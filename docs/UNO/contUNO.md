@@ -179,12 +179,154 @@ En "Recursos" de "arduinoblocks" tenemos todas las opciones de descarga y condic
 
 <center>
 
-![Descargas](../img/uno/AB_Connector.png)  
-*Descargas*
+![AB-Connector](../img/uno/AB_Connector.png)  
+*AB-Connector*
 
 </center>
 
-----------------------------
+Una vez instalado lo podemos encontrar entre las aplicaciones:
+
+<center>
+
+![AB-Connector](../img/uno/AB_Connector_app.png)  
+*AB-Connector*
+
+</center>
+
+Al abrir AB-Connector, aparece este cuadro de diálogo que va mostrando información sobre la placa y arduinoblocks:
+
+<center>
+
+![AB-Connector en ejecución](../img/uno/AB_Connector_eje.png)  
+*AB-Connector en ejecución*
+
+</center>
+
+Dejamos AB-Connector en ejecución minimizado en segundo plano.
+
+<FONT size=9><FONT COLOR=#FF0055><b>1.</b></font></font> En ArduinoBlocks, crea una cuenta pulsando en “Iniciar sesión” y, posteriormente, en “nuevo usuario”:
+
+<center>
+
+![Pantalla inicial arduinoblocks](../img/uno/pant_ini_AB.png)  
+*Pantalla inicial arduinoblocks*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>2. </b></font></font> Al entrar en la plataforma te encontrarás esta pantalla:
+
+<center>
+
+![Sesión iniciada en arduinoblocks](../img/uno/ses_ini.png)  
+*Sesión iniciada en arduinoblocks*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>3.</b></font></font> Al hacer clic en "Empezar un nuevo proyecto!" aparece la siguiente pantalla para seleccionar el tipo de proyecto:
+
+<center>
+
+![Nuevo proyecto](../img/uno/nuevo_proy.png)  
+*Nuevo proyecto*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>4.</b></font></font> Para crear un nuevo **proyecto personal**, debes rellenar un formulario. Si utilizas la placa Keyestudio UNO, debes seleccionar UNO en **Tipo de proyecto**.
+
+<center>
+
+![Tipo de proyecto](../img/uno/tipo_proy.png)  
+*Tipo de proyecto*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>5.</b></font></font> Una vez creado el proyecto, después de haber cumplimentado su nombre y demás campos del formulario, se abre el entorno de programación:
+
+<center>
+
+![Proyecto creado](../img/uno/creado_proy.png)  
+*Proyecto creado*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>6.</b></font></font> En la parte izquierda de esta pantalla, encontrarás los bloques disponibles clasificados por diferentes categorías. Por ejemplo, en la siguiente imagen puedes ver los bloques de algunos de los sensores que se pueden controlar con la placa Keyestudio UNO.
+
+<center>
+
+![Algunos bloques de sensores](../img/uno/B_sensores.png)  
+*Algunos bloques de sensores*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>7.</b></font></font> Arrastra los blogs al espacio de programación para programar tu placa. Por ejemplo, podemos programar el envío en bucle de un mensaje por puerto serie. El **puerto serie**, también conocido como puerto de comunicaciones serie o interfaz serie, es un tipo de conexión utilizada en ordenadores y dispositivos periféricos para la transferencia de datos. La característica principal del puerto serie es que envía los datos en serie; es decir, bit a bit, a través de un solo canal o hilo. Los bloques más importantes para utilizar el puerto serie son:
+
+<center>
+
+![Bloques puerto serie](../img/uno/B_serie.png)  
+*Bloques puerto serie*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>8.</b></font></font> El programa de este ejemplo sería así:
+
+<center>
+
+![Programa Hola mundo](../img/uno/P_HolaMundo.png)  
+*Programa Hola mundo. [Descargar](../UNO/programas/HolaMundo.abp)*
+
+</center>
+
+Dentro de la estructura “**Inicializar**” colocamos el bloque de configuración de la velocidad de transferencia de datos (“**baudrate**”) del puerto serie a 9600. Y en el bucle principal, colocamos el bloque para enviar un mensaje en concreto, seleccionando que se realice un salto de línea. Para que el mensaje no se muestre tan rapidamente hacemos que se reproduzca cada cierto tiempo.
+
+<FONT size=9><FONT COLOR=#FF0055><b>9.</b></font></font> Una vez creado el programa, debes transferirlo (subirlo) a la placa. Para ello, sigue los siguientes pasos:
+
+* Comprueba que AB-Connector está ejecutańdose.
+* Conecta la placa al ordenador mediante un cable USB.
+* Selecciona el puerto de comunicación. Puedes conectar y desconectar el cable USB del ordenador para diferenciar cuál es el puerto de comunicación que utiliza la placa.
+* Si no aparece el "/dev/ttyACM" directamente, pulsa en el icono de actualización. En entornos Linux, MacOS y Chromebook se muestra así el nombre. En Windows se muestra como COM.
+
+<center>
+
+![Establecer conexión USB](../img/uno/P_conex.png)  
+*Establecer conexión USB*
+
+</center>
+
+* Pulsando en el botón “Subir”, carga el programa en la placa.
+
+<center>
+
+![Subir el programa a la placa](../img/uno/P_subir.png)  
+*Subir el programa a la placa*
+
+</center>
+
+Para poder visualizar el monitor serie y comprobar qué mensajes está enviando la placa al ordenador, debes abrirlo en tu entorno de programación, pulsando el botón “Consola”:
+
+<center>
+
+![Abrir consola serie](../img/uno/P_abre_consola.png)  
+*Abrir consola serie*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>10.</b></font></font> Se abrirá la ventana siguiente:
+
+<center>
+
+![Consola serie](../img/uno/consola.png)  
+*Consola serie*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>11.</b></font></font> Selecciona la tasa de baudios (velocidad de transmisión de datos) con la que has iniciado el puerto serie y después haz clic en conectar. Verás el resultado en pantalla.
+
+<center>
+
+![Consola serie recibiendo datos](../img/uno/consola_recibe.png)  
+*Consola serie recibiendo datos*
+
+</center>
 
 ### <FONT COLOR=#AA0000>Arduino IDE</font>
 Arduino IDE es un Entorno de Desarrollo Integrado multiplataforma (Linux, Windows y macOS) ideal para programar placas tipo Arduino y compatibles, como es el caso de la placa Keyestudio UNO, con un lenguaje de programación basado en C/C++.
@@ -345,3 +487,89 @@ En la animación siguiente vemos la herramienta funcionando.
 
 ![Autocompletado](../img/uno/autocompletado.gif)  
 *Autocompletado*
+
+</center>
+
+#### <FONT COLOR=#FF00FF><b>Programando con Arduino IDE</b></font>
+<FONT size=9><FONT COLOR=#FF0055><b>1.</b></font></font> Para poder programar la placa Keyestudio UNO en el entorno Arduino IDE, es necesario que conectes la placa al ordenador con un cable USB y la selecciones en el desplegable “Selecccione placa y puerto”.
+
+<center>
+
+![Seleccionar placa y puerto](../img/uno/IDE_placa.png)  
+*Seleccionar placa y puerto*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>2.</b></font></font> Y selecciona la placa “Arduino UNO” y el puerto adecuado en la ventana que se abre:
+
+<center>
+
+![Seleccionados placa y puerto](../img/uno/IDE_placa_puerto.png)  
+*Seleccionados placa y puerto*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>3.</b></font></font> Una vez configurado el entorno, vamos a programar el envío en bucle de un mensaje por puerto serie. Copiamos el código del programa de arduinoblocks y quedaría así:
+
+<center>
+
+![Programa Hola mundo](../img/uno/IDE_holamundo.png)  
+*Programa Hola mundo*
+
+</center>
+
+Se ha cambiado el tiempo a un segundo para asegurarnos que el programa es diferente al de arduinoblocks. Este es el código del programa listo para copiar:
+
+~~~C++
+unsigned long task_time_ms=0;
+
+void setup()
+{
+  // Inicar puerto serie a 9600 buadios
+	Serial.begin(9600);
+  // Espera a que se complete la transmision de datos serie
+	Serial.flush();
+	while(Serial.available()>0)Serial.read();
+}
+
+void loop()
+{
+  // millis() retorna los milisegundos desde que se inicio el programa
+ 	if((millis()-task_time_ms)>=1000){
+    task_time_ms=millis();
+    // Envia mensaje por puerto serie
+    Serial.println(String("Hola mundo"));
+  }
+}
+~~~
+
+<FONT size=9><FONT COLOR=#FF0055><b>4.</b></font></font> Dentro de la estructura “**setup()**” se añade la instrucción “**Serial.begin(9600);**” para configurar la velocidad de transferencia de datos (“**baudrate**”) del puerto serie a 9600. En el bucle principal, el “**loop()**”, añadimos la instrucción "**Serial.println();**" para enviar un mensaje. Cargamos el programa en la placa clicando el botón de carga:
+
+<center>
+
+![Cargar el programa Hola mundo](../img/uno/IDE_holamundo_carga.png)  
+*Cargar el programa Hola mundo*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>5.</b></font></font> Abrimos la consola serie para visualizar los datos que recibe el ordenador desde la placa mediante la comunicación serie:
+
+<center>
+
+![Programa Hola mundo en ejecución](../img/uno/IDE_holamundo_cargado.png)  
+*Programa Hola mundo en ejecución*
+
+</center>
+
+## <FONT COLOR=#007575>**Seguridad**</font>
+A la hora de utilizar la placa keyestudio UNO, es fundamental seguir unas pautas de seguridad para garantizar tanto el buen funcionamiento de la placa como la seguridad de los usuarios. A continuación, se exponen varios consejos clave:
+
+* **Evita cortocircuitos:** Hay que asegurarse de que la placa no esté alimentada cuando se manipulan materiales y herramientas conductores de electricidad. Esto ayuda a prevenir cortocircuitos inesperados que podrían dañar la placa o causar accidentes.
+* **Manipula la placa con cuidado:** Los pines donde se conectan componentes diversos son delicados y pueden romperse o doblarse si se aplica una gran fuerza o palanca. Hay que ser especialmente prudente en la manipulación y evitar caídas o golpes que puedan afectar a la placa.
+* **Controla la temperatura:** Es necesario tener en cuenta que la temperatura de la placa puede aumentar considerablemente durante el uso prolongado. Algunos componentes pueden calentarse y es importante evitar el contacto directo para prevenir
+quemaduras o daños en la placa.
+* **Revisa regularmente los componentes:** Es conveniente comprobar regularmente el estado de los componentes electrónicos y las conexiones. Los conectores sueltos o desgastados pueden causar un mal funcionamiento de la placa o ser un riesgo de seguridad.
+* **Usa adecuadamente la alimentación:** Utiliza sólo las fuentes de alimentación recomendadas. Un voltaje incorrecto puede dañar la placa o incluso ser peligroso, ya que puede producir sobrecalentamiento de componentes o cortocircuitos.
+* **Mantén la placa en un entorno seco y limpio:** La presencia de líquidos o polvo puede causar cortocircuitos o dañar los componentes de la placa.
+
+Siguiendo estos consejos, podrás disfrutar de una experiencia segura y enriquecedora con la placa programable.

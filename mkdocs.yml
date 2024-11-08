@@ -84,10 +84,11 @@ theme:
   # Icono del repo
   icon:
     repo: fontawesome/brands/github
-  # Pestañas de navegación
+  # Pestañas de navegación y botón copiar
   features:
     - navigation.tabs
     - navigation.tabs.sticky #pestañas fijas
+    - content.code.copy # Botón copiar en bloques de código    
 # Caracteristicas especiales
 features:
     - navigation.instant
