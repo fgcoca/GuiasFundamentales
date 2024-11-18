@@ -17,9 +17,9 @@ extra:
   generator: false
   # Footer - Iconos
   social:
-    - icon: fontawesome/brands/x-twitter 
-      link: https://x.com/fgcoca
-      name: X de Federico Coca
+    - icon: fontawesome/brands/bluesky
+      link: https://bsky.app/profile/fgcoca.bsky.social
+      name: Bluesky de Federico Coca
     - icon: fontawesome/brands/github
       link: https://github.com/fgcoca
       name: Github de Federico Coca
@@ -32,9 +32,20 @@ extra:
 
 # 4. Navegación
 nav:
-  - Principal: index.md
+  - Principal:
+    - Inicio: index.md
+    - Conocimientos técnicos previos: previos.md
+    - Conceptos sobre CO2 y VOC: CO2.md
   - Keyestudio UNO:
     - Antes de: UNO/contUNO.md
+    - Placa TdR-STEAM y keyestudio UNO: UNO/tdrsteam.md
+    - Pantalla LCD 1602: UNO/lcd.md
+    - Pantalla OLED: UNO/oled.md
+    - Programar sensores externos: UNO/externos.md
+    - Programar servomotores: UNO/servos.md
+    - Programar el sensor de ultrasonidos: UNO/ultrason.md
+    - Programar el mando a distancia: UNO/mando.md
+    - Programar una tira de LEDs: UNO/tira.md
 
 #- Ayuda:
     #- Chuleta: ayuda/ayuda.md
