@@ -2,38 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://fgcoca.github.io/GuiasFundamentales/</loc>
-         <lastmod>2024-11-08</lastmod>
+         <lastmod>2024-11-18</lastmod>
+    </url>
+    <url>
+         <loc>https://fgcoca.github.io/GuiasFundamentales/CO2/</loc>
+         <lastmod>2024-11-18</lastmod>
+    </url>
+    <url>
+         <loc>https://fgcoca.github.io/GuiasFundamentales/previos/</loc>
+         <lastmod>2024-11-18</lastmod>
     </url>
     <url>
          <loc>https://fgcoca.github.io/GuiasFundamentales/Miscelanea/about/</loc>
-         <lastmod>2024-11-08</lastmod>
+         <lastmod>2024-11-18</lastmod>
     </url>
     <url>
          <loc>https://fgcoca.github.io/GuiasFundamentales/Miscelanea/lic/</loc>
-         <lastmod>2024-11-08</lastmod>
+         <lastmod>2024-11-18</lastmod>
     </url>
     <url>
          <loc>https://fgcoca.github.io/GuiasFundamentales/Miscelanea/soft/</loc>
-         <lastmod>2024-11-08</lastmod>
+         <lastmod>2024-11-18</lastmod>
     </url>
     <url>
          <loc>https://fgcoca.github.io/GuiasFundamentales/Miscelanea/webgrafia/</loc>
-         <lastmod>2024-11-08</lastmod>
+         <lastmod>2024-11-18</lastmod>
     </url>
     <url>
          <loc>https://fgcoca.github.io/GuiasFundamentales/UNO/contUNO/</loc>
-         <lastmod>2024-11-08</lastmod>
+         <lastmod>2024-11-18</lastmod>
+    </url>
+    <url>
+         <loc>https://fgcoca.github.io/GuiasFundamentales/UNO/externos/</loc>
+         <lastmod>2024-11-18</lastmod>
+    </url>
+    <url>
+         <loc>https://fgcoca.github.io/GuiasFundamentales/UNO/lcd/</loc>
+         <lastmod>2024-11-18</lastmod>
+    </url>
+    <url>
+         <loc>https://fgcoca.github.io/GuiasFundamentales/UNO/mando/</loc>
+         <lastmod>2024-11-18</lastmod>
+    </url>
+    <url>
+         <loc>https://fgcoca.github.io/GuiasFundamentales/UNO/oled/</loc>
+         <lastmod>2024-11-18</lastmod>
+    </url>
+    <url>
+         <loc>https://fgcoca.github.io/GuiasFundamentales/UNO/servos/</loc>
+         <lastmod>2024-11-18</lastmod>
+    </url>
+    <url>
+         <loc>https://fgcoca.github.io/GuiasFundamentales/UNO/tdrsteam/</loc>
+         <lastmod>2024-11-18</lastmod>
+    </url>
+    <url>
+         <loc>https://fgcoca.github.io/GuiasFundamentales/UNO/tira/</loc>
+         <lastmod>2024-11-18</lastmod>
+    </url>
+    <url>
+         <loc>https://fgcoca.github.io/GuiasFundamentales/UNO/ultrason/</loc>
+         <lastmod>2024-11-18</lastmod>
     </url>
     <url>
          <loc>https://fgcoca.github.io/GuiasFundamentales/ayuda/ayuda/</loc>
-         <lastmod>2024-11-08</lastmod>
+         <lastmod>2024-11-18</lastmod>
     </url>
     <url>
          <loc>https://fgcoca.github.io/GuiasFundamentales/ayuda/markdown/</loc>
-         <lastmod>2024-11-08</lastmod>
+         <lastmod>2024-11-18</lastmod>
     </url>
     <url>
          <loc>https://fgcoca.github.io/GuiasFundamentales/ayuda/material/</loc>
-         <lastmod>2024-11-08</lastmod>
+         <lastmod>2024-11-18</lastmod>
     </url>
 </urlset>
