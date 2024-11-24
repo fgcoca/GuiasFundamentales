@@ -9,7 +9,7 @@ Antes de nada se recomienda repasar los conceptos dados en [Control de un servom
 * Servomotor 9g negro con rotación de 0 a 180 grados KS0194
 * Pulsador táctil capacitivo (KS0031) o de botón (KS0029).
 * Cable SVG o 3 cables dupont hembra-hembra
-* Ordenador. Antes de empezar a utilizar la placa Keyestudio UNO, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](http://127.0.0.1:8000/GuiasFundamentales/UNO/contUNO/).
+* Ordenador. Antes de empezar a utilizar la placa Keyestudio UNO, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](https://fgcoca.github.io/GuiasFundamentales/UNO/contUNO/).
 
 ## <FONT COLOR=#007575>**Procedimiento**</font>
 

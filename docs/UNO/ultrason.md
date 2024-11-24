@@ -1,4 +1,4 @@
-Antes de nada se recomienda repasar los conceptos dados en [El sensor de ultrasonidos HC-SR04]().
+Antes de nada se recomienda repasar los conceptos dados en [El sensor de ultrasonidos HC-SR04](https://fgcoca.github.io/GuiasFundamentales/previos/#el-sensor-de-ultrasonidos-hc-sr04).
 
 !!! danger "Por seguridad"
     Es muy conveniente tener la placa desprovista de cualquier tipo de alimentación mientras realizamos el conexionado de elementos. En caso contrario se pueden producir despefectos irreversibles en cualquiera de los elementos.
@@ -7,7 +7,7 @@ Antes de nada se recomienda repasar los conceptos dados en [El sensor de ultraso
 
 * Placa Keyestudio UNO
 * Sensor de ultrasonidos HC-SR04
-* Ordenador. Antes de empezar a utilizar la placa Keyestudio UNO, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](http://127.0.0.1:8000/GuiasFundamentales/UNO/contUNO/).
+* Ordenador. Antes de empezar a utilizar la placa Keyestudio UNO, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](https://fgcoca.github.io/GuiasFundamentales/UNO/contUNO/).
 
 ## <FONT COLOR=#007575>**Procedimiento**</font>
 

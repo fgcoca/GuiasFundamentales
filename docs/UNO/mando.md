@@ -1,6 +1,6 @@
 En esta ocasión vamos a trabajar con el [Kit Imagina TdR STEAM basado en la placa tipo Arduino UNO](https://shop.innovadidactic.com/ca/imagina-steam-y-makers/1445-kit-imagina-tdr-steam-basado-en-arduino-8436574314229.html) en el que ya disponemos del mando y del sensor.
 
-Es conveniente repasar los contendiso explicados en []() y en []() puesto que vamos a utilizar el mando y el sensor de ese conjunto.
+Es conveniente repasar los contendiso explicados en [Emisor y receptor de infrarrojos](https://fgcoca.github.io/GuiasFundamentales/previos/#emisor-y-receptor-de-infrarrojos) y en [Placa TdR-STEAM y keyestudio UNO](https://fgcoca.github.io/GuiasFundamentales/UNO/tdrsteam/) puesto que vamos a utilizar el mando y el sensor de ese conjunto.
 
 !!! danger "Por seguridad"
     Es muy conveniente tener la placa desprovista de cualquier tipo de alimentación mientras realizamos el conexionado de elementos. En caso contrario se pueden producir despefectos irreversibles en cualquiera de los elementos.
@@ -8,7 +8,7 @@ Es conveniente repasar los contendiso explicados en []() y en []() puesto que va
 ## <FONT COLOR=#007575>**Material necesario**</font>
 
 * Kit Imagina TdR STEAM basado en la placa tipo Arduino UNO
-* Ordenador. Antes de empezar a utilizar la placa Keyestudio UNO, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](http://127.0.0.1:8000/GuiasFundamentales/UNO/contUNO/).
+* Ordenador. Antes de empezar a utilizar la placa Keyestudio UNO, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](https://fgcoca.github.io/GuiasFundamentales/UNO/contUNO/).
 
 ## <FONT COLOR=#007575>**Procedimiento**</font>
 

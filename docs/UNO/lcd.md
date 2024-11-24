@@ -1,14 +1,16 @@
 Aquí encontrarás información e instrucciones para conectar y mostrar textos o imágenes en una pantalla de tipo LCD 1602.
 
+Para saber mas sobre la LCD 1602 puedes consultar [Pantalla LCD 1602 I2C](https://fgcoca.github.io/GuiasFundamentales/previos/#pantalla-lcd-1602-i2c).
+
 !!! danger "Por seguridad"
 	Es muy conveniente tener la placa desprovista de cualquier tipo de alimentación mientras realizamos el conexionado de elementos. En caso contrario se pueden producir despefectos irreversibles en cualquiera de los elementos.
 
 ## <FONT COLOR=#007575>**Material necesario**</font>
 
-* Placa Keyestudio UNO
+* Placa ESP32 STEAMakers
 * Pantalla LCD 1602 I2C
 * Cable I2C o 4 cables dupont hembra-hembra
-* Ordenador. Antes de empezar a utilizar la placa Keyestudio UNO, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](http://127.0.0.1:8000/GuiasFundamentales/UNO/contUNO/).
+* Ordenador. Antes de empezar a utilizar la placa ESP32 STEAMakers, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de]().
 
 ## <FONT COLOR=#007575>**Procedimiento**</font>
 

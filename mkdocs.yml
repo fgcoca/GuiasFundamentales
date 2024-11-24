@@ -46,6 +46,17 @@ nav:
     - Programar el sensor de ultrasonidos: UNO/ultrason.md
     - Programar el mando a distancia: UNO/mando.md
     - Programar una tira de LEDs: UNO/tira.md
+  - ESP32 STEAMakers:
+    - Antes de: STEAMakers/contSM.md
+#    - Pantalla LCD 1602: STEAMakers/lcdSM.md
+#    - Pantalla OLED: STEAMakers/oledSM.md
+#    - Programar sensores externos: STEAMakers/externosSM.md
+#    - Conectar a una red WiFi: STEAMakers/wifiSM.md
+#    - Enviar datos a Thingspeak: STEAMakers/thingspkSM.md
+#    - Programar servomotores: STEAMakers/servosSM.md
+#    - Programar el sensor de ultrasonidos: STEAMakers/ultrasonSM.md
+#    - Programar el mando a distancia: STEAMakers/mandoSM.md
+#    - Programar una tira de LEDs: STEAMakers/tiraSM.md
 
 #- Ayuda:
     #- Chuleta: ayuda/ayuda.md

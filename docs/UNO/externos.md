@@ -11,7 +11,7 @@ A continuación se relacionan las actividades desarrolladas con algunos de los t
 * Placa Keyestudio UNO
 * Sensor de humedad del suelo (KS0049)
 * Cable GVS o 3 cables dupont hembra-hembra
-* Ordenador. Antes de empezar a utilizar la placa Keyestudio UNO, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](http://127.0.0.1:8000/GuiasFundamentales/UNO/contUNO/).
+* Ordenador. Antes de empezar a utilizar la placa Keyestudio UNO, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](https://fgcoca.github.io/GuiasFundamentales/UNO/contUNO/).
 
 #### <FONT COLOR=#FF00FF>**Procedimiento**</font>
 
@@ -109,7 +109,7 @@ No obstante, funciona muy bien reaccionando a cambios muy pequeños en un ambien
 * Cable GVS o 3 cables dupont hembra-hembra
 * Matriz de LED 8x8 I2C HT16K33 (KS0064)
 * Matriz de LED 8x8 I2C HT16K33 direccionable (KS0396)
-* Ordenador. Antes de empezar a utilizar la placa Keyestudio UNO, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](http://127.0.0.1:8000/GuiasFundamentales/UNO/contUNO/).
+* Ordenador. Antes de empezar a utilizar la placa Keyestudio UNO, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](https://fgcoca.github.io/GuiasFundamentales/UNO/contUNO/).
 
 #### <FONT COLOR=#FF00FF>**Procedimiento**</font>
 
@@ -189,7 +189,7 @@ En arduinoblocks está disponible un bloque para el sensor que devuelve el nivel
 * Placa Keyestudio UNO
 * Sensor CCS811 Sensor de eCO2 (Dióxido de Carbono Equivalente) y TVOC conexión I2C (KS0457)
 * Cable I2C o 4 cables dupont hembra-hembra
-* Ordenador. Antes de empezar a utilizar la placa Keyestudio UNO, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](http://127.0.0.1:8000/GuiasFundamentales/UNO/contUNO/).
+* Ordenador. Antes de empezar a utilizar la placa Keyestudio UNO, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](https://fgcoca.github.io/GuiasFundamentales/UNO/contUNO/).
 
 #### <FONT COLOR=#FF00FF>**Procedimiento**</font>
 
@@ -266,7 +266,7 @@ Los conceptos que vemos en la imagen anterior se refieren a la rotación del eje
 * Placa Keyestudio UNO
 * Sensor acelerómetro de tres ejes ADXL345 (Ks0012)
 * Cable I2C o 4 cables dupont hembra-hembra
-* Ordenador. Antes de empezar a utilizar la placa Keyestudio UNO, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](http://127.0.0.1:8000/GuiasFundamentales/UNO/contUNO/).
+* Ordenador. Antes de empezar a utilizar la placa Keyestudio UNO, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](https://fgcoca.github.io/GuiasFundamentales/UNO/contUNO/).
 
 #### <FONT COLOR=#FF00FF>**Procedimiento**</font>
 
