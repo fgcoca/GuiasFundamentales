@@ -445,3 +445,147 @@ Vamos a implementar dicho programa mediante listas.
 *[KS_UNO_pos_servo_listas2](../UNO/programas/KS_UNO_pos_servo_listas2.abp)*
 
 </center>
+
+## <FONT COLOR=#007575>**El sensor de ultrasonidos HC-SR04**</font>
+Los sensores ultrasónicos utilizan un sonar para determinar la distancia desde el sensor al objeto. Este módulo utiliza un chip CS100A que puede medir distancias entre 4 cm y 300 cm siendo la medida precisa y estable. El módulo incluye el transmisor y el receptor ultrasónicos y su circuito de control. El dispositivo debe conectarse a dos pines, lo que se debe a que para su funcionamiento necesita uno para emitir el ultrasonido (Trigger) y otro para recibirlo (Echo). El principio de funcionamiento es el de la figura siguiente:
+
+<center>
+
+![Principio de funcionamiento del sensor HC-SR04](../img/previo/principio.png)  
+*Principio de funcionamiento del sensor HC-SR04*
+
+</center>
+
+El sensor lo que hace es medir el tiempo (*t*) en microsegundos que tarda en recibir el eco del sonido emitido y como la velocidad (*v*) es conocida, se trata de la velocidad del sonido, que es de *340 m/s* o *0.034 cm/μs*, la distancia vendrá dada por la siguiente ecuación:
+
+<center>$d = v \cdot t = 0.034(\dfrac{cm}{\mu s}) \cdot t (\mu s) = 0.034 \cdot t (cm)$</center>
+
+Aunque nosotros no debemos preocuparnos por esto puesto que el bloque ya no devuelve esta distancia medida en cm. Su aspecto lo vemos en la figura siguiente:
+
+<center>
+
+![Aspecto del sensor HC-SR04](../img/previo/aspecto_SR04.png)  
+*Aspecto del sensor HC-SR04*
+
+</center>
+
+El módulo detector ultrasónico proporciona una distancia de detección sin contacto que va de 2 cm a 450 cm, con una precisión de 3 mm y un ángulo de 15º. El módulo incluye un transmisor y un receptor de ultrasonidos, así como el circuito de control correspondiente y basa su funcionamiento en la secuencia de trabajo que vemos en la figura siguiente.
+
+<center>
+
+![Secuencia de trabajo del sensor HC-SR04](../img/previo/secuencia.png)  
+*Secuencia de trabajo del sensor HC-SR04*
+
+</center>
+
+1. Partiendo de un nivel bajo de trigger lo mantenemos activado o en estado alto al menos durante 10 us.
+2. Tras el disparo el módulo emitirá una ráfaga de pulsos cuadrados de 40 KHz y detectará automáticamente si hay una señal de regreso.
+3. Si hay una señal de retorno, se emite un nivel alto a través de ECHO. El tiempo de duración de este nivel alto es en realidad el tiempo transcurrido desde la emisión hasta la recepción del ultrasonido.
+
+En el apartado de bloques de programación, se encuentra en "Sensores" y tiene el aspecto de la figura siguiente:
+
+<center>
+
+![Bloque para lectura del sensor HC-SR04](../img/previo/bloque_SR04.png)  
+*Bloque para lectura del sensor HC-SR04*
+
+</center>
+
+## <FONT COLOR=#007575>**Emisor y receptor de infrarrojos**</font>
+### <FONT COLOR=#AA0000>¿que son los infrarrojos?</font>
+Son una clase de radiación electromagnética con una longitud de onda que resulta superior a la longitud de onda de la luz visible, siendo su frecuencia superior a las microondas. Dentro del espectro electromagnético, la radiación infrarroja se encuentra comprendida entre el espectro de luz visible y las microondas. Tiene longitudes de onda mayores o más largas que el rojo. En la imagen siguiente, obtenida del blog de Mercedes González Mas vemos caracterizados los infrarrojos dentro del espectro.
+
+<center>
+
+![Espectro electromagnético](../img/previo/IR-blog.png)  
+*Espectro electromagnético*
+
+</center>
+
+Como podemos observar en la imagen, los rayos infrarrojos son clasificados, de acuerdo a su longitud de onda, del siguiente modo:
+
+* infrarrojo cercano, con longitud de onda entre 0.7 µm y 1.1 µm, es la parte del espectro infrarrojo que ese encuentra más próximo a la luz visible.
+* infrarrojo medio, con longitud de onda entre 1,1 µm y 15 µm.
+* infrarrojo lejano o región más cercana a las microondas, con longitud de onda entre 15 µm y 100 µm
+
+En la imagen siguiente, obtenida de [Wikipedia](https://es.wikipedia.org/wiki/Espectro_electromagn%C3%A9tico), sobre espectro electromagnético podemos ver más información del tema.
+
+<center>
+
+![Espectro electromagnético](../img/previo/Espectro.png)  
+*Espectro electromagnético*
+
+</center>
+
+Todos los cuerpos emiten una cierta cantidad de radiación, y aunque esta resulta invisible para el ojo humano, existen dispositivos electrónicos capaces de "verla" por estar diseñados para ello.
+
+### <FONT COLOR=#AA0000>Diodo receptor de infrarrojos</font>
+Uno de los receptores más universal utilizado en placas tipo Arduino es el receptor de infrarrojos universal TL1838, VS1838B o simplemente 1835 de 38KHz, cuyo aspecto podemos ver en la imagen siguiente:
+
+<center>
+
+![Diodo IR 1838](../img/previo/1838.png)  
+*Diodo IR 1838*
+
+</center>
+
+En el [datasheet TL1838](https://fgcoca.github.io/TdR-STEAM-and_UNO/Datasheet/Tl1838.pdf) del dispositivo tenemos toda la información sobre el mismo destacando las siguientes características:
+
+* Voltaje de funcionamiento: 2.7V a 5.5V
+* Frecuencia: 37.9KHz
+* Ángulo de recepción: 90°
+* Rango de recepción: 18m
+
+El dispositivo genera una señal de salida que sirve para controles remotos universales y utiliza la codificación NEC. El receptor de infrarrojos permite codificar los protocolos de señales de pulsos infrarrojos utilizados por los mandos a distancia. Los protocolos detectados son los siguientes: RC5, RC6, NEC, SONY, PANASONIC, JVC, SAMSUNG, WHYNTER, AIWA, LG, SANYO, MITSUBISHI y DENON. Es decir, detectaría cualquier señal emitida por cualquiera de esos mandos.
+
+### <FONT COLOR=#AA0000>Emisor de infrarrojos</font>
+En nuestro caso como emisor de infrarrojos vamos a utilizar el control remoto de Keyestudio que vemos en la imagen siguiente:
+
+<center>
+
+![Control remoto](../img/previo/1838.png)  
+*Control remoto*
+
+</center>
+
+El mini control remoto tiene 17 teclas de función y tiene las siguientes especificaciones:
+
+* Batería: pilas de botón CR2025
+* Distancia de transmisión: hasta 8 m
+* Ángulo efectivo: 60°
+
+El control remoto, o mando a distancia, por IR funciona emitiendo trenes de pulsos de luz infrarroja. Diferentes señales corresponden a botones diferentes La señal infrarroja transmite el código correspondiente al botón del mando a distancia pulsado al dispositivo en forma de una serie de impulsos de luz infrarroja. El receptor recibe la serie de impulsos de infrarrojos y los pasa a un procesador que decodifica y activarán una determinada función del dispositivo. En el reto y las actividades del mismo obtendremos estos códigos. En arduinoBlocks se han asignado los siguientes nombres a las teclas:
+
+<center>
+
+![Nombre teclas control remoto en Arduinoblocks](../img/previo/teclas.png)  
+*Nombre teclas control remoto en Arduinoblocks*
+
+</center>
+
+### <FONT COLOR=#AA0000>Bloques en Arduinoblocks</font>
+El sensor receptor de infrarrojos permite obtener la cadena de texto con el código en formato hexadecimal correspondiente al tren de pulsos de IR generado al pulsar una determinada tecla. El bloque puede ser uno de los que vemos en la imagen siguiente, dependiendo del tipo de proyecto en el que estemos:
+
+<center>
+
+![En proyectos tipo UNO](../img/previo/Bloque-receptor-IR-NO-TdR.png)  
+*En proyectos tipo UNO*
+
+![En proyectos con TdR STEAM](../img/previo/Bloque-receptor-IR-TdR.png)  
+*En proyectos con TdR STEAM*
+
+</center>
+
+El valor devuelto por el bloque de recepción será una cadena de texto con valor vacío en caso de no detectar ningún código. Al devolver el bloque una cadena de texto debemos recordar que lo tenemos que almacenar en una variable de tipo texto.
+
+Si utilizamos mandos genéricos RC5 como el modelo de Keyestudio, podemos usar el bloque de la imagen siguiente para comparar los códigos recibidos y así identificar fácilmente cada tecla.
+
+<center>
+
+![En proyectos tipo UNO](../img/previo/Bloque-comparar-IR-NO-TdR.png)  
+*En proyectos tipo UNO*
+
+![En proyectos con TdR STEAM](../img/previo/Bloque-comparar-IR-TdR.png)  
+*En proyectos con TdR STEAM*
+
+</center>

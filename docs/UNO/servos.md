@@ -1,4 +1,4 @@
-Antes de nada se recomienda repasar los conceptos dados en [Control de un servomotor](http://127.0.0.1:8000/GuiasFundamentales/previos/#control-de-un-servomotor) y el uso de las listas de datos.
+Antes de nada se recomienda repasar los conceptos dados en [Control de un servomotor](https://fgcoca.github.io/GuiasFundamentales/previos/#control-de-un-servomotor) y el uso de las listas de datos.
 
 !!! danger "Por seguridad"
 	Es muy conveniente tener la placa desprovista de cualquier tipo de alimentación mientras realizamos el conexionado de elementos. En caso contrario se pueden producir despefectos irreversibles en cualquiera de los elementos.
@@ -15,7 +15,7 @@ Antes de nada se recomienda repasar los conceptos dados en [Control de un servom
 
 **1.** Ejecuta el programa AB-Connector. Recuerda que debe estar en ejecución todo el rato mientras trabajas con Arduinoblocks. Iniciamos un nuevo proyecto de tipo "UNO".
 
-**2.** Conecta el servomotor a alguno de los pinos digital de la placa (en el ejemplo utilizaremos el pin D4), teniendo en cuenta que el cable marrón del servomotor corresponde a la G -tierra- (color azul de la placa), el cable rojo del servomotor corresponde a la V -voltaje- (color rojo de la placa) y el cable naranja del servomotor corresponde al S -señal- (color amarillo de la placa).
+**2.** Conecta el servomotor a alguno de los pines digital de la placa (en el ejemplo utilizaremos el pin D4), teniendo en cuenta que el cable marrón del servomotor corresponde a la G -tierra- (color azul de la placa), el cable rojo del servomotor corresponde a la V -voltaje- (color rojo de la placa) y el cable naranja del servomotor corresponde al S -señal- (color amarillo de la placa).
 
 <center>
 
