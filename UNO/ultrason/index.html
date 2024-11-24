@@ -86,6 +86,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#material-necesario" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -610,6 +615,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Programar el sensor de ultrasonidos
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -619,6 +635,41 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#material-necesario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material necesario
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procedimiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procedimiento
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -821,6 +872,32 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#material-necesario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material necesario
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procedimiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procedimiento
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -836,7 +913,42 @@
 
   <h1>Programar el sensor de ultrasonidos</h1>
 
-
+<p>Antes de nada se recomienda repasar los conceptos dados en <a href="">El sensor de ultrasonidos HC-SR04</a>.</p>
+<div class="admonition danger">
+<p class="admonition-title">Por seguridad</p>
+<p>Es muy conveniente tener la placa desprovista de cualquier tipo de alimentación mientras realizamos el conexionado de elementos. En caso contrario se pueden producir despefectos irreversibles en cualquiera de los elementos.</p>
+</div>
+<h2 id="material-necesario"><FONT COLOR=#007575><strong>Material necesario</strong></font><a class="headerlink" href="#material-necesario" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Placa Keyestudio UNO</li>
+<li>Sensor de ultrasonidos HC-SR04</li>
+<li>Ordenador. Antes de empezar a utilizar la placa Keyestudio UNO, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en <a href="http://127.0.0.1:8000/GuiasFundamentales/UNO/contUNO/">Antes de</a>.</li>
+</ul>
+<h2 id="procedimiento"><FONT COLOR=#007575><strong>Procedimiento</strong></font><a class="headerlink" href="#procedimiento" title="Permanent link">&para;</a></h2>
+<p><strong>1.</strong> Ejecuta el programa AB-Connector. Recuerda que debe estar en ejecución todo el rato mientras trabajas con Arduinoblocks. Iniciamos un nuevo proyecto de tipo "UNO".</p>
+<p><strong>2.</strong> Conecta el sensor a pines digitales de la placa (en el ejemplo utilizaremos el pin D2 para Trigger y D3 para Echo). Además tienes que conectar los pines de alimentación teniendo especial cuidado de que VCC se conecta con V y Gnd con G.</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/uno/actividades/KS_UNO_ultra_conecta.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Proyecto KS_UNO_ultrasonidos. Conexionado" src="../../img/uno/actividades/KS_UNO_ultra_conecta.png" /></a><br />
+<em>Proyecto KS_UNO_ultrasonidos. Conexionado</em></p>
+<p></center></p>
+<p>Hemos conectado el pin “Trig” del sensor al pin D2 de la placa y el pin “Echo” al pin D3, para hacerlos coincidir con los que indica el bloque que vamos a utilizar en Arduinoblocks. Si quieres puedes utilizar otros pines para realizar las conexiones, haciendo los cambios correspondientes en el bloque en Arduinoblocks. </p>
+<div class="admonition info">
+<p class="admonition-title">IMPORTANTE:</p>
+<p>El sensor funciona a 5V. comprueba que tienes el interruptor selector de voltaje en la posición correcta:</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/uno/actividades/KS_UNO_ultra_5V.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/uno/actividades/KS_UNO_ultra_5V.png" /></a></p>
+<p></center></p>
+</div>
+<p><strong>3.</strong> Vamos a crear un programa en el que cada segundo se envíe a la consola una composición de texto de la forma "Distancia medida: xx.xx cm". El programa puede ser como el siguiente:</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/uno/actividades/KS_UNO_ultrasonidos.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Proyecto KS_UNO_ultrasonidos" src="../../img/uno/actividades/KS_UNO_ultrasonidos.png" /></a><br />
+<em><a href="../programas/KS_UNO_ultrasonidos.abp">Proyecto KS_UNO_ultrasonidos</a></em></p>
+<p></center></p>
+<p>La consola nos mostrará resultados de la forma siguiente:</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/uno/actividades/KS_UNO_ultrasonidos_consola.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Consola de proyecto KS_UNO_ultrasonidos" src="../../img/uno/actividades/KS_UNO_ultrasonidos_consola.png" /></a><br />
+<em>Consola de proyecto KS_UNO_ultrasonidos</em></p>
+<p></center></p>
 
 
 

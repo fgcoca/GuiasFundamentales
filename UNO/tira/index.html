@@ -86,6 +86,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#material-necesario" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -652,6 +657,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Programar una tira de LEDs
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -661,6 +677,41 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#material-necesario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material necesario
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procedimiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procedimiento
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -821,6 +872,32 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#material-necesario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material necesario
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procedimiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procedimiento
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -836,7 +913,47 @@
 
   <h1>Programar una tira de LEDs</h1>
 
-
+<p>Para saber mas sobre tiras de LEDs RGB direccionables puedes consultar la web <a href="https://fgcoca.github.io/tiras-y-matrices-de-LEDs/">Tiras y matrices de LEDs</a>.</p>
+<div class="admonition danger">
+<p class="admonition-title">Por seguridad</p>
+<p>Es muy conveniente tener la placa desprovista de cualquier tipo de alimentación mientras realizamos el conexionado de elementos. En caso contrario se pueden producir despefectos irreversibles en cualquiera de los elementos.</p>
+</div>
+<h2 id="material-necesario"><FONT COLOR=#007575><strong>Material necesario</strong></font><a class="headerlink" href="#material-necesario" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Placa Keyestudio UNO</li>
+<li>Tira de 8 LEDs</li>
+<li>Cable SVG o 3 cables dupont hembra-hembra</li>
+<li>Ordenador. Antes de empezar a utilizar la placa Keyestudio UNO, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en <a href="http://127.0.0.1:8000/GuiasFundamentales/UNO/contUNO/">Antes de</a>.</li>
+</ul>
+<h2 id="procedimiento"><FONT COLOR=#007575><strong>Procedimiento</strong></font><a class="headerlink" href="#procedimiento" title="Permanent link">&para;</a></h2>
+<p><strong>1.</strong> Ejecuta el programa AB-Connector. Recuerda que debe estar en ejecución todo el rato mientras trabajas con Arduinoblocks. Iniciamos un nuevo proyecto de tipo "UNO".</p>
+<p><strong>2.</strong> Conecta la tira de LEDs a alguno de los puertos digitales de la placa. En el ejemplo utilizamos el pin D13.</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/uno/actividades/KS_UNO_tiraLEDs_conecta.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Proyecto KS_UNO_tiraLEDs_conecta" src="../../img/uno/actividades/KS_UNO_tiraLEDs_conecta.png" /></a><br />
+<em>Proyecto KS_UNO_tiraLEDs_conecta</em></p>
+<p></center></p>
+<p><strong>3.</strong> La tira de LEDs debe inicializarse. Para ello, ve a la categoría “Visualización/NeoPixel” y coloca el bloque “Iniciar GRB 800Khz…”. A continuación, cambia el número de píxeles al número de pixeles de tu tira (8 en el ejemplo) y selecciona el pin al que has conectado la tira (en el ejemplo utilizamos el D13)</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/uno/actividades/KS_UNO_tiraLEDs_bloque_inicializar.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Proyecto KS_UNO_tiraLEDs_bloque_inicializar" src="../../img/uno/actividades/KS_UNO_tiraLEDs_bloque_inicializar.png" /></a><br />
+<em>Proyecto KS_UNO_tiraLEDs_bloque_inicializar</em></p>
+<p></center></p>
+<p>A continuación del bloque “Iniciar”, coloca un bloque “Limpiar”, para asegurar que todos los LEDs estén apagados cuando se inicie el programa.</p>
+<p><strong>4.</strong> En esta misma categoría verás que hay varias opciones para trabajar con los LEDs de manera individual. Puedes establecer el color, el brillo, etc. Ten en cuenta que la numeración comienza en “0”, por lo que los LEDs van desde el 0 hasta el 7.</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/uno/actividades/B_neopix.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bloques de Neopixels" src="../../img/uno/actividades/B_neopix.png" /></a><br />
+<em>Bloques de Neopixels</em></p>
+<p></center></p>
+<p><strong>5.</strong> Si deseas iluminar un píxel en concreto de un color, sólo tienes que situar el bloque “Establecer píxel #…” en el bloque “Bucle”, indicar el número del LED que deseas iluminar y a continuación poner el bloque “Mostrar”. A continuación vemos como hacer parpadear en color rojo al LED 3.</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/uno/actividades/un_pixel_un_color.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Iluminar un pixel de un color" src="../../img/uno/actividades/un_pixel_un_color.png" /></a><br />
+<em>Iluminar un pixel de un color</em></p>
+<p></center></p>
+<p>Puedes construir y subir el programa de la imagen anterior para probar su funcionamiento.</p>
+<p><strong>6.</strong> Vamos a implementar como ejemplo un semáforo. Haremos primero que los LEDs muestren el color rojo durante 2 segundos, a continuación se apagarán y se mostrarán en color naranja durante 1 segundo. Por último, se apagarán de nuevo y se mostrarán de color verde durante 2 segundos, como si fuera un semáforo. El encendido y apagado de todos los LEDs se resolverá mediante bucles. Para empezar, de la categoría "Control", elije "contar con..." y establece el valor "hasta" en 7, dejando el resto como está. Dentro del bucle, desde la categoria “Visualización / NeoPixel”, elije el bloque “Establecer píxel #”, para definir el pixel a iluminar tras # debes poner la variable del bucle y define el color rojo. A continuación, pon el bloque “Mostrar”, seguido de una pausa de 2000 milisegundos (de la categoría “Tiempo”). Para apagar los LEDs, repite el bucle de nuevo esta vez sin retardo y estableciendo el color negro, seguido del bloque “Mostrar”. Los tiempos de espera se deben establecer fuera de los bucles para que todos los LEDs se enciendan al mismo tiempo. En caso contrario el retardo se producirá en cada iteración. Para que el cambio de color se aprecie aún mas podemos establecer un pequeño retardo tras el apagado. El programa completo es el siguiente:</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/uno/actividades/KS_UNO_tiraLEDs.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Programa KS_UNO_tiraLEDs" src="../../img/uno/actividades/KS_UNO_tiraLEDs.png" /></a><br />
+<em><a href="../programas/KS_UNO_tiraLEDs.abp">Proyecto KS_UNO_tiraLEDs</a></em></p>
+<p></center></p>
 
 
 

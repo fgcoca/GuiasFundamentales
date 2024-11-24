@@ -556,6 +556,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#el-sensor-de-ultrasonidos-hc-sr04" class="md-nav__link">
+    <span class="md-ellipsis">
+      El sensor de ultrasonidos HC-SR04
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emisor-y-receptor-de-infrarrojos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Emisor y receptor de infrarrojos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Emisor y receptor de infrarrojos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-son-los-infrarrojos" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿que son los infrarrojos?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diodo-receptor-de-infrarrojos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diodo receptor de infrarrojos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emisor-de-infrarrojos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Emisor de infrarrojos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloques-en-arduinoblocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloques en Arduinoblocks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1100,6 +1160,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#el-sensor-de-ultrasonidos-hc-sr04" class="md-nav__link">
+    <span class="md-ellipsis">
+      El sensor de ultrasonidos HC-SR04
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emisor-y-receptor-de-infrarrojos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Emisor y receptor de infrarrojos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Emisor y receptor de infrarrojos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-son-los-infrarrojos" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿que son los infrarrojos?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diodo-receptor-de-infrarrojos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diodo receptor de infrarrojos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emisor-de-infrarrojos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Emisor de infrarrojos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloques-en-arduinoblocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloques en Arduinoblocks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1440,6 +1560,100 @@
 <p><center></p>
 <p><a class="glightbox" href="../img/previo/KS_UNO_pos_servo_listas2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="KS_UNO_pos_servo_listas2" src="../img/previo/KS_UNO_pos_servo_listas2.png" /></a><br />
 <em><a href="../UNO/programas/KS_UNO_pos_servo_listas2.abp">KS_UNO_pos_servo_listas2</a></em></p>
+<p></center></p>
+<h2 id="el-sensor-de-ultrasonidos-hc-sr04"><FONT COLOR=#007575><strong>El sensor de ultrasonidos HC-SR04</strong></font><a class="headerlink" href="#el-sensor-de-ultrasonidos-hc-sr04" title="Permanent link">&para;</a></h2>
+<p>Los sensores ultrasónicos utilizan un sonar para determinar la distancia desde el sensor al objeto. Este módulo utiliza un chip CS100A que puede medir distancias entre 4 cm y 300 cm siendo la medida precisa y estable. El módulo incluye el transmisor y el receptor ultrasónicos y su circuito de control. El dispositivo debe conectarse a dos pines, lo que se debe a que para su funcionamiento necesita uno para emitir el ultrasonido (Trigger) y otro para recibirlo (Echo). El principio de funcionamiento es el de la figura siguiente:</p>
+<p><center></p>
+<p><a class="glightbox" href="../img/previo/principio.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Principio de funcionamiento del sensor HC-SR04" src="../img/previo/principio.png" /></a><br />
+<em>Principio de funcionamiento del sensor HC-SR04</em></p>
+<p></center></p>
+<p>El sensor lo que hace es medir el tiempo (<em>t</em>) en microsegundos que tarda en recibir el eco del sonido emitido y como la velocidad (<em>v</em>) es conocida, se trata de la velocidad del sonido, que es de <em>340 m/s</em> o <em>0.034 cm/μs</em>, la distancia vendrá dada por la siguiente ecuación:</p>
+<p><center><span class="arithmatex">\(d = v \cdot t = 0.034(\dfrac{cm}{\mu s}) \cdot t (\mu s) = 0.034 \cdot t (cm)\)</span></center></p>
+<p>Aunque nosotros no debemos preocuparnos por esto puesto que el bloque ya no devuelve esta distancia medida en cm. Su aspecto lo vemos en la figura siguiente:</p>
+<p><center></p>
+<p><a class="glightbox" href="../img/previo/aspecto_SR04.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Aspecto del sensor HC-SR04" src="../img/previo/aspecto_SR04.png" /></a><br />
+<em>Aspecto del sensor HC-SR04</em></p>
+<p></center></p>
+<p>El módulo detector ultrasónico proporciona una distancia de detección sin contacto que va de 2 cm a 450 cm, con una precisión de 3 mm y un ángulo de 15º. El módulo incluye un transmisor y un receptor de ultrasonidos, así como el circuito de control correspondiente y basa su funcionamiento en la secuencia de trabajo que vemos en la figura siguiente.</p>
+<p><center></p>
+<p><a class="glightbox" href="../img/previo/secuencia.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Secuencia de trabajo del sensor HC-SR04" src="../img/previo/secuencia.png" /></a><br />
+<em>Secuencia de trabajo del sensor HC-SR04</em></p>
+<p></center></p>
+<ol>
+<li>Partiendo de un nivel bajo de trigger lo mantenemos activado o en estado alto al menos durante 10 us.</li>
+<li>Tras el disparo el módulo emitirá una ráfaga de pulsos cuadrados de 40 KHz y detectará automáticamente si hay una señal de regreso.</li>
+<li>Si hay una señal de retorno, se emite un nivel alto a través de ECHO. El tiempo de duración de este nivel alto es en realidad el tiempo transcurrido desde la emisión hasta la recepción del ultrasonido.</li>
+</ol>
+<p>En el apartado de bloques de programación, se encuentra en "Sensores" y tiene el aspecto de la figura siguiente:</p>
+<p><center></p>
+<p><a class="glightbox" href="../img/previo/bloque_SR04.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bloque para lectura del sensor HC-SR04" src="../img/previo/bloque_SR04.png" /></a><br />
+<em>Bloque para lectura del sensor HC-SR04</em></p>
+<p></center></p>
+<h2 id="emisor-y-receptor-de-infrarrojos"><FONT COLOR=#007575><strong>Emisor y receptor de infrarrojos</strong></font><a class="headerlink" href="#emisor-y-receptor-de-infrarrojos" title="Permanent link">&para;</a></h2>
+<h3 id="que-son-los-infrarrojos"><FONT COLOR=#AA0000>¿que son los infrarrojos?</font><a class="headerlink" href="#que-son-los-infrarrojos" title="Permanent link">&para;</a></h3>
+<p>Son una clase de radiación electromagnética con una longitud de onda que resulta superior a la longitud de onda de la luz visible, siendo su frecuencia superior a las microondas. Dentro del espectro electromagnético, la radiación infrarroja se encuentra comprendida entre el espectro de luz visible y las microondas. Tiene longitudes de onda mayores o más largas que el rojo. En la imagen siguiente, obtenida del blog de Mercedes González Mas vemos caracterizados los infrarrojos dentro del espectro.</p>
+<p><center></p>
+<p><a class="glightbox" href="../img/previo/IR-blog.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Espectro electromagnético" src="../img/previo/IR-blog.png" /></a><br />
+<em>Espectro electromagnético</em></p>
+<p></center></p>
+<p>Como podemos observar en la imagen, los rayos infrarrojos son clasificados, de acuerdo a su longitud de onda, del siguiente modo:</p>
+<ul>
+<li>infrarrojo cercano, con longitud de onda entre 0.7 µm y 1.1 µm, es la parte del espectro infrarrojo que ese encuentra más próximo a la luz visible.</li>
+<li>infrarrojo medio, con longitud de onda entre 1,1 µm y 15 µm.</li>
+<li>infrarrojo lejano o región más cercana a las microondas, con longitud de onda entre 15 µm y 100 µm</li>
+</ul>
+<p>En la imagen siguiente, obtenida de <a href="https://es.wikipedia.org/wiki/Espectro_electromagn%C3%A9tico">Wikipedia</a>, sobre espectro electromagnético podemos ver más información del tema.</p>
+<p><center></p>
+<p><a class="glightbox" href="../img/previo/Espectro.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Espectro electromagnético" src="../img/previo/Espectro.png" /></a><br />
+<em>Espectro electromagnético</em></p>
+<p></center></p>
+<p>Todos los cuerpos emiten una cierta cantidad de radiación, y aunque esta resulta invisible para el ojo humano, existen dispositivos electrónicos capaces de "verla" por estar diseñados para ello.</p>
+<h3 id="diodo-receptor-de-infrarrojos"><FONT COLOR=#AA0000>Diodo receptor de infrarrojos</font><a class="headerlink" href="#diodo-receptor-de-infrarrojos" title="Permanent link">&para;</a></h3>
+<p>Uno de los receptores más universal utilizado en placas tipo Arduino es el receptor de infrarrojos universal TL1838, VS1838B o simplemente 1835 de 38KHz, cuyo aspecto podemos ver en la imagen siguiente:</p>
+<p><center></p>
+<p><a class="glightbox" href="../img/previo/1838.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Diodo IR 1838" src="../img/previo/1838.png" /></a><br />
+<em>Diodo IR 1838</em></p>
+<p></center></p>
+<p>En el <a href="https://fgcoca.github.io/TdR-STEAM-and_UNO/Datasheet/Tl1838.pdf">datasheet TL1838</a> del dispositivo tenemos toda la información sobre el mismo destacando las siguientes características:</p>
+<ul>
+<li>Voltaje de funcionamiento: 2.7V a 5.5V</li>
+<li>Frecuencia: 37.9KHz</li>
+<li>Ángulo de recepción: 90°</li>
+<li>Rango de recepción: 18m</li>
+</ul>
+<p>El dispositivo genera una señal de salida que sirve para controles remotos universales y utiliza la codificación NEC. El receptor de infrarrojos permite codificar los protocolos de señales de pulsos infrarrojos utilizados por los mandos a distancia. Los protocolos detectados son los siguientes: RC5, RC6, NEC, SONY, PANASONIC, JVC, SAMSUNG, WHYNTER, AIWA, LG, SANYO, MITSUBISHI y DENON. Es decir, detectaría cualquier señal emitida por cualquiera de esos mandos.</p>
+<h3 id="emisor-de-infrarrojos"><FONT COLOR=#AA0000>Emisor de infrarrojos</font><a class="headerlink" href="#emisor-de-infrarrojos" title="Permanent link">&para;</a></h3>
+<p>En nuestro caso como emisor de infrarrojos vamos a utilizar el control remoto de Keyestudio que vemos en la imagen siguiente:</p>
+<p><center></p>
+<p><a class="glightbox" href="../img/previo/1838.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Control remoto" src="../img/previo/1838.png" /></a><br />
+<em>Control remoto</em></p>
+<p></center></p>
+<p>El mini control remoto tiene 17 teclas de función y tiene las siguientes especificaciones:</p>
+<ul>
+<li>Batería: pilas de botón CR2025</li>
+<li>Distancia de transmisión: hasta 8 m</li>
+<li>Ángulo efectivo: 60°</li>
+</ul>
+<p>El control remoto, o mando a distancia, por IR funciona emitiendo trenes de pulsos de luz infrarroja. Diferentes señales corresponden a botones diferentes La señal infrarroja transmite el código correspondiente al botón del mando a distancia pulsado al dispositivo en forma de una serie de impulsos de luz infrarroja. El receptor recibe la serie de impulsos de infrarrojos y los pasa a un procesador que decodifica y activarán una determinada función del dispositivo. En el reto y las actividades del mismo obtendremos estos códigos. En arduinoBlocks se han asignado los siguientes nombres a las teclas:</p>
+<p><center></p>
+<p><a class="glightbox" href="../img/previo/teclas.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Nombre teclas control remoto en Arduinoblocks" src="../img/previo/teclas.png" /></a><br />
+<em>Nombre teclas control remoto en Arduinoblocks</em></p>
+<p></center></p>
+<h3 id="bloques-en-arduinoblocks"><FONT COLOR=#AA0000>Bloques en Arduinoblocks</font><a class="headerlink" href="#bloques-en-arduinoblocks" title="Permanent link">&para;</a></h3>
+<p>El sensor receptor de infrarrojos permite obtener la cadena de texto con el código en formato hexadecimal correspondiente al tren de pulsos de IR generado al pulsar una determinada tecla. El bloque puede ser uno de los que vemos en la imagen siguiente, dependiendo del tipo de proyecto en el que estemos:</p>
+<p><center></p>
+<p><a class="glightbox" href="../img/previo/Bloque-receptor-IR-NO-TdR.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="En proyectos tipo UNO" src="../img/previo/Bloque-receptor-IR-NO-TdR.png" /></a><br />
+<em>En proyectos tipo UNO</em></p>
+<p><a class="glightbox" href="../img/previo/Bloque-receptor-IR-TdR.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="En proyectos con TdR STEAM" src="../img/previo/Bloque-receptor-IR-TdR.png" /></a><br />
+<em>En proyectos con TdR STEAM</em></p>
+<p></center></p>
+<p>El valor devuelto por el bloque de recepción será una cadena de texto con valor vacío en caso de no detectar ningún código. Al devolver el bloque una cadena de texto debemos recordar que lo tenemos que almacenar en una variable de tipo texto.</p>
+<p>Si utilizamos mandos genéricos RC5 como el modelo de Keyestudio, podemos usar el bloque de la imagen siguiente para comparar los códigos recibidos y así identificar fácilmente cada tecla.</p>
+<p><center></p>
+<p><a class="glightbox" href="../img/previo/Bloque-comparar-IR-NO-TdR.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="En proyectos tipo UNO" src="../img/previo/Bloque-comparar-IR-NO-TdR.png" /></a><br />
+<em>En proyectos tipo UNO</em></p>
+<p><a class="glightbox" href="../img/previo/Bloque-comparar-IR-TdR.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="En proyectos con TdR STEAM" src="../img/previo/Bloque-comparar-IR-TdR.png" /></a><br />
+<em>En proyectos con TdR STEAM</em></p>
 <p></center></p>
 
 
