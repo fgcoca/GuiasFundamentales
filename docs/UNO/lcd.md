@@ -7,13 +7,10 @@ Para saber mas sobre la LCD 1602 puedes consultar [Pantalla LCD 1602 I2C](https:
 
 ## <FONT COLOR=#007575>**Material necesario**</font>
 
-* Placa ESP32 STEAMakers
+* Placa Keyestudio UNO
 * Pantalla LCD 1602 I2C
 * Cable I2C o 4 cables dupont hembra-hembra
 * Ordenador. Antes de empezar a utilizar la placa ESP32 STEAMakers, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](https://fgcoca.github.io/GuiasFundamentales/STEAMakers/contSM/).
-
-
-EN PREPARACION
 
 ## <FONT COLOR=#007575>**Procedimiento**</font>
 

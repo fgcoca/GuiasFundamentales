@@ -48,8 +48,11 @@ nav:
     - Programar una tira de LEDs: UNO/tira.md
   - ESP32 STEAMakers:
     - Antes de: STEAMakers/contSM.md
-#    - Pantalla LCD 1602: STEAMakers/lcdSM.md
-#    - Pantalla OLED: STEAMakers/oledSM.md
+    - Placa TdR-STEAM y ESP32 STEAMakers: STEAMakers/tdrsteam_SM.md
+    - Consideraciones sobre ESP32: STEAMakers/considera.md
+    - Pantalla LCD 1602: STEAMakers/lcdSM.md
+    #- Pantalla OLED: STEAMakers/oledSM.md
+
 #    - Programar sensores externos: STEAMakers/externosSM.md
 #    - Conectar a una red WiFi: STEAMakers/wifiSM.md
 #    - Enviar datos a Thingspeak: STEAMakers/thingspkSM.md

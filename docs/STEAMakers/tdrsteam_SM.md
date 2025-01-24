@@ -1,6 +1,6 @@
-Una alternativa que considero aconsejable para iniciarse en la programación con la placa Keyestudio UNO es acompañarla del escudo TdR STEAM. Es mas, es por donde aconsejaría comenzar.
+Una alternativa que considero aconsejable para iniciarse en la programación con la placa ESP32 STEAMakers es acompañarla del escudo TdR STEAM. Es mas, es por donde aconsejaría comenzar.
 
-En la web [Retos con TdR-STEAM y keyestudio UNO](https://fgcoca.github.io/TdR-STEAM-and_UNO/) tienes disponible toda una colección de retos y actividades realizadas con este conjunto de placas y algún hardware adicional.
+En la web [Notas sobre ESP32 STEAMakers](https://fgcoca.github.io/ESP32-STEAMakers/) tienes disponibles actividades realizadas con este conjunto de placas y algún hardware adicional.
 
 La mayoría de retos y actividades se dan solucionadas para facilitar el aprendizaje,  pero se reta al lector a solucionar cada caso por si mismo y solamente recurrir a la solución cuando resulte imprescindible.
 
@@ -36,7 +36,7 @@ Interfaz I2C o IIC conectados a los pines VCC, GND, SDA (A4) y SCL (A5). El pin 
 </center>
 
 ### <FONT COLOR=#FF00FF><FONT size=9><b>2. Pulsadores</b></font></font>
-Los pulsadores SW1 y SW2 se conectan a D2 y D7 respectivamente y se configuran como entradas digitales con sus correspondientes resistencias de polarización que hacen que cuando están en reposo pongan su entrada digital correspondiente a "0" (cero lógico) y que se ponga a "1" (uno lógico) cuando los accionemos.
+Los pulsadores SW1 y SW2 se conectan a IO26 (D2) e IO14 (D7) respectivamente y se configuran como entradas digitales con sus correspondientes resistencias de polarización que hacen que cuando están en reposo pongan su entrada digital correspondiente a "0" (cero lógico) y que se ponga a "1" (uno lógico) cuando los accionemos.
 
 <center>
 
@@ -46,7 +46,7 @@ Los pulsadores SW1 y SW2 se conectan a D2 y D7 respectivamente y se configuran c
 </center>
 
 ### <FONT COLOR=#FF00FF><FONT size=9><b>3. Diodos LED</b></font></font>
-Diodos LED Azul (LED3) y Rojo (LED4) conectados a D13 y D12 respectivamente. Configurados como salidas con su resistencia limitadora.
+Diodos LED Azul (LED3) y Rojo (LED4) conectados a IO18 (D13) e IO19 (D12) respectivamente. Configurados como salidas con su resistencia limitadora.
 
 <center>
 
@@ -56,7 +56,7 @@ Diodos LED Azul (LED3) y Rojo (LED4) conectados a D13 y D12 respectivamente. Con
 </center>
 
 ### <FONT COLOR=#FF00FF><FONT size=9><b>4. Led RGB</b></font></font>
-El Led RGB o neopixel de la placa es del tipo 5050 conectado a los pines D6 (Red), D9 (Green) y D10(Blue). Estos tres pines son PWM y nos van a permitir regular su intensidad.
+El Led RGB o neopixel de la placa es del tipo 5050 conectado a los pines IO27 (D6) el rojo (Red), IO13 (D9) el verde (Green) e IO05 (D10) el azul (Blue). Estos tres pines son PWM y nos van a permitir regular su intensidad.
 
 <center>
 
@@ -66,7 +66,7 @@ El Led RGB o neopixel de la placa es del tipo 5050 conectado a los pines D6 (Red
 </center>
 
 ### <FONT COLOR=#FF00FF><FONT size=9><b>5. Conectores E/S digital</b></font></font>
-Son dos conectores para Entradas/Salidas digitales dotados de alimentación y conectados a los pines D3 y D5. A estos conectores podemos colocarles sensores externos.
+Son dos conectores para Entradas/Salidas digitales dotados de alimentación y conectados a los pines IO25 (D3) e IO16 (D5). A estos conectores podemos colocarles sensores externos.
 
 <center>
 
@@ -76,9 +76,12 @@ Son dos conectores para Entradas/Salidas digitales dotados de alimentación y co
 </center>
 
 ### <FONT COLOR=#FF00FF><FONT size=9><b>6. Comunicaciones serie</b></font></font>
-Conector de comunicaciones Bluetooth y WiFi con conmutado (Swich On/Off) conectado a los pines D0 (Rx) y D1 (Tx).
+Conector de comunicaciones Bluetooth y WiFi con conmutador (Swich On/Off) conectado a los pines D0 (Rx) y D1 (Tx).
 
 El puerto de comunicaciones serie nos permite conectar módulos Bluetooth o WiFi. Este puerto va equipado con un conmutador para poder conectarlo o desconectarlo ya que utiliza los mismos pines Rx/Tx que se utilizan para comunicarse con el ordenador. Si vamos a subir firmware a la placa debe estar en posición OFF y si vamos a trabajar con Bluetooth o WiFi en posición ON.
+
+!!! info "Sobre la información anterior"
+    Cuando usamos la TdR STEAM con una STEAMakers este conector no tiene utilidad puesto que la propia ESP32 ya dispone de WiFi y Bluetooth integrados. Se recomienda poner siempre el interruptor en posición OFF.
 
 <center>
 
@@ -88,7 +91,7 @@ El puerto de comunicaciones serie nos permite conectar módulos Bluetooth o WiFi
 </center>
 
 ### <FONT COLOR=#FF00FF><FONT size=9><b>7. DHT11</b></font></font>
-Sensor digital de Temperatura y Humedad DHT11 conectado como entrada a D4.
+Sensor digital de Temperatura y Humedad DHT11 conectado como entrada a IO17 (D4).
 
 <center>
 
@@ -98,7 +101,7 @@ Sensor digital de Temperatura y Humedad DHT11 conectado como entrada a D4.
 </center>
 
 ### <FONT COLOR=#FF00FF><FONT size=9><b>8. Potenciómetro</b></font></font>
-Potenciómetro giratorio de 270º conectado como entrada analógica al pin A0.
+Potenciómetro giratorio de 270º conectado como entrada analógica al pin IO02 (A0).
 
 <center>
 
@@ -107,8 +110,18 @@ Potenciómetro giratorio de 270º conectado como entrada analógica al pin A0.
 
 </center>
 
+!!! Warning "¡MUY IMPORTANTE!"
+    Cuando vamos a subir firmware a la placa es **imprescindible** que el potenciómetro esté totalmente girado a la posición izquierda (punto de color magenta), ya que comparte la conexión A0 (GPIO02) con el sistema de grabación del programa. Si no está en esa posición se producirá un error en el envío del programa. La flecha debe estar en dirección al punto.
+
+    <center>
+
+    ![Posición cero del potenciómetro](../img/steamakers/Pot_0_TdR.png)  
+    *Posición cero del potenciómetro*
+
+    </center>
+
 ### <FONT COLOR=#FF00FF><FONT size=9><b>9. Buzzer</b></font></font>
-El zumbador Piezoeléctrico o buzzer es un pequeño altavoz conectado a la salida digital D8.
+El zumbador Piezoeléctrico o buzzer es un pequeño altavoz conectado a la salida digital IO12 (D8).
 
 <center>
 
@@ -118,7 +131,7 @@ El zumbador Piezoeléctrico o buzzer es un pequeño altavoz conectado a la salid
 </center>
 
 ### <FONT COLOR=#FF00FF><FONT size=9><b>10. Receptor IR</b></font></font>
-Diodo receptor de infrarrojos (IR) conectado a la entrada digital D11.
+Diodo receptor de infrarrojos (IR) conectado a la entrada digital IO23 (D11).
 
 <center>
 
@@ -128,7 +141,7 @@ Diodo receptor de infrarrojos (IR) conectado a la entrada digital D11.
 </center>
 
 ### <FONT COLOR=#FF00FF><FONT size=9><b>11. LDR</b></font></font>
-Sensor de luminosidad o resistencia LDR conectada al pin analógico A1.
+Sensor de luminosidad o resistencia LDR conectada al pin analógico IO04 (A1).
 
 <center>
 
@@ -138,7 +151,7 @@ Sensor de luminosidad o resistencia LDR conectada al pin analógico A1.
 </center>
 
 ### <FONT COLOR=#FF00FF><FONT size=9><b>12. Reset</b></font></font>
-Botón de Reset conectado directamente a la entrada de reset de la placa Keyestudio UNO. Sirve para inicializar el funcionamiento del conjunto.
+Botón de Reset conectado directamente a la entrada de reset de la placa STEAMakers. Sirve para inicializar el funcionamiento del conjunto.
 
 <center>
 
@@ -148,7 +161,7 @@ Botón de Reset conectado directamente a la entrada de reset de la placa Keyestu
 </center>
 
 ### <FONT COLOR=#FF00FF><FONT size=9><b>13. Entrada analógica</b></font></font>
-Conector para entrada analógica desde sensor externo conectado al pin A3.
+Conector para entrada analógica desde sensor externo conectado al pin IO34 (A3).
 
 <center>
 
@@ -158,7 +171,7 @@ Conector para entrada analógica desde sensor externo conectado al pin A3.
 </center>
 
 ### <FONT COLOR=#FF00FF><FONT size=9><b>14. LM35</b></font></font>
-Sensor de temperatura (LM35) conectado al pin analógico A2.
+Sensor de temperatura (LM35) conectado al pin analógico IO35 (A2).
 
 <center>
 

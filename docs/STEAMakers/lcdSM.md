@@ -7,7 +7,7 @@ Para saber mas sobre la LCD 1602 puedes consultar [Pantalla LCD 1602 I2C](https:
 
 ## <FONT COLOR=#007575>**Material necesario**</font>
 
-* Placa Keyestudio UNO
+* Placa ESP32 STEAMakers
 * Pantalla LCD 1602 I2C
 * Cable I2C o 4 cables dupont hembra-hembra
 * Ordenador. Antes de empezar a utilizar la placa Keyestudio UNO, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](https://fgcoca.github.io/GuiasFundamentales/UNO/contUNO/).
@@ -18,7 +18,7 @@ Para saber mas sobre la LCD 1602 puedes consultar [Pantalla LCD 1602 I2C](https:
 
 <center>
 
-![Conexionado](../img/uno/actividades/conex_LCD.png)  
+![Conexionado](../img/steamakers/actividades/conex_LCD_SM.png)  
 *Conexionado*
 
 </center>
@@ -32,12 +32,12 @@ Puedes hacer las conexiones con un cable I2C o utilizando cuatro cables dupont h
 
 **2.** Sigue con la programación con Arduinoblocks: Ejecuta el programa AB-Connector. Recuerda que debe estar en ejecución todo el rato mientras trabajas con Arduinoblocks.
 
-**3.** Ve a ArduinoBlocks, inicia sesión y comienza un nuevo proyecto del tipo “UNO”:
+**3.** Ve a ArduinoBlocks, inicia sesión y comienza un nuevo proyecto del tipo "ESP32 STEAMakers":
 
 <center>
 
-![Proyecto KS_UNO_LCD. Creación](../img/uno/actividades/KS_UNO_LCD.png)  
-*Proyecto KS_UNO_LCD. Creación*
+![Proyecto SM_LCD. Creación](../img/steamakers/actividades/SM_LCD.png)  
+*Proyecto SM_LCD. Creación*
 
 </center>
 
@@ -45,8 +45,8 @@ Puedes hacer las conexiones con un cable I2C o utilizando cuatro cables dupont h
 
 <center>
 
-![Proyecto KS_UNO_LCD. Inicializar](../img/uno/actividades/KS_UNO_LCD_inicial.png)  
-*Proyecto KS_UNO_LCD. Inicializar*
+![Proyecto SM_LCD. Inicializar](../img/uno/actividades/KS_UNO_LCD_inicial.png)  
+*Proyecto SM_LCD. Inicializar*
 
 </center>
 
@@ -54,8 +54,8 @@ Puedes hacer las conexiones con un cable I2C o utilizando cuatro cables dupont h
 
 <center>
 
-![Proyecto KS_UNO_LCD. Hola](../img/uno/actividades/KS_UNO_LCD_Hola.png)  
-*Proyecto KS_UNO_LCD. Hola*
+![Proyecto SM_LCD. Hola](../img/uno/actividades/KS_UNO_LCD_Hola.png)  
+*Proyecto SM_LCD. Hola*
 
 </center>
 
@@ -63,8 +63,8 @@ Haz clic en el botón “Subir” situado arriba a la derecha, verificando prime
 
 <center>
 
-![Proyecto KS_UNO_LCD. Subir](../img/uno/actividades/KS_UNO_LCD_Subir.png)  
-*Proyecto KS_UNO_LCD. Subir*
+![Proyecto SM_LCD. Subir](../img/steamakers/actividades/SM_LCD_Subir.png)  
+*Proyecto SM_LCD. Subir*
 
 </center>
 
@@ -72,26 +72,16 @@ Haz clic en el botón “Subir” situado arriba a la derecha, verificando prime
 
 <center>
 
-![Proyecto KS_UNO_LCD. Símbolos](../img/uno/actividades/KS_UNO_LCD_simbolos.png)  
-*Proyecto KS_UNO_LCD.Símbolos*
+![Proyecto SM_LCD. Símbolos](../img/uno/actividades/KS_UNO_LCD_simbolos.png)  
+*Proyecto SM_LCD.Símbolos*
 
 </center>
 
-**7.** De la categoría Visualización/Pantalla LCD I2C, elige el bloque “LCD #1 Imprimir…” y lo colocas un par de veces de manera que en uno aparezca el texto "Hola desde" en la fila 0 y en el otro "Keyestudio UNO" en la fila 1. Ahora, añade una espera de 2 segundos (2000 milisegundos). Cambia el valor a 2000. Para añadir la espera de 2 segundos, ve a la categoría “Tiempo” y elige el bloque “Esperar 1000 milisegundos”. Haz que se limpie la pantalla y que a continuación se muestre la letra "S" en la fila 0 y columna 0. A continuación, de la categoría Visualización/Pantalla LCD I2C, elige el bloque “LCD #1 Imprimir… Símbolo…” y pon el número correspondiente a la letra "i" ajustando la columna a 1. Ahora ponemos a partir de la columna 2 el resto del texto ("mbolo"). Ya solamente queda colocar en la fila uno la definición del símbolo del muñequito. Pon otra espera de 2 segundos. El código completo de la programación debe quedar así:
+**7.** De la categoría Visualización/Pantalla LCD I2C, elige el bloque “LCD #1 Imprimir…” y lo colocas un par de veces de manera que en uno aparezca el texto "Hola desde" en la fila 0 y en el otro "ESP32 STEAMakers" en la fila 1. Ahora, añade una espera de 2 segundos (2000 milisegundos). Cambia el valor a 2000. Para añadir la espera de 2 segundos, ve a la categoría “Tiempo” y elige el bloque “Esperar 1000 milisegundos”. Haz que se limpie la pantalla y que a continuación se muestre la letra "S" en la fila 0 y columna 0. A continuación, de la categoría Visualización/Pantalla LCD I2C, elige el bloque “LCD #1 Imprimir… Símbolo…” y pon el número correspondiente a la letra "í" ajustando la columna a 1. Ahora ponemos a partir de la columna 2 el resto del texto ("mbolo"). Ya solamente queda colocar en la fila uno la definición del símbolo del muñequito. Pon otra espera de 2 segundos. El código completo de la programación debe quedar así:
 
 <center>
 
-![Proyecto KS_UNO_LCD](../img/uno/actividades/KS_UNO_LCD_completo.png)  
-*[Proyecto KS_UNO_LCD](../UNO/programas/KS_UNO_LCD.abp)*
-
-</center>
-
-## <FONT COLOR=#007575>**Funcionamiento**</font>
-En la animación podemos observar el programa en funcionamiento:
-
-<center>
-
-![Proyecto KS_UNO_LCD](../img/uno/actividades/KS_UNO_LCD_completo.gif)  
-*Proyecto KS_UNO_LCD*
+![Proyecto SM_LCD](../img/steamakers/actividades/SM_LCD_completo.png)  
+*[Proyecto SM_LCD](../STEAMakers/programas/SM_LCD.abp)*
 
 </center>
