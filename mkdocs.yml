@@ -11,10 +11,10 @@ edit_uri: ""
 
 
 # 3. Footer
-copyright: Copyright &copy; 2023 - 2035 Federico Coca
+copyright: Copyright y copia; 2023 - 2035 Federico Coca
 extra:
   # Footer - No poner que está hecho con MkDocs
-  generator: false
+  generator: true
   # Footer - Iconos
   social:
     - icon: fontawesome/brands/bluesky
@@ -23,12 +23,9 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/fgcoca
       name: Github de Federico Coca
-    - icon: fontawesome/brands/instagram
+    - icon: fontawesome/brands/square-instagram
       link: https://www.instagram.com/cocafederico/?hl=es
       name: Instagram de Federico Coca
-    - icon: fontawesome/brands/x-twitter
-      link: https://x.com/clubroboticagra
-      name: X de Club Robótica Granada 
 
 # 4. Navegación
 nav:
@@ -36,6 +33,13 @@ nav:
     - Inicio: index.md
     - Conocimientos técnicos previos: previos.md
     - Conceptos sobre CO2 y VOC: CO2.md
+    - Modelo de colores: mod_colores.md
+    - Comunicaciones Bluetooth: bt.md
+  - Imagina TdR STEAM:
+    - Antes de: TdR_STEAM/contTdR.md
+    - STEAMakersBlocks: TdR_STEAM/SMBlocks.md
+    - Retos: TdR_STEAM/retos.md
+    - Seguridad: TdR_STEAM/seg.md
   - Keyestudio UNO:
     - Antes de: UNO/contUNO.md
     - Placa TdR-STEAM y keyestudio UNO: UNO/tdrsteam.md
@@ -51,15 +55,28 @@ nav:
     - Placa TdR-STEAM y ESP32 STEAMakers: STEAMakers/tdrsteam_SM.md
     - Consideraciones sobre ESP32: STEAMakers/considera.md
     - Pantalla LCD 1602: STEAMakers/lcdSM.md
-    #- Pantalla OLED: STEAMakers/oledSM.md
+    - Pantalla OLED: STEAMakers/oledSM.md
+    - Programar sensores externos: STEAMakers/externosSM.md
+    - Conectar la placa a una red WiFi: STEAMakers/wifiSM.md
+    - Enviar datos a Thingspeak: STEAMakers/thingspkSM.md
+    - Programar servomotores: STEAMakers/servosSM.md
+    - Programar el sensor de ultrasonidos: STEAMakers/ultrasonSM.md
+    - Programar el mando a distancia: STEAMakers/mandoSM.md
+    - Programar una tira de LEDs: STEAMakers/tiraSM.md
+  - ESP32 micro:STEAMakers:
+    - Antes de: microSTEAMakers/contmicroSM.md
+    - Entorno de programación Microblocks: microSTEAMakers/uB.md
+    - MicroBlocks, libreria WiFi: microSTEAMakers/lib_wifi.md
+    - Boardie:un tablero virtual para MicroBlocks: microSTEAMakers/Boardie.md
+    - Programación con MicroBlocks: microSTEAMakers/prog_uB.md
+    - Extensión BluetoothLE de App Inventor: microSTEAMakers/ble_inventor.md
+    - MicroBlocks + App Inventor + BLE: microSTEAMakers/mb_inventor_BLE.md
+    - Como crear una libreria: microSTEAMakers/crea_libreria.md
 
-#    - Programar sensores externos: STEAMakers/externosSM.md
-#    - Conectar a una red WiFi: STEAMakers/wifiSM.md
-#    - Enviar datos a Thingspeak: STEAMakers/thingspkSM.md
-#    - Programar servomotores: STEAMakers/servosSM.md
-#    - Programar el sensor de ultrasonidos: STEAMakers/ultrasonSM.md
-#    - Programar el mando a distancia: STEAMakers/mandoSM.md
-#    - Programar una tira de LEDs: STEAMakers/tiraSM.md
+
+  - Retos:
+    - Keyestudio UNO: retos/keyestudio_UNO.md
+    
 
 #- Ayuda:
     #- Chuleta: ayuda/ayuda.md
@@ -153,8 +170,8 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.highlight:
-      anchor_linenums: true
-      linenums: true
+      anchor_linenums: false
+      linenums: false
       linenums_style: pymdownx-inline
   - pymdownx.inlinehilite
   - pymdownx.keys

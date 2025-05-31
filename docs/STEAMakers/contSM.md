@@ -802,6 +802,253 @@ void loop()
 
 </center>
 
+## <FONT COLOR=#007575>**Actividades iniciales**</font>
+Vamos a realizar tres actividades incrementando el nivel de dificultad y explicadas paso a paso con la finalidad de familiarizarno con esta placa.
+
+### <FONT COLOR=#AA0000>Mostrar un mensaje en la consola</font>
+Se trata de crear un programa que muestre en la consola serie de arduinoblocks un mensaje con el texto "Hola desde ESP32 STEAMakers. Tiempo transcurrido nn segundos" cada cinco segundos. Cada mensaje debe aparece en una línea diferente.
+
+<FONT size=9><FONT COLOR=#FF0055><b>1.</b></font></font> Comienza el programa configurando el puerto serie a una velocidad de transferencia de datos de 9600 baudios. Coloca el bloque "Iniciar baudios..." que encontrarás en "Comunicaciones → Puerto serie" en la estructura "Inicializar". De esta forma esta instrucción se ejecuta al inicio del programa y una sola vez. La programación del bloque "Inicializar" deberá quedar así:
+
+<center>
+
+![Bloque Inicializar en la actividad 1](../img/steamakers/actividades/A1_1.png)  
+*Bloque Inicializar en la actividad 1*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>2.</b></font></font> Coloca en el blucle principal la estructura "Ejecutar cada..." de la categoría "Tiempo". Aquí se va a indicar al programa cada cuanto tiempo debe ejecutar una acción. Escribe 5000 en el parámetro de la extrucutra para que se ejecute cada 5000 ms, o lo que es lo mismo, cada 5 segundos. En este momento el bloque principal estará así:
+
+<center>
+
+![Bloque Bucle en la actividad 1](../img/steamakers/actividades/A1_2.png)  
+*Bloque Bucle en la actividad 1*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>3.</b></font></font> Dentro de la estructura anterior coloca la acción a realizar en el intervalo de tiempo especificado. En este caso enviar un mensaje por el puerto serie. Selecciona el bloque "Enviar" de la categoria "Comunicaciones  → “Puerto serie”.
+
+<FONT size=9><FONT COLOR=#FF0055><b>4.</b></font></font> Coloca un bloque "crear texto con..." que encontrarás en la categoría "Texto" y asegurate que esté marcada la opción "Salto de línea" para que cada vez que se muestre el mensaje se haga en una nueva línea. En la primera línea escribe dentro del bloque el mensaje de texto "Hola desde ESP32 STEAMakers. Tiempo transcurrido: ". En la segunda línea coloca el bloque para realizar operaciones que encontrarás en la categoria "Matemáticas". En la parte izquierda coloca el bloque "Tiempo transcurrido (milisegundo)" que encontrarás en "Tiempo", selecciona la operación de división y a la derecha colocamos el bloque "Un numero" de la categoria "Matemáticas" en el que escribes 1000 para que el tiempo se muestre en segundos. Añade una nueva línea al bloque y en un bloque de texto escribe " segundos".
+
+<FONT size=9><FONT COLOR=#FF0055><b>5.</b></font></font> El programa completo es el siguiente:
+
+<center>
+
+![Programa actividad 1](../img/steamakers/actividades/A1_3.png)  
+*[Programa actividad 1](../STEAMakers/programas/SM_actividad_1.abp)*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>6.</b></font></font> Descarga el programa en la placa haciendo clic en el botón "Subir". Para hacerlo tienes que tener conectada la placa al ordenador mediante un cable USB y AB-Connector en ejecución. Una vez cargado el programa abre la "Consola serie" para visualizar el envio del mensaje de forma periódica.
+
+<center>
+
+![Consola serie de la actividad 1](../img/steamakers/actividades/A1_4.png)  
+*Consola serie de la actividad 1*
+
+</center>
+
+### <FONT COLOR=#AA0000>Temperatura y humedad</font>
+En esta actividad vamos a realizar un control del color de una tira de 8 LEDs RGB direccionables. Será una especie de semáforo basado en el estado de confort y como afecta a los seres humanos. Basaremos las medidas en un sensor de temperatura y humedad DHT22.
+
+<font size=5>==**Estado de confort**==</font size>
+
+En la web ARQUITECTURA & ENERGÍA podemos encontrar un artículo donde se nos explica con bastante profundad el tema del [corfort térmico](http://www.arquitecturayenergia.cl/home/el-confort-termico/).
+
+Puede definirse confort térmico, o más propiamente comodidad higrotérmica, como la ausencia de malestar térmico. En fisiología, se dice que hay confort higrotérmico cuando no tienen que intervenir los mecanismos termorreguladores del cuerpo para una actividad sedentaria y con una indumentaria ligera. Esta situación puede registrarse mediante índices que no deben ser sobrepasados para que no se pongan en funcionamiento los sistemas termorreguladores (metabolismo, sudoración y otros).
+
+En la imagen siguiente vemos los valores de temperatura y humedad que delimitan las zonas de confortabilidad.
+
+<center>
+
+![Confort térmico en función de temperatura y humedad](../img/steamakers/actividades/zonas-confort.png)  
+*Confort térmico en función de temperatura y humedad*
+
+</center>
+
+Sobre el gráfico vamos a delimitar zonas de temperatura y humedad para establecer su color. Por motivos de simplicidad lo vamos a hacer delimitando zonas rectangulares, pero comprobamos que no cometemos grandes errores y para nuestro propósito nos sirve.
+
+**1.- Zona Roja**: en la imagen siguiente tenemos delimitadas las zonas:
+
+* Humedad Relativa: superior al 85% e inferior al 20%
+* Temperatura: superior a 27ºC e inferior a 16ºC
+
+<center>
+
+![Delimitación color rojo zona de confort](../img/steamakers/actividades/Confort-rojo.png)  
+*Delimitación color rojo zona de confort*
+
+</center>
+
+**2.- Zona Amarilla**: en la imagen siguiente tenemos delimitadas las zonas:
+
+* Humedad Relativa: entre el 20% y el 40% y entre el 65% y el 85%
+* Temperatura: entre 16ºC y 18ºC y entre 24ºC y 27ºC
+
+<center>
+
+![Delimitación color amarillo zona de confort](../img/steamakers/actividades/Confort-amarillo.png)  
+*Delimitación color amarillo zona de confort*
+
+</center>
+
+**3.- Zonas Verde, rojo y amarillo**: en la imagen siguiente tenemos delimitadas todas las zonas, correspondiendo a la verde los siguientes datos:
+
+* Humedad Relativa: entre el 40% y el 65%
+* Temperatura: entre 18ºC y 24ºC
+
+<center>
+
+![Delimitación zona de confort](../img/steamakers/actividades/Confort-todos.png)  
+*Delimitación zona de confort*
+
+</center>
+
+<font size=5>==**Actividad**==</font size>
+
+<FONT size=9><FONT COLOR=#FF0055><b>1.</b></font></font> Comenzamos por crear dos variables de tipo numérico desde "Variables → Crear variable (Número)”, una para la temperatura y otra para la humedad. En la imagen siguiente vemos el proceso de creación de la variable temperatura.
+
+<center>
+
+![Creación de la variable temperatura](../img/steamakers/actividades/A2_1.png)  
+*Creación de la variable temperatura*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>2.</b></font></font> Coloca el bloque "Establecer..." que se ha creado dentro de la estructura "Inicializar". Realiza un duplicado del mismo y colocalo a continuación del anterior seleccionando en uno la temperatura y en otro la humedad.
+
+<center>
+
+![Colocación de los bloques Inicializar](../img/steamakers/actividades/A2_2.png)  
+*Colocación de los bloques Inicializar*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>3.</b></font></font> Conecta el sensor DHT22 al pin analógico D5 (IO16). Asegúrate de realizar las conexiones de manera correcta respetando el orden de los pines.
+
+<center>
+
+![Conexión del sensor DHT22](../img/steamakers/actividades/A2_3.png)  
+*Conexión del sensor DHT22*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>4.</b></font></font> Conecta la tira de LEDs RGB direccionables D3 (IO25). Asegúrate de realizar las conexiones de manera correcta respetando el orden de los pines.
+
+<center>
+
+![Conexión de la tira de LEDs RGB direccionables](../img/steamakers/actividades/A2_4.png)  
+*Conexión de la tira de LEDs RGB direccionables*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>5.</b></font></font> Inicializar la tira de LEDs mediante el bloque "Iniciar GRB 800kHz..." de la categoria "Visualización". Hay que indicar el número de LEDs así como el pin al que están conectados. El bloque "Inicializar" deberá estar asi:
+
+<center>
+
+![Bloque Iniciar GRB...](../img/steamakers/actividades/A2_5.png)  
+*Bloque Iniciar GRB...*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>6.</b></font></font> Para obtener el valor de la humedad colocamos coloca en el "Bucle" el bloque "Establecer humedad" y le acoplamos a la derecha el bloque "DHT-22" que se encuentra en la categoría "Sensores". Selecciona Humedad y pin 16 (D5). Duplicar este bloque y seleccionar temperatura tanto en variable como en el sensor. Con esto, en las variables vamos a tener el valor de ambas medido por el sensor DHT22.
+
+<FONT size=9><FONT COLOR=#FF0055><b>7.</b></font></font> De la categoría "Lógica" arrastra un bloque "si...hacer..." y los expandes a dos opciones "sino si...hacer...". Actualmente la situación de "Bucle" es:
+
+<center>
+
+![Bloque Bucle con condicional](../img/steamakers/actividades/A2_6.png)  
+*Bloque Bucle con condicional*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>8.</b></font></font> Establece la condición para la zona roja que se va a dar cuando la humedad supera el 85% o está por debajo del 20% o la temperatura está por encima de 27ºC o por debajo de 16ºC. En la animación siguiente vemos como se compone la condición para el rojo.
+
+<center>
+
+![Proceso para establecer la condición para rojo](../img/steamakers/actividades/A2_7.gif)  
+*Proceso para establecer la condición para rojo*
+
+</center>
+
+Después de completar la condición esta debe queda de la siguiente forma:
+
+<center>
+
+![Condición para rojo](../img/steamakers/actividades/A2_8.png)  
+*Condición para rojo*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>9.</b></font></font> Coloca un bloque "Contar con..." de la categoría "Control" en el primer "hacer" del condicional. Cambia el nombre de la variable a "LED_RGB" y establece el valor final de la cuenta en 7. El cambio de nombre de variable no es imprescindible pero ayuda a entender mejor lo que estamos haciendo. Finalmente arrastra un bloque "Establecer pixel #", coloca en el número el bloque que tiene el valor de la variable de control y establece el color rojo. De esta forma todos los LEDs se iluminarán en color rojo cuando se de cualquiera de las condiciones que delimitan la zona. El programa tendrá el siguiente aspecto:
+
+<center>
+
+![Condición para rojo completa](../img/steamakers/actividades/A2_9.png)  
+*Condición para rojo completa*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>10.</b></font></font> Establece la condición para la zona amarilla que se va a dar cuando la humedad está entre el 65 y el 85% o está entre el 20 y el 40% o la temperatura está entre 24 y 27ºC o entre 16 y 18ºC.
+
+<FONT size=9><FONT COLOR=#FF0055><b>11.</b></font></font> Establece la condición para la zona verde que se va a dar cuando la humedad está entre el 40 y el 85% o la temperatura está entre 18 y 24ºC.
+
+<FONT size=9><FONT COLOR=#FF0055><b>12.</b></font></font> Finalmente, para dar tiempo al sensor a que lea los datos, añade una pausa detrás del condicional mediante el bloque "Esperar" de la categoria "Tiempo". Para que los LEDs RGB direccionables se iluminen debes añadir un bloque "Mostrar" de la categoria "NeoPixel". El programa final es el siguiente:
+
+<center>
+
+![Programa actividad 2](../img/steamakers/actividades/A2_10.png)  
+*[Programa actividad 2](../STEAMakers/programas/SM_actividad_2.abp)*
+
+</center>
+
+### <FONT COLOR=#AA0000>Monitor de consumo</font>
+En esta última actividad, crea un programa que muestre el valor de la intensidad, el voltaje y la energia consumida por la placa ESP32 STEAMakers en la consola serie a intervalos de 5 segundos.
+
+<FONT size=9><FONT COLOR=#FF0055><b>1.</b></font></font> Comienza el programa configurando el puerto serie a una velocidad de transferencia de datos de 9600 baudios. Coloca el bloque "Iniciar baudios..." que encontrarás en "Comunicaciones → Puerto serie" en la estructura "Inicializar". De esta forma esta instrucción se ejecuta al inicio del programa y una sola vez. La programación del bloque "Inicializar" deberá quedar así:
+
+<center>
+
+![Bloque Inicializar en la actividad 3](../img/steamakers/actividades/A1_1.png)  
+*Bloque Inicializar en la actividad 3*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>2.</b></font></font> Coloca dentro del bucle principal un conjunto de instrucciones de forma secuencial para mostrar una serie de datos a través de la consola serie. Para ello, utiliza el bloque “Enviar” por puerto serie de la categoría “Comunicaciones → Puerto serie”. Plantea este orden para enviar el conjunto de datos (Las comillas de los textos se omiten):
+
+* Texto: “Intensidad: ” (sin salto de línea)
+* Lectura Medidor de energía: Amps (A) (sin salto de línea)
+* Texto: “ A” (con salto de línea)
+* Texto: “Voltaje: ” (sin salto de línea)
+* Lectura Medidor de energía: Volts (V) (sin salto de línea)
+* Texto: “ V” (con salto de línea)
+* Texto: “Energía: ” (sin salto de línea)
+* Lectura Medidor de energía: Energy (Wh) (sin salto de línea)
+* Texto: “ W.h” (con salto de línea)
+* Texto: “--------------------------------” (con salto de línea)
+
+<FONT size=9><FONT COLOR=#FF0055><b>3.</b></font></font> Puedes escribir el texto directamente en el bloque “Enviar” por puerto serie. El bloque para realizar la lectura del medidor de energía interno de la placa ESP32 STEAMakers lo encontrarás en “Sensores → Integrados” y simplemente hay que seleccionar qué magnitud quieres que mida en cada caso.
+
+<FONT size=9><FONT COLOR=#FF0055><b>4.</b></font></font> Al final de las instrucciones anteriores, para que el programa se detenga 5 segundos, utiliza el bloque "Esperar...milisegundos" de la categoría "Tiempo".
+
+El programa completo será el siguiente:
+
+<center>
+
+![Programa actividad 3](../img/steamakers/actividades/A3.png)  
+*[Programa actividad 3](../STEAMakers/programas/SM_actividad_3.abp)*
+
+</center>
+
+<FONT size=9><FONT COLOR=#FF0055><b>5.</b></font></font> En la consola se debería ver algo como la imagen siguiente:
+
+<center>
+
+![Consola del programa actividad 3](../img/steamakers/actividades/A3_consola.png)  
+*Consola del programa actividad 3*
+
+</center>
+
 ## <FONT COLOR=#007575>**Seguridad**</font>
 A la hora de utilizar la placa ESP32 STEAMakers, es fundamental seguir unas pautas de seguridad para garantizar tanto el buen funcionamiento de la placa como la seguridad de los usuarios. A continuación, se exponen varios consejos clave:
 

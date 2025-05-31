@@ -5,67 +5,84 @@ Antes de nada se recomienda repasar los conceptos dados en [Control de un servom
 
 ## <FONT COLOR=#007575>**Material necesario**</font>
 
-* Placa Keyestudio UNO
+* Placa ESP32 STEAMakers
 * Servomotor 9g negro con rotación de 0 a 180 grados KS0194
-* Pulsador táctil capacitivo (KS0031) o de botón (KS0029).
+* Pulsador táctil capacitivo (KS0031) o de botón (KS0029)
 * Cable SVG o 3 cables dupont hembra-hembra
-* Ordenador. Antes de empezar a utilizar la placa Keyestudio UNO, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](https://fgcoca.github.io/GuiasFundamentales/UNO/contUNO/).
+* Ordenador. Antes de empezar a utilizar la placa STEAMakers, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](https://fgcoca.github.io/GuiasFundamentales/UNO/contUNO/).
 
 ## <FONT COLOR=#007575>**Procedimiento**</font>
 
-**1.** Ejecuta el programa AB-Connector. Recuerda que debe estar en ejecución todo el rato mientras trabajas con Arduinoblocks. Iniciamos un nuevo proyecto de tipo "UNO".
+<FONT SIZE=6>==**INFORMACIÓN**==</FONT>
 
-**2.** Conecta el servomotor a alguno de los pines digital de la placa (en el ejemplo utilizaremos el pin D4), teniendo en cuenta que el cable marrón del servomotor corresponde a la G -tierra- (color azul de la placa), el cable rojo del servomotor corresponde a la V -voltaje- (color rojo de la placa) y el cable naranja del servomotor corresponde al S -señal- (color amarillo de la placa).
+!!! info "==**IMPORTANTE**=="
+    A partir de esta entrada se comienza a utilizar el nuevo dominio de la aplicación que pasa a denominarse **[steamakersblocks](https://www.steamakersblocks.com/)**, siendo su funcionamiento idéntico al utilizado hasta ahora. El nuevo logotipo es el siguiente:
+
+	<center>![Logotipo steamakersblocks](../img/steamakers/steamakersblockslogo.png)</center>
+
+**1.** Ejecuta el programa Connector. Recuerda que debe estar en ejecución todo el rato mientras trabajas con steamakersblocks. Iniciamos un nuevo proyecto de tipo "UNO".
+
+**2.** Ve a steamakersblocks, inicia sesión y comienza un nuevo proyecto del tipo “ESP32 STEAMakers”:
 
 <center>
 
-![Proyecto KS_UNO_servo_conecta](../img/uno/actividades/KS_UNO_servo_conecta.png)  
-*Proyecto KS_UNO_servo_conecta*
+![Proyecto SM_servo. Creación](../img/steamakers/actividades/SM_servo_crea.png)  
+*Proyecto SM_servo. Creación*
 
 </center>
 
-**3.** Conecta el pulsador también a un pin digital (D3 en mi caso) teniendo especial cuidado que el orden de los pines sea el correcto.
-
-**4.** A partir de aquí vamos a hacer dos ejemplos diferentes que, lógicamente deberemos subir en cada caso a la placa para probar su funcionamiento.
-
-## <FONT COLOR=#007575>**Ejemplos**</font>
-
-==**Ejemplo 1**==
-
-Vamos a crear un programa en el que cada vez que pulsemos el botón el servo gire un ángulo de 10 grados. Si no activamos el pulsador el servo permanecerá en su posición actual. La posición inicial del servo será en cero grados y si se alcanzan los 180 grados de giro retornará a su posición inicial.
+**3.** Conecta el servomotor a alguno de los pines digitales de la placa (en el ejemplo utilizaremos el pin D3 - IO25), teniendo en cuenta que el cable marrón del servomotor corresponde a la G -tierra- (color negro de la placa), el cable rojo del servomotor corresponde a la V -voltaje- (color rojo de la placa) y el cable naranja del servomotor corresponde al S -señal- (color amarillo de la placa).
 
 <center>
 
-![Proyecto KS_UNO_servo. Ejemplo 1](../img/uno/actividades/KS_UNO_servo_ejem1.png)  
-*[Proyecto KS_UNO_servo. Ejemplo 1](../UNO/programas/KS_UNO_servo_ejem1.abp)*
+![Proyecto SM_servo. Conexión](../img/steamakers/actividades/SM_servo_conex.png)  
+*Proyecto SM_servo. Conexión*
 
 </center>
 
-En la animación vemos el programa funcionando.
+**4.** A continuación, de la categoría “Motores / Servo” selecciona el bloque “Servo” y colócalo en el bloque “Bucle”. Selecciona el pin al que tienes conectado el servomotor e indica el ángulo de giro y si deseaa que tenga algún retraso antes de hacerlo.
 
 <center>
 
-![Proyecto KS_UNO_servo. Funcionamiento Ejemplo 1](../img/uno/actividades/KS_UNO_servo_ejem1.gif)  
-*Proyecto KS_UNO_servo. Funcionamiento Ejemplo 1*
+![Proyecto SM_servo. Bloque servo](../img/steamakers/actividades/SM_Bservo.png)  
+*Proyecto SM_servo. Bloque servo*
 
 </center>
 
-==**Ejemplo 2**==
-
-Vamos a crear un programa en el que si no activamos el botón el servo se moverá entre 0 y 180 grados a intérvalos de un segundo. Si el botón se acciona el servo se moverá entre las posiciones fijadas en una lista creada al efecto.
+**5.** En este ejemplo, para ver el servomotor en funcionamiento, harás que el servomotor gire un ángulo de 90º, pasado un segundo volverá a su posición inicial (0º) y pasado otro segundo volverá a girar 90º. Esto lo hará de manera continua: Dentro del bloque “Bucle” coloca el bloque servo con un giro de 90º. A continuación, de la categoría “Tiempo”, pon un bloque de espera de 1000 milisegundos, seguido de un bloque de giro del servo a 0º y de una nueva espera de un segundo, tal y como se muestra en la imagen:
 
 <center>
 
-![Proyecto KS_UNO_servo. Ejemplo 2](../img/uno/actividades/KS_UNO_servo_ejem2.png)  
-*[Proyecto KS_UNO_servo. Ejemplo 2](../UNO/programas/KS_UNO_pos_servo_listas2.abp)*
+![Proyecto SM_servo. Giro 90_0_90](../img/steamakers/actividades/SM_servo_giro.png)  
+*Proyecto SM_servo. Giro 90_0_90*
 
 </center>
 
-En la animación vemos el programa funcionando.
+**6.** Haz clic en el botón "Subir" situado arriba a la derecha.
+
+**7.** De esta forma, estás trabajando con el servomotor con giros con ángulos definidos. Si deseas que el ángulo de giro dependa de algún otro parámetro, puedes crear una variable y hacer que el ángulo de giro dependa del valor de esta variable. Por ejemplo, si deseas que el servomotor gire 5º cada vez que toques un pulsador, puede hacer lo siguiente: Conecta un pulsador (KS0029) a un pin de la placa (en el ejemplo, lo conectamos al pin D4 - IO17 en mi caso) teniendo especial cuidado que el orden de los pines sea el correcto.
 
 <center>
 
-![Proyecto KS_UNO_servo. Funcionamiento Ejemplo 2](../img/uno/actividades/KS_UNO_servo_ejem2.gif)  
-*Proyecto KS_UNO_servo. Funcionamiento Ejemplo 2*
+![Proyecto SM_servo. Conexión](../img/steamakers/actividades/SM_servo_conex1.png)  
+*Proyecto SM_servo. Conexión*
+
+</center>
+
+**8.** Desde la categoría “Variables”, crea una variable del tipo número (en el ejemplo le llamamos “giro”). A continuación, sitúa el bloque “Establecer gir=0” dentro del bloque “Inicializar”, de esta manera, el valor inicial de la variable será 0. Pon un bloque de la categoría “Lógica” “Si…hacer” en el bloque “Bucle”. A continuación del “sí”, coloca el bloque “Pulsador” que encontrará en la categoría “Sensores” y elige el pin donde lo tengas conectado. A continuación del “hacer”, actualizarás el valor de la variable “giro”, sumándole 5º. Para ello, de la categoría “Variables”, elige el bloque “Establecer giro” y, a continuación, de la categoría “Matemáticas” elija un bloque de suma y dentro pon la variable “giro” más 5. Por último, haz que el servomotor gire según el valor de esta variable, tal y como se muestra en la imagen:
+
+<center>
+
+![Proyecto SM_servo. Programa](../img/steamakers/actividades/SM_servoP.png)  
+*[Proyecto SM_servo. Programa](../STEAMakers/programas/SM_servo.abp)*
+
+</center>
+
+**9.** Haz clic en el botón "Subir" situado arriba a la derecha.
+
+<center>
+
+![Proyecto SM_servo. Subir](../img/steamakers/actividades/SM_servo_subir.png)  
+*Proyecto SM_servo. Subir*
 
 </center>

@@ -10,7 +10,7 @@ Para saber mas sobre la LCD 1602 puedes consultar [Pantalla LCD 1602 I2C](https:
 * Placa ESP32 STEAMakers
 * Pantalla LCD 1602 I2C
 * Cable I2C o 4 cables dupont hembra-hembra
-* Ordenador. Antes de empezar a utilizar la placa Keyestudio UNO, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](https://fgcoca.github.io/GuiasFundamentales/UNO/contUNO/).
+* Ordenador. Antes de empezar a utilizar la placa STEAMakers, es necesario comprobar que nuestro dispositivo esté listo para trabajar. Encontrarás toda la información en [Antes de](https://fgcoca.github.io/GuiasFundamentales/STEAMakers/contSM/).
 
 ## <FONT COLOR=#007575>**Procedimiento**</font>
 
