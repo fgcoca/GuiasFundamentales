@@ -1,20 +1,38 @@
-unsigned long task_time_ms=0;
+// I2C Slave Receiver and Transmitter
+// by Turgut Guneysu
+// 
+// Used in demo of micro:bit to Arduino I2C comms
+// Receiver will print all characters received.
+// Transmitter will use a 32 byte buffer,
+//  but messages can be shorter by placing a \n at the end.
 
-void setup()
-{
-  // Inicar puerto serie a 9600 buadios
-	Serial.begin(9600);
-  // Espera a que se complete la transmision de datos serie
-	Serial.flush();
-	while(Serial.available()>0)Serial.read();
+#include <Wire.h>
+
+void setup() {
+  Wire.begin(13);               // join i2c bus with address #13
+  Wire.onReceive(receiveEvent); // register event
+  Wire.onRequest(requestEvent); // register event
+  Serial.begin(9600);           // start serial for output
+  Serial.println("Ready...");
 }
 
-void loop()
-{
-  // millis() retorna los milisegundos desde que se inicio el programa
- 	if((millis()-task_time_ms)>=1000){
-    task_time_ms=millis();
-    // Envia mensaje por puerto serie
-    Serial.println(String("Hola mundo"));
+void loop() {
+}
+
+void receiveEvent(int howMany) {    // I2C Receive Event Handler        
+    char c;
+  Serial.println(howMany);
+  while (Wire.available()) { 
+    c = Wire.read(); 
+    Serial.print(c);         
   }
+  Serial.print(" / LAST char: ");   // Also print the last char as DEC
+  Serial.print(c);
+  Serial.print(" = ");
+  Serial.println(c,DEC);         
+}
+
+void requestEvent() {               // I2C Transmit event Handler
+  char response[32] = "Hello from Arduino.\n";  
+  Wire.write(response);             // respond with \n terminated message
 }
