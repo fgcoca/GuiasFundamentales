@@ -76,6 +76,7 @@ nav:
     - Introducción: cocube/introCC.md
 
   - ED1:
+    #- ed1/contTdR.md
     - Introducción: ed1/introED1.md
 
   - Retos:

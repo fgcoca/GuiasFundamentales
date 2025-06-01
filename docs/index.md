@@ -12,7 +12,7 @@ El formato que vamos a seguir será:
 |:-:|:-:|:-:|:-:|
 |![](./img/indice/tdrSTEAM.png)|![](./img/indice/keyestudio-uno-r3.png)|![](./img/indice/STEAMakers.png)|![](./img/indice/microSM.png)|
 |*<br>Shield Imagina TdR STEAM</br>*|*<br>Placa Keyestudio UNO</br>*|*<br>Placa ESP32 STEAMakers</br>*|*<br>Placa ESP32 micro:STEAMakers</br>*|
-|[Robot CoCube]()|[ED1]()|[]()|[]()|
+|[Robot CoCube](https://fgcoca.github.io/GuiasFundamentales/cocube/introCC/)|[ED1](https://fgcoca.github.io/GuiasFundamentales/introED1)|[]()|[]()|
 |![](./img/indice/cocube.png)|![](./img/indice/ED1.png)|![](./img/indice/.png)|![](./img/indice/.png)|
 |*<br>Plataforma modular multirrobot de sobremesa para educación e investigación</br>*|*<br>Placa ED1 y robot Fantastic</br>*|*<br></br>*|*<br></br>*|
 
