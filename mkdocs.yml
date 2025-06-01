@@ -73,7 +73,7 @@ nav:
     - MicroBlocks + App Inventor + BLE: microSTEAMakers/mb_inventor_BLE.md
     - Como crear una libreria: microSTEAMakers/crea_libreria.md
   - Robot CoCube:
-    - Introducción: cocube/intro.md
+    - Introducción: cocube/introCC.md
 
   - ED1:
     - Introducción: ed1/introED1.md
