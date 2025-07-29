@@ -1,0 +1,22 @@
+module Mensajes 'cat;Data'
+author Fede
+version 1 2 
+description 'La libreria Mensajes se ha creado con el único propósito de ilustrar el procedimiento de creación y mantenimiento de la misma.
+'
+
+  spec ' ' 'Mi bloque 1' 'Mi bloque 1'
+  spec ' ' 'Mi bloque 2' 'Mi bloque 2'
+  spec ' ' 'Mi nuevo bloque' 'Mi nuevo bloque'
+
+to 'Mi bloque 1' {
+  sayIt 'Mensaje generado por: ' ('[data:unicodeString]' 10) 'Mi bloque 1'
+}
+
+to 'Mi bloque 2' {
+  sayIt 'Mensaje generado por: ' ('[data:unicodeString]' 10) 'Mi bloque 2'
+}
+
+to 'Mi nuevo bloque' {
+  sayIt 'Mensaje generado por: ' ('[data:unicodeString]' 10) 'Mi nuevo bloque'
+}
+

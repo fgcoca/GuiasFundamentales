@@ -1,0 +1,12 @@
+module main
+author unknown
+version 1 0 
+description ''
+
+script 181 246 {
+whenStarted
+local 'cadena' 'MicroBlocks es genial'
+local 'expresion' ((size cadena) == (size cadena))
+sayIt 'Programar con' cadena ('[data:unicodeString]' 10) 'MicroBlocks es genial ocupa:' (size cadena) 'bytes' ('[data:unicodeString]' 10) 'expresion es:' expresion ('[data:unicodeString]' 10) 'Operador NOT a expresion:' (not expresion)
+}
+
