@@ -1,0 +1,231 @@
+# 1. Información de la web
+site_name: Guias Fundamentales
+site_description: En esta web vamos a encontrar diversas guías para iniciarnos en placas como Keyestudio UNO, micro:bit, ESP32 micro:STEAMakers, ESP32STEAMakers y otras.
+site_author: Federico Coca
+site_url: https://fgcoca.github.io/GuiasFundamentales/
+
+# 2. Repositorio
+repo_name: fgcoca/GuiasFundamentales
+repo_url: https://github.com/fgcoca/GuiasFundamentales
+edit_uri: ""
+
+
+# 3. Footer
+copyright: Copyright y copia; 2023 - 2035 Federico Coca
+extra:
+  # Footer - No poner que está hecho con MkDocs
+  generator: true
+  # Footer - Iconos
+  social:
+    - icon: fontawesome/brands/bluesky
+      link: https://bsky.app/profile/fgcoca.bsky.social
+      name: Bluesky de Federico Coca
+    - icon: fontawesome/brands/github
+      link: https://github.com/fgcoca
+      name: Github de Federico Coca
+    - icon: fontawesome/brands/square-instagram
+      link: https://www.instagram.com/cocafederico/?hl=es
+      name: Instagram de Federico Coca
+
+# 4. Navegación
+nav:
+  - Principal:
+    - Inicio: index.md
+    - Problemas de conexión USB: problemasUSB.md
+    - Conocimientos técnicos previos: previos.md
+    - Conceptos sobre CO2 y VOC: CO2.md
+    - Modelo de colores: mod_colores.md
+    - Comunicaciones Bluetooth: bt.md
+    - Conceptos básicos de UDP: basicoUDP.md
+    - Sensor de visión IA Sentry2: sentry2.md
+  - Imagina TdR STEAM:
+    - Antes de: TdR_STEAM/contTdR.md
+    - STEAMakersBlocks: TdR_STEAM/SMBlocks.md
+    - Retos: TdR_STEAM/retos.md
+    - Seguridad: TdR_STEAM/seg.md
+  - Keyestudio UNO:
+    - Antes de: UNO/contUNO.md
+    - Placa TdR-STEAM y keyestudio UNO: UNO/tdrsteam.md
+    - Pantalla LCD 1602: UNO/lcd.md
+    - Pantalla OLED: UNO/oled.md
+    - Programar sensores externos: UNO/externos.md
+    - Programar servomotores: UNO/servos.md
+    - Programar el sensor de ultrasonidos: UNO/ultrason.md
+    - Programar el mando a distancia: UNO/mando.md
+    - Programar una tira de LEDs: UNO/tira.md
+  - ESP32 STEAMakers:
+    - Antes de: STEAMakers/contSM.md
+    - Placa TdR-STEAM y ESP32 STEAMakers: STEAMakers/tdrsteam_SM.md
+    - Consideraciones sobre ESP32: STEAMakers/considera.md
+    - Pantalla LCD 1602: STEAMakers/lcdSM.md
+    - Pantalla OLED: STEAMakers/oledSM.md
+    - Programar sensores externos: STEAMakers/externosSM.md
+    - Conectar la placa a una red WiFi: STEAMakers/wifiSM.md
+    - Enviar datos a Thingspeak: STEAMakers/thingspkSM.md
+    - Programar servomotores: STEAMakers/servosSM.md
+    - Programar el sensor de ultrasonidos: STEAMakers/ultrasonSM.md
+    - Programar el mando a distancia: STEAMakers/mandoSM.md
+    - Programar una tira de LEDs: STEAMakers/tiraSM.md
+  - ESP32 micro:STEAMakers:
+    - Antes de: microSTEAMakers/contmicroSM.md
+    - Entorno de programación Microblocks: microSTEAMakers/uB.md
+    - MicroBlocks, libreria WiFi: microSTEAMakers/lib_wifi.md
+    - Boardie:un tablero virtual para MicroBlocks: microSTEAMakers/Boardie.md
+    - Programación con MicroBlocks: microSTEAMakers/prog_uB.md
+    - Aplicaciones con BLE: microSTEAMakers/app_ble.md
+    - Extensión BluetoothLE de App Inventor: microSTEAMakers/ble_inventor.md
+    - MicroBlocks + App Inventor + BLE: microSTEAMakers/mb_inventor_BLE.md
+    - WiFi y Wifi Radio: microSTEAMakers/wifi_radio.md
+    - Como crear una libreria: microSTEAMakers/crea_libreria.md
+  - Robot CoCube:
+    - Antes de: cocube/contCoCube.md
+    - Introducción: cocube/introCC.md
+    - Progamación de la pantalla LCD: cocube/lcd.md
+    - Movimientos: cocube/movimientos.md
+    - Posicionamiento: cocube/posicionamiento.md
+    - Sonidos: cocube/sonidos.md
+    - Servo con pinza: cocube/pinza.md
+    - Eventos de transmisión o broadcast: cocube/broadcast.md
+    - Control por eventos de teclado: cocube/teclado.md
+    - Comunicaciones UDP: cocube/com_UDP.md
+    - Control remoto mediante APP: cocube/remoto_wifi.md
+    - Reconocimiento de color con Sentry2: cocube/sentry2_color.md
+  - Sensor de visión IA Sentry2:
+    - Antes de: Sentry2/contSentry2.md
+    
+  - ED1:
+    - Antes de: ed1/conted1.md
+    - Introducción: ed1/introED1.md
+
+  - Retos:
+    - Keyestudio UNO: retos/keyestudio_UNO.md
+    
+
+#- Ayuda:
+    #- Chuleta: ayuda/ayuda.md
+    #- Chuleta de Markdown: ayuda/markdown.md
+    #- Chuleta de Material Design: ayuda/material.md
+
+  - Miscelanea:
+    - Autor: Miscelanea/about.md 
+    - Licencias: Miscelanea/lic.md
+    - Webgrafia/Bibliografía: Miscelanea/webgrafia.md
+    - Software utilizado: Miscelanea/soft.md
+
+# 5. Google Analytics
+#google_analytics:
+#  - !!python/object/apply:os.getenv ["GOOGLE_ANALYTICS_KEY"]
+#  - auto
+
+# 6. Configuración del tema
+theme:
+  name: material
+  # Color - Fuentes - Lenguaje
+  palette:
+    # Light Mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/lightbulb
+        name: Modo Oscuro
+      primary: light blue
+      accent: deep purple 
+    # Dark Mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/lightbulb-outline
+        name: Modo Claro
+      primary: light blue
+      accent: deep purple
+  # Fuente
+  font:
+    text: Roboto 
+    code: Roboto Mono 
+  # Lenguage
+  language: es
+  logo: img/favicon.png 
+  favicon: img/favicon.png 
+  # Icono del repo
+  icon:
+    repo: fontawesome/brands/github
+  # Pestañas de navegación y botón copiar
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky #pestañas fijas
+    - content.code.copy # Botón copiar en bloques de código    
+# Caracteristicas especiales
+features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    # Experimental
+    - search.suggest
+    - search.highlight
+    - search.share
+
+# 7. Extensiones
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: false
+      linenums: false
+      linenums_style: pymdownx-inline
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+# 8. Necesario para la extensión pydownx.arithmatex
+extra_javascript:
+  - plugins/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# 9. Plugins
+plugins:
+  - search:
+      lang: es
+      separator: '[\s\-,:!=\[\]()"/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: "100%"
+      height: auto
+      zoomable: true
+      draggable: true
+      auto_caption: false
+      caption_position: bottom
