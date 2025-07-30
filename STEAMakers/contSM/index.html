@@ -1,0 +1,3931 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="En esta web vamos a encontrar diversas guías para iniciarnos en placas como Keyestudio UNO, micro:bit, ESP32 micro:STEAMakers, ESP32STEAMakers y otras.">
+      
+      
+        <meta name="author" content="Federico Coca">
+      
+      
+        <link rel="canonical" href="https://fgcoca.github.io/GuiasFundamentales/STEAMakers/contSM/">
+      
+      
+        <link rel="prev" href="../../UNO/tira/">
+      
+      
+        <link rel="next" href="../tdrsteam_SM/">
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Antes de - Guias Fundamentales</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#descripcion" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Guias Fundamentales" class="md-header__button md-logo" aria-label="Guias Fundamentales" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guias Fundamentales
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Antes de
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="deep-purple"  aria-label="Modo Oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo Oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="deep-purple"  aria-label="Modo Claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo Claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fgcoca/GuiasFundamentales" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fgcoca/GuiasFundamentales
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+  Principal
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../TdR_STEAM/contTdR/" class="md-tabs__link">
+          
+  
+  
+  Imagina TdR STEAM
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../UNO/contUNO/" class="md-tabs__link">
+          
+  
+  
+  Keyestudio UNO
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  ESP32 STEAMakers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../microSTEAMakers/contmicroSM/" class="md-tabs__link">
+          
+  
+  
+  ESP32 micro:STEAMakers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cocube/contCoCube/" class="md-tabs__link">
+          
+  
+  
+  Robot CoCube
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Sentry2/contSentry2/" class="md-tabs__link">
+          
+  
+  
+  Sensor de visión IA Sentry2
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ed1/conted1.md" class="md-tabs__link">
+          
+  
+  
+  ED1
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../retos/keyestudio_UNO/" class="md-tabs__link">
+          
+  
+  
+  Retos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Miscelanea/about/" class="md-tabs__link">
+          
+  
+  
+  Miscelanea
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guias Fundamentales" class="md-nav__button md-logo" aria-label="Guias Fundamentales" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    Guias Fundamentales
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fgcoca/GuiasFundamentales" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fgcoca/GuiasFundamentales
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Principal
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Principal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problemasUSB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Problemas de conexión USB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../previos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conocimientos técnicos previos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CO2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conceptos sobre CO2 y VOC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mod_colores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modelo de colores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comunicaciones Bluetooth
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basicoUDP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conceptos básicos de UDP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sentry2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sensor de visión IA Sentry2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Imagina TdR STEAM
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Imagina TdR STEAM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TdR_STEAM/contTdR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TdR_STEAM/SMBlocks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    STEAMakersBlocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TdR_STEAM/retos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Retos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TdR_STEAM/seg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Keyestudio UNO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Keyestudio UNO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/contUNO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/tdrsteam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Placa TdR-STEAM y keyestudio UNO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/lcd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pantalla LCD 1602
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/oled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pantalla OLED
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/externos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar sensores externos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/servos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar servomotores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/ultrason/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar el sensor de ultrasonidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/mando/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar el mando a distancia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/tira/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar una tira de LEDs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    ESP32 STEAMakers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ESP32 STEAMakers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descripcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descripción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentes-de-la-placa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Componentes de la placa
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compatibilidad-y-descripcion-de-pines-unoesp32-steamakers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compatibilidad y descripción de pines UNO/ESP32 STEAMakers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#posibilidades-de-la-placa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Posibilidades de la placa
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entorno-de-programacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entorno de programación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Entorno de programación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arduinoblocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arduinoblocks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arduinoblocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programando-con-arduinoblocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programando con arduinoblocks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arduino-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arduino IDE
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arduino IDE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descarga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descarga
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ventana-principal-del-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventana principal del IDE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-principales-del-ide-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características principales del IDE 2.0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programando-con-arduino-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programando con Arduino IDE
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades-iniciales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividades iniciales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actividades iniciales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mostrar-un-mensaje-en-la-consola" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mostrar un mensaje en la consola
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temperatura-y-humedad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temperatura y humedad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-de-consumo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitor de consumo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seguridad
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tdrsteam_SM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Placa TdR-STEAM y ESP32 STEAMakers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../considera/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Consideraciones sobre ESP32
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lcdSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pantalla LCD 1602
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oledSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pantalla OLED
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../externosSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar sensores externos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wifiSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conectar la placa a una red WiFi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../thingspkSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enviar datos a Thingspeak
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../servosSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar servomotores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ultrasonSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar el sensor de ultrasonidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mandoSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar el mando a distancia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tiraSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar una tira de LEDs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ESP32 micro:STEAMakers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            ESP32 micro:STEAMakers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microSTEAMakers/contmicroSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microSTEAMakers/uB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entorno de programación Microblocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microSTEAMakers/lib_wifi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MicroBlocks, libreria WiFi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microSTEAMakers/Boardie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Boardie:un tablero virtual para MicroBlocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microSTEAMakers/prog_uB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programación con MicroBlocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microSTEAMakers/app_ble/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aplicaciones con BLE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microSTEAMakers/ble_inventor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extensión BluetoothLE de App Inventor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microSTEAMakers/mb_inventor_BLE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MicroBlocks + App Inventor + BLE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microSTEAMakers/wifi_radio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WiFi y Wifi Radio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microSTEAMakers/crea_libreria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Como crear una libreria
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Robot CoCube
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Robot CoCube
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/contCoCube/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/introCC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/lcd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Progamación de la pantalla LCD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/movimientos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Movimientos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/posicionamiento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Posicionamiento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/sonidos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sonidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/pinza/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Servo con pinza
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/broadcast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Eventos de transmisión o broadcast
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/teclado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control por eventos de teclado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/com_UDP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comunicaciones UDP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/remoto_wifi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control remoto mediante APP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/sentry2_color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reconocimiento de color con Sentry2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Sensor de visión IA Sentry2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Sensor de visión IA Sentry2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sentry2/contSentry2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ED1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            ED1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ed1/conted1.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ed1/introED1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Retos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Retos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../retos/keyestudio_UNO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Keyestudio UNO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Miscelanea
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Miscelanea
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Autor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/lic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Licencias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/webgrafia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Webgrafia/Bibliografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/soft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software utilizado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descripcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descripción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentes-de-la-placa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Componentes de la placa
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compatibilidad-y-descripcion-de-pines-unoesp32-steamakers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compatibilidad y descripción de pines UNO/ESP32 STEAMakers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#posibilidades-de-la-placa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Posibilidades de la placa
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entorno-de-programacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entorno de programación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Entorno de programación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arduinoblocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arduinoblocks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arduinoblocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programando-con-arduinoblocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programando con arduinoblocks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arduino-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arduino IDE
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arduino IDE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descarga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descarga
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ventana-principal-del-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventana principal del IDE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-principales-del-ide-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características principales del IDE 2.0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programando-con-arduino-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programando con Arduino IDE
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades-iniciales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividades iniciales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actividades iniciales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mostrar-un-mensaje-en-la-consola" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mostrar un mensaje en la consola
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temperatura-y-humedad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temperatura y humedad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-de-consumo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitor de consumo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seguridad
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Antes de</h1>
+
+<p>comenzar a utilizar la placa ESP32 STEAMakers, tienes que comprobar que tu ordenador tenga instalados los controladores necesarios. Por ello es aconsejable estudiar antes de nada los contenidos de este apartado.</p>
+<h2 id="descripcion"><FONT COLOR=#007575><strong>Descripción</strong></font><a class="headerlink" href="#descripcion" title="Permanent link">&para;</a></h2>
+<center>
+
+![Placa ESP32 STEAMakers](../img/steamakers/placa_SM.png)  
+*Placa ESP32 STEAMakers*
+
+</center>
+
+<p>La placa <strong>ESP32 STEAMakers</strong> es una placa basada en el microcontrolador ESP32, que gracias a una disposición versátil de conectores facilita el acceso a sus numerosas entradas y salidas donde conectar toda clase de sensores y actuadores. Incorpora comunicación WiFi y Bluetooth integradas, así como mayor capacidad de procesamiento que las populares placas electrónicas Arduino UNO y clones de la misma.</p>
+<p>Esta placa puede programarse mediante diversas plataformas y lenguajes, como Arduino IDE con código basado en C/C++ o entornos de programación visual Arduinoblocks y MicroBlocks.</p>
+<p>Todo ello convierte al ESP32 STEAMakers en un recurso muy versátil y accesible para iniciarse en electrónica, programación y prototipado de proyectos de robótica, internet de las cosas, domótica, etc. Es especialmente adecuada para docentes y estudiantes gracias a su facilidad de programación y conectividad inalámbrica integrada.</p>
+<p>El formato de placa tipo UNO hace posible reutilizar todo el material del que dispongamos para placas tipo UNO puesto que se ha conservado la compatibilidad de pines en la distribución.</p>
+<p>Los pines de Señal (S) se corresponden con pines GPIO. Los pines GND (G) se corresponden con masa. Los pines VCC (V) a la tensión de los mismos. Puedes controlar el voltaje VCC mediante un interruptor deslizante para ponerlo a 5V o 3.3V.</p>
+<p>Cuando se sitúa a 5V, el nivel en el puerto de comunicación serie es de 5V, el voltaje de los pines es de 5V. Cuando se cambia a 3.3V, el nivel en el puerto de comunicación serie es de 3.3V, el voltaje de los pines es de 3.3V.</p>
+<p>También, de forma separada hay cuatro conjuntos de cuatro pines macho mas un conjunto de pines hembra, a modo de hub, para comunicación IIC o I2C. También existe un conjunto de 4 pines macho para comunicación serie.</p>
+<h2 id="componentes-de-la-placa"><FONT COLOR=#007575><strong>Componentes de la placa</strong></font><a class="headerlink" href="#componentes-de-la-placa" title="Permanent link">&para;</a></h2>
+<center>
+
+![Componentes de la placa ESP32 STEAMakers](../img/steamakers/comp_placa_SM.png)  
+*Componentes de la placa ESP32 STEAMakers*
+
+</center>
+
+<ol>
+<li><strong>Botón de reset</strong>. Para reiniciar la placa.</li>
+<li><strong>Conmutador deslizante</strong>. Permite controlar el voltaje en los pines V (VCC) entre 3.3V or 5V.</li>
+<li><strong>Conector USB-B</strong>. Para alimentación y cargar de firmware.</li>
+<li><strong>Bus I2C</strong>. Con conectores macho y hembra para GND - 3.3V/5V - SDA - SCL.</li>
+<li><strong>Pines analógicos</strong>. Conjunto de conectores de 3 pines con GND - 3.3V - (IO24 - A3),(IO35 - A2),(IO04 - A1),(IO02 - A0)</li>
+<li><strong>Conector alimentación DC</strong>. La placa se puede alimentar con una tensión continua externa de 7 a 12V desde la toma de alimentación DC.</li>
+<li><strong>Tarjeta microSD</strong>. Pines CS - CMD - SCK - D0. El soporte está en la cara posterior de la placa.</li>
+<li><strong>Medidor de corriente y tensión</strong>. Mediante el circuito integrado <a href="https://www.allegromicro.com/en/products/sense/current-sensor-ics/zero-to-fifty-amp-integrated-conductor-sensor-ics/acs712">ACS712T</a> de <a href="https://www.allegromicro.com/en/">Allegro microsystems</a> se suministran las medidas de consumo energético: corriente (IOUT) en el pin io36 y tensión (VOUT) en el pin io39.</li>
+<li><strong>Pines varios</strong>. De izquierda a derecha según la imagen anterior tenemos: io0, 5V, Reset, 3.3V, 5V, GND, GND y entrada de alimentación VIN entre 7 y 12V.</li>
+<li><strong>Entradas analógicas y bus I2C</strong>. A0 (io2) - A1 (io4) - A2 (io35) - A3 (io34) y Pines SDA y SCL del Bus I2C.</li>
+<li><strong>Microcontrolador</strong>. Chip <a href="https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf">ESP32-WROOM-32</a>.</li>
+<li><strong>Comunicación serie</strong>. Para conectar la comunicación serie. 4Pines (GND, VCC, RX, TX).</li>
+<li><strong>Entradas salidas digitales</strong>. Pines GPIO: D0 (RX0) - D1 (TX0) - D2 (io26) - D3 (io25) - D4 (io17) - D5 (io16) - D6 (io27) - D7 (io14) - D8 (io12) - D9 (io13) - D10 (io05) - D11 (io23) - D12 (io19) y D13 (io18).</li>
+<li><strong>Pines I2C</strong>. Pines para comunicaciones I2C de 4 pines (GNC, VCC, SDA y SCL).</li>
+<li><strong>Pines G,V,S (GND, VCC, Señal)</strong>. Pines digitales de entrada/salida, etiquetados de D2 a D13 con la misma correspondencia que se ha dado anteriormente. Estos pines digitales se pueden conectar mediante conectores hembra tipo dupont individuales o de 2,54mm de paso. Selecciona la tensión de 3,3 V o 5 V mediante el interruptor deslizante.</li>
+</ol>
+<h2 id="compatibilidad-y-descripcion-de-pines-unoesp32-steamakers"><FONT COLOR=#007575><strong>Compatibilidad y descripción de pines UNO/ESP32 STEAMakers</strong></font><a class="headerlink" href="#compatibilidad-y-descripcion-de-pines-unoesp32-steamakers" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Importante:</p>
+<p>Todos los pines IOxx son entradas y salidas digitales de propósito general, algunas con más funciones.</p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">IMPORTANTE</p>
+<p><strong>Utilizando la comunicación WiFi no funciona el ADC2.</strong></p>
+</div>
+<center>
+
+<table width="100%"  border="1" cellspacing="2" cellpadding="2" style="font-size:10px">
+  <tr>
+    <th>Pin UNO</th>
+    <th>Pin ESP32</th>
+    <th>Función</th>
+    <th>Ampliación</th>
+    <th>Descripción UNO</th>
+  </tr>
+  <tr>
+    <td>D0</td>
+    <td>IO03</td>
+    <td>Rx</td>
+    <td>UART 0 RX</td>
+    <td>Pin de recepción Bluetooth y WiFi</td>
+  </tr>
+  <tr>
+    <td>D1</td>
+    <td>IO01</td>
+    <td>Tx</td>
+    <td>UART 0 TX</td>
+    <td>Pin de transmisión Bluetooth y WiFi</td>
+  </tr>
+  <tr>
+    <td>D2</td>
+    <td>IO26</td>
+    <td>ADC2 CH9</td>
+    <td>DAC2</td>
+    <td>Entrada/salida digital</td>
+  </tr>
+  <tr>
+    <td>D3</td>
+    <td>IO25</td>
+    <td>ADC2 CH8</td>
+    <td>DAC1</td>
+    <td>Entrada/salida digital</td>
+  </tr>
+  <tr>
+    <td>D4</td>
+    <td>IO17</td>
+    <td></td>
+    <td>UART 2 TX</td>
+    <td>Entrada/salida digital</td>
+  </tr>
+  <tr>
+    <td>D5</td>
+    <td>IO16</td>
+    <td></td>
+    <td>UART 2 RX</td>
+    <td>Entrada/salida digital</td>
+  </tr>
+  <tr>
+    <td>D6</td>
+    <td>IO27</td>
+    <td>ADC2 CH7</td>
+    <td>ADC2-7 / TOUCH7</td>
+    <td>Entrada/salida digital</td>
+  </tr>
+  <tr>
+    <td>D7</td>
+    <td>IO14</td>
+    <td>ADC2 CH6</td>
+    <td>ADC2-6 / TOUCH6</td>
+    <td>Entrada/salida digital</td>
+  </tr>
+  <tr>
+    <td>D8</td>
+    <td>IO12</td>
+    <td>ADC2 CH5</td>
+    <td>ADC2-5 / TOUCH5</td>
+    <td>Entrada/salida digital</td>
+  </tr>
+  <tr>
+    <td>D9</td>
+    <td>IO13</td>
+    <td>ADC2 CH4    </td>
+    <td>ADC2-4 / TOUCH4</td>
+    <td>Entrada/salida digital</td>
+  </tr>
+   <tr>
+    <td>D10</td>
+    <td>IO05</td>
+    <td></td>
+    <td>VSPI CSO</td>
+    <td>Entrada/salida digital</td>
+  </tr>
+   <tr>
+    <td>D11</td>
+    <td>IO23</td>
+    <td></td>
+    <td>VSPI MOSI</td>
+    <td>Entrada/salida digital</td>
+  </tr>
+   <tr>
+    <td>D12</td>
+    <td>IO19</td>
+    <td></td>
+    <td>VSPI MISO</td>
+    <td>Entrada/salida digital</td>
+  </tr>
+   <tr>
+    <td>D13</td>
+    <td>IO18</td>
+    <td></td>
+    <td>VSPI CLK</td>
+    <td>Entrada/salida digital</td>
+  </tr>
+   <tr>
+    <td>GND</td>
+    <td>GND</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>AREF</td>
+    <td>Reset</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>SDA</td>
+    <td>IO21</td>
+    <td>I2C</td>
+    <td></td>
+    <td>Serial DAta</td>
+  </tr>
+   <tr>
+    <td>SCL</td>
+    <td>IO22</td>
+    <td>I2C</td>
+    <td></td>
+    <td>Serial CLock</td>
+  </tr>
+   <tr>
+    <td>A0</td>
+    <td>IO02</td>
+    <td>ADC2 CH2</td>
+    <td></td>
+    <td>Entrada analógica</td>
+  </tr>
+   <tr>
+    <td>A1</td>
+    <td>IO04</td>
+    <td>ADC2 CH0</td>
+    <td></td>
+    <td>Entrada analógica</td>
+  </tr>
+   <tr>
+    <td>A2</td>
+    <td>IO36</td>
+    <td>ADC1 CH0</td>
+    <td></td>
+    <td>Entrada analógica</td>
+  </tr>
+   <tr>
+    <td>A3</td>
+    <td>IO34</td>
+    <td>ADC1 CH6</td>
+    <td></td>
+    <td>Entrada analógica</td>
+  </tr>
+   <tr>
+    <td>A4</td>
+    <td>IO38</td>
+    <td></td>
+    <td></td>
+    <td>Datos I2C</td>
+  </tr>
+  <tr>
+    <td>A5</td>
+    <td>IO39</td>
+    <td>ADC1 CH3</td>
+    <td></td>
+    <td>Señal de reloj I2C</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>IO00</td>
+    <td>¡ No conectar !</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>IO32</td>
+    <td>D0- uSD</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>IO15</td>
+    <td>CLK - uSD</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>IO33</td>
+    <td>CMD - uSD</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>IO35</td>
+    <td>IOUT</td>
+    <td>Medidor de corriente</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>IO37</td>
+    <td>VOUT</td>
+    <td>Medidor de tensión</td>
+    <td></td>
+  </tr>
+</table>
+
+</center>
+
+<h2 id="posibilidades-de-la-placa"><FONT COLOR=#007575><strong>Posibilidades de la placa</strong></font><a class="headerlink" href="#posibilidades-de-la-placa" title="Permanent link">&para;</a></h2>
+<p>La placa ESP32 STEAMakers facilita el acceso a las potentes capacidades del microcontrolador ESP32 mediante una disposición versátil de conectores y una amplia variedad de entradas y salidas. Esto permite crear de forma sencilla toda clase de proyectos interactivos con sensores, actuadores y comunicaciones inalámbricas.</p>
+<p>Algunos ejemplos de proyectos que se pueden realizar en el aula:</p>
+<ul>
+<li><strong>MEDIR LA TEMPERATURA</strong></li>
+</ul>
+<p>El sensor de temperatura integrado permite obtener el valor de la temperatura cercano al procesador de la placa. Puede mostrarse a través de una pantalla o enviar a un servidor.</p>
+<ul>
+<li><strong>DETECTAR EL NIVEL DE LUZ</strong></li>
+</ul>
+<p>A través de un sensor de luz conectado a una de las entradas analógicas de la placa, se puede medir la intensidad lumínica de un espacio y activar actuadores en función de si hay más o menos claridad.</p>
+<ul>
+<li><strong>DETECTAR PROXIMIDAD O MOVIMIENTO</strong></li>
+</ul>
+<p>Mediante un sensor de tipo Hall (magnético) interno en la placa o un sensor de ultrasonidos conectado a una entrada se puede detectar cuándo un objeto o persona se acerca o se aleja de la placa.</p>
+<ul>
+<li><strong>REPRODUCIR AUDIO</strong></li>
+</ul>
+<p>Empleando un zumbador se pueden generar tonos y melodías que puedan formar parte de una experiencia interactiva.</p>
+<ul>
+<li><strong>CONTROLAR REMOTAMENTE POR WIFI</strong></li>
+</ul>
+<p>Aprovechando la conectividad WiFi integrada, se pueden crear interfaces web o apps móviles para controlar de forma remota los componentes conectados a la placa.</p>
+<ul>
+<li><strong>COMUNICAR CON OTROS DISPOSITIVOS</strong></li>
+</ul>
+<p>La conectividad Bluetooth permite que la placa intercambie datos en tiempo real con tablets, teléfonos inteligentes u otros sistemas externos con Bluetooth integrado.</p>
+<h2 id="entorno-de-programacion"><FONT COLOR=#007575><strong>Entorno de programación</strong></font><a class="headerlink" href="#entorno-de-programacion" title="Permanent link">&para;</a></h2>
+<h3 id="arduinoblocks"><FONT COLOR=#AA0000>Arduinoblocks</font><a class="headerlink" href="#arduinoblocks" title="Permanent link">&para;</a></h3>
+<p>ArduinoBlocks <a href="http://www.arduinoblocks.com/">http://www.arduinoblocks.com</a> es un entorno de programación visual por bloques que facilita la programación de la placa.</p>
+<p>ArduinoBlocks es compatible con varias placas electrónicas. En su entorno de programación o IDE se pueden distinguir las siguientes partes:</p>
+<center>
+
+![Entorno de programación o IDE de arduinoblocks](../img/uno/IDE_AB.png)  
+*Entorno de programación o IDE de arduinoblocks*
+
+</center>
+
+<center>
+
+<font size="1">
+<table>
+<tr>
+  <td>1</td>
+  <td>Página principal arduinoblocks</td>
+  <td>15</td>
+  <td>Configuraciones de arduinoblocks</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>Repositorio de proyectos</td>
+  <td>16</td>
+  <td>Botón para grabar el programa en la placa una vez conectada</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>Desplegar para acceder a nuestros proyectos y para crear un proyecto nuevo</td>
+  <td>17</td>
+  <td>Botón para abrir la consola serie. Desplegando podemos abrir serial plotter</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>Acceso a la información del proyecto referente a nombre, descripción, etc.</td>
+  <td>18</td>
+  <td>Actualización puerto. Muestra puerto cuando hay una placa conectada (/dev/ttyUSBn)</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>Acceso a los archivos adjuntos al proyecto</td>
+  <td>19</td>
+  <td>Captura de pantalla del programa sin fondo</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>Acceso a herramientas de edición de matrices de leds, pantallas LCD y OLED, Neopixel e información RTTTL</td>
+  <td>20</td>
+  <td>Espacio para guardar instrucciones y estructuras de programación y reutilizarlas en el proyecto actual o en otro diferente</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>Botón para compartir el proyecto via correo electrónico</td>
+  <td>21</td>
+  <td>Botón para maximizar el tamaño de los bloques</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>Nombre del proyecto con el icono de la placa seleccionada para programar</td>
+  <td>22</td>
+  <td>Botón para centrar los bloques</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td>Desplegable para acceder a Connector, documentación varia y librerias usadas por la aplicación</td>
+  <td>23</td>
+  <td>Botón para ampliar el tamaño de los bloques</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td>Idioma del IDE de arduinoblocks</td>
+  <td>24</td>
+  <td>Botón para reducir el tamaño de los bloques</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td>Identificación de la cuenta con la que hemos accedido</td>
+  <td>25</td>
+  <td>Papelera para descartar bloques no usados</td>
+</tr>
+<tr>
+  <td>12</td>
+  <td>Cerrar la sesión actual</td>
+  <td>26</td>
+  <td>Espacio de programación</td>
+</tr>
+<tr>
+  <td>13</td>
+  <td>Botones deshacer y rehacer</td>
+  <td>27</td>
+  <td>Bloques de programación organizados por categorias</td>
+</tr>
+<tr>
+  <td>14</td>
+  <td>Botón y un desplegable para guardar y exportar el proyecto</td>
+  <td>28</td>
+  <td>Desplegable para mostrar el código del programa, descargarlo en formato .ino o descargar en formato .zip (se descargan el programa y las librerias</td>
+</tr>
+</table>
+</center>
+<p></font></p>
+<h4 id="programando-con-arduinoblocks"><FONT COLOR=#FF00FF><b>Programando con arduinoblocks</b></font><a class="headerlink" href="#programando-con-arduinoblocks" title="Permanent link">&para;</a></h4>
+<p>Para poder conectar y programar las placas con arduinoblocks, es necesario instalar “AB-Connector” para permitir la comunicación entre el entorno arduinoblocks y la placa electrónica.</p>
+<p>En "Recursos" de "arduinoblocks" tenemos todas las opciones de descarga y condiciones de instalación de “AB-Connector” para los sistemas operativos soportados. Para el caso de Ubuntu nos indica:</p>
+<center>
+
+![AB-Connector](../img/uno/AB_Connector.png)  
+*AB-Connector*
+
+</center>
+
+<p>Una vez instalado lo podemos encontrar entre las aplicaciones:</p>
+<center>
+
+![AB-Connector](../img/uno/AB_Connector_app.png)  
+*AB-Connector*
+
+</center>
+
+<p>Al abrir AB-Connector, aparece este cuadro de diálogo que va mostrando información sobre la placa y arduinoblocks:</p>
+<center>
+
+![AB-Connector en ejecución](../img/uno/AB_Connector_eje.png)  
+*AB-Connector en ejecución*
+
+</center>
+
+<p>Dejamos AB-Connector en ejecución minimizado en segundo plano.</p>
+<p><FONT size=9><FONT COLOR=#FF0055><b>1.</b></font></font> En ArduinoBlocks, crea una cuenta pulsando en “Iniciar sesión” y, posteriormente, en “nuevo usuario”:</p>
+<center>
+
+![Pantalla inicial arduinoblocks](../img/uno/pant_ini_AB.png)  
+*Pantalla inicial arduinoblocks*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>2. </b></font></font> Al entrar en la plataforma te encontrarás esta pantalla:</p>
+<center>
+
+![Sesión iniciada en arduinoblocks](../img/uno/ses_ini.png)  
+*Sesión iniciada en arduinoblocks*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>3.</b></font></font> Al hacer clic en "Empezar un nuevo proyecto!" aparece la siguiente pantalla para seleccionar el tipo de proyecto:</p>
+<center>
+
+![Nuevo proyecto](../img/uno/nuevo_proy.png)  
+*Nuevo proyecto*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>4.</b></font></font> Para crear un nuevo <strong>proyecto personal</strong>, debes rellenar un formulario. Si utilizas la placa ESP32 STEAMaker, debes seleccionar ESP32 STEAMaker en <strong>Tipo de proyecto</strong>.</p>
+<center>
+
+![Tipo de proyecto](../img/steamakers/tipo_proy.png)  
+*Tipo de proyecto*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>5.</b></font></font> Una vez creado el proyecto, después de haber cumplimentado su nombre y demás campos del formulario, se abre el entorno de programación:</p>
+<center>
+
+![Proyecto creado](../img/steamakers/creado_proy.png)  
+*Proyecto creado*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>6.</b></font></font> En la parte izquierda de esta pantalla, encontrarás los bloques disponibles clasificados por diferentes categorías. Por ejemplo, en la siguiente imagen puedes ver los bloques de algunos de los sensores que se pueden controlar con la placa ESP32 STEAMaker.</p>
+<center>
+
+![Algunos bloques de sensores](../img/uno/B_sensores.png)  
+*Algunos bloques de sensores*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>7.</b></font></font> Arrastra los bloques al espacio de programación para programar tu placa. Por ejemplo, podemos programar el envío en bucle de un mensaje por puerto serie. El <strong>puerto serie</strong>, también conocido como puerto de comunicaciones serie o interfaz serie, es un tipo de conexión utilizada en ordenadores y dispositivos periféricos para la transferencia de datos. La característica principal del puerto serie es que envía los datos en serie; es decir, bit a bit, a través de un solo canal o hilo. Los bloques más importantes para utilizar el puerto serie son:</p>
+<center>
+
+![Bloques puerto serie](../img/steamakers/B_serie.png)  
+*Bloques puerto serie*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>8.</b></font></font> El programa de este ejemplo sería así:</p>
+<center>
+
+![Programa Hola mundo](../img/steamakers/P_HolaMundo.png)  
+*Programa Hola mundo. [Descargar](../STEAMakers/programas/HolaMundo.abp)*
+
+</center>
+
+<p>Dentro de la estructura “<strong>Inicializar</strong>” colocamos el bloque de configuración de la velocidad de transferencia de datos (“<strong>baudrate</strong>”) del puerto serie a 115200. Y en el bucle principal, colocamos el bloque para enviar un mensaje en concreto, seleccionando que se realice un salto de línea. Para que el mensaje no se muestre tan rapidamente hacemos que se reproduzca cada cierto tiempo.</p>
+<p><FONT size=9><FONT COLOR=#FF0055><b>9.</b></font></font> Una vez creado el programa, debes transferirlo (subirlo) a la placa. Para ello, sigue los siguientes pasos:</p>
+<ul>
+<li>Comprueba que AB-Connector está ejecutańdose.</li>
+<li>Conecta la placa al ordenador mediante un cable USB.</li>
+<li>Selecciona el puerto de comunicación. Puedes conectar y desconectar el cable USB del ordenador para diferenciar cuál es el puerto de comunicación que utiliza la placa.</li>
+<li>Si no aparece el "/dev/ttyUSBn" directamente, pulsa en el icono de actualización. En entornos Linux, MacOS y Chromebook se muestra así el nombre. En Windows se muestra como COM.</li>
+</ul>
+<center>
+
+![Establecer conexión USB](../img/uno/P_conex.png)  
+*Establecer conexión USB*
+
+</center>
+
+<ul>
+<li>Pulsando en el botón “Subir”, carga el programa en la placa.</li>
+</ul>
+<center>
+
+![Subir el programa a la placa](../img/steamakers/P_subir.png)  
+*Subir el programa a la placa*
+
+</center>
+
+<div class="admonition info">
+<p class="admonition-title">Tiempo de subida</p>
+<p>En ESP32 el tiempo de subida será bastante mayor que en otras placas debido a la cantidad y peso de las librerias que utiliza ESP32.</p>
+</div>
+<p>Para poder visualizar el monitor serie y comprobar qué mensajes está enviando la placa al ordenador, debes abrirlo en tu entorno de programación, pulsando el botón “Consola”:</p>
+<center>
+
+![Abrir consola serie](../img/steamakers/P_abre_consola.png)  
+*Abrir consola serie*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>10.</b></font></font> Se abrirá la ventana siguiente:</p>
+<center>
+
+![Consola serie](../img/uno/consola.png)  
+*Consola serie*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>11.</b></font></font> Selecciona la tasa de baudios (velocidad de transmisión de datos) con la que has iniciado el puerto serie y después haz clic en conectar. Verás el resultado en pantalla.</p>
+<center>
+
+![Consola serie recibiendo datos](../img/steamakers/consola_recibe.png)  
+*Consola serie recibiendo datos*
+
+</center>
+
+<h3 id="arduino-ide"><FONT COLOR=#AA0000>Arduino IDE</font><a class="headerlink" href="#arduino-ide" title="Permanent link">&para;</a></h3>
+<p>Arduino IDE es un Entorno de Desarrollo Integrado multiplataforma (Linux, Windows y macOS) ideal para programar placas tipo Arduino y compatibles, con un lenguaje de programación basado en C/C++.</p>
+<p>IDE (Integrated Development Environment, traducido como Entorno Integrado de Desarrollo) incorpora un editor de código que facilita la escritura de programas. También dispone de numerosas bibliotecas y ejemplos que ayudan a la programación.</p>
+<p>Permite compilar y subir los programas a la placa con tan sólo un clic, visualizando el resultado a través del monitor serie, por ejemplo.</p>
+<p>En el entorno de programación se pueden distinguir las siguientes partes:</p>
+<h4 id="descarga"><FONT COLOR=#000000><mark>Descarga</mark></font><a class="headerlink" href="#descarga" title="Permanent link">&para;</a></h4>
+<p>Podemos descargarlo desde la <a href="https://www.arduino.cc/en/software">página de software de Arduino IDE 2.0</a> y en el momento de creación de este apartado de la web nos ofrece la versión 2.3.2 además de los enlaces al editor online, tal y como vemos en la figura siguiente.</p>
+<center>
+
+![Descargas](../img/uno/descarga.png)  
+*Descargas*
+
+</center>
+
+<p>En esta página tenemos disponibles las versiones Nightly y otras informaciones importantes como:</p>
+<ul>
+<li>La versión de escritorio no está disponible para Chromebook donde deberemos trabajar con el <a href="https://create.arduino.cc/editor/">editor web de Arduino</a>.</li>
+<li>Es posible programar las placas utilizando MicroPython. En la página <a href="https://docs.arduino.cc/micropython">MicroPython with Arduino</a> tenemos toda la información.</li>
+<li>Opciones de descarga de versiones anteriores del IDE.</li>
+<li>Términos de servicio</li>
+</ul>
+<p>Si tenemos alguna duda podemos seguir el tutorial en inglés de <a href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing">descarga e instalación de Arduino IDE 2.0</a>.</p>
+<h4 id="ventana-principal-del-ide"><FONT COLOR=#000000><mark>Ventana principal del IDE</mark></font><a class="headerlink" href="#ventana-principal-del-ide" title="Permanent link">&para;</a></h4>
+<p>En la figura siguiente vemos el aspecto que presenta el IDE en la versión 2.0.</p>
+<center>
+
+![Arduino IDE 2.0](../img/uno/IDE.png)  
+*Arduino IDE 2.0*
+
+</center>
+
+<p>A continuación se describen de forma rápida los apartados señalados en la figura anterior.</p>
+<ol>
+<li>Verify/Upload (Verificar/Cargar): Para compilar y cargar el código en la placa.</li>
+<li>Select board &amp; port (Seleccionar placa y puerto): En el desplegable se muestran las placas detectadas de forma automática, junto con el puerto asignado.</li>
+<li>Open Serial Plotter (abrir trazador seríe): Abre la herramienta de graficado como una nueva ventana.</li>
+<li>Open Serial Monitor (abrir el monitor serie): abre la herramienta Serial Monitor, como una nueva pestaña en la consola.</li>
+<li>Sketchbook (Carpeta de programas): es el directorio o carpeta donde se almacenan localmente los programas. Además, desde aquí se puede sincronizar con Arduino Cloud y también obtener los sketch del entorno online.</li>
+<li>Boards Manager (Administrador de placas): para explorar los paquetes de Arduino y de terceros que se pueden instalar. Por ejemplo, usar una placa MKR WiFi 1010 requiere tener instalado el paquete <em>Arduino SAMD Boards</em>.</li>
+<li>Library Manager (Ad https://docs.arduino.cc/software/ide-v2./img/teo-basica/soft/ministrador de librerías): Para navegar por las librerías propias de Arduino y las creadas por la comunidad.</li>
+<li>Debugger (Depurador): Para probar y depurar programas en tiempo real.</li>
+<li>Search (Buscar): búsqueda de palabras en el código.</li>
+</ol>
+<h4 id="caracteristicas-principales-del-ide-20"><FONT COLOR=#000000><mark>Características principales del IDE 2.0</mark></font><a class="headerlink" href="#caracteristicas-principales-del-ide-20" title="Permanent link">&para;</a></h4>
+<ul>
+<li><FONT COLOR=#FF00FF><b>Ajustar preferencias</b></font><br />
+En la animación de la figura siguiente vemos como acceder a la configuración de las mismas y también como se realiza algún ajuste adicional.</li>
+</ul>
+<center>
+
+![Preferencias IDE 2.0](../img/uno/preferencias.gif)  
+*Preferencias IDE 2.0*
+
+</center>
+
+<ul>
+<li><FONT COLOR=#FF00FF><b>La carpeta de programas</b></font><br />
+Los programas o sketches de Arduino se guardan como .ino y deben almacenarse en una carpeta con el mismo nombre. Por ejemplo, un programa de nombre 'mi_programa.ino' debe almacenarse en una carpeta llamada 'mi_programa'. Generalmente se guardan en una carpeta de nombre 'Arduino' en la carpeta personal.<br />
+En la animación siguiente vemos como abrir y cerrar esta carpeta desde el botón de la barra lateral y como nos muestra el contenido</li>
+</ul>
+<center>
+
+![Carpeta de programas](../img/uno/archivos.gif)  
+*Carpeta de programas*
+
+</center>
+
+<ul>
+<li><FONT COLOR=#FF00FF><b>Administrador de placas</b></font><br />
+Con el Administrador de placas se pueden buscar e instalar paquetes o "núcleos" para nuestras placas. Compilar y cargar un programa en una placa siempre requiere un paquete de la placa. Hay muchos paquetes de placa Arduino disponibles, como avr, samd, megaav y muchos más.<br />
+Podemos decir que un "núcleo" está escrito y diseñado para microcontroladores específicos y sabemos que las diferentes placas tienen micros de diferentes tipos. Por ejemplo, un Arduino UNO tiene un <strong>ATmega328P</strong>, que usa el <strong>núcleo AVR</strong>, mientras que un Arduino Nano 33 IoT tiene un microcontrolador <strong>SAMD21</strong>, donde necesitamos usar el <strong>núcleo SAMD</strong>. En definitiva, para poder usar una placa concreta debemos instalar su núcleo específico.<br />
+Al hacer clic en el botón de la barra lateral se nos abren todas las opciones disponibles y ne indica si están o no instalados y además dispone de un buscador que permite localizar el núcleo que necesitamos. Hay que tener presente que la instalación de algunos de ellos puede tardar varios minutos.<br />
+En la animación vemos el funcionamiento de este botón.</li>
+</ul>
+<center>
+
+![Administrador de placas](../img/uno/placas.gif)  
+*Administrador de placas*
+
+</center>
+
+<ul>
+<li><FONT COLOR=#FF00FF><b>Gestor de librerías</b></font><br />
+Este botón nos permite buscar e instalar librerías, que son extensiones de la API de Arduino que facilitan el control de un servo, leer un sensor específico o utilizar un módulo WiFi.<br />
+En la animación vemos como utilizar este botón.</li>
+</ul>
+<center>
+
+![Gestor de librerías](../img/uno/librerias.gif)  
+*Gestor de librerías*
+
+</center>
+
+<ul>
+<li><FONT COLOR=#FF00FF><b>Monitor serie</b></font><br />
+Esta herramienta que habitualmente estaba en una ventana separada ahora se integra en el editor. La herramienta sirve para comunicarse con la placa o para depurar programas.<br />
+Una ventaja de tener el Serial Monitor integrado con el editor es la posibilidad de tener múltiples monitores abiertos simultáneamente. En el editor antiguo, al cambiar el puerto/placa, cambiaba en todas las ventanas. Además, estábamos limitados a una ventana de Serial Monitor, un obstáculo que el IDE 2.0 elimina.<br />
+En la animación vemos el uso básico del mismo.</li>
+</ul>
+<center>
+
+![Monitor serie](../img/uno/monitor.gif)  
+*Monitor serie*
+
+</center>
+
+<p>Para obtener más información sobre Serial Monitor podemos visitar el <a href="https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-serial-monitor">Serial Monitor tutorial</a>.</p>
+<ul>
+<li><FONT COLOR=#FF00FF><b>Serial Plotter</b></font><br />
+Nos permite visualizar datos utilizando gráficos permitiendo monitorizar varias variables de manera simultanea. Para ver mejor el funcionamiento de este elemento vamos a utilizar un potenciómetro conectado al pin analógico A3 junto con una variable estática y una aleatoria. El código del ejemplo es:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">potenciometro</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">aleatoria</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">static_variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">500</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="n">potenciometro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">A3</span><span class="p">);</span>
+<span class="n">aleatoria</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Potenciometro:&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">potenciometro</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Valor aleatorio:&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">aleatoria</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Variable estatica:&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">static_variable</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>En la animación vemos como cargar el programa y el funcionamiento en la ventana del Serial Plotter.</p>
+<center>
+
+![Serial Plotter](../img/uno/SP.gif)  
+*Serial Plotter*
+
+</center>
+
+<ul>
+<li>
+<p><FONT COLOR=#FF00FF><b>Debugger</b></font><br />
+El depurador se utiliza para probar y depurar programas. Básicamente lo que permite es navegar a través de la ejecución de un programa, lo que sirve para detectar fallos o errores de código.<br />
+El depurador solamente está disponible con las placas SAMD.<br />
+Tenemos mas información en <a href="https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-debugger">Debugging tutorial</a>.</p>
+</li>
+<li>
+<p><FONT COLOR=#FF00FF><b>Autocompletado</b></font><br />
+Es una nueva característica de la versión 2.0 muy bien equipada. Debemos tener presente que para que funcione debemos tener seleccionada la placa a utilizar.<br />
+En la animación siguiente vemos la herramienta funcionando.</p>
+</li>
+</ul>
+<center>
+
+![Autocompletado](../img/uno/autocompletado.gif)  
+*Autocompletado*
+
+</center>
+
+<h4 id="programando-con-arduino-ide"><FONT COLOR=#FF00FF><b>Programando con Arduino IDE</b></font><a class="headerlink" href="#programando-con-arduino-ide" title="Permanent link">&para;</a></h4>
+<p><FONT size=9><FONT COLOR=#FF0055><b>1.</b></font></font> Para poder programar la placa ESP32 STEAMakers en el entorno Arduino IDE, es necesario que conectes la placa al ordenador con un cable USB y la selecciones en el desplegable “Selecccione placa y puerto”.</p>
+<center>
+
+![Seleccionar placa y puerto](../img/uno/IDE_placa.png)  
+*Seleccionar placa y puerto*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>2.</b></font></font> Y selecciona la placa “ESP32-WROOM” y el puerto adecuado en la ventana que se abre:</p>
+<center>
+
+![Seleccionados placa y puerto](../img/steamakers/IDE_placa_puerto.png)  
+*Seleccionados placa y puerto*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>3.</b></font></font> Una vez configurado el entorno, vamos a programar el envío en bucle de un mensaje por puerto serie. Copiamos el código del programa de arduinoblocks y quedaría así:</p>
+<center>
+
+![Programa Hola mundo](../img/steamakers/IDE_holamundo.png)  
+*Programa Hola mundo*
+
+</center>
+
+<p>Se ha cambiado el tiempo a un segundo para asegurarnos que el programa es diferente al de arduinoblocks. Este es el código del programa listo para copiar:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">task_time_ms</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">flush</span><span class="p">();</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">Serial</span><span class="p">.</span><span class="n">available</span><span class="p">()</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span><span class="n">Serial</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">yield</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">((</span><span class="n">millis</span><span class="p">()</span><span class="o">-</span><span class="n">task_time_ms</span><span class="p">)</span><span class="o">&gt;=</span><span class="mi">1000</span><span class="p">){</span>
+<span class="w">        </span><span class="n">task_time_ms</span><span class="o">=</span><span class="n">millis</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="s">&quot;Hola Mundo&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><FONT size=9><FONT COLOR=#FF0055><b>4.</b></font></font> Dentro de la estructura “<strong>setup()</strong>” se añade la instrucción “<strong>Serial.begin(115200);</strong>” para configurar la velocidad de transferencia de datos (“<strong>baudrate</strong>”) del puerto serie a 115200. En el bucle principal, el “<strong>loop()</strong>”, añadimos la instrucción "<strong>Serial.println();</strong>" para enviar un mensaje. Cargamos el programa en la placa clicando el botón de carga:</p>
+<center>
+
+![Cargar el programa Hola mundo](../img/uno/IDE_holamundo_carga.png)  
+*Cargar el programa Hola mundo*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>5.</b></font></font> Abrimos la consola serie para visualizar los datos que recibe el ordenador desde la placa mediante la comunicación serie:</p>
+<center>
+
+![Programa Hola mundo en ejecución](../img/steamakers/IDE_holamundo_cargado.png)  
+*Programa Hola mundo en ejecución*
+
+</center>
+
+<h2 id="actividades-iniciales"><FONT COLOR=#007575><strong>Actividades iniciales</strong></font><a class="headerlink" href="#actividades-iniciales" title="Permanent link">&para;</a></h2>
+<p>Vamos a realizar tres actividades incrementando el nivel de dificultad y explicadas paso a paso con la finalidad de familiarizarno con esta placa.</p>
+<h3 id="mostrar-un-mensaje-en-la-consola"><FONT COLOR=#AA0000>Mostrar un mensaje en la consola</font><a class="headerlink" href="#mostrar-un-mensaje-en-la-consola" title="Permanent link">&para;</a></h3>
+<p>Se trata de crear un programa que muestre en la consola serie de arduinoblocks un mensaje con el texto "Hola desde ESP32 STEAMakers. Tiempo transcurrido nn segundos" cada cinco segundos. Cada mensaje debe aparece en una línea diferente.</p>
+<p><FONT size=9><FONT COLOR=#FF0055><b>1.</b></font></font> Comienza el programa configurando el puerto serie a una velocidad de transferencia de datos de 9600 baudios. Coloca el bloque "Iniciar baudios..." que encontrarás en "Comunicaciones → Puerto serie" en la estructura "Inicializar". De esta forma esta instrucción se ejecuta al inicio del programa y una sola vez. La programación del bloque "Inicializar" deberá quedar así:</p>
+<center>
+
+![Bloque Inicializar en la actividad 1](../img/steamakers/actividades/A1_1.png)  
+*Bloque Inicializar en la actividad 1*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>2.</b></font></font> Coloca en el blucle principal la estructura "Ejecutar cada..." de la categoría "Tiempo". Aquí se va a indicar al programa cada cuanto tiempo debe ejecutar una acción. Escribe 5000 en el parámetro de la extrucutra para que se ejecute cada 5000 ms, o lo que es lo mismo, cada 5 segundos. En este momento el bloque principal estará así:</p>
+<center>
+
+![Bloque Bucle en la actividad 1](../img/steamakers/actividades/A1_2.png)  
+*Bloque Bucle en la actividad 1*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>3.</b></font></font> Dentro de la estructura anterior coloca la acción a realizar en el intervalo de tiempo especificado. En este caso enviar un mensaje por el puerto serie. Selecciona el bloque "Enviar" de la categoria "Comunicaciones  → “Puerto serie”.</p>
+<p><FONT size=9><FONT COLOR=#FF0055><b>4.</b></font></font> Coloca un bloque "crear texto con..." que encontrarás en la categoría "Texto" y asegurate que esté marcada la opción "Salto de línea" para que cada vez que se muestre el mensaje se haga en una nueva línea. En la primera línea escribe dentro del bloque el mensaje de texto "Hola desde ESP32 STEAMakers. Tiempo transcurrido: ". En la segunda línea coloca el bloque para realizar operaciones que encontrarás en la categoria "Matemáticas". En la parte izquierda coloca el bloque "Tiempo transcurrido (milisegundo)" que encontrarás en "Tiempo", selecciona la operación de división y a la derecha colocamos el bloque "Un numero" de la categoria "Matemáticas" en el que escribes 1000 para que el tiempo se muestre en segundos. Añade una nueva línea al bloque y en un bloque de texto escribe " segundos".</p>
+<p><FONT size=9><FONT COLOR=#FF0055><b>5.</b></font></font> El programa completo es el siguiente:</p>
+<center>
+
+![Programa actividad 1](../img/steamakers/actividades/A1_3.png)  
+*[Programa actividad 1](../STEAMakers/programas/SM_actividad_1.abp)*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>6.</b></font></font> Descarga el programa en la placa haciendo clic en el botón "Subir". Para hacerlo tienes que tener conectada la placa al ordenador mediante un cable USB y AB-Connector en ejecución. Una vez cargado el programa abre la "Consola serie" para visualizar el envio del mensaje de forma periódica.</p>
+<center>
+
+![Consola serie de la actividad 1](../img/steamakers/actividades/A1_4.png)  
+*Consola serie de la actividad 1*
+
+</center>
+
+<h3 id="temperatura-y-humedad"><FONT COLOR=#AA0000>Temperatura y humedad</font><a class="headerlink" href="#temperatura-y-humedad" title="Permanent link">&para;</a></h3>
+<p>En esta actividad vamos a realizar un control del color de una tira de 8 LEDs RGB direccionables. Será una especie de semáforo basado en el estado de confort y como afecta a los seres humanos. Basaremos las medidas en un sensor de temperatura y humedad DHT22.</p>
+<p><font size=5><mark><strong>Estado de confort</strong></mark></font size></p>
+<p>En la web ARQUITECTURA &amp; ENERGÍA podemos encontrar un artículo donde se nos explica con bastante profundad el tema del <a href="http://www.arquitecturayenergia.cl/home/el-confort-termico/">corfort térmico</a>.</p>
+<p>Puede definirse confort térmico, o más propiamente comodidad higrotérmica, como la ausencia de malestar térmico. En fisiología, se dice que hay confort higrotérmico cuando no tienen que intervenir los mecanismos termorreguladores del cuerpo para una actividad sedentaria y con una indumentaria ligera. Esta situación puede registrarse mediante índices que no deben ser sobrepasados para que no se pongan en funcionamiento los sistemas termorreguladores (metabolismo, sudoración y otros).</p>
+<p>En la imagen siguiente vemos los valores de temperatura y humedad que delimitan las zonas de confortabilidad.</p>
+<center>
+
+![Confort térmico en función de temperatura y humedad](../img/steamakers/actividades/zonas-confort.png)  
+*Confort térmico en función de temperatura y humedad*
+
+</center>
+
+<p>Sobre el gráfico vamos a delimitar zonas de temperatura y humedad para establecer su color. Por motivos de simplicidad lo vamos a hacer delimitando zonas rectangulares, pero comprobamos que no cometemos grandes errores y para nuestro propósito nos sirve.</p>
+<p><strong>1.- Zona Roja</strong>: en la imagen siguiente tenemos delimitadas las zonas:</p>
+<ul>
+<li>Humedad Relativa: superior al 85% e inferior al 20%</li>
+<li>Temperatura: superior a 27ºC e inferior a 16ºC</li>
+</ul>
+<center>
+
+![Delimitación color rojo zona de confort](../img/steamakers/actividades/Confort-rojo.png)  
+*Delimitación color rojo zona de confort*
+
+</center>
+
+<p><strong>2.- Zona Amarilla</strong>: en la imagen siguiente tenemos delimitadas las zonas:</p>
+<ul>
+<li>Humedad Relativa: entre el 20% y el 40% y entre el 65% y el 85%</li>
+<li>Temperatura: entre 16ºC y 18ºC y entre 24ºC y 27ºC</li>
+</ul>
+<center>
+
+![Delimitación color amarillo zona de confort](../img/steamakers/actividades/Confort-amarillo.png)  
+*Delimitación color amarillo zona de confort*
+
+</center>
+
+<p><strong>3.- Zonas Verde, rojo y amarillo</strong>: en la imagen siguiente tenemos delimitadas todas las zonas, correspondiendo a la verde los siguientes datos:</p>
+<ul>
+<li>Humedad Relativa: entre el 40% y el 65%</li>
+<li>Temperatura: entre 18ºC y 24ºC</li>
+</ul>
+<center>
+
+![Delimitación zona de confort](../img/steamakers/actividades/Confort-todos.png)  
+*Delimitación zona de confort*
+
+</center>
+
+<p><font size=5><mark><strong>Actividad</strong></mark></font size></p>
+<p><FONT size=9><FONT COLOR=#FF0055><b>1.</b></font></font> Comenzamos por crear dos variables de tipo numérico desde "Variables → Crear variable (Número)”, una para la temperatura y otra para la humedad. En la imagen siguiente vemos el proceso de creación de la variable temperatura.</p>
+<center>
+
+![Creación de la variable temperatura](../img/steamakers/actividades/A2_1.png)  
+*Creación de la variable temperatura*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>2.</b></font></font> Coloca el bloque "Establecer..." que se ha creado dentro de la estructura "Inicializar". Realiza un duplicado del mismo y colocalo a continuación del anterior seleccionando en uno la temperatura y en otro la humedad.</p>
+<center>
+
+![Colocación de los bloques Inicializar](../img/steamakers/actividades/A2_2.png)  
+*Colocación de los bloques Inicializar*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>3.</b></font></font> Conecta el sensor DHT22 al pin analógico D5 (IO16). Asegúrate de realizar las conexiones de manera correcta respetando el orden de los pines.</p>
+<center>
+
+![Conexión del sensor DHT22](../img/steamakers/actividades/A2_3.png)  
+*Conexión del sensor DHT22*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>4.</b></font></font> Conecta la tira de LEDs RGB direccionables D3 (IO25). Asegúrate de realizar las conexiones de manera correcta respetando el orden de los pines.</p>
+<center>
+
+![Conexión de la tira de LEDs RGB direccionables](../img/steamakers/actividades/A2_4.png)  
+*Conexión de la tira de LEDs RGB direccionables*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>5.</b></font></font> Inicializar la tira de LEDs mediante el bloque "Iniciar GRB 800kHz..." de la categoria "Visualización". Hay que indicar el número de LEDs así como el pin al que están conectados. El bloque "Inicializar" deberá estar asi:</p>
+<center>
+
+![Bloque Iniciar GRB...](../img/steamakers/actividades/A2_5.png)  
+*Bloque Iniciar GRB...*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>6.</b></font></font> Para obtener el valor de la humedad colocamos coloca en el "Bucle" el bloque "Establecer humedad" y le acoplamos a la derecha el bloque "DHT-22" que se encuentra en la categoría "Sensores". Selecciona Humedad y pin 16 (D5). Duplicar este bloque y seleccionar temperatura tanto en variable como en el sensor. Con esto, en las variables vamos a tener el valor de ambas medido por el sensor DHT22.</p>
+<p><FONT size=9><FONT COLOR=#FF0055><b>7.</b></font></font> De la categoría "Lógica" arrastra un bloque "si...hacer..." y los expandes a dos opciones "sino si...hacer...". Actualmente la situación de "Bucle" es:</p>
+<center>
+
+![Bloque Bucle con condicional](../img/steamakers/actividades/A2_6.png)  
+*Bloque Bucle con condicional*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>8.</b></font></font> Establece la condición para la zona roja que se va a dar cuando la humedad supera el 85% o está por debajo del 20% o la temperatura está por encima de 27ºC o por debajo de 16ºC. En la animación siguiente vemos como se compone la condición para el rojo.</p>
+<center>
+
+![Proceso para establecer la condición para rojo](../img/steamakers/actividades/A2_7.gif)  
+*Proceso para establecer la condición para rojo*
+
+</center>
+
+<p>Después de completar la condición esta debe queda de la siguiente forma:</p>
+<center>
+
+![Condición para rojo](../img/steamakers/actividades/A2_8.png)  
+*Condición para rojo*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>9.</b></font></font> Coloca un bloque "Contar con..." de la categoría "Control" en el primer "hacer" del condicional. Cambia el nombre de la variable a "LED_RGB" y establece el valor final de la cuenta en 7. El cambio de nombre de variable no es imprescindible pero ayuda a entender mejor lo que estamos haciendo. Finalmente arrastra un bloque "Establecer pixel #", coloca en el número el bloque que tiene el valor de la variable de control y establece el color rojo. De esta forma todos los LEDs se iluminarán en color rojo cuando se de cualquiera de las condiciones que delimitan la zona. El programa tendrá el siguiente aspecto:</p>
+<center>
+
+![Condición para rojo completa](../img/steamakers/actividades/A2_9.png)  
+*Condición para rojo completa*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>10.</b></font></font> Establece la condición para la zona amarilla que se va a dar cuando la humedad está entre el 65 y el 85% o está entre el 20 y el 40% o la temperatura está entre 24 y 27ºC o entre 16 y 18ºC.</p>
+<p><FONT size=9><FONT COLOR=#FF0055><b>11.</b></font></font> Establece la condición para la zona verde que se va a dar cuando la humedad está entre el 40 y el 85% o la temperatura está entre 18 y 24ºC.</p>
+<p><FONT size=9><FONT COLOR=#FF0055><b>12.</b></font></font> Finalmente, para dar tiempo al sensor a que lea los datos, añade una pausa detrás del condicional mediante el bloque "Esperar" de la categoria "Tiempo". Para que los LEDs RGB direccionables se iluminen debes añadir un bloque "Mostrar" de la categoria "NeoPixel". El programa final es el siguiente:</p>
+<center>
+
+![Programa actividad 2](../img/steamakers/actividades/A2_10.png)  
+*[Programa actividad 2](../STEAMakers/programas/SM_actividad_2.abp)*
+
+</center>
+
+<h3 id="monitor-de-consumo"><FONT COLOR=#AA0000>Monitor de consumo</font><a class="headerlink" href="#monitor-de-consumo" title="Permanent link">&para;</a></h3>
+<p>En esta última actividad, crea un programa que muestre el valor de la intensidad, el voltaje y la energia consumida por la placa ESP32 STEAMakers en la consola serie a intervalos de 5 segundos.</p>
+<p><FONT size=9><FONT COLOR=#FF0055><b>1.</b></font></font> Comienza el programa configurando el puerto serie a una velocidad de transferencia de datos de 9600 baudios. Coloca el bloque "Iniciar baudios..." que encontrarás en "Comunicaciones → Puerto serie" en la estructura "Inicializar". De esta forma esta instrucción se ejecuta al inicio del programa y una sola vez. La programación del bloque "Inicializar" deberá quedar así:</p>
+<center>
+
+![Bloque Inicializar en la actividad 3](../img/steamakers/actividades/A1_1.png)  
+*Bloque Inicializar en la actividad 3*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>2.</b></font></font> Coloca dentro del bucle principal un conjunto de instrucciones de forma secuencial para mostrar una serie de datos a través de la consola serie. Para ello, utiliza el bloque “Enviar” por puerto serie de la categoría “Comunicaciones → Puerto serie”. Plantea este orden para enviar el conjunto de datos (Las comillas de los textos se omiten):</p>
+<ul>
+<li>Texto: “Intensidad: ” (sin salto de línea)</li>
+<li>Lectura Medidor de energía: Amps (A) (sin salto de línea)</li>
+<li>Texto: “ A” (con salto de línea)</li>
+<li>Texto: “Voltaje: ” (sin salto de línea)</li>
+<li>Lectura Medidor de energía: Volts (V) (sin salto de línea)</li>
+<li>Texto: “ V” (con salto de línea)</li>
+<li>Texto: “Energía: ” (sin salto de línea)</li>
+<li>Lectura Medidor de energía: Energy (Wh) (sin salto de línea)</li>
+<li>Texto: “ W.h” (con salto de línea)</li>
+<li>Texto: “--------------------------------” (con salto de línea)</li>
+</ul>
+<p><FONT size=9><FONT COLOR=#FF0055><b>3.</b></font></font> Puedes escribir el texto directamente en el bloque “Enviar” por puerto serie. El bloque para realizar la lectura del medidor de energía interno de la placa ESP32 STEAMakers lo encontrarás en “Sensores → Integrados” y simplemente hay que seleccionar qué magnitud quieres que mida en cada caso.</p>
+<p><FONT size=9><FONT COLOR=#FF0055><b>4.</b></font></font> Al final de las instrucciones anteriores, para que el programa se detenga 5 segundos, utiliza el bloque "Esperar...milisegundos" de la categoría "Tiempo".</p>
+<p>El programa completo será el siguiente:</p>
+<center>
+
+![Programa actividad 3](../img/steamakers/actividades/A3.png)  
+*[Programa actividad 3](../STEAMakers/programas/SM_actividad_3.abp)*
+
+</center>
+
+<p><FONT size=9><FONT COLOR=#FF0055><b>5.</b></font></font> En la consola se debería ver algo como la imagen siguiente:</p>
+<center>
+
+![Consola del programa actividad 3](../img/steamakers/actividades/A3_consola.png)  
+*Consola del programa actividad 3*
+
+</center>
+
+<h2 id="seguridad"><FONT COLOR=#007575><strong>Seguridad</strong></font><a class="headerlink" href="#seguridad" title="Permanent link">&para;</a></h2>
+<p>A la hora de utilizar la placa ESP32 STEAMakers, es fundamental seguir unas pautas de seguridad para garantizar tanto el buen funcionamiento de la placa como la seguridad de los usuarios. A continuación, se exponen varios consejos clave:</p>
+<ul>
+<li><strong>Evita cortocircuitos:</strong> Hay que asegurarse de que la placa no esté alimentada cuando se manipulan materiales y herramientas conductores de electricidad. Esto ayuda a prevenir cortocircuitos inesperados que podrían dañar la placa o causar accidentes.</li>
+<li><strong>Manipula la placa con cuidado:</strong> Los pines donde se conectan componentes diversos son delicados y pueden romperse o doblarse si se aplica una gran fuerza o palanca. Hay que ser especialmente prudente en la manipulación y evitar caídas o golpes que puedan afectar a la placa.</li>
+<li><strong>Controla la temperatura:</strong> Es necesario tener en cuenta que la temperatura de la placa puede aumentar considerablemente durante el uso prolongado. Algunos componentes pueden calentarse y es importante evitar el contacto directo para prevenir
+quemaduras o daños en la placa.</li>
+<li><strong>Revisa regularmente los componentes:</strong> Es conveniente comprobar regularmente el estado de los componentes electrónicos y las conexiones. Los conectores sueltos o desgastados pueden causar un mal funcionamiento de la placa o ser un riesgo de seguridad.</li>
+<li><strong>Usa adecuadamente la alimentación:</strong> Utiliza sólo las fuentes de alimentación recomendadas. Un voltaje incorrecto puede dañar la placa o incluso ser peligroso, ya que puede producir sobrecalentamiento de componentes o cortocircuitos.</li>
+<li><strong>Mantén la placa en un entorno seco y limpio:</strong> La presencia de líquidos o polvo puede causar cortocircuitos o dañar los componentes de la placa.</li>
+</ul>
+<p>Siguiendo estos consejos, podrás disfrutar de una experiencia segura y enriquecedora con la placa programable.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright y copia; 2023 - 2035 Federico Coca
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://bsky.app/profile/fgcoca.bsky.social" target="_blank" rel="noopener" title="Bluesky de Federico Coca" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3M288 227.1c-26.1-50.7-97.1-145.2-163.1-191.8C61.6-9.4 37.5-1.7 21.6 5.5 3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7 3.3-.5 6.6-.9 10-1.4-3.3.5-6.6 1-10 1.4-93.9 14-177.3 48.2-67.9 169.9C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4 102.4-103.4 28.1-156-65.8-169.9-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3 64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/fgcoca" target="_blank" rel="noopener" title="Github de Federico Coca" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.instagram.com/cocafederico/?hl=es" target="_blank" rel="noopener" title="Instagram de Federico Coca" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M194.4 211.7a53.3 53.3 0 1 0 59.2 88.6 53.3 53.3 0 1 0-59.2-88.6m142.3-68.4c-5.2-5.2-11.5-9.3-18.4-12-18.1-7.1-57.6-6.8-83.1-6.5-4.1 0-7.9.1-11.2.1s-7.2 0-11.4-.1c-25.5-.3-64.8-.7-82.9 6.5-6.9 2.7-13.1 6.8-18.4 12s-9.3 11.5-12 18.4c-7.1 18.1-6.7 57.7-6.5 83.2 0 4.1.1 7.9.1 11.1s0 7-.1 11.1c-.2 25.5-.6 65.1 6.5 83.2 2.7 6.9 6.8 13.1 12 18.4s11.5 9.3 18.4 12c18.1 7.1 57.6 6.8 83.1 6.5 4.1 0 7.9-.1 11.2-.1s7.2 0 11.4.1c25.5.3 64.8.7 82.9-6.5 6.9-2.7 13.1-6.8 18.4-12s9.3-11.5 12-18.4c7.2-18 6.8-57.4 6.5-83 0-4.2-.1-8.1-.1-11.4s0-7.1.1-11.4c.3-25.5.7-64.9-6.5-83-2.7-6.9-6.8-13.1-12-18.4zm-67.1 44.5c18.1 12.1 30.6 30.9 34.9 52.2s-.2 43.5-12.3 61.6c-6 9-13.7 16.6-22.6 22.6s-19 10.1-29.6 12.2c-21.3 4.2-43.5-.2-61.6-12.3s-30.6-30.9-34.9-52.2.2-43.5 12.2-61.6 30.9-30.6 52.2-34.9 43.5.2 61.6 12.2h.1zm29.2-1.3c-3.1-2.1-5.6-5.1-7.1-8.6s-1.8-7.3-1.1-11.1 2.6-7.1 5.2-9.8 6.1-4.5 9.8-5.2 7.6-.4 11.1 1.1 6.5 3.9 8.6 7 3.2 6.8 3.2 10.6c0 2.5-.5 5-1.4 7.3s-2.4 4.4-4.1 6.2-3.9 3.2-6.2 4.2-4.8 1.5-7.3 1.5c-3.8 0-7.5-1.1-10.6-3.2zM448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64zm-91 293c-18.7 18.7-41.4 24.6-67 25.9-26.4 1.5-105.6 1.5-132 0-25.6-1.3-48.3-7.2-67-25.9s-24.6-41.4-25.8-67c-1.5-26.4-1.5-105.6 0-132 1.3-25.6 7.1-48.3 25.8-67s41.5-24.6 67-25.8c26.4-1.5 105.6-1.5 132 0 25.6 1.3 48.3 7.1 67 25.8s24.6 41.4 25.8 67c1.5 26.3 1.5 105.4 0 131.9-1.3 25.6-7.1 48.3-25.8 67z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../plugins/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
