@@ -1,12 +1,11 @@
 # Autor
 
-![Foto de perfil](../img/YO.png)
-
+![Foto de perfil](../img/YO.png)  
 Federico Coca
 
 * [GitHub](https://github.com/fgcoca)
 
-* [X](https://x.com/fgcoca)
+* [Bluesky](@fgcoca.bsky.social)
 
 * [Instagram](https://www.instagram.com/cocafederico/?hl=es)
 
