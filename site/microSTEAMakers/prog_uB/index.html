@@ -1,0 +1,4914 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="En esta web vamos a encontrar diversas guías para iniciarnos en placas como Keyestudio UNO, micro:bit, ESP32 micro:STEAMakers, ESP32STEAMakers y otras.">
+      
+      
+        <meta name="author" content="Federico Coca">
+      
+      
+        <link rel="canonical" href="https://fgcoca.github.io/GuiasFundamentales/microSTEAMakers/prog_uB/">
+      
+      
+        <link rel="prev" href="../Boardie/">
+      
+      
+        <link rel="next" href="../app_ble/">
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Programación con MicroBlocks - Guias Fundamentales</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#conexion-y-carga-de-la-libreria" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Guias Fundamentales" class="md-header__button md-logo" aria-label="Guias Fundamentales" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guias Fundamentales
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Programación con MicroBlocks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="deep-purple"  aria-label="Modo Oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo Oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="deep-purple"  aria-label="Modo Claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo Claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fgcoca/GuiasFundamentales" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fgcoca/GuiasFundamentales
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+  Principal
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../TdR_STEAM/contTdR/" class="md-tabs__link">
+          
+  
+  
+  Imagina TdR STEAM
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../UNO/contUNO/" class="md-tabs__link">
+          
+  
+  
+  Keyestudio UNO
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../STEAMakers/contSM/" class="md-tabs__link">
+          
+  
+  
+  ESP32 STEAMakers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../contmicroSM/" class="md-tabs__link">
+          
+  
+  
+  ESP32 micro:STEAMakers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cocube/contCoCube/" class="md-tabs__link">
+          
+  
+  
+  Robot CoCube
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Sentry2/contSentry2/" class="md-tabs__link">
+          
+  
+  
+  Sensor de visión IA Sentry2
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ed1/conted1.md" class="md-tabs__link">
+          
+  
+  
+  ED1
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../retos/keyestudio_UNO/" class="md-tabs__link">
+          
+  
+  
+  Retos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Miscelanea/about/" class="md-tabs__link">
+          
+  
+  
+  Miscelanea
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guias Fundamentales" class="md-nav__button md-logo" aria-label="Guias Fundamentales" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    Guias Fundamentales
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fgcoca/GuiasFundamentales" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fgcoca/GuiasFundamentales
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Principal
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Principal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problemasUSB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Problemas de conexión USB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../previos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conocimientos técnicos previos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CO2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conceptos sobre CO2 y VOC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mod_colores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modelo de colores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comunicaciones Bluetooth
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basicoUDP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conceptos básicos de UDP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sentry2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sensor de visión IA Sentry2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Imagina TdR STEAM
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Imagina TdR STEAM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TdR_STEAM/contTdR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TdR_STEAM/SMBlocks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    STEAMakersBlocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TdR_STEAM/retos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Retos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TdR_STEAM/seg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Keyestudio UNO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Keyestudio UNO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/contUNO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/tdrsteam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Placa TdR-STEAM y keyestudio UNO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/lcd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pantalla LCD 1602
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/oled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pantalla OLED
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/externos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar sensores externos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/servos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar servomotores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/ultrason/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar el sensor de ultrasonidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/mando/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar el mando a distancia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/tira/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar una tira de LEDs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ESP32 STEAMakers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ESP32 STEAMakers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/contSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/tdrsteam_SM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Placa TdR-STEAM y ESP32 STEAMakers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/considera/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Consideraciones sobre ESP32
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/lcdSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pantalla LCD 1602
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/oledSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pantalla OLED
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/externosSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar sensores externos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/wifiSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conectar la placa a una red WiFi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/thingspkSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enviar datos a Thingspeak
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/servosSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar servomotores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/ultrasonSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar el sensor de ultrasonidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/mandoSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar el mando a distancia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/tiraSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar una tira de LEDs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    ESP32 micro:STEAMakers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            ESP32 micro:STEAMakers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contmicroSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entorno de programación Microblocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lib_wifi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MicroBlocks, libreria WiFi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boardie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Boardie:un tablero virtual para MicroBlocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Programación con MicroBlocks
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programación con MicroBlocks
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-y-carga-de-la-libreria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión y carga de la libreria
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comentarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comentarios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pantalla-leds-rgb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pantalla LEDs RGB
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-avanzados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores avanzados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operadores avanzados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anatomia-de-un-numero-binario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anatomia de un número binario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-ternario" class="md-nav__link">
+    <span class="md-ellipsis">
+      If ternario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reescalado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reescalado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raiz-cuadrada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raíz cuadrada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arcotangente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arcotángente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hexadecimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hexadecimal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitwise-and" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bitwise AND
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitwise-or" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bitwise OR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitwise-xor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bitwise XOR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitwise-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bitwise NOT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitwise-desplazamiento-izquierda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bitwise desplazamiento izquierda
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitwise-desplazamiento-derecha" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bitwise desplazamiento derecha
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bucles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bucles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mas-operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mas operadores
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#botones-y-bloques-de-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Botones y bloques de control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graficado-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graficado de datos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graficado de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bloque" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloque
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#panel-grafico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Panel gráfico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opciones-del-panel-grafico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opciones del panel gráfico
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sobre-el-boton-tactil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sobre el botón táctil
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#libreria-neopixeles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Libreria NeoPixeles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mis-bloques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mis bloques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mis bloques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descripcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descripción
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operaciones-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operaciones comunes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sonidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sonidos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sonidos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tonos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tonos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#politonos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Politonos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abrir-archivos-de-sonido-o-musica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abrir archivos de Sonido o música
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensor-de-temperatura-y-humedad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor de temperatura y humedad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acelerometro-y-giroscopio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acelerómetro y giroscopio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensor-de-energia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor de energia
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app_ble/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aplicaciones con BLE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ble_inventor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extensión BluetoothLE de App Inventor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mb_inventor_BLE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MicroBlocks + App Inventor + BLE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wifi_radio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WiFi y Wifi Radio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crea_libreria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Como crear una libreria
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Robot CoCube
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Robot CoCube
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/contCoCube/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/introCC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/lcd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Progamación de la pantalla LCD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/movimientos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Movimientos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/posicionamiento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Posicionamiento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/sonidos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sonidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/pinza/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Servo con pinza
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/broadcast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Eventos de transmisión o broadcast
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/teclado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control por eventos de teclado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/com_UDP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comunicaciones UDP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/remoto_wifi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control remoto mediante APP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocube/sentry2_color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reconocimiento de color con Sentry2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Sensor de visión IA Sentry2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Sensor de visión IA Sentry2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sentry2/contSentry2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ED1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            ED1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ed1/conted1.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ed1/introED1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Retos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Retos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../retos/keyestudio_UNO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Keyestudio UNO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Miscelanea
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Miscelanea
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Autor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/lic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Licencias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/webgrafia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Webgrafia/Bibliografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/soft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software utilizado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-y-carga-de-la-libreria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión y carga de la libreria
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comentarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comentarios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pantalla-leds-rgb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pantalla LEDs RGB
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-avanzados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores avanzados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operadores avanzados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anatomia-de-un-numero-binario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anatomia de un número binario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-ternario" class="md-nav__link">
+    <span class="md-ellipsis">
+      If ternario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reescalado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reescalado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raiz-cuadrada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raíz cuadrada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arcotangente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arcotángente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hexadecimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hexadecimal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitwise-and" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bitwise AND
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitwise-or" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bitwise OR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitwise-xor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bitwise XOR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitwise-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bitwise NOT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitwise-desplazamiento-izquierda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bitwise desplazamiento izquierda
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitwise-desplazamiento-derecha" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bitwise desplazamiento derecha
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bucles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bucles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mas-operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mas operadores
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#botones-y-bloques-de-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Botones y bloques de control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graficado-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graficado de datos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graficado de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bloque" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloque
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#panel-grafico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Panel gráfico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opciones-del-panel-grafico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opciones del panel gráfico
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sobre-el-boton-tactil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sobre el botón táctil
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#libreria-neopixeles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Libreria NeoPixeles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mis-bloques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mis bloques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mis bloques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descripcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descripción
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operaciones-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operaciones comunes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sonidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sonidos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sonidos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tonos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tonos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#politonos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Politonos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abrir-archivos-de-sonido-o-musica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abrir archivos de Sonido o música
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensor-de-temperatura-y-humedad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor de temperatura y humedad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acelerometro-y-giroscopio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acelerómetro y giroscopio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensor-de-energia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor de energia
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Programación con MicroBlocks</h1>
+
+<h2 id="conexion-y-carga-de-la-libreria"><FONT COLOR=#007575><strong>Conexión y carga de la libreria</strong></font><a class="headerlink" href="#conexion-y-carga-de-la-libreria" title="Permanent link">&para;</a></h2>
+<p>La primera tarea que vamos a realizar es conectar la placa micro:STEAMakers a un puerto USB del ordenador mediante un cable USB-A / USB-C y desde el menú MicroBlocks (el engranaje) proceder a actualizar el firmware de la placa.</p>
+<center>
+
+![Actualizar el firmware de la placa](../img/microSM/prog/act_firm.gif)  
+*Actualizar el firmware de la placa*
+
+</center>
+
+<p>Al final del todo vemos como se pone en verde el icono USB indicando que la conexión está realizada con la micro:STEAMakers y la máquina virtual se está ejecutando por lo que ya podemos trabajar en vivo con la placa.</p>
+<center>
+
+![Primer trabajo en vivo](../img/microSM/prog/vivo.gif)  
+*Primer trabajo en vivo*
+
+</center>
+
+<p>Al realizar la conexión con la placa micro:STEAMakers se cargan por defecto las librerias dependientes que vemos en la imagen siguiente:</p>
+<center>
+
+![Librerias que se cargan por defecto](../img/microSM/prog/lib_def.png)  
+*Librerias que se cargan por defecto*
+
+</center>
+
+<p>También podemos añadir la libreria (creada por Joan Guillén) con los bloques especificos de micro:STEAMakers.</p>
+<center>
+
+![Primer trabajo en vivo](../img/microSM/prog/libreria.gif)  
+*Primer trabajo en vivo*
+
+</center>
+
+<p>Vamos a ver como se realiza esta tarea utilizando la versión pilot de Microblocks v2.0.18. Realizamos una serie de consideraciones acerca del funcionamiento del programa:</p>
+<ul>
+<li>
+<p>Microblocks prioriza el proyecto que tenga cargado en la interfaz (¡no borrará nada de lo que tengamos en pantalla al conectarse a una placa!). Cuando tenemos un proyecto (aunque sea un solo bloque en el área de programación), al conectar una placa se cargará este programa en ella. Cuando hacemos esto rutinariamente, podemos clicar en el "play" (triángulo) para asegurarnos de que se realiza esta acción de sincronización.</p>
+</li>
+<li>
+<p>Cuando Microblocks tiene un proyecto en blanco (acabamos de abrir, o sin conectar la placa hacemos Archivo-&gt;Nuevo) y conectamos una placa, según la configuración que tengamos, priorizará cargar el programa que tenga la placa. Esta configuración se puede cambiar, en el menú de Configuración (escogiendo el "modo avanzado") veremos la opción "auto-PlugShare en proyectos vacíos".</p>
+</li>
+</ul>
+<center>
+
+![Opción auto-PlugShare en proyectos vacíos](../img/microSM/prog/PlugShare.png)  
+*Opción auto-PlugShare en proyectos vacíos*
+
+</center>
+
+<ul>
+<li>Cuando el proyecto está vacío y la placa tampoco tiene programa, Microblocks puede cargar (lo hace por defecto) las librerías asociadas a la placa que hemos conectado. Este comportamiento también lo podemos modificar en el menú de Configuración (escogiendo "modo avanzado") en la opción "autocarga las librerías de la placa".</li>
+</ul>
+<center>
+
+![Opción autocarga las librerías de la placa](../img/microSM/prog/autocarga_librerias.png)  
+*Opción autocarga las librerías de la placa*
+
+</center>
+
+<p>Es decir, el comportamiento es configurable, pero debemos quedarnos en una primera descripción es el comportamiento "por defecto". Y en este caso lo que hace cambiar el comportamiento es tener en primera instancia un proyecto modificado (aunque fuera un pequeño movimiento de bloques) y en segunda instancia, un proyecto ya guardado en la placa (aunque esté vacío, pero al que ya se han cargado manualmente librerías).</p>
+<p>Con una placa micro:STEAMakers conectada, al seleccionar "actualizar firmware de la placa", a partir de la versión 2.0, podemos seleccionar directamente la placa micro:STEAMakers y con las configuraciones vistas anteriormente se produce una carga de librerias como la que vemos en la animación siguiente:</p>
+<center>
+
+![Actualizar el firmware de la placa](../img/microSM/prog/actual_firm.gif)  
+*Actualizar el firmware de la placa*
+
+</center>
+
+<p>Cuando finaliza el proceso se muestra el mensaje siguiente:</p>
+<center>
+
+![Actualizar el firmware de la placa](../img/microSM/prog/actual_firm_mensaje.png)  
+*Actualizar el firmware de la placa*
+
+</center>
+
+<p>Continuamos el proceso de conexionado:</p>
+<center>
+
+![Actualizar el firmware de la placa](../img/microSM/prog/actual_firm_fin.gif)  
+*Actualizar el firmware de la placa*
+
+</center>
+
+<p>Y ya tenemos disponibles los bloques de la micro:STEAMakers y las librerias dependientes cargadas. Si desconectamos la placa y creamos un nuevo proyecto recuperamos la situación por defecto, tal y como vemos en la imagen siguiente:</p>
+<center>
+
+![Creado archivo nuevo sin placa conectada](../img/microSM/prog/sin_placa_nuevo.png)  
+*Creado archivo nuevo sin placa conectada*
+
+</center>
+
+<h2 id="comentarios"><FONT COLOR=#007575><strong>Comentarios</strong></font><a class="headerlink" href="#comentarios" title="Permanent link">&para;</a></h2>
+<p>En MicroBlocks los comentarios son tratados desde un único bloque que podemos encontrar en el menú 'Control'. Es un bloque que no hace nada. Se utiliza para añadir notas y documentación a los scripts.</p>
+<center>
+
+![Comentarios](../img/microSM/prog/comentuB.png)  
+*Comentarios*
+
+</center>
+
+<p>La ventana de entrada de texto se autodimensiona según introducimos texto y se pueden añadir líneas pulsando la tecla enter.</p>
+<h2 id="control"><FONT COLOR=#007575><strong>Control</strong></font><a class="headerlink" href="#control" title="Permanent link">&para;</a></h2>
+<p>En este grupo tenemos acceso a los bloques de control de la placa.</p>
+<ul>
+<li><strong>al empezar</strong>. Los bloques debajo de este se ejecutan cuando se enciende la placa o cuando se hace clic en el icono verde EJECUTAR que tiene forma de flecha. Es uno de los bloques denominados sombrero.</li>
+</ul>
+<center>
+
+![Bloque 'al empezar'](../img/microSM/prog/B_al_empezar.png)  
+*Bloque 'al empezar'*
+
+</center>
+
+<ul>
+<li><strong>por siempre</strong>. Se trata del bloque de la imagen y es un bloque que se ejecuta de manera indefinida.</li>
+</ul>
+<center>
+
+![Bloque 'por siempre'](../img/microSM/prog/B_por_siempre.png)  
+*Bloque 'por siempre'*
+
+</center>
+
+<ul>
+<li><strong>espera xx milisegundos</strong>. Espera el número de milisegundos indicado antes de continuar.</li>
+</ul>
+<center>
+
+![Bloque 'espera xx milisegundos'](../img/microSM/prog/B_espera_ms.png)  
+*Bloque 'espera xx milisegundos'*
+
+</center>
+
+<h2 id="pantalla-leds-rgb"><FONT COLOR=#007575><strong>Pantalla LEDs RGB</strong></font><a class="headerlink" href="#pantalla-leds-rgb" title="Permanent link">&para;</a></h2>
+<p>Estos son los bloques de control de la matriz de 5x5 LEDs RGB.</p>
+<center>
+
+![Bloques Pantalla LEDs RGB](../img/microSM/prog/B_pantalla.png)  
+*Bloques Pantalla LEDs RGB*
+
+</center>
+
+<ul>
+<li><strong>m:s clear display (limpia pantalla)</strong>. Apaga todos los LEDs.</li>
+</ul>
+<center>
+
+![Bloque m:s clear display (limpia pantalla)](../img/microSM/prog/B_limpia_pant.png)  
+*Bloque m:s clear display (limpia pantalla)*
+
+</center>
+
+<p>Se trata de un bloque que pone a 0 (cero) el color de todos los LEDs RGB actualizando su estado. En la imagen siguiente vemos su definición:</p>
+<center>
+
+![Definición del bloque m:s clear display (limpia pantalla)](../img/microSM/prog/scriptImage31871059.png)  
+*Definición del bloque m:s clear display (limpia pantalla)*
+
+</center>
+
+<ul>
+<li><strong>pantalla micro:STEAM</strong>. Muestra una imagen de la pantalla que permite cambiar el color de cada LED de manera individual haciendo clic sobre el mismo y utilizando la paleta RGB que se muestra.</li>
+</ul>
+<center>
+
+![Bloque pantalla micro:STEAM](../img/microSM/prog/B_pantallams.png)  
+*Bloque pantalla micro:STEAM*
+
+</center>
+
+<p>El bloque lo que hace es sustituir el elemento de la lista <em>'_ms_neoPixels'</em> por el valor RGB que le demos desde la paleta. La definición del bloque es:</p>
+<center>
+
+![Definición del bloque pantalla micro:STEAM](../img/microSM/prog/scriptImage33581712.png)  
+*Definición del bloque pantalla micro:STEAM*
+
+</center>
+
+<p>En el video siguiente vemos el trabajo básico con el bloque en MicroBlocks, aunque el fuerte brillo de los LEDs deslumbra la webcam y no se aprecia en exceso. Vemos como la placa trabaja en vivo incluso en el menú de bloques sin necesidad de arrastrarlo al área de programa. Esto es especialmente útil para probar funcionalidad antes de llevarlo al programa.</p>
+<center>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AuY8-PwJbhA?si=KtRtEOEmuFAVRwXL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<FONT COLOR=#0000FF>***Imágenes capturadas con una versión en desarrollo del programa***</font>
+
+</center>
+
+<ul>
+<li><strong>m:s set global brightness scale to</strong>. Este bloque permite establecer el brillo de los LEDs en porcentaje. Su aspecto es el siguiente:</li>
+</ul>
+<center>
+
+![Bloque m:s set global brightness scale to](../img/microSM/prog/B_brillo.png)  
+*Bloque m:s set global brightness scale to*
+
+</center>
+
+<p>Retomamos el ejemplo "Uso del bloque m:s display image with color" para reformarlo modificando el brillo según la imagen que se muestra. En la animación siguiente tenemos el resultado.</p>
+<center>
+
+![Uso del bloque m:s set global brightness scale to](../img/microSM/prog/display_image_modif.gif)  
+*Uso del bloque m:s set global brightness scale to*  
+[Descargar programa](../microSTEAMakers/programas/B_display_image_with_modif.ubp)
+
+</center>
+
+<ul>
+<li><strong>m:s plot x,y with</strong>. Enciende el LED indicado en la coordenada x,y. La coordenadas x es la horizontal y la y es la vertical. La coordenada 1,1 es la esquina superior ezquierda, la 1,5 es la derecha, la 5,1 es la inferior izquierda y la 5,5 la inferior derecha. El color se elige desde la paleta. Las coordenadas por defecto corresponden al LED central.</li>
+</ul>
+<center>
+
+![Bloque m:s plot x,y with](../img/microSM/prog/B_enciende_xy.png)  
+*Bloque m:s plot x,y with*
+
+</center>
+
+<ul>
+<li><strong>m:s unplot x,y</strong>. Apaga el LED indicado en la coordenada x,y. La coordenadas x es la horizontal y la y es la vertical. La coordenada 1,1 es la esquina superior ezquierda, la 1,5 es la derecha, la 5,1 es la inferior izquierda y la 5,5 la inferior derecha. Las coordenadas por defecto corresponden al LED central.</li>
+</ul>
+<center>
+
+![Bloque m:s unplot x,y](../img/microSM/prog/B_apaga_xy.png)  
+*Bloque m:s unplot x,y*
+
+</center>
+
+<ul>
+<li><strong>color al azar</strong>. Lo podemos encontrar en la libreria "Gráficos y pantallas &rarr; Color". Genera un color aleatorio.</li>
+</ul>
+<center>
+
+![Bloque color al azar](../img/microSM/prog/B_azar.png)  
+*Bloque color al azar*
+
+</center>
+
+<p>En la animación siguiente tenemos un ejemplo de uso de los bloques plot, unplot y color al azar. El ejemplo lo que hace es recorrer dos bucles, uno para las filas y otro para las columnas que hará que se encienda un LED cada 100ms en un color aleatorio, se detenga un segundo y los apague en el mismo orden que se encendieron, se detiene un segundo y se inicia de nuevo el proceso.</p>
+<center>
+
+![Uso de los bloques m:s plot x,y; m:s unplot x,y y color al azar](../img/microSM/prog/plot_unplot.gif)  
+*Uso de los bloques m:s plot x,y; m:s unplot x,y y color al azar*  
+[Descargar programa](../microSTEAMakers/programas/B_plot_unplot_color_azar.ubp)
+
+</center>
+
+<ul>
+<li><strong>color rva (0-255)</strong>. Lo podemos encontrar en la libreria "Gráficos y pantallas &rarr; Color". Para establecer colores en formato <a href="https://es.wikipedia.org/wiki/RGB">RGB</a> (sigla del inglés Red, Green, Blue; en español, ‘Rojo, Verde, Azul’ o RVA), donde (0,0,0) corresponde a negro y (255,255,255) a blanco.</li>
+</ul>
+<center>
+
+![Bloque color rva (0-255)](../img/microSM/prog/B_rva.png)  
+*Bloque color rva (0-255)*
+
+</center>
+
+<p>En la animación siguiente tenemos un ejemplo de uso de los bloques muestra caracter y color rva. El ejemplo muestra la palabra 'Hola' caracter a caracter en diferentes colores y tras dos segundos muestra de forma intermitente el caracter '!' en un color RGB aleatorio. Mientras en el IDE se muestra la cantidad de rojo, verde y azul que se utiliza para la letra H.</p>
+<center>
+
+![Uso de los bloques muestra caracter y color rva](../img/microSM/prog/char_rva.gif)  
+*Uso de los bloques muestra caracter y color rva*  
+[Descargar programa](../program/uB/B_display_char_rva.ubp)
+
+</center>
+
+<ul>
+<li><strong>color hsv</strong>. Para establecer colores en formato HSV (siglas del inglés Hue, Saturation, Value – Matiz, Saturación, Valor).</li>
+</ul>
+<center>
+
+![Bloque color hsv](../img/microSM/B_HSV.png)  
+*Bloque color HSV*
+
+</center>
+
+<p>En la animación siguiente tenemos un ejemplo de uso de estos bloques HSV.</p>
+<center>
+
+![Uso de los bloques color hsv](../img/microSM/color_hsv.gif)  
+*Uso de los bloques color hsv*  
+[Descargar programa](../microSTEAMakers/programas/color_hsv.ubp)
+
+</center>
+
+<h2 id="operadores"><FONT COLOR=#007575><strong>Operadores</strong></font><a class="headerlink" href="#operadores" title="Permanent link">&para;</a></h2>
+<p>Esta entrada se crea porque en MicroBlocks, en el menú específico, aparecen algunos operadores especiales. Las descripciones siguiente son las obtenidas de <a href="https://wiki.microblocks.fun/reference_manual/operators">MicroBlocks Wiki</a>.</p>
+<p>Dentro del grupo de bloques estándar tenemos los que se ven en la imagen.</p>
+<center>
+
+![Bloques estándar](../img/microSM/oper/ub01.png)  
+*Bloques estándar*
+
+</center>
+
+<ul>
+<li><a class="glightbox" href="../../img/microSM/oper/ub02.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Módulo" src="../../img/microSM/oper/ub02.png" /></a>  Devuelve el resto de la división entre los dos números introducidos, ambos inclusive.</li>
+<li><a class="glightbox" href="../../img/microSM/oper/ub03.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Aleatorio" src="../../img/microSM/oper/ub03.png" /></a> Devuelve un número aleatorio (al azar) entre el primer y el segundo valor indicado.</li>
+</ul>
+<p>En la imagen vemos un ejemplo donde se averigua si un número generado al azar es par o impar.</p>
+<p>A la variable <code>num_aleatorio</code> se le asigna un número aleatorio del 1 al 15. La operación <code>módulo</code> se utiliza para comprobar si el resto es 0 y así saber si el número es par. Si el resto de la operación <code>num_aleatorio</code> dividido por 2 da como resultado 0, el número es par, en caso contrario es impar. Si el número es par se muestra un cuadrado (4 lados = par) y si es impar un triángulo rectángulo (3 lados = impar).</p>
+<center>
+
+![Par o impar](../img/microSM/oper/ub04.gif)  
+*Par o impar*  
+[Descargar el programa](../microSTEAMakers/programas/par_impar.ubp)
+
+</center>
+
+<p>Con este ejemplo comprobamos que una vez conectada la micro:STEAMakers (si no el programa nos indica que no lo está y no funcionará), el bloque <code>di</code> muestra como retorno un mensaje que aparece asociado al bloque <code>al empezar</code> en la pantalla del ordenador. Esta es la forma de trabajar de MicroBlocks y hace que el código se compruebe de manera instantánea siempre que los bloques estén acoplados a <code>al empezar</code>.</p>
+<ul>
+<li><a class="glightbox" href="../../img/microSM/oper/ub05.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="El dato es de tipo" src="../../img/microSM/oper/ub05.png" /></a>  Devuelve <code>True</code> si la expesión de entrada del lado izquierdo coincide con la selección del menú de tipos de datos realizada en el lado derecho. Los tipos de datos son importantes a la hora de programar. Aunque un entorno como MicroBlocks facilita las cosas a los usuarios principiantes al encargarse de las conversiones de tipos de datos, todavía es posible engañarse visualmente al comparar variables cuyos valores parecen iguales. Este bloque pertenece al grupo de condicionales, pero se describe ahora porque se utiliza en el ejemplo siguiente.</li>
+</ul>
+<center>
+
+![Número o cadena](../img/microSM/oper/ub06.png)  
+*Número o cadena*  
+[Descargar el programa](../microSTEAMakers/programas/num_cad.ubp)
+
+</center>
+
+<h2 id="operadores-avanzados"><FONT COLOR=#007575><strong>Operadores avanzados</strong></font><a class="headerlink" href="#operadores-avanzados" title="Permanent link">&para;</a></h2>
+<p>El contenido de este apartado se basa en <a href="https://wiki.microblocks.fun/en/reference_manual/operators">Operators</a> del manual de referencia que encontramos en la wiki de Microblocks.</p>
+<p>En la sección 'Avanzados' vemos algunos bloques que representan operaciones bit a bit. Los operadores bit a bit (bitwise) trabajan sobre representaciones binarias de datos y su utilidad está en cambiar bits individuales en un operando. Los dos operandos asociados al operador bit a bit deben ser enteros. En la imagen vemos los bloques que aparecen en avanzados.</p>
+<p>Para facilitar el seguimiento de los detalles y ejemplos que se presentan a continuación, se ha proporcionado una tabla de referencia en la que se detallan los valores de posición de los bytes en decimal y hexadecimal.</p>
+<div class="admonition quote">
+<p class="admonition-title"><strong>Posición de valores y bytes</strong></p>
+<p><a class="glightbox" href="../../img/microSM/oper/tabla_pos.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Tabla posición" src="../../img/microSM/oper/tabla_pos.png" /></a></p>
+</div>
+<h3 id="anatomia-de-un-numero-binario"><FONT COLOR=#AA0000>Anatomia de un número binario</font><a class="headerlink" href="#anatomia-de-un-numero-binario" title="Permanent link">&para;</a></h3>
+<p>Un número binario es un número expresado en el sistema de numeración de base 2 o sistema numérico binario, que utiliza sólo dos símbolos: normalmente "0" (cero) y "1" (uno).</p>
+<p>Un <strong>byte</strong> es un número binario de ocho bits. Cada <strong>bit</strong> es un 0 o un 1.</p>
+<p>Para determinar el valor decimal de un número binario de ocho bits, consulte la tabla Posición del byte y sume todos los valores decimales de las columnas en las que el número binario tiene un 1.</p>
+<p><strong>Ejemplo:</strong></p>
+<p>Número binario: 0010 0110</p>
+<p>Valor decimal: 38</p>
+<p><strong>Explicación:</strong></p>
+<p><a class="glightbox" href="../../img/microSM/oper/tabla_ej.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Tabla ejemplo" src="../../img/microSM/oper/tabla_ej.png" /></a></p>
+<p>Suma todos los valores decimales con un 1 binario en esa columna:</p>
+<p>Valores decimales: 32 + 4 + 2 = 38</p>
+<center>
+
+![Bloques de operadores avanzados](../img/microSM/oper/ub07.png)  
+*Bloques de operadores avanzados*
+
+</center>
+
+<h3 id="if-ternario"><FONT COLOR=#AA0000>If ternario</font><a class="headerlink" href="#if-ternario" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="../../img/microSM/oper/if_ter.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="If ternario" src="../../img/microSM/oper/if_ter.png" /></a></p>
+<p>Se evalúa la condición expresada en la primera posición. Si es TRUE, se devuelve la expresión en la segunda posición o si es FALSE, se devuelve la expresión en la tercera posición.</p>
+<p>Aunque funcionalmente es muy similar a la construcción IF-THEN-ELSE, el hecho de que este bloque sea un informador, le confiere una usabilidad extra. El valor devuelto puede colocarse en otras operaciones directamente en línea, sin la estructura del bloque if-then-else.</p>
+<p>La condición expresada en la primera ranura tiene que evaluarse a un resultado verdadero/falso.</p>
+<p>Los valores de las ranuras segunda y tercera pueden ser expresiones que se evalúen con cualquier tipo de datos. Además, también pueden ser nombres de funciones o sentencias de llamada que hagan referencia a nombres de funciones; lo que proporciona la máxima flexibilidad y compactación en el código escrito.</p>
+<p><strong>Ejemplo:</strong></p>
+<p>Un ejemplo sencillo sería la evaluación par/impar de un número.
+La operación MOD devuelve el resto de dos números divididos entre sí.</p>
+<p>Si utilizamos una división por 2, si el resultado es 0, el número es par; y si el resultado no es 0, el número es impar.</p>
+<p>Para convertir el resultado de la división en un formato verdadero/falso, utilizamos la operación convertir con la opción booleana.</p>
+<center>
+
+![Ejemplo](../img/microSM/oper/scriptImage11730327.png)
+
+</center>
+
+<p>Una segunda versión del mismo ejemplo utiliza funciones personalizadas que devuelven los resultados de la evaluación como "El número es IMPAR" o "El número es PAR". Estos nombres de función se utilizan como valores de la segunda y tercera posición.</p>
+<center>
+
+![Ejemplo](../img/microSM/oper/scriptImage30883507.png)
+
+</center>
+
+<h3 id="reescalado"><FONT COLOR=#AA0000>Reescalado</font><a class="headerlink" href="#reescalado" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="../../img/microSM/oper/ub08.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Reescalado" src="../../img/microSM/oper/ub08.png" /></a></p>
+<p>Permite modificar el rango de un valor o variable desde un rango origen a un rango destino. Esta función es especialmente útil para adaptar los valores leídos de sensores o para adaptar valores a aplicar en un actuador.</p>
+<p><strong>Ejemplo:</strong></p>
+<p>Tenemos un potenciómetro conectado al pin 1 del microcontrolador. Manipulando el potenciómetro se generan valores en el rango de 0-1023. Convertiremos estos valores al rango de 0-5 para nuestra aplicación.</p>
+<p>Leemos el valor del pin analógico 1 y lo almacenamos en una variable llamada pinValue. Luego usamos la variable como entrada en el primer parámetro del bloque de reescalado. El rango "desde" del bloque de reescalado se ajusta al rango del potenciómetro de 0-1023. El rango "a" del bloque de reescalado se ajusta a nuestro rango deseado de 0-5.</p>
+<center>
+
+![Ejemplo](../img/microSM/oper/scriptImage32534786.png)
+
+</center>
+
+<h3 id="raiz-cuadrada"><FONT COLOR=#AA0000>Raíz cuadrada</font><a class="headerlink" href="#raiz-cuadrada" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="../../img/microSM/oper/uBraiz.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Raíz cuadrada" src="../../img/microSM/oper/uBraiz.png" /></a></p>
+<p>Devuelve la raíz cuadrada del número introducido.</p>
+<p><strong>Ejemplo:</strong></p>
+<p><a class="glightbox" href="../../img/microSM/oper/uBraiz_sol.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Raíz cuadrada" src="../../img/microSM/oper/uBraiz_sol.png" /></a></p>
+<h3 id="arcotangente"><FONT COLOR=#AA0000>Arcotángente</font><a class="headerlink" href="#arcotangente" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="../../img/microSM/oper/arctg.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arcotángente" src="../../img/microSM/oper/arctg.png" /></a></p>
+<p>La fórmula básica para el arctg viene dada por:</p>
+<center>
+
+$\tan \theta = \cfrac{Perpendicular}{Base}$  
+$\theta = \arctan\cfrac{Perpendicular}{Base}$
+
+</center>
+
+<p>donde <span class="arithmatex">\(\theta\)</span> es el ángulo entre la hipotenusa y la base de un triángulo rectángulo. Usamos esta fórmula para encontrar el valor del ángulo <span class="arithmatex">\(\theta\)</span> en términos de grados o radianes.</p>
+<p><strong>Ejemplo:</strong></p>
+<p><a class="glightbox" href="../../img/microSM/oper/arctg1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arcotángente" src="../../img/microSM/oper/arctg1.png" /></a></p>
+<p><a class="glightbox" href="../../img/microSM/oper/arctg2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arcotángente" src="../../img/microSM/oper/arctg2.png" /></a></p>
+<p>Debido al hecho de que MicroBlocks trabaja con matemáticas de números enteros, el resultado se proporciona en un formato multiplicado por 100. Para obtener el valor angular real hay que dividir el resultado entre 100.</p>
+<p><a class="glightbox" href="../../img/microSM/oper/arctg3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arcotángente" src="../../img/microSM/oper/arctg3.png" /></a></p>
+<p>Si deseas conservar el valor del ángulo fraccionario, puede utilizar la función mod.</p>
+<p><a class="glightbox" href="../../img/microSM/oper/arctg4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Arcotángente" src="../../img/microSM/oper/arctg4.png" /></a></p>
+<h3 id="hexadecimal"><FONT COLOR=#AA0000>Hexadecimal</font><a class="headerlink" href="#hexadecimal" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="../../img/microSM/oper/ub09.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Hexadecimal" src="../../img/microSM/oper/ub09.png" /></a></p>
+<p>Convierte una cadena Hexadecimal en un número decimal. Por ejemplo, 5A hex. = 90 dec.</p>
+<p>Como introducción rápida, los números hexadecimales constan de los dígitos 0 - 9 y las letras A, B, C, D, E, F. Por lo tanto, hex(3F) equivale a 63 en decimal.</p>
+<div class="admonition warning">
+<p class="admonition-title"> </p>
+<p>Ten en cuenta que las entradas del bloque HEX tienen que ser del tipo STRING, ya que parte de los números hexadecimales están formados por las letras A-F.</p>
+</div>
+<p>La conversión de hexadecimal a decimal es una operación muy común. Cada dígito hexadecimal representa exactamente cuatro bits, por lo que un byte está representado por dos dígitos. Esa sencilla correspondencia entre dígitos y bytes hace que el hexadecimal resulte útil cuando se trabaja con determinados tipos de datos. Por ejemplo, los códigos de color RGB.</p>
+<div class="admonition quote">
+<p class="admonition-title"> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Decimal</th>
+<th style="text-align: center;">Hex</th>
+<th style="text-align: center;">Binario</th>
+<th style="text-align: center;">Decimal</th>
+<th style="text-align: center;">Hex</th>
+<th style="text-align: center;">Binario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">00</td>
+<td style="text-align: center;">0000</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">08</td>
+<td style="text-align: center;">1000</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">01</td>
+<td style="text-align: center;">0001</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">09</td>
+<td style="text-align: center;">1001</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">02</td>
+<td style="text-align: center;">0010</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">0A</td>
+<td style="text-align: center;">1010</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">03</td>
+<td style="text-align: center;">0011</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">0B</td>
+<td style="text-align: center;">1011</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">04</td>
+<td style="text-align: center;">0100</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">0C</td>
+<td style="text-align: center;">1100</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">05</td>
+<td style="text-align: center;">0101</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">0D</td>
+<td style="text-align: center;">1101</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">06</td>
+<td style="text-align: center;">0110</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">0E</td>
+<td style="text-align: center;">1110</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">07</td>
+<td style="text-align: center;">0111</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">0F</td>
+<td style="text-align: center;">1111</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="bitwise-and"><FONT COLOR=#AA0000>Bitwise AND</font><a class="headerlink" href="#bitwise-and" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="../../img/microSM/oper/ub10.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bitwise AND" src="../../img/microSM/oper/ub10.png" /></a></p>
+<p>El operador AND compara dos bits y genera un resultado igual a 1 si ambos bits son 1; en caso contrario, devuelve 0. Números de mas de un bit son comparados bit a bit. Un ejemplo de aplicación lo vemos en la imagen siguiente.</p>
+<p><strong>Ejemplo:</strong></p>
+<center>
+
+![bitwise AND](../img/microSM/oper/ub11.png)  
+*bitwise AND*
+
+</center>
+
+<p>La tabla siguiente muestra la forma de obtener el resultado de forma teórica.</p>
+<center>
+
+![bitwise AND](../img/microSM/oper/ub12.png)  
+
+</center>
+
+<h3 id="bitwise-or"><FONT COLOR=#AA0000>Bitwise OR</font><a class="headerlink" href="#bitwise-or" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="../../img/microSM/oper/ub13.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bitwise OR" src="../../img/microSM/oper/ub13.png" /></a></p>
+<p>El operador OR compara dos bits y devuelve 1 si uno o ambos bits son 1 y da 0 si ambos bits son 0. Bitwise OR compara todas las posiciones de bits de ambos números e informa de aquellas en las que cualquiera de los dos está a 1.</p>
+<p>Un ejemplo de aplicación lo vemos en la imagen siguiente.</p>
+<center>
+
+![bitwise OR](../img/microSM/oper/ub14.png)  
+*bitwise OR*
+
+</center>
+
+<p>La tabla siguiente muestra la forma de obtener el resultado de forma teórica.</p>
+<center>
+
+![bitwise OR](../img/microSM/oper/ub15.png)  
+
+</center>
+
+<h3 id="bitwise-xor"><FONT COLOR=#AA0000>Bitwise XOR</font><a class="headerlink" href="#bitwise-xor" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="../../img/microSM/oper/ub16.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bitwise XOR" src="../../img/microSM/oper/ub16.png" /></a></p>
+<p>El operador EXCLUSIVE-OR compara dos bits y genera un resultado de 1 si los bits son complementarios (el bit se establece en un operando pero no en ambos); en caso contrario, devuelve 0. Otra forma de pensar en la operación XOR es que invertirá las posiciones de los bits en las que el segundo operando tenga un 1. Todas las demás se copiarán igual.</p>
+<p>Un ejemplo de aplicación lo vemos en la imagen siguiente.</p>
+<center>
+
+![bitwise XOR](../img/microSM/oper/ub17.png)  
+*bitwise XOR*
+
+</center>
+
+<p>La tabla siguiente muestra la forma de obtener el resultado de forma teórica.</p>
+<center>
+
+![bitwise XOR](../img/microSM/oper/ub18.png)  
+
+</center>
+
+<h3 id="bitwise-not"><FONT COLOR=#AA0000>Bitwise NOT</font><a class="headerlink" href="#bitwise-not" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="../../img/microSM/oper/ub19.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bitwise NOT" src="../../img/microSM/oper/ub19.png" /></a></p>
+<p>El operador NOT se utiliza para invertir (BIT FLIP) todos los bits del operando. Cuando el bit de posición más alta de un número se convierte en 1, ese número se considera un número negativo. La representación informática real de un número entero con signo en MicroBlocks es de 31 bits. El bit de mayor peso es un bit de signo. Esto permite números en el rango de -1073741824 a 1073741823. Cuando el bit de signo es 0, el número es positivo; y cuando es 1, el número es negativo.</p>
+<p>Un ejemplo de aplicación lo vemos en la imagen siguiente.</p>
+<center>
+
+![bitwise NOT](../img/microSM/oper/ub20.png)  
+*bitwise NOT*
+
+</center>
+
+<p>La explicación es sencilla, el número 3 (0011) se convierte al binario 1100 y como el bit de mayor peso es 1 indica que es negativo y el número es 4, por lo tanto el resultado es -4.</p>
+<h3 id="bitwise-desplazamiento-izquierda"><FONT COLOR=#AA0000>Bitwise desplazamiento izquierda</font><a class="headerlink" href="#bitwise-desplazamiento-izquierda" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="../../img/microSM/oper/ub21.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bitwise desplazamiento izquierda" src="../../img/microSM/oper/ub21.png" /></a></p>
+<p>El valor del operando izquierdo se desplaza hacia la izquierda el número de bits especificado por el operando derecho. Los bits se desplazan hacia la izquierda, el bit situado más a la izquierda se descarta y al bit situado más a la derecha se le asigna el valor 0. Cada posición de bit desplazada a la izquierda equivale en binario a multiplicar por 2. En la imagen siguiente vemos el funcionamiento del desplazamiento a la izquierda a nivel de bit.</p>
+<center>
+
+![bitwise desplazamiento izquierda](../img/microSM/oper/ub22.png)  
+*bitwise desplazamiento izquierda*
+
+</center>
+
+<h3 id="bitwise-desplazamiento-derecha"><FONT COLOR=#AA0000>Bitwise desplazamiento derecha</font><a class="headerlink" href="#bitwise-desplazamiento-derecha" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="../../img/microSM/oper/ub23.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bitwise desplazamiento derecha" src="../../img/microSM/oper/ub23.png" /></a></p>
+<p>El valor del operando izquierdo se desplaza hacia la derecha el número de bits especificado por el operando derecho. Los bits se desplazan hacia la derecha, el bit situado más a la derecha se descarta y al bit situado más a la izquierda se le asigna una copia del bit de signo. Esto se denomina desplazamiento aritmético. Por cada posición de bit desplazada a la derecha, esta operación es el equivalente binario de dividir por 2. En la imagen siguiente vemos el funcionamiento del desplazamiento a la derecha a nivel de bit.</p>
+<center>
+
+![bitwise desplazamiento derecha](../img/microSM/oper/ub24.png)  
+*bitwise desplazamiento derecha*
+
+</center>
+
+<h2 id="variables"><FONT COLOR=#007575>Variables</font><a class="headerlink" href="#variables" title="Permanent link">&para;</a></h2>
+<p>En MicroBlocks se contemplan dos tipos de variables, las globales y las locales. Cuando hablamos en estos términos hablamos de ámbito (scope) de las variables y determina la zona donde se define la variable, que son global y local.</p>
+<p>Las variables locales son las definidas dentro de una función y solamente está disponible para el código que se ejecuta dentro de la función.</p>
+<p>Las variables globales se definen en cualquier punto del programa, normalmente al principio, y pueden ser llamadas desde cualquier sitio del programa, incluso desde las funciones.</p>
+<ul>
+<li><a class="glightbox" href="../../img/microSM/var/var1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Añadir o crear variable" src="../../img/microSM/var/var1.png" /></a> Este bloque es en realidad un botón que crea una nueva variable global. Si existe una variable con el mismo nombre, se creará una nueva con el mismo nombre y el número 2 añadido. Cuando creamos una variable se nos pide el nombre de la misma en una ventana emergente y una vez creada aparecerá un nuevo bloque para acceder al valor de la variable creada. Además esta nueva variable estará disponible para su selección en dos de los bloques que explicaremos después.</li>
+<li><a class="glightbox" href="../../img/microSM/var/var2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Borrar variable" src="../../img/microSM/var/var2.png" /></a>  Este bloque es en realidad un botón que sirve para eliminar una variable previamente creada.</li>
+</ul>
+<p>En la animación siguiente vemos el proceso de creación y eliminación de variables.</p>
+<center>
+
+![Creación y eliminación de variables](../img/microSM/var/var3.gif)  
+*Creación y eliminación de variables*
+
+</center>
+
+<p>La opción de mostrar el nombre de las variables mostrada desde el bloque se puede utilizar para añadir variables mientras se edita el código del programa, sin pasar a las opciones de la categoría variables.</p>
+<ul>
+<li><a class="glightbox" href="../../img/microSM/var/var4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Asigna valor a variable" src="../../img/microSM/var/var4.png" /></a>  Este bloque asigna el valor a cualquier variable, global o local, en la cantidad especificada en el área de entrada. La cantidad que se asigna puede ser un número positivo o negativo. Para mostrar los nombres de las variables locales en el menú de selección, este bloque debe estar físicamente unido a la secuencia de bloques en la que se utiliza el bloque 'Inicializar local' que veremos a continuación.</li>
+<li><a class="glightbox" href="../../img/microSM/var/var6.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Inicializa variable local" src="../../img/microSM/var/var6.png" /></a>  Este bloque se utiliza para crear e inicializar variables locales. El nombre predeterminado de la variable 'var' puede cambiarse por cualquier otro haciendo clic en el nombre y escribiendo un nuevo nombre en el cuadro de diálogo que se abre. Despés, si es necesario cambiar el valor de la variable local, se puede utilizar el bloque 'asigna valor a' de la categoría variables. En la animación siguiente vemos este proceso y la disponibilidad o no de la variable local.</li>
+</ul>
+<p>Una variable global tiene:</p>
+<ul>
+<li><strong>Alcance global</strong>: Una variable global puede utilizarse en cualquier script que no tenga una variable local del mismo nombre que la anule.</li>
+<li><strong>Tiempo de vida largo</strong>: Una variable global es creada explícitamente y vive hasta que es explícitamente borrada. Conserva su valor cuando los scripts se inician y detienen e incluso cuando no hay scripts en ejecución. Sin embargo, al hacer clic en el botón "Detener", todas las variables globales se borran e inicializan con el valor cero. Las variables globales también se inicializan a cero cuando se crean por primera vez y cuando se carga un proyecto.</li>
+</ul>
+<p>Por el contrario, una <strong>variable local</strong> tiene:</p>
+<ul>
+<li><strong>Ámbito local</strong>: Una variable local sólo puede utilizarse en el script en el que aparece. Si varios scripts utilizan variables locales con el mismo nombre, esas variables son independientes entre sí. Aunque esta práctica se desaconseja porque puede inducir a errores.</li>
+<li><strong>Tiempo de vida limitado</strong>: Una variable local de un script se crea cuando se inicia el script y se elimina cuando éste finaliza. Se crea una nueva variable local cada vez que se inicia un script (incluyendo un script de función), y las variables locales de cada invocación de script son independientes entre sí.</li>
+<li><strong>Precedencia sobre las globales</strong>: Si una variable local tiene el mismo nombre que una variable global, la variable local prevalece sobre la global en el script en el que aparece la variable local. Una variable es local en todo el script sin importar en qué parte del script aparezca "inicializar var local a", aunque es una buena práctica de codificación que "inicializar var local a" preceda a cualquier otra referencia a esa variable.</li>
+</ul>
+<p>Un ejemplo comentado de aplicación lo vemos en la imagen siguiente.</p>
+<center>
+
+![Variables](../img/microSM/var/var8.gif)  
+*[Descargar el programa](../microSTEAMakers/programas/variables.ubp)*
+
+</center>
+
+<h2 id="bucles"><FONT COLOR=#007575>Bucles</font><a class="headerlink" href="#bucles" title="Permanent link">&para;</a></h2>
+<p>En el caso de MicroBlocks los bucles, condicionales y funciones están todos englobados en la categoría 'Control'. Vamos a ver algunos de ellos en esta ocasión y los que no veamos en esta actividad se irán viendo cuando los necesitemos.</p>
+<ul>
+<li><a class="glightbox" href="../../img/microSM/bucles/bu1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Al empezar" src="../../img/microSM/bucles/bu1.png" /></a>  Los bloques con forma de sombrero forman parte de un grupo de bloques de control que comienzan a ejecutarse cuando se pulsa el icono verde <code>Inicia</code>. Este bloque se activa cuando se cumple la condición de inicio del programa.</li>
+<li><a class="glightbox" href="../../img/microSM/bucles/bu2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bucle infinito" src="../../img/microSM/bucles/bu2.png" /></a>  Los bloques con forma de "C" son un grupo de bloques de control que ejecutan el código colocado en su interior siempre que se cumplan las condiciones descritas en sus subtítulos. Estos son los bloques de tipo bucle. Este en particular ejecutará los bloques en su interior indefinidamente.</li>
+<li><a class="glightbox" href="../../img/microSM/bucles/bu3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bucle para número de iteraciones" src="../../img/microSM/bucles/bu3.png" /></a>  Este bloque C ejecuta el código colocado en su interior el número especificado de veces.</li>
+</ul>
+<p>En el ejemplo siguiente veremos tanto en el programa como en la pantalla la suma de los 10 primero números naturales.</p>
+<center>
+
+![Suma de los 10 primeros números](../img/microSM/bucles/bu4.gif)  
+*[Descargar el programa](../microSTEAMakers/programas/suma_10_primeros_numeros.ubp)*
+
+</center>
+
+<ul>
+<li>
+<p><a class="glightbox" href="../../img/microSM/bucles/bu5.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bucle for" src="../../img/microSM/bucles/bu5.png" /></a>  Este bloque es también de tipo C y pertenece al grupo de los bucles. Funciona de dos formas distintas en función del tipo de entrada especificado.</p>
+</li>
+<li>
+<p>Si la <strong>entrada es un número</strong>, los bloques interiores se ejecutarán tantas veces como el número. En cada iteración del bucle, empezando por uno, el parámetro o variable de control es 'i' por defecto y se incrementará en uno. Este valor se puede utilizar en el código del programa como se crea conveniente.</p>
+</li>
+<li>El nombre del parámetro de control puede cambiarse por otro haciendo clic en la 'i' y escribiendo un nuevo nombre.</li>
+<li>Si la <strong>entrada es una lista</strong>, los bloques colocados dentro se ejecutarán tantas veces como elementos tenga la lista. En cada iteración, el parámetro de control 'i' tomará el valor de cada elemento de la lista de manera secuencial.</li>
+</ul>
+<p>En el ejemplo siguiente vemos una animación de un sencillo programa de como hacer un contador con los 5 primeros números y hacer que se muestre en el ordenador y en la pantalla de la micro:STEAMakers.</p>
+<center>
+
+![Mostrar los 5 primeros números](../img/microSM/bucles/bu6.gif)  
+[Descargar el programa](../microSTEAMakers/programas/muestra_5_primeros_numeros.ubp)
+
+</center>
+
+<ul>
+<li><a class="glightbox" href="../../img/microSM/bucles/bu7.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="espera en milisegundos" src="../../img/microSM/bucles/bu7.png" /></a>  Este bloque pausa el flujo de ejecución del programa por el tiempo especificado en milisegundos. Se utiliza para pausar y reanudar la ejecución de código de forma controlada.</li>
+<li><a class="glightbox" href="../../img/microSM/bucles/bu8.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="espera en microsegundos" src="../../img/microSM/bucles/bu8.png" /></a>  Este bloque pausa el flujo de ejecución del programa por el tiempo especificado en microsegundos. Se utiliza para pausar y reanudar la ejecución de código de forma controlada.</li>
+<li><a class="glightbox" href="../../img/microSM/bucles/bu9.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="envía o broadcast" src="../../img/microSM/bucles/bu9.png" /></a>  Emite el mensaje especificado. Véase en conjunto a <a class="glightbox" href="../../img/microSM/bucles/bu10.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="al recibir" src="../../img/microSM/bucles/bu10.png" /></a>. Este bloque envía el contenido del mensaje especificado. Todos los bloques de mensajes <code>al recibir</code> con el mismo mensaje en su contenido recibirán el mensaje y actuarán ejecutando su contenido.</li>
+<li><a class="glightbox" href="../../img/microSM/bucles/bu10.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="al recibir" src="../../img/microSM/bucles/bu10.png" /></a>  Ejecuta cuando se emita el mensaje especificado. Este bloque y su par funcional <a class="glightbox" href="../../img/microSM/bucles/bu9.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="envía o broadcast" src="../../img/microSM/bucles/bu9.png" /></a> se suelen utilizar juntos para conseguir un medio de comunicación dentro del programa. Cualquier mensaje enviado con el comando <code>envía</code> es detectado y recibido por este bloque. Así, los bloques colocados bajo este bloque se ejecutarán al recibir el mensaje correspondiente. Los mensajes pueden ser cadenas o números. Además, el bloque <a class="glightbox" href="../../img/microSM/bucles/bu11.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="ultimo mensaje" src="../../img/microSM/bucles/bu11.png" /></a> contiene el último mensaje emitido y recibido.</li>
+<li><a class="glightbox" href="../../img/microSM/bucles/bu11.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="ultimo mensaje" src="../../img/microSM/bucles/bu11.png" /></a>  Devuelve el último mensaje enviado en todo el programa, cronológicamente hablando. Nótese que <strong>NO</strong> es el último mensaje recibido por una secuencia de bloques concreta del programa, y es independiente de la ejecución del bloque <code>al recibir</code>. No hay colas de mensajes en el sistema. Si no hay ningún <code>al recibir</code> en espera cuando se envía un mensaje, se perderá y será sobrescrito por el siguiente mensaje.</li>
+</ul>
+<p>En el ejemplo siguiente vemos de forma sencilla el funcionamiento de estos tres últimos bloques.</p>
+<center>
+
+![Di el último mensaje](../img/microSM/bucles/bu12.gif)  
+[Descargar el programa](../microSTEAMakers/programas/ultimo_mensaje.ubp)
+
+</center>
+
+<h2 id="listas"><FONT COLOR=#007575>Listas</font><a class="headerlink" href="#listas" title="Permanent link">&para;</a></h2>
+<p>Los bloques para trabajar con listas están en el menú 'Datos' y los disponibles los vemos en la imagen siguiente.</p>
+<center>
+
+![Bloques para Listas. Datos](../img/microSM/listas/lista1.png)  
+*Bloques para Listas. Datos*
+
+</center>
+
+<ul>
+<li><a class="glightbox" href="../../img/microSM/listas/l1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/listas/l1.png" /></a> Devuelve una lista corta que contiene algunos elementos en inglés. Con las flechas podemos añadir o eliminar elementos a la lista aunquw a partir del cuarto se repite siempre el mismo. Para crear una lista vacía (<a class="glightbox" href="../../img/microSM/listas/l2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/listas/l2.png" /></a>) basta con eliminar el único elemento existente cuando se crea una nueva.</li>
+<li><a class="glightbox" href="../img/microSM/listas/listas/l3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/microSM/listas/listas/l3.png" /></a> Une (concatena) cadenas, listas o matrices de bytes y devuelve el resultado.</li>
+<li><a class="glightbox" href="../../img/microSM/listas/l4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/listas/l4.png" /></a> Devuelve el carácter <a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">Unicode</a> del número dado.</li>
+<li><a class="glightbox" href="../../img/microSM/listas/l5.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/listas/l5.png" /></a> Devuelve el enésimo elemento de una lista, cadena o matriz de bytes.</li>
+<li><a class="glightbox" href="../../img/microSM/listas/l6.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/listas/l6.png" /></a>  Combina los elementos de una lista en una cadena, opcionalmente se puede usar un carácter delimitador.</li>
+<li><a class="glightbox" href="../../img/microSM/listas/l7.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/listas/l7.png" /></a>  Añade un elemento al final de una lista.</li>
+</ul>
+<p>En el ejemplo siguiente vemos el uso de estos bloques. Comenzamos por crear una cadena de caracteres de la que vamos a extraer la palabra "un" mediante la unión de los elementos 9 y 10 de la cadena. Se crea una lista con cuatros animales y finalmente se muestra la palabra 'un' seguida de la posición 3 de la lista creada.</p>
+<center>
+
+![Un pajaro](../img/microSM/listas/l8.gif)  
+[Descargar el programa](../microSTEAMakers/programas/un_pajaro.ubp)
+
+</center>
+
+<p>En este otro ejemplo vemos como se generan los caracteres de latín básico comenzando por el espacio en blanco (32), diferentes símbolos, números, letras mayúsculas y letras minúsculas. Se muestra en pantalla un caracter cada 100ms y en pantalla la lista completa de caracteres generados.</p>
+<center>
+
+![Caracteres Unicode de Latín básico](../img/microSM/listas/l9.gif)  
+[Descargar el programa](../microSTEAMakers/programas/unicode.ubp)
+
+</center>
+
+<ul>
+<li><a class="glightbox" href="../../img/microSM/listas/l10.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/listas/l10.png" /></a> Devuelve el número de elementos de una lista, cadena o matriz de bytes.</li>
+<li><a class="glightbox" href="../../img/microSM/listas/l11.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/listas/l11.png" /></a> Sustituye el enésimo elemento de una lista por el valor dado. También puede sustituir todos los elementos por un valor.</li>
+<li><a class="glightbox" href="../../img/microSM/listas/l12.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/listas/l12.png" /></a> Elimina el elemento N de una lista. La lista resultante se reduce de tamaño. También puede eliminar todos los elementos.</li>
+</ul>
+<p>A continuación vemos un ejemplo en el que se demuestra la funcionalidad de estos tres bloques.</p>
+<center>
+
+![Sustituir, eliminar y tamaño](../img/microSM/listas/l13.gif)  
+[Descargar el programa](../microSTEAMakers/programas/sustituir_eliminar_long.ubp)
+
+</center>
+
+<ul>
+<li><a class="glightbox" href="../../img/microSM/listas/l14.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/listas/l14.png" /></a> Devuelve la posición de la primera coincidencia de una subcadena dentro de una cadena o un elemento de una lista. Devuelve -1 si no encuentra coincidencias.</li>
+</ul>
+<p>En el ejemplo siguiente las variables locales <code>cadena</code> y <code>animales</code> se inicializan como de tipo string y list respectivamente. El primer conjunto de resultados opera sobre la cadena, buscando la posición de la primera apariciones de "es". La primera coincidencia se encuentra en el carácter número uno. La segunda búsqueda se inicia en el carácter número tres, y localiza el objetivo de la búsqueda en el carácter número seis. La búsqueda de "perro" en la lista 'animales' la encuentra en el elemento número dos de la lista. La segunda búsqueda de "perro" en la lista 'animales' comienza en el elemento número tres y devuelve -1 porque no lo encuentra. No hay ningún "raton" en la lista, por lo que la búsqueda devuelve -1.</p>
+<center>
+
+![Buscar](../img/microSM/listas/l15.png)  
+[Descargar el programa](../microSTEAMakers/programas/buscar.ubp)
+
+</center>
+
+<ul>
+<li><a class="glightbox" href="../../img/microSM/listas/l16.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/listas/l16.png" /></a> Copia una cadena desde/hasta el caracter especificado, o una desde/hasta el elemento indicado. Como ya sabemos para mostrar el parámetro hasta hay que hacer clic en el triángulo negro.</li>
+</ul>
+<center>
+
+![Copiar](../img/microSM/listas/l17.png)  
+[Descargar el programa](../microSTEAMakers/programas/copiar.ubp)
+
+</center>
+
+<ul>
+<li><a class="glightbox" href="../../img/microSM/listas/l18.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/listas/l18.png" /></a> Devuelve una lista separando la cadena especificada por el delimitador opcional. Si no se especifica ningún delimitador, la cadena se divide por cada carácter.</li>
+</ul>
+<p>En la imagen vemos una cadena delimitada por comas que separa los caracteres mediante el delimitador coma en una lista de tres elementos.</p>
+<center>
+
+![](../img/microSM/listas/l19.png)
+
+</center>
+
+<p>A continuación vemos una cadena que incluye un carácter retorno de línea después del ABC y DEF que se separa mediante el caracter unicode de nueva línea (return) en una lista de tres elementos.</p>
+<center>
+
+![](../img/microSM/listas/l20.png)
+
+</center>
+
+<p>En este otro caso separamos la URL de la descarga de MicroBlocks en partes mediante el delimitador /.</p>
+<center>
+
+![](../img/microSM/listas/l21.png)
+
+</center>
+
+<ul>
+<li><a class="glightbox" href="../../img/microSM/listas/l22.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/listas/l22.png" /></a>  Devuelve el valor Unicode del carácter enésimo de la cadena introducida. El número de caracteres introducido debe estar comprendido entre uno y la longitud de la cadena. Este bloque es el opuesto de <a class="glightbox" href="../img/programacion/ublocks/uB/listas/l4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/programacion/ublocks/uB/listas/l4.png" /></a>.</li>
+</ul>
+<center>
+
+![](../img/microSM/listas/l23.png)
+
+</center>
+
+<ul>
+<li><a class="glightbox" href="../../img/microSM/listas/l24.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/listas/l24.png" /></a> Crea una nueva lista del número de elementos especificado. Hay que controlar la disponibilidad de memoria. Los elementos de la lista creada se pueden inicializar a cualquier valor utilizando la opción de bloque con todos.</li>
+<li><a class="glightbox" href="../../img/microSM/listas/l25.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/listas/l25.png" /></a> Crea una matriz del número de elementos especificado en función de la disponibilidad de memoria. Cada elemento es de tamaño byte y se le pueden asignar valores en el rango de 0-255 (0-FF).</li>
+<li><a class="glightbox" href="../../img/microSM/listas/l26.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/listas/l26.png" /></a> Devuelve una cadena que indica el número de palabras de 32 bits de memoria dinámica disponibles para asignar nuevos objetos (cadenas, listas o matrices de bytes). Al pulsar el botón de parada se libera toda la memoria. Justo después de pulsar el botón de parada, este bloque informa del total de memoria dinámica disponible en un dispositivo determinado. Los dispositivos tienen diferentes cantidades de memoria dinámica, basadas en la cantidad de RAM proporcionada por el hardware. Por ejemplo, la micro:bit v2 tiene mucha más RAM que la micro:bit original.</li>
+</ul>
+<p>Un ejemplo de uso.</p>
+<center>
+
+![Nueva lista](../img/microSM/listas/l27.png)  
+[Descargar el programa](../microSTEAMakers/programas/nueva_lista_mem.ubp)
+
+</center>
+
+<ul>
+<li><a class="glightbox" href="../../img/microSM/listas/l28.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/listas/l28.png" /></a>  Convierte un byte, una lista o una cadena especificada en una matriz de bytes. Cada elemento es el valor unicode de las letras de la cadena en el rango de 0-255 (0-FF).</li>
+</ul>
+<h2 id="mas-operadores"><FONT COLOR=#007575><strong>Mas operadores</strong></font><a class="headerlink" href="#mas-operadores" title="Permanent link">&para;</a></h2>
+<p>Los operadores aún no vistos son:</p>
+<center>
+
+![Operadores aritméticos, de comparación y booleanos](../img/microSM/oper/O_arit_comp_bool.png)
+
+*Operadores aritméticos, de comparación y booleanos*
+
+</center>
+
+<p>Los operadores aritméticos y de comparación no requieren de mayor explicación por lo que nos vamos a centrar en los booleanos.</p>
+<ul>
+<li><a class="glightbox" href="../../img/microSM/oper/b1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/oper/b1.png" /></a> Operador booleano <code>True</code> o <code>False</code>. Devuelve verdadero o falso en función de la posición del selector, o de la evaluación binaria de la expresión utilizada como entrada. Este bloque se usa dentro de muchos otros bloques, donde se utiliza para controlar el flujo de las ejecuciones y eventos.</li>
+</ul>
+<p>El bloque <code>if</code> es un buen ejemplo para demostrar el uso del bloque verdadero/falso.</p>
+<center>
+
+![Uso sencillo del operador ```True/False```](../img/microSM/oper/oper_T_F.gif)  
+[Descargar el programa](../microSTEAMakers/programas/verdadero_falso.ubp)
+
+</center>
+
+<p>El código del ejemplo se ejecuta de dos maneras diferentes siempre dentro de un bucle infinito en el que se genera un número aleatorio que puede valer 1, 2 o 3:</p>
+<ul>
+<li>La primera es la condición de la rama <code>IF</code> que será verdadera si el número generado es 1.</li>
+<li>La segunda es la rama <code>ELSE IF</code> que se evalúa si la condición del <code>IF</code> no es verdadera y se pone a verdadero, ejecutando su código.</li>
+<li>
+<p>La tercera es la condición <code>ELSE</code> a la que nunca se llega porque si el número vale 1 se ejecuta el <code>IF</code> y si no se ejecuta el <code>ELSE IF</code> que siempre es cierto. Es decir, aunque se genere <code>variable = 3</code> la condición <code>ELSE</code> no se ejecuta.</p>
+</li>
+<li>
+<p><a class="glightbox" href="../../img/microSM/oper/b2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/oper/b2.png" /></a> Invierte el valor lógico asociado a la expresión sobre la que opera. Tal y como se muestra, <code>NOT</code> devolverá <code>FALSE</code> si el deslizador se establece en <code>TRUE</code>, y <code>TRUE</code> si se establece en <code>FALSE</code>.</p>
+</li>
+</ul>
+<p>En el ejemplo siguiente, una variable llamada <code>cadena</code> se inicializa como "MicroBlocks es genial", y una variable llamada <code>expresion</code> se inicializa en <code>TRUE</code> de una forma peculiar, diciendo que algo es igual a si mismo. Cuando se aplica <code>NOT</code> al resultado de la expresión de igualdad, se cambia a <code>FALSE</code>.</p>
+<center>
+
+![Uso sencillo del operador ```NOT```](../img/microSM/oper/not.png)  
+[Descargar el programa](../microSTEAMakers/programas/not.ubp)
+
+</center>
+
+<ul>
+<li><a class="glightbox" href="../../img/microSM/oper/b3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/oper/b3.png" /></a>  Devuelve verdadero sólo si todas sus entradas son verdadero y devuelve falso en caso contrario. Como ambas condiciones tienen que ser verdaderas para obtener un resultado verdadero, si se detecta un falso en la primera condición, no es necesario evaluar la segunda; se devuelve falso inmediatamente.</li>
+</ul>
+<p>En el ejemplo tenemos dos variables <code>salir</code> y <code>llueve</code> que se inicializan a falso. Se muestran una serie de mensajes y al final se evalúa si "necesito un paraguas" comprobando si es cirto 'voy a salir y si llueve'. Si no necesito un paraguas se muestra en pantalla un check y si lo necesito se muestra un paraguas. Ambas condiciones tienen que ser verdaderas para que necesitemos un paraguas. Podemos cambiar el estado de las variables y comprobar lo que ocurre.</p>
+<center>
+
+![Uso sencillo del operador ```AND```](../img/microSM/oper/and.gif)  
+[Descargar el programa](../microSTEAMakers/programas/and.ubp)
+
+</center>
+
+<ul>
+<li><a class="glightbox" href="../../img/microSM/oper/b4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/oper/b4.png" /></a>  Devuelve verdadero si uno o ambos operandos son verdaderos y devuelve falso en caso contrario. Similar a <code>AND</code> pero opuesto a él, aquí sólo una de las dos condiciones tiene que ser verdadera para un resultado verdadero. Por lo tanto, si la primera condición es verdadera, no es necesario comprobar la segunda.</li>
+</ul>
+<p>En el ejemplo estamos generando aleatoriamente dos números en el rango de 1 a 5. A continuación, comprobamos si alguno de los dos números es igual al número que estamos buscando (3). El bloque <code>OR</code> se utiliza para verificar el resultado de la comparación.</p>
+<center>
+
+![Uso sencillo del operador ```OR```](../img/microSM/oper/or.gif)  
+[Descargar el programa](../microSTEAMakers/programas/or.ubp)
+
+</center>
+
+<p>Cada segundo se genera un nuevo resultado.</p>
+<h2 id="botones-y-bloques-de-control"><FONT COLOR=#007575><strong>Botones y bloques de control</strong></font><a class="headerlink" href="#botones-y-bloques-de-control" title="Permanent link">&para;</a></h2>
+<p>En la categoria "Entrada" disponemos de los bloques para detectar si se ha pulsado alguno de los botones A/B de la placa.</p>
+<ul>
+<li><strong>ms táctil?</strong> Este bloque permite saber si se ha tocado (pulsado) la zona táctil.</li>
+</ul>
+<center>
+
+![Bloque ms táctil?](../img/microSM/botyC/c2.png)  
+*Bloque ms táctil?*
+
+</center>
+
+<p>En el ejemplo siguiente vemos el uso básico de estos tres bloques de la libreria micro:STEAMakers.</p>
+<center>
+
+![Uso sencillo de los botones](../img/microSM/oper/uso_botones.gif)  
+[Descargar el programa](../microSTEAMakers/programas/uso_botones.ubp)
+
+</center>
+
+<ul>
+<li><a class="glightbox" href="../../img/microSM/botyC/c3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/botyC/c3.png" /></a>  El bloque <code>IF</code> comprueba la condición booleana y ejecuta los bloques de una sola vez si la condición booleana se evalúa como verdadera. El triángulo negro permite la expansión del bloque <code>IF</code> con múltiples condiciones <code>ELSE IF</code> añadidas. En caso de que las ramas <code>IF</code> o <code>ELSE IF</code> anteriores no sean verdaderas, entonces se evalúan y ejecutan sucesivamente cada una de las siguientes <code>ELSE IF</code>.</li>
+</ul>
+<p>En el ejemplo siguiente, a la variable <code>aleatorio</code> se le asigna un número al azar entre el 1 y el 9. La operación MOD se utiliza para sondear el estado par/impar del número. Si el resto de la operación 'num dividido por 2' da como resultado 0, el número es par, en caso contrario es impar.</p>
+<center>
+
+![Sentencia ```IF```](../img/microSM/oper/if.gif)  
+[Descargar el programa](../microSTEAMakers/programas/if_else.ubp)
+
+</center>
+
+<p>Cada vez que pulsemos en 'Iniciar' se genera un nuevo resultado, se indica si el número es par o impar mientras se muestra el número en los LEDs.</p>
+<ul>
+<li><a class="glightbox" href="../../img/microSM/botyC/c4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/botyC/c4.png" /></a>  El bloque 'cuando' comprueba repetidamente una condición booleana. Cuando la condición se convierte en verdadera, se ejecutan los bloques bajo el sombrero. Si la condición sigue siendo verdadera al final de la ejecución, entonces los bloques se ejecutarán de nuevo, y ese proceso se repite hasta que la condición se convierte en falsa.</li>
+</ul>
+<p>Nota: El sombrero 'cuando' incluye una espera de 10 milisegundos entre ciclos. Esto es útil para eliminar ruido en las entradas, por ejemplo rebotes en los botones, pero limita el rendimiento a un máximo de 100 iteraciones/segundo.</p>
+<p>Vamos a ver el mismo ejemplo que en el bloque <code>IF</code> pero utilizando este bloque. Los tres bloques del tipo <code>WHEN</code> empiezan a funcionar simultáneamente cuando se pulsa el icono <code>START</code>. El bloque 'por siempre' debajo de 'al empezar' genera un número aleatorio cada segundo. Y de forma simultanea los otros dos bloques evaluan continuamente sus condiciones mostrando el resultado que corresponde a cada uno.</p>
+<center>
+
+![Bloque 'cuando'](../img/microSM/oper/cuando.gif)  
+[Descargar el programa](../microSTEAMakers/programas/cuando.ubp)
+
+</center>
+
+<ul>
+<li><a class="glightbox" href="../../img/microSM/botyC/c5.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/botyC/c5.png" /></a>  Este bloque de control pausa la ejecución del programa y espera hasta que la condición booleana especificada se convierta en verdadera. Se puede utilizar para sincronizar bloques de código que se ejecutan en paralelo, basándose en los eventos monitorizados.</li>
+<li><strong>m:s light %</strong>. Este bloque permite trabajar con el nivel de iluminación medido por el sensor montado en la placa micro:STEAMakers.</li>
+</ul>
+<center>
+
+![Bloque ms luz](../img/microSM/botyC/c6.png)  
+*Bloque ms luz*
+
+</center>
+
+<p>En este ejemplo, el nivel de luz ambiental se controla mediante el sensor de luz integrado. Cuando se inicia el programa, ambos bloques 'cuando se pulse el boton' comienzan a ejecutarse y a comprobar el estado del botón.</p>
+<p>Al pulsar el botón A, se inicia la monitorización de la luz y el programa espera hasta que los sensores de la micro:bit informen de un nivel de luz &lt; 75. Cuando esa condición se cumple, se emite una alerta para avisar de que hay que encender las luces.</p>
+<p>El botón B está programado para detener el proceso de monitorización. Al pulsarlo, detiene la ejecución de esa rama del programa.</p>
+<center>
+
+![Bloque 'cuando se pulsa el boton'](../img/microSM/oper/cuando_pulsa_boton.gif)  
+[Descargar el programa](../microSTEAMakers/programas/cuando_pulsa_boton.ubp)
+
+</center>
+
+<p>El bloque 'deten las otras tareas' se explica un poco mas adelante.</p>
+<ul>
+<li>
+<p><a class="glightbox" href="../../img/microSM/botyC/c7.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/botyC/c7.png" /></a>  El bloque <code>RETURN</code> se utiliza para devolver el valor especificado en su área de entrada. El valor retornado puede ser cualquier tipo de dato. Aunque es posible utilizar el bloque <code>RETURN</code> en cualquier parte de un programa para mostrar un valor, de forma similar al bloque <code>di</code>, su uso correcto y más común es en una función (o bloque personalizado) para devolver un valor como resultado del proceso realizado. Hay que tener en cuenta que los bloques colocados después del bloque <code>RETURN</code> no se ejecutarán.</p>
+</li>
+<li>
+<p><a class="glightbox" href="../../img/microSM/botyC/c8.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/botyC/c8.png" /></a>  Este bloque tipo C es un bucle que se utiliza para ejecutar los bloques colocados dentro de él, mientras que la condición booleana especificada se convierte en verdadera. En ese momento, se ejecutará el siguiente bloque después del bloque en forma de C.</p>
+</li>
+</ul>
+<p>En el ejemplo vemos como se monitoriza si se ha pulsado el botón A enviando un mensaje.</p>
+<center>
+
+![Bloque 'repetir hasta que'](../img/microSM/oper/B_repetir.gif)  
+[Descargar el programa](../microSTEAMakers/programas/B_repetir.ubp)
+
+</center>
+
+<ul>
+<li><a class="glightbox" href="../../img/microSM/botyC/c9.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/botyC/c9.png" /></a>  Este bloque, y su par relacionado <a class="glightbox" href="../../img/microSM/botyC/c10.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/botyC/c10.png" /></a>, se utilizan para controlar el hilo de ejecución del programa. Este bloque detiene la ejecución de todos los bloques de los que forma parte, o que están bajo el mismo bloque sombrero. Una vez ejecutado este bloque en un grupo de bloques, no se ejecutará nada más en ese grupo.</li>
+</ul>
+<p>En el ejemplo siguiente, el grupo de bloques de la derecha está en un bucle continuo que cuenta hacia atrás y decrementa su variable local <code>numero</code>. El grupo de bloques de la izquierda también está en un bucle continuo, contando hacia abajo y decrementando su variable local <code>numero</code>. Cuando la cuenta atrás alcanza el valor 7 se cumple la condición del <code>else if</code> y se detiene la cuenta del bloque derecho, mientras que la secuencia del bloque izquierdo continua su ejecución hasta que se cumpla la condición del <code>if</code> que será cuando se alcance el número 2, momento en que se detiene esta tarea.</p>
+<p>Podemos comprobar como el último bloque <code>di</code> de la secuencia de la izquierda <strong>NUNCA</strong> se ejecuta porque una vez que el bloque 'deten esta tarea' se ejecuta, todas las actividades de este bloque izquierdo terminan.</p>
+<center>
+
+![Bloques 'deten esta tarea' y 'deten las otras tareas'](../img/microSM/oper/B_deten_tar.gif)  
+[Descargar el programa](../microSTEAMakers/programas/deten_tareas.ubp)
+
+</center>
+
+<h2 id="graficado-de-datos"><FONT COLOR=#007575><strong>Graficado de datos</strong></font><a class="headerlink" href="#graficado-de-datos" title="Permanent link">&para;</a></h2>
+<p>En MicroBlocks es relativamente sencillo trabajar los datos de forma gráfica y para ello disponemos de un bloque para indicar el dato que queremos ver de manera gráfica y un icono en el menú que abre la ventana flotante 'Gráfico de datos'.</p>
+<center>
+
+![Bloque e icono para mostrar 'Gráfico de datos'](../img/microSM/graph/bloque_grafico.png)  
+*Bloque e icono para mostrar 'Gráfico de datos'*
+
+</center>
+
+<h3 id="bloque"><FONT COLOR=#AA0000>Bloque</font><a class="headerlink" href="#bloque" title="Permanent link">&para;</a></h3>
+<p>Está disponible en el menú 'Salida'.</p>
+<ul>
+<li><a class="glightbox" href="../../img/microSM/graph/bloque.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/graph/bloque.png" /></a>. Graficará el valor introducido en el panel de visualización de gráficos de datos. Se puede graficar cualquier tipo de dato: números, valores de pines digitales y analógicos, salidas de sensores, etc. Si tenemos que representar gráficamente más de un dato, hacemos clic en el triángulo negro para mostrar campos de datos adicionales. Se pueden graficar hasta seis valores simultáneos con diferentes colores.</li>
+</ul>
+<p>La representación gráfica sólo es posible en el IDE. Por lo tanto, sólo es posible realizar gráficos mientras el microdispositivo está conectado al ordenador. Si intentamos realizar un gráfico mientras no está conectado al ordenador, aparecerá el mensaje "Placa no conectada".</p>
+<h3 id="panel-grafico"><FONT COLOR=#AA0000>Panel gráfico</font><a class="headerlink" href="#panel-grafico" title="Permanent link">&para;</a></h3>
+<p>Se activa desde el icono y tiene el siguiente aspecto:</p>
+<center>
+
+![Panel 'Gráfico de datos'](../img/microSM/graph/panel.png)  
+*Panel 'Gráfico de datos'*
+
+</center>
+
+<p>El panel <strong>Gráficos de datos</strong> muestra los valores utilizados con el bloque de gráficos. El eje y del panel puede escalarse utilizando los controles de zoom del propio panel, y el eje x se desplazará lateralmente a medida que se grafiquen más datos.</p>
+<p>La ventana de visualización del gráfico se puede redimensionar con el control situado en la esquina inferior derecha y puede colocarse en cualquier lugar de la ventana del IDE.</p>
+<p>Tras el registro de cualquier dato, la ventana de visualización de gráficos puede cerrarse y abrirse, si es necesario, sin que se pierda ningún dato ni la imagen visualizada, aunque si pierde la reconfiguración realizada en la misma, como la posición del cero, el tamaño, etc. Además, es posible desconectar y volver a conectar el dispositivo en uso, sin perder los datos del gráfico.</p>
+<p>En la animación vemos como funciona lo indicado. El escalado con la lupa del menos amplia el rango de valores del eje y, con la lupa del mas lo disminuye y la lupa del igual restaura la situación inicial tras el redimensionado de la ventana.</p>
+<center>
+
+![Funcionamiento de 'Gráfico de datos'](../img/microSM/graph/func_panel.gif)  
+*Funcionamiento de 'Gráfico de datos'*
+
+</center>
+
+<h3 id="opciones-del-panel-grafico"><FONT COLOR=#AA0000>Opciones del panel gráfico</font><a class="headerlink" href="#opciones-del-panel-grafico" title="Permanent link">&para;</a></h3>
+<p>Se accede haciendo clic con el botón derecho del ratón en cualquier zona del panel. Si tenemos el cursor del ratón sobre la zona de las lupas no funcionará.</p>
+<center>
+
+![Opciones de 'Gráfico de datos'](../img/microSM/graph/opciones_panel.png)  
+*Opciones de 'Gráfico de datos'*
+
+</center>
+
+<p>El menú de opciones del gráfico permite controlar la visualización de los ejes, así como la importación/exportación de datos y el ajuste de la frecuencia de muestreo de datos.</p>
+<ul>
+<li><strong>limpiar gráfico</strong>. Borra cualquier gráfico de la ventana de visualización de datos.</li>
+<li><strong>cero abajo</strong>. Sitúa el punto de origen del eje y en la parte inferior del área de visualización del gráfico.</li>
+<li><strong>exportar datos a archivo CSV</strong>. Permite guardar los datos del gráfico en formato CSV. Se exportan los últimos diez mil (10000) valores.</li>
+<li><strong>importar datos desde archivo CSV</strong>. Permite cargar datos CSV desde el ordenador en el que se está ejecutando MicroBlocks. Los datos importados se grafican y se muestran en el 'Gráfico de datos'. Es posible importar 10000 valores. Si tenemos mas de un dato para graficar, estos no se exportan individualmente sino todos juntos eparados por comas.</li>
+<li><strong>copiar datos del gráfico al portapapeles</strong>. Se trata de una función avanzada que permite copiar en el portapapeles los últimos 10000 valores utilizados con el bloque gráfico.</li>
+<li><strong>ajustar latencia del puerto serie</strong>. Se trata de otro función avanzada que permite establecer la frecuencia de muestreo de datos o latencia entre 1 y 20ms. Los números más bajos dan como resultado frecuencias de muestreo más altas.</li>
+</ul>
+<p>Los archivos CSV (del inglés Comma-Separated Values) son un tipo de documento no estandarizado que tiene la idea básica de separar los campos de datos por una coma, de ahí su nombre <a href="https://es.wikipedia.org/wiki/Valores_separados_por_comas">Valores separados por comas</a></p>
+<p>Vamos a ver un ejemplo de uso en el que se muestran de forma gráfica una serie de números aleatorio. El programa y el gráfico son:</p>
+<center>
+
+![Ejemplo de 'Gráfico de datos'](../img/microSM/graph/ejemplo.gif)  
+[Descargar el programa](../microSTEAMakers/programas/grafico_aleatorios.ubp)
+
+</center>
+
+<h2 id="sobre-el-boton-tactil"><FONT COLOR=#007575><strong>Sobre el botón táctil</strong></font><a class="headerlink" href="#sobre-el-boton-tactil" title="Permanent link">&para;</a></h2>
+<p>Vamos a ver un poco mas en profundidad el uso de la zona táctil de la micro:STEAMakers en MicroBlocks tanto con la placa sola como conectada a la Shield:bit.</p>
+<p>Partimos del bloque "ms táctil?" de la libreria microSTEAMakers y mostramos su definición. Vemos que el retorno nos devuelve el valor capacitivo del sensor con el que haremos un sencillo programa de pruebas como el siguiente:</p>
+<center>
+
+![Programa de pruebas para botón táctil](../img/microSM/oper/pruebas_tactil.png)  
+*[Programa de pruebas para botón táctil](../microSTEAMakers/programas/pruebas_tactil.ubp)*
+
+</center>
+
+<p>A continuación vemos los valores que retorna el bloque cuando se realizan toques cortos y largos. Se muestran los valores tanto numéricos como en forma de gráfico para las dos situaciones que vamos a contemplar:</p>
+<p><strong>1.</strong> <strong><em>Placa micro:STEAMakers sola</em></strong>. Sin tocar nos devuelve un valor de 43, para pulsaciones cortas entre 15 y 25 y para largas se estabiliza en torno a 10.</p>
+<center>
+
+![Resultado con la micro:STEAMakers sola](../img/microSM/oper/pruebas_tactil_res_sola.gif)  
+*Resultado con la micro:STEAMakers sola*  
+
+</center>
+
+<p><strong>2.</strong> <strong><em>Placa micro:STEAMakers en la Shield:bit</em></strong>. Sin tocar nos devuelve un valor de 31, para pulsaciones cortas entre 20 y 22 y para largas se estabiliza en torno a 15.</p>
+<center>
+
+![Resultado con la micro:STEAMakers con la Shield:bit](../img/microSM/oper/pruebas_tactil_res_SB.gif)  
+*Resultado con la micro:STEAMakers con la Shield:bit*  
+
+</center>
+
+<p>Podemos decir como conclusión de la prueba que cuando la micro:STEAMakers está colocada en la Shield:bit el botón táctil es menos sensible que cuando no lo está. No obstante observamos como en ambos casos responde muy bien tanto a toques largos como cortos.</p>
+<h2 id="libreria-neopixeles"><FONT COLOR=#007575><strong>Libreria NeoPixeles</strong></font><a class="headerlink" href="#libreria-neopixeles" title="Permanent link">&para;</a></h2>
+<p>Los NeoPixels son pequeños módulos LED que combinan LEDs rojos, verdes y azules montados en un solo encapsulado con un chip controlador. Los NeoPixels pueden ser controlados individualmente por una sola línea de datos desde un dispositivo microcontrolado para crear diferentes colores y patrones. Un solo pin del microcontrolador puede controlar docenas (o incluso cientos) de NeoPixels. Los NeoPixels se encuentran en muchas configuraciones diferentes, como son anillos, barras, matrices y tiras flexibles.</p>
+<ul>
+<li><a class="glightbox" href="../../img/microSM/NeoP/b1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/NeoP/b1.png" /></a>. Configura el pin de conexión de los Neopixels. Este bloque configura un dispositivo NeoPixel especificando cuántos LEDs hay en el dispositivo y qué pin se utilizará para controlarlos. El bloque debe ejecutarse antes de hacer nada con cualquiera de los otros bloques NeoPixel.</li>
+</ul>
+<p>El bloque se expande a <a class="glightbox" href="../../img/microSM/NeoP/b2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/NeoP/b2.png" /></a> para el trabajo con Neopixels blancos.</p>
+<ul>
+<li><a class="glightbox" href="../../img/microSM/NeoP/b3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/NeoP/b3.png" /></a>. Establece los colores de los diez primeros NeoPixels. Es especialmente útil cuando se utiliza con placas o tiras con este número de LEDs. La secuencia de numeración (1-10) es de izquierda a derecha y de arriba a abajo. La configuración del color se hace desde la paleta que se muestra sin poder establecer mayor precisión. La paleta muestra los valores RGB en decimal.</li>
+</ul>
+<center>
+
+![](../img/microSM/NeoP/b4.png)
+
+</center>
+
+<ul>
+<li><a class="glightbox" href="../../img/microSM/NeoP/b5.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/NeoP/b5.png" /></a>. Apaga todos los LEDs. Los pone a color negro.</li>
+<li><a class="glightbox" href="../../img/microSM/NeoP/b6.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/NeoP/b6.png" /></a>. Pone todos los LEDs con el color indicado.</li>
+<li><a class="glightbox" href="../../img/microSM/NeoP/b7.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/NeoP/b7.png" /></a>. Pone el número de LED especificado del color indicado. Los LEDs se numeran secuencialmente comenzando por uno.</li>
+<li><a class="glightbox" href="../../img/microSM/NeoP/b8.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/NeoP/b8.png" /></a>. Desplaza la secuencia de colores NeoPixel el número de NeoPixels indicado. Los colores al final de la secuencia se desplazan y se insertan al principio de la secuencia. Si los NeoPixels forman un círculo, los colores giran alrededor del círculo. El argumento determina el número de posiciones que se desplazan los colores. Un valor negativo hará que los NeoPixels roten en la dirección opuesta.</li>
+<li><a class="glightbox" href="../../img/microSM/NeoP/b9.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/NeoP/b9.png" /></a>. Devuelve un color definido especificando los valores de rojo (R), verde (G) y azul (B) entre 0 y255. El bloque puede utilizarse en cualquier bloque que reciba una entrada de color. Los valores inferiores a 40 pueden provocar que el LED no se encienda nada.</li>
+<li><a class="glightbox" href="../../img/microSM/NeoP/b10.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/NeoP/b10.png" /></a>. Devuelve un color aleatorio. El bloque puede utilizarse en cualquier bloque que reciba una entrada de color.</li>
+</ul>
+<p>El siguiente ejemplo muestra el uso básico de algunos de los bloques de esta libreria como complemento del manejo de los bloques de la libreria micro:STEAMakers relativos a la pantalla. Al ser LEDs RGB direccionables pueden ser tratados como una tira de 25 LEDs numerada desde el 1 al 25 empezando por la esquina superior izquierda y contando de izquierda a derecha de de arriba hacia abajo.</p>
+<center>
+
+![Ejemplo de 'Libreria NeoPixels'](../img/microSM/NeoP/lib_neo_pix.gif)  
+[Descargar el programa](../microSTEAMakers/programas/lib_neo_pix.ubp)
+
+</center>
+
+<h2 id="mis-bloques"><FONT COLOR=#007575><strong>Mis bloques</strong></font><a class="headerlink" href="#mis-bloques" title="Permanent link">&para;</a></h2>
+<p>Aprenderemos a crear nuestros propios bloques, o lo que es lo mismo, a definir nuestras propias funciones. Acceder a su cración es sencillo ya que están en el menú de la aplicación. Basta con hacer clic en el apartado de color azul claro y veremos los dos bloques disponibles. Haciendo clic en cualquiera de ellos se nos abre una pequeña ventana emergente para ponerle un nombre, que por defecto es MyBlock.</p>
+<center>
+
+![Mis bloques](../img/microSM/mis_b/mis1.png)  
+*Mis bloques*
+
+</center>
+
+<p>Observamos que se pueden crear dos tipos de bloques:</p>
+<ul>
+<li><strong>de comando:</strong> <a class="glightbox" href="../../img/microSM/mis_b/b1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/mis_b/b1.png" /></a>. Este bloque es en realidad un botón y al hacer clic sobre el mismo se inicia el proceso de creación de un bloque personalizado (función).</li>
+<li><strong>reportador:</strong> <a class="glightbox" href="../../img/microSM/mis_b/b2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/mis_b/b2.png" /></a>. Este bloque también es un botón. Inicia el proceso de creación de un bloque personalizado (función) que puede devolver un resultado. Junto con este bloque se suelen utilizar los bloques del menú "Control" que veremos mas abajo.</li>
+</ul>
+<h3 id="descripcion"><FONT COLOR=#AA0000>Descripción</font><a class="headerlink" href="#descripcion" title="Permanent link">&para;</a></h3>
+<p>La principal diferencia entre el segundo y el primer bloque es que la definición del bloque personalizado que se cree en el segundo podrá devolver un valor mediante el bloque RETURN.</p>
+<p>Esta capacidad única permitirá que el bloque personalizado se utilice en cualquier bloque en el que se espere un parámetro de entrada, y pasará el valor que informe a esa operación.</p>
+<div class="admonition info">
+<p class="admonition-title">En cuanto al uso del bloque RETURN:</p>
+<ul>
+<li>Cualquier bloque colocado después de él no será ejecutado.</li>
+<li>Pueden existir múltiples bloques RETURN, manejando diferentes condiciones y devolviendo sus valores respectivos.</li>
+</ul>
+</div>
+<p>La creación de un bloque personalizado es un proceso detallado con los siguientes pasos y opciones:</p>
+<ul>
+<li>Asignación de un nombre de bloque personalizado</li>
+<li>Añadir parámetros y sus etiquetas</li>
+<li>Modificación de los tipos de parámetros</li>
+<li>Asignación de valores por defecto a los parámetros</li>
+<li>Valores de color</li>
+</ul>
+<p>Los dos bloques citados de "Control" son los siguientes, que aunque de apariencia son idénticos, en realidad hay diferencias.</p>
+<ul>
+<li><a class="glightbox" href="../../img/microSM/mis_b/b3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/mis_b/b3.png" /></a>.  Llama al bloque personalizado que se seleccione de la lista 'function name'. La lista de parámetros es opcional.</li>
+<li><a class="glightbox" href="../../img/microSM/mis_b/b4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/mis_b/b4.png" /></a>.  Devuelve el resultado de la llamada del bloque personalizado que se seleccione de la lista 'function name'. La lista de parámetros es opcional.</li>
+</ul>
+<h3 id="operaciones-comunes"><FONT COLOR=#AA0000>Operaciones comunes</font><a class="headerlink" href="#operaciones-comunes" title="Permanent link">&para;</a></h3>
+<p>Antes de examinar el proceso de creación de un nuevo bloque personalizado, repasemos algunas de las operaciones habituales disponibles al trabajar con una cabecera de bloque personalizada:</p>
+<ul>
+<li><strong><FONT COLOR=#0000FF>MODO DE EDICIÓN</font></strong></li>
+</ul>
+<p>Cuando se hace clic en la parte púrpura del bloque con sombrero "define" o en la parte azul claro del bloque personalizado con el nombre del bloque, se entra en modo edición. Este modo puede identificarse por el cambio de aspecto de los parámetros de la cabecera, así como por la aparición de los triángulos negros. En la animación siguiente vemos como crear, activar y desactivar la edición y como añadir y eliminar casillas o etiquetas en un bloque.</p>
+<center>
+
+![Crear un bloque](../img/microSM/mis_b/mis2.gif)  
+*Crear un bloque*
+
+</center>
+
+<p>Cada parámetro añadido debe tener un nombre diferente que MicroBlocks asigna de manera automática pero que podemos cambiar según nuestros intereses simplemente haciendo clic sobre el bloque del nombre.</p>
+<center>
+
+![Cambios de nombre de parámetros y edición de un bloque](../img/microSM/mis_b/mis3.gif)  
+*Cambios de nombre de parámetros y edición de un bloque*
+
+</center>
+
+<p>El triángulo negro de la derecha sirve para añadir parámetros y etiquetas, mientras que el de la izquierda sirve para borrarlos. Al hacer clic en el mismo, se eliminará el elemento situado más a la derecha (ya sea un parámetro o una etiqueta).</p>
+<p>Si hay que borrar una etiqueta situada en el centro de la cabecera del bloque, basta con hacer doble clic para seleccionarla, dejarla vacia, y pulsar la tecla Supr.</p>
+<ul>
+<li><strong><FONT COLOR=#0000FF>RENOMBRAR PARÁMETROS Y ETIQUETAS</font></strong></li>
+</ul>
+<p>Para cambiar el nombre de una etiqueta de un bloque personalizado o de cualquier etiqueta de la cabecera, basta con hacer doble clic para seleccionarla y, a continuación, escribir un nuevo nombre. Dado que el nombre del bloque y las etiquetas son sólo campos de texto, es posible crear nombres con varias palabras separadas por espacios o caracteres de subrayado.</p>
+<p>Si se utilizan espacios al crear el nombre de la etiqueta, el nombre de la etiqueta resultante se tratará como etiquetas sucesivas separadas. Aunque aparezcan una tras otra y se perciban como un nombre continuo, en realidad son etiquetas de texto individuales. Esto sólo es importante si va a editarlas posteriormente.</p>
+<p>Si se utilizan caracteres de subrayado al crear el nombre de la etiqueta, el nombre de la etiqueta resultante se tratará como una sola etiqueta.</p>
+<p>Por lo tanto, dependiendo de cuáles sean nuestras intenciones, puede que encontremos un método u otro más adecuado a nuestras necesidades.</p>
+<p>Para cambiar el nombre de un parámetro, hacemos clic en el área ovalada marrón del parámetro y escribimos un nuevo nombre en la ventana de edición.</p>
+<p>A continuación vemos el proceso para cambiar ambas etiquetas, el nombre del bloque y los parámetros.</p>
+<center>
+
+![Cambios de nombres](../img/microSM/mis_b/mis3b.gif)  
+*Cambios de nombres*
+
+</center>
+
+<ul>
+<li><strong><FONT COLOR=#0000FF>MOSTRAR EL CONTENIDO DE UN BLOQUE PERSONALIZADO</font></strong></li>
+</ul>
+<p>Una vez creado un bloque personalizado y cerrada su cabecera y definición, este aparecerá automáticamente en el área de bloques de la categoría Mis bloques. Como el bloque recién creado reside en el área Mis bloques, se verá como el formato de control o bloque informador de su definición. Para ver realmente los bloques que componen la definición del bloque personalizado, debemos hacer clic derecho en el bloque y seleccionar "mostrar definición de bloque" en el menú.</p>
+<center>
+
+![Mostrar la definición de un bloque](../img/microSM/mis_b/mis4.png)  
+*Mostrar la definición de un bloque*
+
+</center>
+
+<p>Al seleccionar esta opción, la definición del bloque personalizado aparecerá en el Área de trabajo, como apreciamos en la siguiente animación.</p>
+<center>
+
+![Mostrar la definición de un bloque](../img/microSM/mis_b/mis5.gif)  
+*Mostrar la definición de un bloque*
+
+</center>
+
+<p>Si queremos borrar la definición de un bloque de la zona de programa basta con que lo arrastremos a la zona de menú, donde observaremos como aparece un ojo tachado en color gris (indicando ocultar) en lugar de la papelera habitual.</p>
+<p>Para elminar completamente la definición del bloque hay que escoger la opción "elimina la definición del bloque"</p>
+<ul>
+<li><font size="5"><FONT COLOR=#0000FF><b><u>Proceso de creación de un bloque personalizado</u></b></font color></font size></li>
+</ul>
+<p><font size="3"><FONT COLOR=#006400><b>Asignar nombre al bloque</b></font color></font size></p>
+<p>Al hacer clic en el botón añadir bloque, se abre un cuadro de diálogo en el que se introduce el nombre del bloque personalizado.</p>
+<center>
+
+![Creación de un bloque personalizado](../img/microSM/mis_b/mis6.png)  
+*Creación de un bloque personalizado*
+
+</center>
+
+<p>Tras pulsar el botón "De acuerdo", se coloca una cabecera de definición de bloque personalizada en el área de programación.</p>
+<center>
+
+![Bloque personalizado recien creado](../img/microSM/mis_b/mis7.png)  
+*Bloque personalizado recien creado*
+
+</center>
+
+<p>Ahora todos los bloques de código que compondrán este bloque personalizado pueden colocarse bajo el bloque de cabecera, y formarán parte de la nueva función programada. Observe también que se ha colocado un nuevo bloque que representa la función personalizada en la ventana de categoría Mis Bloques con el nombre predeterminado de miBloque.</p>
+<p>Aunque no siempre es un requisito, algunas funciones necesitarán parámetros para completar su funcionalidad programada. Éstos actuarán como entradas de la función y podrán ser utilizados por los bloques que componen el código de bloque personalizado.</p>
+<p><font size="3"><FONT COLOR=#006400><b>Modificación de los tipos de parámetros</b></font color></font size></p>
+<p>Cuando se añade un parámetro, MicroBlocks le asigna un nombre por defecto (foo, baz, etc) y un tipo por defecto (número/cadena).</p>
+<center>
+
+![Tipos de parámetros](../img/microSM/mis_b/mis8.png)  
+*Tipos de parámetros*
+
+</center>
+
+<p>Hay varios tipos de parámetros posibles: número/texto, booleano y color. Estos están disponibles para seleccionar en el menú que se abre al hacer clic en el triángulo negro que apunta hacia abajo en el bloque de parámetros oval marrón. Para los parámetros de tipo número/texto, es posible restringir sus tipos a sólo número o sólo texto. A continuación se expone un sencillo bloque que muestra datos de todos los tipos.</p>
+<center>
+
+![Ejemplo de tipos de parámetros](../img/microSM/mis_b/mis9.png)  
+*Ejemplo de tipos de parámetros*
+
+</center>
+
+<p>Vemos que el nombre de la función parece <code>Datos Nombre</code>. De hecho, el nombre de la función es <code>Datos</code>, mientras que <code>Nombre</code> es el nombre del primer parámetro. Sin embargo, dado que MicroBlocks no permite la entrada de una etiqueta seguida de otra, ha sido necesario crear primero el parámetro <code>nombre</code>, seguido de un doble clic en el nombre de la función <code>Datos</code> y añadir " <code>Nombre</code>" (espacio <code>Nombre</code>) al final de la misma.</p>
+<p>Esta técnica parece extraña, pero es totalmente correcta, ya que los nombres de función nunca se utilizan específicamente por sí solos como en un lenguaje de programación basado en texto. Los bloques personalizados, al igual que todos los demás, se arrastran y sueltan en el área de programación, independientemente de su nombre. No obstante, no debemos crear varios bloques personalizados en los que el nombre de la primera etiqueta sea idéntico. De hecho, <strong>NO</strong> podremos hacerlo, ya que MicroBlocks asignará un nombre numerado que lo hará único.</p>
+<p><font size="3"><FONT COLOR=#006400><b>Asignar valores por defecto a los parámetros</b></font color></font size></p>
+<p>Como se ve en la imágen anterior de definición de bloque personalizado, la vista final del bloque muestra valores para cada parámetro, "Juan", 55, true, y 16715550 para el color rojo. Estos valores se denominan valores por defecto y son los que hemos asignado al bloque en su cración y se pueden modificar en cualquier momento si los ponemos en modo edición.</p>
+<ul>
+<li><font size="5"><FONT COLOR=#0000FF><b><u>Interpretación del número que identifica al color</u></b></font color></font size></li>
+</ul>
+<p>Los valores por defecto de los tipos cadena, número y booleano se explican por sí mismos. Sin embargo, el tipo de color necesita alguna explicación mas. Vamos a utilizar el siguiente ejemplo para ello.</p>
+<center>
+
+![Color como un número](../img/microSM/mis_b/mis9_1.png)  
+*Color como un número*
+
+</center>
+
+<p>Como puede verse en la muestra de resultados los primeros corresponden a los valores en decimal de las variables R, G y B respectivamente, el valor del color magenta se obtiene del valor decimal 12398300. Analicemos estos valores y veamos qué representan.</p>
+<p>Si cada uno de los tres valores decimales superiores se convierten a los equivalentes hexadecimales, se obtiene:</p>
+<center>
+
+|Color (1,1)|Decimal|Hexadecimal|
+|:-:|:-:|:-:|
+|R|115|73|
+|G|188|BC|
+|B|180|B4|
+
+</center>
+
+<p>Si llevamos esto a un programa que trabaje con colores RGB, como por ejemplo Inkscape, podemos ver como el color del pixel (1,1) es color verde claro.</p>
+<center>
+
+![Color como un número](../img/microSM/mis_b/mis9a.png)  
+*Color como un número*
+
+</center>
+
+<p>Podriamos colocar los tres valores hexadecimales RGB uno a continuación del otro en el orden RGB para obtener 0x73BCB4, y este número expresado en el sistema de numeración decimal es el 7584948.</p>
+<p>El valor decimal 12398300 pasado a hexadecimal es BD2EDC que descompuesto corresponde R = BD (189), G = 2E (46) y B = DC (220), tal y como se refleja en la tabla siguiente:</p>
+<center>
+
+|Color (5,5)|Decimal|Hexadecimal|
+|:-:|:-:|:-:|
+|R|189|BD|
+|G|46|2E|
+|B|220|DC|
+
+</center>
+
+<p>Si llevamos esto a un programa que trabaje con colores RGB, como por ejemplo Inkscape, podemos ver como el color del pixel (5,5) es color magenta claro.</p>
+<center>
+
+![Color como un número](../img/microSM/mis_b/mis9b.png)  
+*Color como un número*
+
+</center>
+
+<ul>
+<li><font size="5"><FONT COLOR=#0000FF><b><u>Ejemplo de creación de bloque personalizado</u></b></font color></font size></li>
+</ul>
+<p>Vamos a definir algunos de ellos mediante Mis Bloques. Creamos los siguientes (aunque ya existen en otro bloque):</p>
+<center>
+
+![Creación de bloques para iconos](../img/microSM/mis_b/mis11.png)  
+*Creación de bloques para iconos*
+
+</center>
+
+<p>El uso de estos bloques lo vemos a continuación:</p>
+<center>
+
+![Uso de bloques personalizados](../img/microSM/mis_b/mis12.gif)  
+[Descargar programa](../microSTEAMakers/programas/bloques_iconos.ubp)
+
+</center>
+
+<p>En el programa está disponible la definición de los bloques .</p>
+<p>En la imagen siguiente tenemos un sencillo ejemplo de uso de función con retorno de valor mediante bloque reportador.</p>
+<center>
+
+![Función con retorno de valor](../img/microSM/mis_b/mis13.png)  
+[Descargar programa](../microSTEAMakers/programas/multiplicador.ubp)
+
+</center>
+
+<h2 id="sonidos"><FONT COLOR=#007575><strong>Sonidos</strong></font><a class="headerlink" href="#sonidos" title="Permanent link">&para;</a></h2>
+<p>En MicroBlocks tenemos tres opciones de reproducción de sonidos o música, un conjunto de librerías englobadas bajo el seudónimo "Sonido", una librería de "Politonos" y otra librería de "Tonos". En "Sonido" nos encontraremos bloques "MultiTone", opciones para reproducir mp3 o WAV, radio AM, etc. No veremos estas librerías por el momento y nos centraremos en "Tonos" y "Politonos".</p>
+<p>La libreria micro:STEAMakers dispone de un bloque relacionado con el sonido. Este es:</p>
+<ul>
+<li><strong>ms sonido</strong>. Bloque de lectura del nivel de sonido percibido por el micrófono de la placa expresado en tanto por ciento. El bloque es:</li>
+</ul>
+<center>
+
+![Bloque ms sonido](../img/microSM/sonido/micro.png).  
+*Bloque ms sonido*
+
+</center>
+
+<h3 id="tonos"><FONT COLOR=#AA0000>Tonos</font><a class="headerlink" href="#tonos" title="Permanent link">&para;</a></h3>
+<p>Añadimos la libreria "<strong>Tonos</strong>" a nuestro entorno y nos encontramos con los siguientes bloques:</p>
+<ul>
+<li><a class="glightbox" href="../../img/microSM/sonido/Btonos1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/sonido/Btonos1.png" /></a>. Reproduce la nota y la octava y por el tiempo indicados.</li>
+<li><a class="glightbox" href="../../img/microSM/sonido/Btonos2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/sonido/Btonos2.png" /></a>. Reproduce la nota indicada por el número de tecla en el teclado del piano (0-127) donde el Do central es 60. Este bloque es útil cuando se realizan transformaciones matemáticas de la música. MIDI es la abreviatura de "Musical Instrument Digital Interface", que se traduce como "Interfaz digital de instrumentos musicales", y es un estándar de la industria para controlar sintetizadores, cajas de ritmos y otros dispositivos musicales electrónicos.</li>
+<li><a class="glightbox" href="../../img/microSM/sonido/Btonos3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/sonido/Btonos3.png" /></a>. Reproduce la nota especificada en Hertz (Hz) durante el tiempo indicado.</li>
+<li><a class="glightbox" href="../../img/microSM/sonido/Btonos4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/sonido/Btonos4.png" /></a>. Reproduce el tono indicado en Hz.</li>
+<li><a class="glightbox" href="../../img/microSM/sonido/Btonos5.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/sonido/Btonos5.png" /></a>. Detiene la reproducción del tono actual.</li>
+<li><a class="glightbox" href="../../img/microSM/sonido/Btonos6.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/sonido/Btonos6.png" /></a>. Especifica el pin al que está conectado un zumbador piezoeléctrico o unos auriculares. En placas con altavoces integrados, se utilizará el altavoz integrado si se omite este bloque.</li>
+</ul>
+<p>Veamos un ejemplo en el que se utiliza el bloque <strong>ms sonido</strong> junto con bloques de la libreria <code>Tonos</code>. El ejmplo simplemente emite distintos tonos por el altavoz y enciende el LED central de un color que dependerá del nivel de sonido detectado por el micrófono.</p>
+<center>
+
+![Ejemplo básico de sonido](../img/microSM/sonido/basico_sonido.gif)  
+[Descargar programa](../microSTEAMakers/programas/basico_sonido.ubp)
+
+</center>
+
+<h3 id="politonos"><FONT COLOR=#AA0000>Politonos</font><a class="headerlink" href="#politonos" title="Permanent link">&para;</a></h3>
+<p>El formato <a href="https://en.wikipedia.org/wiki/Ring_Tone_Text_Transfer_Language">RTTTL</a> (del inglés, Ring Tone Text Transfer Language) fue desarrollado por Nokia para codificar tonos de llamada a teléfonos móviles. El formato RTTTL es una cadena dividida en tres secciones: encabezado (nombre o título), valor predeterminado y datos. Por ejemplo, la siguiente cadena de texto se corresponde con la Intro de Donkey Kong:</p>
+<p><em>d=4,o=5,b=140:8a#,8p,8d6,16p,16f.6,16g.6,16f.6,8a#,8p,8d6,16p,16f.6,16g.6,<br>16f.6,8a#,8p,8d6,16p,16f.6,16g.6,16f.6,8a#,8p,8d6,16p,16f.6,16g.6,16f.6</em></br></p>
+<p>Añadimos la libreria "<strong>Politonos</strong>" a nuestro entorno y nos encontramos con los siguientes bloques:</p>
+<ul>
+<li><a class="glightbox" href="../../img/microSM/sonido/BPolitonos1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/sonido/BPolitonos1.png" /></a>. Reproduce la cadena de tono de llamada indicada.</li>
+<li><a class="glightbox" href="../../img/microSM/sonido/BPolitonos2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/microSM/sonido/BPolitonos2.png" /></a>. Devuelve el nombre del tono de llamada que se está reproduciendo actualmente.</li>
+</ul>
+<p>Para reproducir una melodia simplemente la copiamos en el bloque <code>toca el politono</code>.</p>
+<p>Existen páginas de donde se pueden descargar tonos, o incluso podemos hacerlo nosotros mismos. A continuación ponemos algunos enlaces:</p>
+<ul>
+<li><a href="https://picaxe.com/rtttl-ringtones-for-tune-command/">RTTTL Ringtone Downloads</a> de Picaxe.</li>
+<li>Colecciones de <a href="http://arcadetones.emuunlim.com/">ArcadeTones</a> clasificados por temas.</li>
+<li>Archivo <a href="http://microblocks.fun/mbtest/NokringTunes.txt">NokringTunes.txt</a> que contiene más de once mil melodías en formato Nokring.</li>
+</ul>
+<p>Una vez descargado lo abrimos y buscamos la melodia para copiar y pegar en el bloque.</p>
+<p><font size="5"><FONT COLOR=#0000FF><b><u>Información complementaria</u></b></font color></font size></p>
+<p>Ya hemos visto como añadir la librería politonos, enlaces para obtenerlos y el uso de los mismos en MicroBlocks, pero vamos a profundizar un poco mas sobre el tema.</p>
+<p>El formato RTTTL es una cadena dividida en tres partes: nombre, valor por defecto y datos.</p>
+<ul>
+<li><strong>nombre</strong>. Es una cadena que describe el nombre del tono de llamada. En principio su longitud máxima es de 10 caracteres y no puede contener el signo de dos puntos (:).</li>
+<li><strong>valor por defecto</strong>. Lo forman un conjunto de valores separados por comas que son los que deben cumplirse durane la ejecución del tono de llamada. Cada valor es una clave a la que se asigna con una igualdad un valor, siendo los nombre posibles: <strong>D</strong> (duración), <strong>o</strong> (octava) y <strong>B</strong> (ritmo o tempo)</li>
+<li><strong>datos</strong>. Es un conjunto de cadenas de caracteres separadas por comas, estando cada cadena formada por una <em>duración</em>, un <em>tono</em>, una <em>octava</em> y opcionalmente <em>puntos</em> que aumentan la duración de la nota a la mitad.</li>
+</ul>
+<p>Un ejemplo de tono RTTTL puede ser:</p>
+<p><code>Abba - Money Money Money: d=4,o=5,b=112:8e7,8e7,8e7,8e7,8e7,8e7,16e6,16a6,16c7,16e7,8d#7,8d#7,8d#7,8d#7,8d#7,8d#7,16f6,16a6,16c7,16d#7,d7,8c7,8a6,8c7,c7,2a6,32a6,32c7,32e7,8a7</code></p>
+<p>donde se pueden distinguir facilmente las tres partes separadas por dos puntos (:):</p>
+<ul>
+<li><strong>nombre</strong>. Abba - Money Money Money.</li>
+<li><strong>valor por defecto</strong>. d=4,o=5,b=112 (d = duración; o = octava y b = tempo o ritmo). Mas adelante se describen mejor estos conceptos.</li>
+<li><strong>datos</strong>. Las notas separadas por comas y formadas por una duración, una nota [a (La), b (Si), c (Do), d (Re), e (Mi), f (Fa) o g (Sol)] y la indicación de la octava, que si no se indica se aplica el valor predeterminado.</li>
+</ul>
+<p>La duración de las notas es:</p>
+<ul>
+<li><strong>1</strong> - nota entera</li>
+<li><strong>2</strong> - media nota</li>
+<li><strong>4</strong> - cuarto de nota</li>
+<li><strong>8</strong> - octavo de nota (octava)</li>
+<li><strong>16</strong> - dieciseisavo de nota</li>
+<li><strong>32</strong> - treintaidosavo de nota</li>
+</ul>
+<p>Los tonos pueden ser:</p>
+<ul>
+<li><strong>P</strong> – descanso o pausa</li>
+<li><strong>A</strong> – A (La)</li>
+<li><strong>A#</strong> – A♯ B♭ (La#/Si♭)</li>
+<li><strong>B</strong> – B/C♭ (Si/Do♭)</li>
+<li><strong>C</strong> – C (Do)</li>
+<li><strong>C#</strong> – C♯/D♭ (Do♯/Re♭)</li>
+<li><strong>D</strong> – D (Re)</li>
+<li><strong>D#</strong> – D♯/E♭ (Re♯/Mi♭)</li>
+<li><strong>E</strong> – E/F♭ (Mi/Fa♭)</li>
+<li><strong>F</strong> – F/E♯ (Fa/Mi♯)</li>
+<li><strong>F#</strong> – F♯/G♭ (Fa♯/Sol♭)</li>
+<li><strong>G</strong> – G (Sol)</li>
+<li><strong>G#</strong> – G♯/A♭ (Sol♯/La♭)</li>
+</ul>
+<p>En el formato RTTTL se permiten octavas comenzando desde la A por debajo del do medio y subiendo cuatro octavas. Esto se debe a la imposibilidad de los teléfonos móviles para reproducir ciertos tonos de forma audible. Las octavas están numeradas desde el tono más bajo hasta el tono más alto de 4 a 7. La octava debe dejarse fuera de la notación en el caso de un descanso o pausa en el patrón.</p>
+<p>En el ejemplo siguiente suena un politono u otro dependiendo del botón que pulsemos en la micro:STEAMakers.</p>
+<center>
+
+![Ejemplo básico de politonos](../img/microSM/sonido/ejem_politonos.png)  
+[Descargar programa](../microSTEAMakers/programas/ejem_politonos.ubp)
+
+</center>
+
+<h3 id="abrir-archivos-de-sonido-o-musica"><FONT COLOR=#AA0000>Abrir archivos de Sonido o música</font><a class="headerlink" href="#abrir-archivos-de-sonido-o-musica" title="Permanent link">&para;</a></h3>
+<p>En MicroBlocks tenemos disponibles una serie de ejemplos resueltos a los que se puede acceder desde el menú "Fichero" escogiendo la opción "Abre" y dirigiendonos a la carpeta ejemplos, si no estamos ya en ella.</p>
+<div class="admonition info">
+<p class="admonition-title"><strong>ADVERTENCIA</strong></p>
+<p>Los ejemplos están desarrollados para micro:bit por lo que para hacer que funcionen hay que realizar ciertas adaptaciones de los mismos.</p>
+<p>Veremos solamente algunos de ellos.</p>
+</div>
+<center>
+
+![Ejemplos de música y sonido en MicroBlocks](../img/microSM/sonido/ej_music.png)  
+*Ejemplos de música y sonido en MicroBlocks*
+
+</center>
+
+<p>Podemos abrir cualquiera de los ejemplos de los directorios indicados. En el directorio "Sonido" basicamente hay diferentes ejemplos que trabajan con sonidos y vamos a abrir SoundLevel, que es un programa que simula vúmetros sencillos con la pantalla y/o tiras de LEDs. El programa, como hemos dicho está pensado para micro:bit y, tal cual lo cargamos, no funcionará en la micro:STEAMakers. El programa original lo vemos en la imagen siguiente:</p>
+<center>
+
+![Ejemplo de nivel de sonido](../img/microSM/sonido/SoundLevel_orig.png)  
+*Ejemplo de nivel de sonido con los dos programas que lo forman*
+
+</center>
+
+<p>En la imagen siguiente podemos ver las modificaciones realizadas para hacer que el ejemplo funcione.</p>
+<center>
+
+![Ejemplo de nivel de sonido modificado](../img/microSM/sonido/SoundLevel_modif.png)  
+[Descargar programa](../microSTEAMakers/programas/SoundLevel_modif.ubp)
+
+</center>
+
+<p>La imagen siguiente, en formato svg, es una comparativa entre el antes y el después del programa.</p>
+<center>
+
+![Comparativa ejemplo de nivel de sonido](../img/microSM/sonido/compara.svg)  
+*Comparativa ejemplo de nivel de sonido*  
+**Clic sobre la imagen para agrandar**
+
+</center>
+
+<p>En el directorio "Music" hay varios ejemplos en los que se utilizan bloques propios. En la figura vemos el ejemplo HarryPotter mostrando la definición de uno de los bloques.</p>
+<center>
+
+![Ejemplo de sonido HarryPotter original](../img/microSM/sonido/ej_harrypotter_orig.png)  
+*Ejemplo de sonido HarryPotter original*
+
+</center>
+
+<p>El programa modificado lo tenemos a continuación. En este caso solamente hay que añadir el bloque de inicializar audio de la libreria micro:STEAMakers.</p>
+<center>
+
+![Ejemplo de sonido HarryPotter modificado](../img/microSM/sonido/ej_harrypotter_modif.png)  
+[Descargar programa](../microSTEAMakers/programas/ej_harrypotter_modif.ubp)
+
+</center>
+
+<p>A simple vista se aprecia la utilidad de las funciones para simplificar el código y hacer mas sencilla la depuración del mismo.</p>
+<p>Otro ejemplo con todos los bloques desplegados lo vemos para el caso de Bach Bouree, que se corresponden con la pieza musical integrada como quinto movimiento en la Suite en Mi menor para Laúd BWV 996 Bourrée en mi menor compuesta por Johann Sebastian Bach. En la imagen siguiente vemos el archivo orginal.</p>
+<center>
+
+![Ejemplo de sonido Bach Bouree](../img/microSM/sonido/ej_bach.png)  
+*Ejemplo de sonido Bach Bouree*
+
+</center>
+
+<p>El programa sin los bloques expandidos, con la inicialización del audio y sin los comentarios es tan simple como:</p>
+<center>
+
+![Ejemplo de sonido Bach Bouree](../img/microSM/sonido/ej_bach1.png)  
+*Ejemplo de sonido Bach Bouree*
+
+</center>
+
+<h2 id="sensor-de-temperatura-y-humedad"><FONT COLOR=#007575><strong>Sensor de temperatura y humedad</strong></font><a class="headerlink" href="#sensor-de-temperatura-y-humedad" title="Permanent link">&para;</a></h2>
+<p>La micro:STEAMakers incorpora un sensor de temperatura y humedad AHT20 y en MicroBlocks se han contemplado dos bloques que nos devuelven sus lecturas. Estos bloques son:</p>
+<ul>
+<li><strong>ms temperatura ºC</strong> El bloque devuelve la temperatura medida por el sensor expresada en ºC. El aspecto del bloque es:</li>
+</ul>
+<center>
+
+![Bloque ms temperatura](../img/microSM/B_temp.png).  
+*Bloque ms temperatura*
+
+</center>
+
+<ul>
+<li><strong>ms humedad %</strong> El bloque devuelve la humedad medida por el sensor expresada en porcentaje. El aspecto del bloque es:</li>
+</ul>
+<center>
+
+![Bloque ms humedad](../img/microSM/B_hum.png).  
+*Bloque ms humedad*
+
+</center>
+
+<p>El siguiente ejemplo muestra el uso de estos bloques.</p>
+<center>
+
+![Ejemplo de uso de ms temperatura ºC  y ms humedad %](../img/microSM/ej_temp_hum.gif)  
+[Descargar programa](../microSTEAMakers/programas/ej_temp_hum.ubp)
+
+</center>
+
+<h2 id="acelerometro-y-giroscopio"><FONT COLOR=#007575><strong>Acelerómetro y giroscopio</strong></font><a class="headerlink" href="#acelerometro-y-giroscopio" title="Permanent link">&para;</a></h2>
+<p>La micro:STEAMakers incorpora un giroscopio acelerometro de seis ejes MPU6050 con Velocidad máxima de rotación de 2000°/s y un Rango de aceleración de ±2g，±4g，±8g，±16g. En el apartado "Antes de" hemos visto detalles sobre el mismo.</p>
+<p>MicroBlocks nos da tres bloques en la libreria micro:STEAMakers para trabajar con el mismo:</p>
+<ul>
+<li><strong>ms accel m/s2</strong>. Nos devuelve la aceleración respecto al eje escogido medida en m/s2. El aspecto del bloque es:</li>
+</ul>
+<center>
+
+![Bloque ms accel m/s2](../img/microSM/B_acel.png).  
+*Bloque ms accel m/s2*
+
+</center>
+
+<p>El siguiente ejemplo muestra la captura de un programa que hace uso de este bloque.</p>
+<center>
+
+![Ejemplo de uso de m:s accel m/s2](../img/microSM/ej_acel.png)  
+[Descargar programa](../microSTEAMakers/programas/ej_acel.ubp)
+
+</center>
+
+<ul>
+<li><strong>ms gyro deg/s</strong>. Nos devuelve la velocidad angular respecto al eje escogido medida en deg/s. El aspecto del bloque es:</li>
+</ul>
+<center>
+
+![Bloque ms gyro deg/s](../img/microSM/B_gyro.png).  
+*Bloque ms gyro deg/s*
+
+</center>
+
+<p>El siguiente ejemplo muestra la captura de un programa que hace uso de este bloque.</p>
+<center>
+
+![Ejemplo de uso de ms gyro deg/s](../img/microSM/ej_gyro.png)  
+[Descargar programa](../microSTEAMakers/programas/ej_gyro.ubp)
+
+</center>
+
+<ul>
+<li><strong>ms inclinación hacia</strong>. Nos devuelve la inclinación respecto al eje escogido medida en grados. El aspecto del bloque es:</li>
+</ul>
+<center>
+
+![Bloque ms inclinación hacia](../img/microSM/B_incli.png).  
+*Bloque ms inclinación hacia*
+
+</center>
+
+<p>El siguiente ejemplo muestra la captura de un programa que hace uso de este bloque.</p>
+<center>
+
+![Ejemplo de uso de ms inclinación hacia](../img/microSM/ej_incli.png)  
+[Descargar programa](../microSTEAMakers/programas/ej_incli.ubp)
+
+</center>
+
+<h2 id="sensor-de-energia"><FONT COLOR=#007575><strong>Sensor de energia</strong></font><a class="headerlink" href="#sensor-de-energia" title="Permanent link">&para;</a></h2>
+<p>La micro:STEAMakers incorpora un circuito integrado con encapsulado SOT-23 de 5 pines que es un monitor de corriente, tensión y potencia. Esto nos permite trabajar con valores de energia a partir de los bloques que incorpora MicroBlocks, que son:</p>
+<ul>
+<li><strong>ms energia</strong>. El bloque devuelve el parámetro que indica la unidad seleccionada, es decir: corriente en mA, tensión en mV o potencia en mW. El aspecto del bloque es:</li>
+</ul>
+<center>
+
+![Bloque ms energia](../img/microSM/B_energy.png).  
+*Bloque ms energia*
+
+</center>
+
+<ul>
+<li><strong>ms <code>estado</code> la medida de energia</strong>.  Bloque que permite poner en marcha (arranca), detener (detén) o reiniciar (resetea) la monitorización del consumo energético que se está produciendo en la placa micro:STEAMakers. El aspecto del bloque es:</li>
+</ul>
+<center>
+
+![Bloque ms ```estado``` la medida de energia](../img/microSM/B_energy_meter.png).  
+*Bloque ms ```estado``` la medida de energia*
+
+</center>
+
+<p>La definición del bloque es la siguiente:</p>
+<ul>
+<li><strong>ms consumo de energia (<span class="arithmatex">\(\mu Wh\)</span>)</strong>.  El bloque devuelve el consumo energético en <span class="arithmatex">\(\mu Wh\)</span> que se produce desde el momento en que se arranca el medidor (bloque anterior) hasta que se detiene o se resetea. El aspecto del bloque es:</li>
+</ul>
+<center>
+
+![Bloque ms consumo de energia ($\mu Wh$)](../img/microSM/B_energy_consum.png).  
+*Bloque ms consumo de energia ($\mu Wh$)*
+
+</center>
+
+<p>El siguiente ejemplo muestra un programa que hace uso de estos bloques. En la animación podemos apreciar como el consumo energético no retorna un valor distinto de cero hasta que no se pone en marcha el medidor. Se ha incluido un cálculo de la potencia en mW a partir de las medidas de tensión y corriente.</p>
+<center>
+
+![Ejemplo de uso de m:s energy consumption ($\mu Wh$)](../img/microSM/ej_energia.gif)  
+[Descargar programa](../microSTEAMakers/programas/ej_energia.ubp)
+
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright y copia; 2023 - 2035 Federico Coca
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://bsky.app/profile/fgcoca.bsky.social" target="_blank" rel="noopener" title="Bluesky de Federico Coca" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3M288 227.1c-26.1-50.7-97.1-145.2-163.1-191.8C61.6-9.4 37.5-1.7 21.6 5.5 3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7 3.3-.5 6.6-.9 10-1.4-3.3.5-6.6 1-10 1.4-93.9 14-177.3 48.2-67.9 169.9C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4 102.4-103.4 28.1-156-65.8-169.9-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3 64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/fgcoca" target="_blank" rel="noopener" title="Github de Federico Coca" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.instagram.com/cocafederico/?hl=es" target="_blank" rel="noopener" title="Instagram de Federico Coca" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M194.4 211.7a53.3 53.3 0 1 0 59.2 88.6 53.3 53.3 0 1 0-59.2-88.6m142.3-68.4c-5.2-5.2-11.5-9.3-18.4-12-18.1-7.1-57.6-6.8-83.1-6.5-4.1 0-7.9.1-11.2.1s-7.2 0-11.4-.1c-25.5-.3-64.8-.7-82.9 6.5-6.9 2.7-13.1 6.8-18.4 12s-9.3 11.5-12 18.4c-7.1 18.1-6.7 57.7-6.5 83.2 0 4.1.1 7.9.1 11.1s0 7-.1 11.1c-.2 25.5-.6 65.1 6.5 83.2 2.7 6.9 6.8 13.1 12 18.4s11.5 9.3 18.4 12c18.1 7.1 57.6 6.8 83.1 6.5 4.1 0 7.9-.1 11.2-.1s7.2 0 11.4.1c25.5.3 64.8.7 82.9-6.5 6.9-2.7 13.1-6.8 18.4-12s9.3-11.5 12-18.4c7.2-18 6.8-57.4 6.5-83 0-4.2-.1-8.1-.1-11.4s0-7.1.1-11.4c.3-25.5.7-64.9-6.5-83-2.7-6.9-6.8-13.1-12-18.4zm-67.1 44.5c18.1 12.1 30.6 30.9 34.9 52.2s-.2 43.5-12.3 61.6c-6 9-13.7 16.6-22.6 22.6s-19 10.1-29.6 12.2c-21.3 4.2-43.5-.2-61.6-12.3s-30.6-30.9-34.9-52.2.2-43.5 12.2-61.6 30.9-30.6 52.2-34.9 43.5.2 61.6 12.2h.1zm29.2-1.3c-3.1-2.1-5.6-5.1-7.1-8.6s-1.8-7.3-1.1-11.1 2.6-7.1 5.2-9.8 6.1-4.5 9.8-5.2 7.6-.4 11.1 1.1 6.5 3.9 8.6 7 3.2 6.8 3.2 10.6c0 2.5-.5 5-1.4 7.3s-2.4 4.4-4.1 6.2-3.9 3.2-6.2 4.2-4.8 1.5-7.3 1.5c-3.8 0-7.5-1.1-10.6-3.2zM448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64zm-91 293c-18.7 18.7-41.4 24.6-67 25.9-26.4 1.5-105.6 1.5-132 0-25.6-1.3-48.3-7.2-67-25.9s-24.6-41.4-25.8-67c-1.5-26.4-1.5-105.6 0-132 1.3-25.6 7.1-48.3 25.8-67s41.5-24.6 67-25.8c26.4-1.5 105.6-1.5 132 0 25.6 1.3 48.3 7.1 67 25.8s24.6 41.4 25.8 67c1.5 26.3 1.5 105.4 0 131.9-1.3 25.6-7.1 48.3-25.8 67z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../plugins/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

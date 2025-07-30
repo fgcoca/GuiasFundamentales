@@ -1,0 +1,5339 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="En esta web vamos a encontrar diversas guías para iniciarnos en placas como Keyestudio UNO, micro:bit, ESP32 micro:STEAMakers, ESP32STEAMakers y otras.">
+      
+      
+        <meta name="author" content="Federico Coca">
+      
+      
+        <link rel="canonical" href="https://fgcoca.github.io/GuiasFundamentales/sentry2/">
+      
+      
+        <link rel="prev" href="../basicoUDP/">
+      
+      
+        <link rel="next" href="../TdR_STEAM/contTdR/">
+      
+      
+      <link rel="icon" href="../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Sensor de visión IA Sentry2 - Guias Fundamentales</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hardware" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Guias Fundamentales" class="md-header__button md-logo" aria-label="Guias Fundamentales" data-md-component="logo">
+      
+  <img src="../img/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guias Fundamentales
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sensor de visión IA Sentry2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="deep-purple"  aria-label="Modo Oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo Oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="deep-purple"  aria-label="Modo Claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo Claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fgcoca/GuiasFundamentales" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fgcoca/GuiasFundamentales
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+  Principal
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../TdR_STEAM/contTdR/" class="md-tabs__link">
+          
+  
+  
+  Imagina TdR STEAM
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../UNO/contUNO/" class="md-tabs__link">
+          
+  
+  
+  Keyestudio UNO
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../STEAMakers/contSM/" class="md-tabs__link">
+          
+  
+  
+  ESP32 STEAMakers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../microSTEAMakers/contmicroSM/" class="md-tabs__link">
+          
+  
+  
+  ESP32 micro:STEAMakers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../cocube/contCoCube/" class="md-tabs__link">
+          
+  
+  
+  Robot CoCube
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Sentry2/contSentry2/" class="md-tabs__link">
+          
+  
+  
+  Sensor de visión IA Sentry2
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ed1/conted1.md" class="md-tabs__link">
+          
+  
+  
+  ED1
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../retos/keyestudio_UNO/" class="md-tabs__link">
+          
+  
+  
+  Retos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Miscelanea/about/" class="md-tabs__link">
+          
+  
+  
+  Miscelanea
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Guias Fundamentales" class="md-nav__button md-logo" aria-label="Guias Fundamentales" data-md-component="logo">
+      
+  <img src="../img/favicon.png" alt="logo">
+
+    </a>
+    Guias Fundamentales
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fgcoca/GuiasFundamentales" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fgcoca/GuiasFundamentales
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Principal
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Principal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../problemasUSB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Problemas de conexión USB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../previos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conocimientos técnicos previos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CO2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conceptos sobre CO2 y VOC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mod_colores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modelo de colores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comunicaciones Bluetooth
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basicoUDP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conceptos básicos de UDP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Sensor de visión IA Sentry2
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sensor de visión IA Sentry2
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametros-del-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parámetros del hardware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algoritmos-de-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algoritmos de visión
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-se-utiliza" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cómo se utiliza
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definicion-de-los-pines-del-puerto-de-salida" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definición de los pines del puerto de salida
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conexionado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexionado
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conexionado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modo-uart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modo UART
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modo-i2c-esp32-steamakers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modo I2C ESP32 STEAMakers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modo-i2c-esp32-microsteamakers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modo I2C ESP32 micro:STEAMakers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-de-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface de usuario
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface de usuario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-del-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración del hardware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-la-camara" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de la cámara
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecutando-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejecutando visión
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultados-de-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resultados de visión
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visión
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resumen_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducción">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introduccion-detallada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción detallada
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resumen-de-la-interfaz-de-ejecucion-running" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumen de la interfaz de ejecución (Running)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ideas-de-utilizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ideas de utilización
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos-de-la-sentry2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Videos de la Sentry2
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Imagina TdR STEAM
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Imagina TdR STEAM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TdR_STEAM/contTdR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TdR_STEAM/SMBlocks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    STEAMakersBlocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TdR_STEAM/retos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Retos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TdR_STEAM/seg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Keyestudio UNO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Keyestudio UNO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UNO/contUNO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UNO/tdrsteam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Placa TdR-STEAM y keyestudio UNO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UNO/lcd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pantalla LCD 1602
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UNO/oled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pantalla OLED
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UNO/externos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar sensores externos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UNO/servos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar servomotores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UNO/ultrason/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar el sensor de ultrasonidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UNO/mando/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar el mando a distancia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UNO/tira/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar una tira de LEDs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ESP32 STEAMakers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ESP32 STEAMakers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STEAMakers/contSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STEAMakers/tdrsteam_SM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Placa TdR-STEAM y ESP32 STEAMakers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STEAMakers/considera/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Consideraciones sobre ESP32
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STEAMakers/lcdSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pantalla LCD 1602
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STEAMakers/oledSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pantalla OLED
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STEAMakers/externosSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar sensores externos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STEAMakers/wifiSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conectar la placa a una red WiFi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STEAMakers/thingspkSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enviar datos a Thingspeak
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STEAMakers/servosSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar servomotores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STEAMakers/ultrasonSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar el sensor de ultrasonidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STEAMakers/mandoSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar el mando a distancia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STEAMakers/tiraSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar una tira de LEDs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ESP32 micro:STEAMakers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            ESP32 micro:STEAMakers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microSTEAMakers/contmicroSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microSTEAMakers/uB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entorno de programación Microblocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microSTEAMakers/lib_wifi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MicroBlocks, libreria WiFi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microSTEAMakers/Boardie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Boardie:un tablero virtual para MicroBlocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microSTEAMakers/prog_uB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programación con MicroBlocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microSTEAMakers/app_ble/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aplicaciones con BLE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microSTEAMakers/ble_inventor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extensión BluetoothLE de App Inventor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microSTEAMakers/mb_inventor_BLE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MicroBlocks + App Inventor + BLE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microSTEAMakers/wifi_radio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WiFi y Wifi Radio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microSTEAMakers/crea_libreria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Como crear una libreria
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Robot CoCube
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Robot CoCube
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cocube/contCoCube/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cocube/introCC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cocube/lcd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Progamación de la pantalla LCD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cocube/movimientos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Movimientos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cocube/posicionamiento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Posicionamiento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cocube/sonidos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sonidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cocube/pinza/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Servo con pinza
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cocube/broadcast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Eventos de transmisión o broadcast
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cocube/teclado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control por eventos de teclado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cocube/com_UDP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comunicaciones UDP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cocube/remoto_wifi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control remoto mediante APP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cocube/sentry2_color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reconocimiento de color con Sentry2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Sensor de visión IA Sentry2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Sensor de visión IA Sentry2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sentry2/contSentry2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ED1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            ED1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ed1/conted1.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ed1/introED1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Retos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Retos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retos/keyestudio_UNO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Keyestudio UNO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Miscelanea
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Miscelanea
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Miscelanea/about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Autor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Miscelanea/lic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Licencias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Miscelanea/webgrafia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Webgrafia/Bibliografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Miscelanea/soft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software utilizado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametros-del-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parámetros del hardware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algoritmos-de-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algoritmos de visión
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-se-utiliza" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cómo se utiliza
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definicion-de-los-pines-del-puerto-de-salida" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definición de los pines del puerto de salida
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conexionado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexionado
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conexionado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modo-uart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modo UART
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modo-i2c-esp32-steamakers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modo I2C ESP32 STEAMakers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modo-i2c-esp32-microsteamakers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modo I2C ESP32 micro:STEAMakers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-de-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface de usuario
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface de usuario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-del-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración del hardware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-la-camara" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de la cámara
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecutando-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejecutando visión
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultados-de-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resultados de visión
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visión
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resumen_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducción">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introduccion-detallada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción detallada
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resumen-de-la-interfaz-de-ejecucion-running" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumen de la interfaz de ejecución (Running)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ideas-de-utilizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ideas de utilización
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos-de-la-sentry2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Videos de la Sentry2
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Sensor de visión IA Sentry2</h1>
+
+<h2 id="hardware"><FONT COLOR=#007575><strong>Hardware</strong></font><a class="headerlink" href="#hardware" title="Permanent link">&para;</a></h2>
+<h3 id="resumen"><FONT COLOR=#AA0000>Resumen</font><a class="headerlink" href="#resumen" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Processador → K210, 400 MHz</li>
+<li>Lente de la cámera → 200 píxels</li>
+<li>Voltage de funcionamiento → 3,3 - 5 V</li>
+<li>Dimensiones → 42 x 36 x 12 mm</li>
+<li>Pantalla → TFT-IPS de 1,3”</li>
+<li>Resolución de la pantalla → 240 x 240 píxels</li>
+</ul>
+<p>Sus principales funcionalidades son:</p>
+<ul>
+<li>Reconocimiento de colores</li>
+<li>Detección de bloques de color</li>
+<li>Reconocimiento de etiquetas</li>
+<li>Aprendizaje</li>
+<li>Detección de líneas</li>
+<li>Reconocimiento de tarjetas</li>
+<li>Reconocimiento de caras</li>
+</ul>
+<p>Sentry2 es un sensor de visión artificial diseñado con un procesador de red neuronal RISC-V de 64 bits avanzado K210.</p>
+<center>
+
+![Chip K210](../img/sentry2/k210.png)  
+
+</center>
+
+<p>Este dispositivo integra varios algoritmos de visión avanzados que pueden satisfacer las necesidades básicas de procesamiento de imágenes. El chip ESP8285-WiFi integrado se puede programar desde el IDE de Arduino para realizar reconocimiento en línea, transmisión de imágenes, AIoT (Artificial Intelligence of Things) y otras aplicaciones. El ESP8285 se puede utilizar como controlador para el K210, lo que facilita la programación de IA sin necesidad de un controlador externo.</p>
+<p>Aplicaciones: robots, coches inteligentes, diseño creativo, educación STEAM, creadores, juguetes, AIoT.</p>
+<p>En la imagen vemos los nombre y situación de sus principales partes:</p>
+<center>
+
+![Hardware Sentry2](../img/sentry2/hard.png)  
+
+</center>
+
+<ul>
+<li><strong>LED</strong>: representa diferentes estados de detección.</li>
+<li><strong>Cámara</strong>: captura de imágenes. El usuario puede ajustar el nivel de zoom, el balance de blancos, el brillo, la saturación y otros parámetros de la cámara.</li>
+<li><strong>Antena WiFi</strong>: el chip WiFi ESP8285 puede realizar reconocimiento en línea, transmisión de imágenes y aplicaciones AIoT.</li>
+<li><strong>Procesador K210</strong>: un potente MCU (Multipoint Control Unit) con unidad de procesamiento de red neuronal, procesador RISC-V de doble núcleo y 64 bits.</li>
+<li><strong>Ranura microSD</strong>: admite tarjetas microSD (también conocidas como TF, que significa TransFlash) para el almacenamiento de imágenes (nota: no se admiten todos los tipos de tarjetas SD, solo con comunicación SPI).</li>
+<li><strong>USB</strong>: el chip USB-UART integrado puede comunicarse y controlarse directamente con el ordenador, así como actualizar el firmware.</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title"><strong>PRECAUCIÓN</strong></p>
+<p>La alimentación USB se conecta al puerto de comunicación de 4 pines. <strong>Nunca se deben usar dos alimentaciones al mismo tiempo</strong>.</p>
+</div>
+<ul>
+<li><strong>Pantalla LCD</strong>: pantalla TFT-ISP (Thin Film Transistor - In-Plane Switching) a color con alta definición y amplio ángulo de visión.</li>
+<li><strong>Joystick</strong>: para interactuar con la interfaz de usuario, admite control en cinco direcciones (arriba, abajo, izquierda, derecha, pulsar).</li>
+<li><strong>Reset o botón de reinicio</strong>: reinicia el hardware.</li>
+<li><strong>Puerto de salida</strong>: puerto de salida de 4 pines para comunicación, compatible con los modos UART e I2C.</li>
+</ul>
+<h3 id="parametros-del-hardware"><FONT COLOR=#AA0000>Parámetros del hardware</font><a class="headerlink" href="#parametros-del-hardware" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th style="text-align: center;">Valor</th>
+<th style="text-align: center;">Unidad</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tensión</td>
+<td style="text-align: center;">3.3 a 5</td>
+<td style="text-align: center;">V</td>
+<td>No alimentar por USB e I2C/UART simultaneamente</td>
+</tr>
+<tr>
+<td>Corriente</td>
+<td style="text-align: center;">150</td>
+<td style="text-align: center;">mA</td>
+<td>Alimentada a 5V y en modo reconocimiento de caras</td>
+</tr>
+<tr>
+<td>Tamaño</td>
+<td style="text-align: center;">40x32x12.5</td>
+<td style="text-align: center;">mm</td>
+<td>Sin carcasa</td>
+</tr>
+<tr>
+<td>Peso</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">g</td>
+<td>Sin carcasa</td>
+</tr>
+<tr>
+<td>Distancia entre agujeros de montaje</td>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">mm</td>
+<td></td>
+</tr>
+<tr>
+<td>Diámetro agujeros de montaje</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">mm</td>
+<td></td>
+</tr>
+<tr>
+<td>Tipo de cámara</td>
+<td style="text-align: center;">CMOS</td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td>Resolución cámara</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">pixel</td>
+<td></td>
+</tr>
+<tr>
+<td>FPS</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">fps</td>
+<td></td>
+</tr>
+<tr>
+<td>Campo de visión FOV</td>
+<td style="text-align: center;">68</td>
+<td style="text-align: center;">º</td>
+<td></td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td style="text-align: center;">TFT-ISP LCD</td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td>Tamaño</td>
+<td style="text-align: center;">1.3</td>
+<td style="text-align: center;">Pulgadas</td>
+<td></td>
+</tr>
+<tr>
+<td>Resolución pantalla</td>
+<td style="text-align: center;">240x240</td>
+<td style="text-align: center;">pixel</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="algoritmos-de-vision"><FONT COLOR=#AA0000>Algoritmos de visión</font><a class="headerlink" href="#algoritmos-de-vision" title="Permanent link">&para;</a></h3>
+<p>Sentry 2 integra una variedad de algoritmos de visión sin conexión para reconocer objetos sin red, y el chip WiFi ESP8285 integrado puede realizar la función de reconocimiento de imágenes basada en nube.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">ID</th>
+<th>Nombre</th>
+<th></th>
+<th>Información</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Color</td>
+<td>Colores (*)</td>
+<td>Devuelve el valor R (rojo), G (verde), B (azul) y su etiqueta en cada región. Hasta 25 regiones</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Blob</td>
+<td>Bloques de color (*)</td>
+<td>Detecta un bloque de color especificado. Admite la selección de bloques de color negro, blanco, rojo, verde, azul y amarillo a la vez</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Apriltat</td>
+<td>Etiquetas April</td>
+<td>Admite las familias Apriltag 16H5, 25H9, 36H11. Hasta 25 etiquetas</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Line</td>
+<td>Líneas (*)</td>
+<td>Encuentra líneas y devuelve sus puntos finales y grados. Admite de 1 a 5 líneas</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Learning</td>
+<td>Aprendizaje</td>
+<td>Entrena objetos y los categoriza. Hasta 15 modelos</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td>Card</td>
+<td>Tajetas (tráfico)</td>
+<td>Identifica patrones de tarjetas especiales, incluidas 10 tarjetas de tráfico</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td>Face</td>
+<td>Caras</td>
+<td>Detección y reconocimiento facial que admite la detección de máscaras. Hasta 15 caras</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td>20Class</td>
+<td>Objetos comunes</td>
+<td>Clasifica 20 objetos comunes como gato, coche, etc</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td>QRCode</td>
+<td>Códigos QR</td>
+<td>Reconocimientos de código QR sencillo. No disponible en la versión comercial</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td>Custom</td>
+<td>Personalizar</td>
+<td>Algoritmos personalizados que se ejecutan en el chip WiFi ESP8255 incorporado</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td>Motion</td>
+<td>Movimiento</td>
+<td>Determina si hay zonas en movimiento en la imagen. No disponible en la versión comercial</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">(*)</p>
+<p>Los algoritmos <strong>Colores</strong>, <strong>Bloques de color</strong> y <strong>Líneas</strong> se pueden abrir simultáneamente con el resto de algoritmos, mientras que el resto <ins>NO se pueden abrir a la vez entre sí</ins>, pero SÍ que se pueden abrir a la vez que los 3 citados.</p>
+<p>Por ejemplo, podríamos abrir simultáneamente <strong>Colores</strong>, <strong>Líneas</strong> y <strong>Caras</strong>, pero NO <strong>Colores</strong>, <strong>Tarjetas</strong> y <strong>Caras</strong>.</p>
+</div>
+<h3 id="como-se-utiliza"><FONT COLOR=#AA0000>Cómo se utiliza</font><a class="headerlink" href="#como-se-utiliza" title="Permanent link">&para;</a></h3>
+<p>Sentry2 se puede conectar a un controlador a través del puerto de salida (ver imagen siguiente) o a un ordenador mediante un cable USB. El puerto de salida se puede configurar en modo UART o I2C y también es posible modificar la dirección del dispositivo y la velocidad de transmisión.</p>
+<p>Desde el enlace se pueden <a href="https://tosee.readthedocs.io/en/latest/Sentry2/Download/index.html#chapter-download-index">descargar</a>: Controladores, firmware, manuales y recursos de terceros.</p>
+<div class="admonition danger">
+<p class="admonition-title"><strong>PRECAUCIÓN:</strong></p>
+<p>¡El puerto USB y el puerto de comunicación no se pueden alimentar al mismo tiempo!</p>
+</div>
+<h3 id="definicion-de-los-pines-del-puerto-de-salida"><FONT COLOR=#AA0000>Definición de los pines del puerto de salida</font><a class="headerlink" href="#definicion-de-los-pines-del-puerto-de-salida" title="Permanent link">&para;</a></h3>
+<p>Para la conexión entre la placa controladora y el sensor Sentry2 resultará útil la información de pines del conector de salida:</p>
+<center>
+
+![Definición de los pines del puerto de salida](../img/sentry2/pines_con_sal.png)  
+
+|Pines|Modo UART|Modo I2C|
+|:-:|:-:|:-:|
+|1|Rx|SDA|
+|2|Tx|SCL|
+|3|GND|GND|
+|4|VCC|VCC|
+
+</center>
+
+<div class="admonition danger">
+<p class="admonition-title"><strong>ATENCIÓN:</strong></p>
+<p>Cuando se inserta el cable USB, este puerto puede suministrar energía a dispositivos externos.</p>
+<p><center><font size="4"><FONT COLOR=#FF0000><b>Este puerto NO puede conectarse directamente a una fuente de alimentación, no se puede acceder al sistema de 3,3V.</b></font></font></center></p>
+</div>
+<h3 id="conexionado"><FONT COLOR=#AA0000>Conexionado</font><a class="headerlink" href="#conexionado" title="Permanent link">&para;</a></h3>
+<p>Veamos en primer lugar como conectar el sensor de visión IA a una placa ESP32 STEAMakers.</p>
+<h4 id="modo-uart"><FONT COLOR=#0000FF><strong>Modo UART</strong></font><a class="headerlink" href="#modo-uart" title="Permanent link">&para;</a></h4>
+<center>
+
+![Modo UART](../img/sentry2/Modo_UART.png)  
+
+</center>
+
+<p>En modo UART debes asegurarte de:</p>
+<ul>
+<li>La conexión Tx - Rx entre la placa y Sentry2 está cruzada. Sentry2 Rx → Tx placa y Sentry2 Tx → Rx placa.</li>
+<li>Dado que los pines RX y TX de STEAMakers son utilizados para la carga del firmware, es necesario desconectar las conexiones Rx y Tx durante la carga del programa. Se recomienda utilizar el modo I2C.</li>
+</ul>
+<h4 id="modo-i2c-esp32-steamakers"><FONT COLOR=#0000FF><strong>Modo I2C ESP32 STEAMakers</strong></font><a class="headerlink" href="#modo-i2c-esp32-steamakers" title="Permanent link">&para;</a></h4>
+<center>
+
+![Modo I2C](../img/sentry2/Modo_I2C.png)  
+
+</center>
+
+<h4 id="modo-i2c-esp32-microsteamakers"><FONT COLOR=#0000FF><strong>Modo I2C ESP32 micro:STEAMakers</strong></font><a class="headerlink" href="#modo-i2c-esp32-microsteamakers" title="Permanent link">&para;</a></h4>
+<center>
+
+![Modo I2C](../img/sentry2/Modo_I2C1.png)  
+
+</center>
+
+<div class="admonition note">
+<p class="admonition-title">NOTA:</p>
+<p>Si quieres utilizar el puerto serie por software, puedes especificar otros puertos de entrada/salida. Para más detalles, mira el SoftSerialExample en el IDE de Arduino.</p>
+</div>
+<h3 id="interface-de-usuario"><FONT COLOR=#AA0000>Interface de usuario</font><a class="headerlink" href="#interface-de-usuario" title="Permanent link">&para;</a></h3>
+<p>Sentry2 tiene dos tipos de páginas o modos de interfaz de usuario:</p>
+<p><mark><strong>Ejecución (Running)</strong></mark></p>
+<center>
+
+![Modo ejecución](../img/sentry2/Modo_ejec.png)  
+
+</center>
+
+<p>En este modo el significado de las partes es:</p>
+<ul>
+<li>Estado de la cámara: En esta área se muestra el nombre actual del modo de visión.</li>
+<li>Imagen: Muestra las imágenes de la cámara.</li>
+<li>Marcos: Enmarca los objetos detectados, como el cuadro de detección, las coordenadas o la información.</li>
+<li>Estado del sistema: Velocidad de fotogramas de la cámara, nivel de zoom o estado de la conexión WiFi.</li>
+</ul>
+<p><mark><strong>Configuración (Setting)</strong></mark></p>
+<center>
+
+![Página de configuración](../img/sentry2/config.png)  
+
+</center>
+
+<p>En la página de ejecución, puedes hacer clic derecho en el joystick para acceder a la página de configuración de la interfaz de usuario. Hay tres páginas: <strong>Configuración Vision</strong>, <strong>Configuración cámara</strong> y <strong>Configuración hardware</strong>.</p>
+<center>
+
+![Apartados de la página de configuración](../img/sentry2/config_apartados.png)  
+
+</center>
+
+<p>Si haces clic con el joystick hacia la izquierda, saldrá de la página actual y pasará una por una hasta volver a la página de ejecución.</p>
+<ul>
+<li><strong>Configuración Vision</strong>: habilita o deshabilita la configuración del modo de visión y parámetros.</li>
+<li><strong>Configuración cámara</strong>: puedes configurar el zoom de la cámara, el balance de blancos, la saturación, etc.</li>
+<li><strong>Configuración hardware</strong>: configura el modo de salida, la velocidad de transmisión UART, la dirección del dispositivo, el color de la luz, el idioma y otras configuraciones de hardware.</li>
+</ul>
+<h4 id="configuracion-del-hardware"><FONT COLOR=#0000FF><strong>Configuración del hardware</strong></font><a class="headerlink" href="#configuracion-del-hardware" title="Permanent link">&para;</a></h4>
+<p>En la tabla siguiente se resumen las operaciones posibles con el joystick:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Página actual</th>
+<th style="text-align: center;">Operación</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Ejecución</td>
+<td style="text-align: center;">Clic arriba</td>
+<td>Cambia a la última visión</td>
+</tr>
+<tr>
+<td style="text-align: center;">Ejecución</td>
+<td style="text-align: center;">Clic abajo</td>
+<td>Cambia a la siguiente visión</td>
+</tr>
+<tr>
+<td style="text-align: center;">Ejecución</td>
+<td style="text-align: center;">Clic izquierdo</td>
+<td>Instantánea (cuando hay insertada tarjeta microSD)</td>
+</tr>
+<tr>
+<td style="text-align: center;">Ejecución</td>
+<td style="text-align: center;">Clic derecho</td>
+<td>Entra en la página de configuración</td>
+</tr>
+<tr>
+<td style="text-align: center;">Ejecución</td>
+<td style="text-align: center;">Pulsar</td>
+<td>Modelos de entrenamiento (para visiones especiales)</td>
+</tr>
+<tr>
+<td style="text-align: center;">Ejecución</td>
+<td style="text-align: center;">Pulsación larga arriba</td>
+<td>Acercar zoom</td>
+</tr>
+<tr>
+<td style="text-align: center;">Ejecución</td>
+<td style="text-align: center;">Pulsación larga abajo</td>
+<td>Alejar zoom</td>
+</tr>
+<tr>
+<td style="text-align: center;">Ejecución</td>
+<td style="text-align: center;">Pulsación larga izquierda</td>
+<td>Enciende/apaga la pantalla LCD</td>
+</tr>
+<tr>
+<td style="text-align: center;">Ejecución</td>
+<td style="text-align: center;">Pulsación larga</td>
+<td>Borra todos los modelos (para visiones especiales)</td>
+</tr>
+<tr>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">Configuración</td>
+<td style="text-align: center;">Clic arriba</td>
+<td>Cambia al menú o botón anterior</td>
+</tr>
+<tr>
+<td style="text-align: center;">Configuración</td>
+<td style="text-align: center;">Clic abajo</td>
+<td>Cambia al siguiente menú o botón</td>
+</tr>
+<tr>
+<td style="text-align: center;">Configuración</td>
+<td style="text-align: center;">Clic izquierdo</td>
+<td>Cambia a la anterior página de configuración<br>Vuelve a la página de ejecución</br></td>
+</tr>
+<tr>
+<td style="text-align: center;">Configuración</td>
+<td style="text-align: center;">Clic derecho</td>
+<td>Cambia a la siguiente página de configuración</td>
+</tr>
+<tr>
+<td style="text-align: center;">Configuración</td>
+<td style="text-align: center;">Pulsar</td>
+<td>Selecciona</td>
+</tr>
+<tr>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">Inicio</td>
+<td style="text-align: center;">Pulsación mayor de 10 segundos arriba</td>
+<td>Restaura la configuración de hardware por defecto</td>
+</tr>
+<tr>
+<td style="text-align: center;">Inicio</td>
+<td style="text-align: center;">Pulsar</td>
+<td>Entra en modo actualización de firmware de K210</td>
+</tr>
+<tr>
+<td style="text-align: center;">Inicio</td>
+<td style="text-align: center;">Pulsación larga abajo</td>
+<td>Entra en modo actualización de firmware de ESP8255</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">NOTA:</p>
+<p>Un clic es una pulsación corta, para que sea una pulsación larga debes mantener pulsado el botón durante al menos 2 segundos antes de soltarlo.</p>
+</div>
+<p><mark><strong>Configuración de salida</strong></mark></p>
+<p>Si quieres utilizar un controlador para comunicarte con la Sentry2 debes hacer ajustes en algunas configuraciones de salida.</p>
+<center>
+
+![Configuraciones de salida](../img/sentry2/config_salida.png)  
+
+</center>
+
+<ol>
+<li>En la página de <em>'ejecución'</em>, haz clic derecho tres veces en el joystick para acceder a la página de configuración del hardware.</li>
+<li>En la opción <em>'Salida' (Output)</em>, pulsa el botón del joystick para acceder a la configuración.</li>
+<li>Selecciona el modo <em>'<a href="https://es.wikipedia.org/wiki/Universal_Asynchronous_Receiver-Transmitter">UART</a>'</em> o <em>'<a href="https://es.wikipedia.org/wiki/I%C2%B2C">I2C</a>'</em>. Por lo general, el modo I2C es más rápido, lo que favorece la mejora de la velocidad de fotogramas del procesamiento de imágenes especialmente si tu controlador no es compatible con el modo UART de alta velocidad de transmisión.</li>
+<li>Elige el <em>'Protocolo estándar'</em> o el <em>'Protocolo simple'</em> para el modo UART. Por lo general, hay que seleccionar <em>'Protocolo estándar'</em> para utilizar la biblioteca de controladores.</li>
+<li>Haz clic en <em>'YES'</em> para volver atrás.</li>
+<li>Seleccione la opción <em>'Dirección' (Address)</em> en los menús de la izquierda.</li>
+<li>Configura la dirección de hardware de Sentry2 con un valor entre <em>'0x60'</em> y <em>'0x63'</em>, haz clic en <em>'YES'</em> y vuelve atrás. El valor predeterminado es: <em>'0x60'</em>.</li>
+<li>Accede a la página de configuración <em>'UART'</em> si seleccionas este modo.</li>
+<li>
+<p><strong>Mueve el control deslizante hacia la izquierda o hacia la derecha para configurar la velocidad de transmisión UART a alguno de los valores siguientes: 9600, 19200, 38400, 57600, 115200, 921600, 1152000, 2000000</strong>.</p>
+<p>Una velocidad de transmisión más alta puede reducir el tiempo de transferencia de datos, lo que puede mejorar la velocidad de fotogramas de la imagen. Debes comprobar que la velocidad de transmisión máxima de tu controlador sea compatible. Si la comunicación es anómala, debes reducir la velocidad de transmisión.</p>
+</li>
+<li>
+<p>Haz clic izquierdo con el joystick tres veces para volver a la página de ejecución.</p>
+</li>
+</ol>
+<p><mark><strong>Configuración USB</strong></mark></p>
+<p>Sentry2 puede comunicarse con el ordenador mediante un cable USB-C. Su velocidad de transmisión se puede configurar por separado. El modo USB también se basa en el <em>'protocolo estándar o simple'</em>.</p>
+<center>
+
+![Configuración USB](../img/sentry2/config_USB.png)  
+
+</center>
+
+<p><strong>Velocidad en baudios</strong>: admite velocidades de 9600, 19200, 38400, 57600, 115200, 921600, 1152000 y 2000000 baudios. El USB se puede desactivar si el control deslizante 'To UART' está a la izquierda.</p>
+<p><strong>To UART</strong>: activa o desactiva la transmisión de datos entre el USB y la UART.</p>
+<div class="admonition tip">
+<p class="admonition-title">Consejo:</p>
+<p>Si los datos enviados coinciden con las instrucciones del protocolo, se ejecutan las instrucciones en lugar de la salida.</p>
+</div>
+<p><mark><strong>Configuración de la pantalla</strong></mark></p>
+<p>Los resultados de la detección, cuando el modo visión está en funcionamiento, se indican a través de tres marcas: cuadro de detección, coordenadas X-Y e información.</p>
+<center>
+
+![Configuración de la pantalla](../img/sentry2/config_pantalla.png)  
+
+</center>
+
+<p><strong>Box</strong>: Cuadro rectangular que muestra los objetos detectados.</p>
+<p><strong>X-Y</strong>: Dibuja las líneas de coordenadas horizontales y verticales del objeto detectado y muestra:</p>
+<ul>
+<li>X: posición horizontal</li>
+<li>Y: posición vertical</li>
+<li>W: anchura del objeto</li>
+<li>H: altura del objeto.</li>
+</ul>
+<p><strong>Info</strong>: muestra información del objeto, como su etiqueta de clasificación y su nombre.</p>
+<p><mark><strong>Configuración diodos LED</strong></mark></p>
+<p>Hay dos diodos LED en la parte delantera del hardware para indicar el estado de la detección. El color del LED cambiará en función de los resultados de la detección de cada fotograma.</p>
+<center>
+
+![Configuración diodos LED](../img/sentry2/config_LED.png)  
+
+</center>
+
+<p>El usuario puede configurar el color del LED para el estado <em>'detectado'</em> o <em>'no detectado'</em> respectivamente. Haz clic en el joystick para cambiar el color siguiendo la secuencia siguiente:</p>
+<center>
+
+![Secuencia de colores](../img/sentry2/sec_colores.png)  
+
+</center>
+
+<p>El color negro significa que el LED está apagado.</p>
+<p>Cuando los colores <em>'Detected' (Detectado)</em> y <em>'Undetected' (No detectado)</em> son iguales, los LED permanecerán encendidos.</p>
+<p>El rango de <em>'Brillo'</em> va de 0 a 15, donde 0 es como apagar la luz y 15 es el más brillante. Por lo general, se recomienda ajustar el brillo a 1 o 2.</p>
+<ul>
+<li>
+<p><strong>Apagar el LED</strong></p>
+<p>En algunos casos, el LED debe apagarse, ya que su iluminación puede causar interferencias en el reconocimiento de imágenes (como la visión de color o de manchas). Hay dos formas de apagar el LED:</p>
+<div class="highlight"><pre><span></span><code>1. Establecer &#39;Detected&#39; y &#39;Undetected&#39; en negro.
+2. Establecer el brillo a 0.
+</code></pre></div>
+</li>
+<li>
+<p><strong>Luz de relleno</strong></p>
+</li>
+</ul>
+<p>Cuando el entorno es oscuro o hay contraluz, es necesario utilizar luz de relleno:</p>
+<div class="highlight"><pre><span></span><code>    1. Establece &#39;Detected&#39; y &#39;Undetected&#39; a blanco.
+    2. Establece &#39;Brillo&#39; a 15.
+</code></pre></div>
+<p><mark><strong>Comnfiguración WiFi</strong></mark></p>
+<p>El chip ESP8285-WiFi integrado en Sentry2 puede comunicarse con el chip K210 a través de un puerto UART interno. Cuando se activa la función <em>'Custom Vision'</em>, el chip ESP8285 entra en funcionamiento.</p>
+<center>
+
+![Comnfiguración WiFi](../img/sentry2/config_wifi.png)  
+
+</center>
+
+<p><strong>Baudrate</strong>: Velocidad en baudios. Admite velocidades de 9600, 74880, 115200, 921600, 1152000, 2000000, 3000000, 4000000 baudios. El WiFi se desactivará si el control deslizante está a la izquierda.</p>
+<p><strong>to UART</strong>: Activa o desactiva la transmisión de datos entre WiFi y UART.</p>
+<p><strong>to USB</strong>: Habilita o deshabilita la transmisión de datos entre WiFi y USB.</p>
+<div class="admonition tip">
+<p class="admonition-title">Consejo:</p>
+<p>Si los datos enviados coinciden con las instrucciones del protocolo, se ejecutan las instrucciones en lugar de la salida.</p>
+</div>
+<p><mark><strong>Configuración de coordenadas</strong></mark></p>
+<p>Sentry2 soporta dos sistemas de coordenadas: Absolutas y Porcentuales.</p>
+<center>
+
+![Comnfiguración de coordenadas](../img/sentry2/config_coordenadas.png)  
+
+</center>
+
+<p><strong>Absoluto</strong>: En este modo, se devuelven los resultados de coordenadas reales. El rango va de 0 a 319 (horizontal) y de 0 a 239 (vertical). El punto central es (160,120). Este modo tiene una mayor precisión.</p>
+<p><strong>Porcentuales</strong>: En este modo, los resultados de las coordenadas reales se cuantifican en un rango de 0 a 100, tanto en el rango en dirección horizontal como en dirección vertical. El punto central es (50,50).</p>
+<p><mark><strong>Configuración de idioma</strong></mark></p>
+<p>Se puede cambiar el idioma entre Chino e Inglés.</p>
+<center>
+
+![Comnfiguración de idioma](../img/sentry2/config_idioma.png)  
+
+</center>
+
+<p><mark><strong>Configuración de registros</strong></mark></p>
+<p>Operaciones con registros Sentry2: Modo de guardado automático (Auto Save Mode), Guardar registro (Save Register), Configuración predeterminada (Default Settings).</p>
+<center>
+
+![Comnfiguración de registros](../img/sentry2/config_reg.png)  
+
+</center>
+
+<p><strong>Auto Save (Autoguardado)</strong>: Algunos valores de los registros se guardarán automáticamente si se habilita este modo; de lo contrario, los registros se restablecerán a su valor predeterminado después del siguiente inicio. Por lo general, este modo debe estar deshabilitado.</p>
+<p><strong>Save REG</strong>: Guarda los valores actuales de los registros.</p>
+<p><strong>Default</strong>: Restaura los registros a la configuración de fábrica. Haz clic primero en este botón y, a continuación 'YES'.</p>
+<h4 id="configuracion-de-la-camara"><FONT COLOR=#0000FF><strong>Configuración de la cámara</strong></font><a class="headerlink" href="#configuracion-de-la-camara" title="Permanent link">&para;</a></h4>
+<p><mark><strong>Zoom digital</strong></mark></p>
+<p>Puedes ampliar la vista de zoom de la cámara para ver objetos lejanos. Admite de 1 a 5 niveles de ajuste.</p>
+<p>Al aumentar el zoom, el objeto se verá más grande, pero el campo de visión será más pequeño. Por el contrario, al reducir el zoom, el objeto se verá más pequeño, pero el campo de visión será mayor.</p>
+<p>También puedes cambiar el zoom con el joystick: para acercar, manten pulsado hacia arriba; para alejar, manten pulsado hacia abajo.</p>
+<p><mark><strong>Autobalanace de blancos (AWB)</strong></mark></p>
+<p>Diferentes condiciones de iluminación (luz blanca o luz amarilla) pueden provocar un desequilibrio en el color blanco. Es necesario ajustar el balance de blancos. Hay disponibles cuatro modos: Automático, Bloqueado, Blanco y Amarillo.</p>
+<p><strong>Auto (Automático)</strong>: este modo es el modo predeterminado y se aplica a la mayoría de los entornos.</p>
+<p><strong>Lock (Bloqueado)</strong>: cuando hay una gran área de fondo monocromático en la imagen, el blanco se desequilibra, lo que provoca errores en el reconocimiento del color. Por lo tanto, es necesario bloquear el balance de blancos antes del reconocimiento para evitar el ajuste automático del color. El método es el siguiente:</p>
+<div class="highlight"><pre><span></span><code>1. Apunta la cámara hacia un papel blanco y manten una distancia de unos 20 cm.
+2. Entra en el menú &#39;AWB&#39; y selecciona el modo &#39;Bloqueado&#39;.
+3. Haz clic en &#39;YES&#39;.
+4. Vuelve a la página de ejecución.
+</code></pre></div>
+<p><strong>White (Blanco)</strong>: úsalo en entornos con luz blanca.</p>
+<p><strong>Yellow (Amarillo)</strong>: úsalo en entornos con luz amarilla.</p>
+<p><mark><strong>Saturación</strong></mark></p>
+<p>Aumentar la saturación hará que el color se vuelva más brillante, se intensifique y resalte.</p>
+<p>Disminuir la saturación hará que el color se vuelva más apagado y, a niveles muy bajos, parecerá blanco y negro.</p>
+<p><mark><strong>Brillo</strong></mark></p>
+<p>Para cambiar el brillo de la imagen si resulta necesario.</p>
+<p><mark><strong>Contraste</strong></mark></p>
+<p>Aumentar el contraste hará que la diferencia entre lugares próximos con diferencia de color sea mayor.</p>
+<p>Reducir el contraste hará que la imagen se vea apagada.</p>
+<p><mark><strong>Sharpness (Nitidez)</strong></mark></p>
+<p>Aumentar la nitidez hará que el contorno de los bordes sea más claro y los detalles más evidentes, pero si se aumenta demasiado se producirá ruido.</p>
+<p>Reducir la nitidez difuminará la imagen.</p>
+<p><mark><strong>Control de autoexposición AEC</strong></mark></p>
+<p>La luz intensa permite reducir el valor de exposición cuando se expone la imagen.</p>
+<p>Por el contrario, si el entorno es oscuro, se debe aumentar el valor de exposición.</p>
+<p><mark><strong>Rotación</strong></mark></p>
+<p>La imagen rota 180 grados si se habilita.</p>
+<h4 id="ejecutando-vision"><FONT COLOR=#0000FF><strong>Ejecutando visión</strong></font><a class="headerlink" href="#ejecutando-vision" title="Permanent link">&para;</a></h4>
+<p>Hay varias formas de activar/desactivar la visión: desde la página de la interfaz de usuario, haciendo clic en el joystick o mediante comandos del controlador.</p>
+<p><mark><strong>Interfaz de usuario</strong></mark></p>
+<center>
+
+![Activar/desactivar desde interfaz de usuario](../img/sentry2/act_des_vision.png)  
+
+</center>
+
+<ol>
+<li>Selecciona visión en los menús de la izquierda de la página de configuración de 'Vision'.</li>
+<li>Algunas visiones se pueden configurar, haz clic en <em>'Configuración'</em> para acceder.</li>
+<li>Si aparece el botón rojo <em>'Stop'</em> en la parte inferior izquierda del área de control de la derecha, significa que el algoritmo está cerrado actualmente. Al hacer clic en él, cambiará a un botón verde <em>'run'</em>, lo que significa que el algoritmo se ha iniciado. Vuelve a hacer clic en él y volverá a cambiar al botón rojo Detener.</li>
+</ol>
+<p><mark><strong>Con joystick</strong></mark></p>
+<center>
+
+![Activar/desactivar desde joystick](../img/sentry2/ini_rap.png)  
+
+</center>
+
+<ol>
+<li>Haz un clic corto con el joystick hacia arriba y hacia abajo para activar o desactivar visión. La visión anterior se cerrará si se está ejecutando una nueva visión.</li>
+<li>La secuencia de cambio de visión se ordena por ID de visión.</li>
+</ol>
+<p><mark><strong>Comandos del controlador</strong></mark></p>
+<p>Para hacerlo de esta manera, el controlador necesita leer y escribir registros para habilitar o deshabilitar la visión. <a href="https://tosee.readthedocs.io/en/latest/Sentry2/Download/index.html">Se proporcionan las librerias de controladores para diferentes plataformas de programación</a>.</p>
+<p>En el modo UART, la lectura o escritura de registros debe realizarse de acuerdo con el protocolo estándar o el protocolo simple. Para obtener más detalles, consulta las secciones relacionadas.</p>
+<p>En el modo I2C se pueden leer o escribir registros directamente.</p>
+<p>Habilitar visión:</p>
+<ol>
+<li>Escribe el ID de visión en el registro 0x20-VISION_ID.</li>
+<li>Escribe 0x01 en el registro 0x21-VISIO_CONF1 para habilitar visión; o al contrario, escribe 0x00 para deshabilitarla.</li>
+</ol>
+<p>Para obtener más detalles, consulta los registros.</p>
+<h4 id="resultados-de-vision"><FONT COLOR=#0000FF><strong>Resultados de visión</strong></font><a class="headerlink" href="#resultados-de-vision" title="Permanent link">&para;</a></h4>
+<p><mark><strong>Resultados en pantalla</strong></mark></p>
+<p>El objeto objetivo se marcará en la pantalla cuando sea detectado. Significado de las marcas:</p>
+<center>
+
+![Significado de las marcas](../img/sentry2/signif_marcas.png)  
+
+</center>
+
+<p><mark><strong>Resultados por comandos</strong></mark></p>
+<p>Los resultados solamente los puede leer el controlador. Para leer resultados:</p>
+<ol>
+<li>Escribir el identificador de visión en el registro 0x20-VISION_ID.</li>
+<li>Leer el registro 0x34-RESULT_NUM para obtener el número de objetos detectados.</li>
+<li>Escribir el identificador del resultado que se desea leer en el registro 0x24-RESULT_ID.</li>
+<li>Leer los resultados en los registros 0x80~0x89.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Dirección</th>
+<th>Nombre</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0x80</td>
+<td>RESULT_DATA1_H8</td>
+<td>8 bits de mayor peso de Resultado 1</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x81</td>
+<td>RESULT_DATA1_L8</td>
+<td>8 bits de menor peso de Resultado 1</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x82</td>
+<td>RESULT_DATA2_H8</td>
+<td>8 bits de mayor peso de Resultado 2</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x83</td>
+<td>RESULT_DATA2_L8</td>
+<td>8 bits de menor peso de Resultado 2</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x84</td>
+<td>RESULT_DATA3_H8</td>
+<td>8 bits de mayor peso de Resultado 3</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x85</td>
+<td>RESULT_DATA3_L8</td>
+<td>8 bits de menor peso de Resultado 3</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x86</td>
+<td>RESULT_DATA4_H8</td>
+<td>8 bits de mayor peso de Resultado 4</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x87</td>
+<td>RESULT_DATA4_L8</td>
+<td>8 bits de menor peso de Resultado 4</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x88</td>
+<td>RESULT_DATA5_H8</td>
+<td>8 bits de mayor peso de Resultado 5</td>
+</tr>
+<tr>
+<td style="text-align: center;">0x89</td>
+<td>RESULT_DATA5_L8</td>
+<td>8 bits de menor peso de Resultado 5</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vision"><FONT COLOR=#007575><strong>Visión</strong></font><a class="headerlink" href="#vision" title="Permanent link">&para;</a></h2>
+<h3 id="resumen_1"><FONT COLOR=#AA0000>Resumen</font><a class="headerlink" href="#resumen_1" title="Permanent link">&para;</a></h3>
+<p>El sensor de visión Sentry2 integra una variedad de algoritmos de visión offline para reconocer objetos sin necesidad de conexión a la red, y el chip ESP8285-WiFi integrado permite realizar la función de reconocimiento de imágenes basada en la nube.</p>
+<h3 id="introduccion"><FONT COLOR=#AA0000>Introducción</font><a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h3>
+<h4 id="listado"><FONT COLOR=#0000FF><strong>Listado</strong></font><a class="headerlink" href="#listado" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">ID</th>
+<th style="text-align: center;">Nombre</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Color</td>
+<td>Devuelve el valor R (rojo), G (verde) y B (azul) y la etiqueta de cada región. Hasta 25 regiones</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Blob<br>(Burbuja)</br></td>
+<td>Detectar un bloque de color específico. Admite la selección simultánea de bloques de color negro, blanco, rojo, verde, azul y amarillo</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">Apriltag</td>
+<td>Compatible con familia Apriltag 16H5, 25H9, 36H11. Hasta 25 etiquetas</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">Line</td>
+<td>Busca líneas y devuelve sus extremos y grados, admite entre 1 y 5 líneas</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">Learning</td>
+<td>Entrenar objetos y clasificarlos. Hasta 25 datos de modelo</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">Card</td>
+<td>Identificar patrones especiales de tarjetas, incluyendo 10 de tráfico, 9 de formas y 10 de números</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">Face</td>
+<td>Detección y reconocimiento facial, compatible con detección de máscaras, puede almacenar datos de 25 modelos</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">20Class</td>
+<td>Clasifica 20 objetos comunes, como gato, coche, persona, etc</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">QrCode</td>
+<td>Reconocimiento de un código QR sencillo</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">Custom</td>
+<td>Ejecutar algoritmos personalizados que se ejecutan en el chip ESP8285-WiFi integrado</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">Motion</td>
+<td>Determinar si hay áreas en movimiento en la imagen</td>
+</tr>
+</tbody>
+</table>
+<h4 id="introduccion-detallada"><FONT COLOR=#0000FF><strong>Introducción detallada</strong></font><a class="headerlink" href="#introduccion-detallada" title="Permanent link">&para;</a></h4>
+<p><mark><strong>ID:1 Color</strong></mark></p>
+<ul>
+<li><strong>Resumen</strong><br />
+El usuario puede establecer desde una hasta 25 regiones para el reconocimiento de colores y obtener los valores R (rojo), G (verde) y B (azul) y la etiqueta de cada región. Las coordenadas y el tamaño de cada región se pueden configurar.</li>
+</ul>
+<center>
+
+![ID:1 Color. Resumen](../img/sentry2/color.png)  
+
+</center>
+
+<ul>
+<li><strong>Etiqueta Color</strong><br />
+Una etiqueta de color es un número que se utiliza para representar un color:</li>
+</ul>
+<center>
+
+![ID:1 Color. Etiqueta Color](../img/sentry2/etiq_color.png)  
+
+</center>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Etiqueta</th>
+<th>Nombre</th>
+<th style="text-align: center;">Etiqueta</th>
+<th>Nombre</th>
+<th style="text-align: center;">Etiqueta</th>
+<th>Nombre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Negro (Black)</td>
+<td style="text-align: center;">2</td>
+<td>Blanco (White)</td>
+<td style="text-align: center;">3</td>
+<td>Rojo (Red)</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Verde (Green)</td>
+<td style="text-align: center;">5</td>
+<td>Azul (Blue)</td>
+<td style="text-align: center;">6</td>
+<td>Amarillo (Yellow)</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td>Desconocido (Unknown)</td>
+<td style="text-align: center;"></td>
+<td></td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Parámetros</strong><br />
+El usuario puede configurar las regiones para el reconocimiento:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Parámetro</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Coordenada X del centro de la región</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Coordenada Y del centro de la región</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Ancho de la región</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Alto de la región</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Ninguno</td>
+</tr>
+</tbody>
+</table>
+<center>
+
+![ID:1 Color. Parámetros](../img/sentry2/parametros.png)  
+
+</center>
+
+<p>Existen varios parámetros preestablecidos en la página de configuración de la interfaz de usuario:</p>
+<p>Cuadrícula (X x Y): 1x1, 2x2, 3x3, 4x4, 5x5, 1x10, 2x10, 6x1, 6x2</p>
+<p>Tamaño (Ancho x Alto): 2x2, 4x4, 8x8, 16x16, 32x32</p>
+<div class="admonition note">
+<p class="admonition-title">NOTA:</p>
+<p>Para representar un cuadrado en el sistema de coordenadas porcentuales, la anchura y la altura no son iguales, sino que se ajustan a la relación 3:4. Por ejemplo, si la anchura de un cuadrado es del 12%, entonces su altura h debe ser 12/3 × 4 = 16 %. En el sistema de coordenadas absolutas, los tamaños preestablecidos del área de reconocimiento son: 1x1, 2x3, 3x4, 6x8, 9x12.</p>
+</div>
+<ul>
+<li><strong>Resultados</strong><br />
+En la pantalla aparecerá un recuadro rectangular que identifica el color, y un recuadro de cuatro esquinas que identifica el color desconocido.</li>
+</ul>
+<center>
+
+![ID:1 Color. Resultados](../img/sentry2/resultados.png)  
+
+</center>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Resultado</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>R, valor del canal rojo con rango 0 a 255</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>G, valor del canal verde con rango 0 a 255</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>B, valor del canal azul con rango 0 a 255</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Ninguno</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Etiqueta de color</td>
+</tr>
+</tbody>
+</table>
+<p><mark><strong>ID:2 Blob (bloques de color)</strong></mark></p>
+<ul>
+<li><strong>Resumen</strong><br />
+Busca un bloque de color determinado en una imagen y devuelve sus coordenadas y tamaño. Admite la detección de múltiples colores y múltiples resultados. La etiqueta de color tiene la misma definición que en Color vision.</li>
+</ul>
+<center>
+
+![ID:2 Blob. Resumen](../img/sentry2/id2_res.png)  
+
+</center>
+
+<ul>
+<li><strong>Parámetros</strong><br />
+El usuario debe decidir primero qué color desea detectar. El ancho y el alto de la pieza de color mínima se pueden configurar para reducir los resultados falsos:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Resultado</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Ninguno</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Ninguno</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Ancho mínimo</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Alto mínimo</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>La etiqueta Color será detectada</td>
+</tr>
+</tbody>
+</table>
+<center>
+
+![ID:2 Blob. Parámetros](../img/sentry2/id2_param.png)  
+
+</center>
+
+<p>Existen varios parámetros preestablecidos en la página Interfaz de Usuario:</p>
+<blockquote>
+<ul>
+<li><strong>Nivel de rendimiento del algoritmo</strong>: Para seleccionar el rendimiento de la visión según los diferentes requisitos de la aplicación, entre 'Sensible', 'Equilibrado' y 'Preciso'.</li>
+<li><strong>Número máximo de bloques</strong>: Admite de 1 a 5 bloques para cada color.</li>
+<li><strong>Tamaño mínimo del bloque</strong>: En sistema de coordenadas absolutas: 2x2, 4x4, 8x8, 16x16, 32x32, 64x64, 128x128 píxeles. En sistema de coordenadas porcentuales: 1x1, 2x3, 3x4, 6x8, 9x12, 21x28, 42x56 %.</li>
+<li>Color a detectar: Se muestra un icono de ojo abierto si la etiqueta de color está activada.</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Resultados</strong>  </li>
+</ul>
+<center>
+
+![ID:2 Blob. Resultados](../img/sentry2/id2_result.png)  
+
+</center>
+
+<p>Obtén los resultadfos:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Resultado</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Coordenada X del centro del bloque</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Coordenada Y del centro del bloque</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Ancho del bloque</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Alto del bloque</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Etiqueta Color</td>
+</tr>
+</tbody>
+</table>
+<p><mark><strong>ID:3 Apriltag (etiquetas)</strong></mark></p>
+<p>Los <a href="https://april.eecs.umich.edu/software/apriltag">AprilTag</a> son marcadores visuales para detección e identificación mediante sistemas de visión artificial desarrollados por investigadores de la universidad de Michigan.</p>
+<p>Tecnicamente su diseño fiducial y sistema de codificación se basan en lexicografia. El sistema se describe en los artículos enlazados en la web anterior.</p>
+<p>Conceptualmente son similares a los códigos QR pero diseñados para cargas de datos mucho mas pequeñas (entre 4 y 12 bits), lo que permite una detección mejor a mayor distancia. Están diseñados para calcular su posición 3D precisa respecto a la cámara.</p>
+<p>Se utilizan como marcadores fiduciales en robótica y otras aplicaciones.</p>
+<p>Un marcador fiducial o solamente fiducial es un objeto colocado en el campo de visión de un sistema de imágenes que aparece en la imagen producida, para su uso como punto de referencia o medida.</p>
+<p>Su nombre procede del laboratorio de robótica "April" de la Universidad de Michigan, siendo AprilTag una biblioteca y algoritmo que permite a un sistema identificar características en hasta seis grados de libertad.</p>
+<ul>
+<li><strong>Resumen</strong><br />
+Busca etiquetas AprilTag en una imagen, compatible con las familias de codificación 16H5, 25H9 y 36H11, y hasta 25 resultados. Debes decidir qué familia de codificación utilizar antes de habilitar esta función, y solo se puede procesar una familia.</li>
+</ul>
+<center>
+
+![ID:3 AprilTag. Resumen](../img/sentry2/id3_res.png)  
+
+</center>
+
+<p><strong>Etiqueta</strong>  </p>
+<center>
+
+![Etiquetas AprilTag soportadas](../img/sentry2/etq_apriltag.png)  
+
+</center>
+
+<p>En el enlace puedes <a href="https://github.com/AprilRobotics/apriltag-imgs/tree/master">descargar imágenes de AprilTag</a> y aprender mas sobre el tema.</p>
+<ul>
+<li><strong>Parámetros</strong>  </li>
+</ul>
+<center>
+
+![ID:3 AprilTag. Parámetros](../img/sentry2/id3_param.png)  
+
+</center>
+
+<p>Existen varios parámetros preestablecidos en la página de configuración de la interfaz de usuario:</p>
+<blockquote>
+<ul>
+<li><strong>Nivel de rendimiento del algoritmo</strong>: Para seleccionar el rendimiento de la visión según los diferentes requisitos de la aplicación: 'Sensible (Sensitive)', 'Equilibrado (Balance)' y 'Preciso (Accurate)'.</li>
+<li><strong>Familia de codificación</strong>: Compatible con 16H5, 25H9 y 36H11.</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Resultados</strong>  </li>
+</ul>
+<center>
+
+![ID:3 AprilTag. Resultados](../img/sentry2/id3_resul.png)  
+
+</center>
+
+<p>Obtén los resultadfos:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Resultado</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Coordenada X del centro del marcador</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Coordenada Y del centro del marcador</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Ancho del marcador</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Alto del marcador</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Etiqueta</td>
+</tr>
+</tbody>
+</table>
+<p><mark><strong>ID:4 Line (lineas)</strong></mark></p>
+<ul>
+<li><strong>Resumen</strong><br />
+Busca desde una hasta 5 líneas en una imagen y devuelve las coordenadas y los grados de sus dos extremos. Si se trata de una curva, devuelve un segmento de línea aproximado.</li>
+</ul>
+<center>
+
+![ID:4 Linea. Resumen](../img/sentry2/id4_res.png)  
+
+</center>
+
+<ul>
+<li><strong>Parámetros</strong><br />
+En la página de configuración de la interfaz de usuario se pueden establecer varios parámetros.</li>
+</ul>
+<center>
+
+![ID:4 Linea. Parámetros](../img/sentry2/id4_param.png)  
+
+</center>
+
+<blockquote>
+<ul>
+<li><strong>Nivel de rendimiento del algoritmo</strong>: Para seleccionar el rendimiento de la visión según los diferentes requisitos de la aplicación: 'Sensible (Sensitive)', 'Equilibrado (Balance)' y 'Preciso (Accurate)'.</li>
+<li><strong>Número máximo de líneas</strong>: Rango de 1 a 5</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Resultados</strong>  </li>
+</ul>
+<center>
+
+![ID:4 Linea. Resultados](../img/sentry2/id4_resul.png)  
+
+</center>
+
+<div class="admonition note">
+<p class="admonition-title">NOTA:</p>
+<p>La horizontal hacia la derecha es 0 grados, el valor aumenta en sentido antihorario. Hacia arriba es 90 grados, y la horizontal hacia la izquierda es 180 grados.</p>
+</div>
+<p>Se utilizan 5 colores diferentes para distinguir las líneas: rojo, amarillo, verde, azul y púrpura.</p>
+<center>
+
+![ID:4 Linea. Colores de las líneas](../img/sentry2/id4_resul_color_lin.png)  
+
+</center>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Resultado</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Coordenada X del punto final de la línea (superior)</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Coordenada Y del punto final de la línea (superior)</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Coordenada X del punto inicial de la línea (inferior)</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Coordenada Y del punto inicial de la línea (inferior)</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Grados de la línea</td>
+</tr>
+</tbody>
+</table>
+<p><mark><strong>ID:5 Learning (aprendizaje)</strong></mark></p>
+<ul>
+<li><strong>Resumen</strong><br />
+Los objetos pueden ser entrenados y reconocidos por esta cámara de visión artificial y se pueden guardar hasta 25 datos de modelos.</li>
+</ul>
+<center>
+
+![ID:5 Learning. Resumen](../img/sentry2/id5_res.png)  
+
+</center>
+
+<ul>
+<li><strong>Parámetros</strong>  </li>
+</ul>
+<p><strong>Entrenamiento de un nuevo objeto</strong>: El nuevo objeto se puede entrenar en la página en ejecución:</p>
+<center>
+
+![ID:5 Learning. Parámetros](../img/sentry2/id5_param.png)  
+
+</center>
+
+<p>Se asignará automáticamente una etiqueta al nuevo objeto. El principio es: seleccionar el número más pequeño de los ID disponibles.</p>
+<p><strong>Eliminar todos los objetos</strong>: Manten pulsado verticalmente el joystick durante más de 2 segundos en la página en ejecución.</p>
+<center>
+
+![ID:5 Learning. Eliminar todos los objetos](../img/sentry2/id5_param1.png)  
+
+</center>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Parámetro</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Ninguno</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Ninguno</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Ninguno</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Ninguno</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Escribe 0 para borrar el objeto actual o 100 para entrenamiento</td>
+</tr>
+</tbody>
+</table>
+<p>Puedes renombrar o borrar el objeto entrenado.</p>
+<center>
+
+![ID:5 Learning. Renombrar o borrar el objeto entrenado](../img/sentry2/id5_param2.png)  
+
+</center>
+
+<blockquote>
+<ul>
+<li><strong>Renombrar</strong>:</li>
+</ul>
+</blockquote>
+<center>
+
+![ID:5 Learning. Renombrar el objeto entrenado](../img/sentry2/id5_param3.png)  
+
+</center>
+
+<blockquote>
+<ul>
+<li><strong>Borrar</strong>:</li>
+</ul>
+</blockquote>
+<center>
+
+![ID:5 Learning. Borrar el objeto entrenado](../img/sentry2/id5_param4.png)  
+
+</center>
+
+<ul>
+<li><strong>Resultados</strong><br />
+La visión solo puede juzgar la existencia del objeto entrenado, pero no sus coordenadas y tamaño, por lo que el cuadro de reconocimiento es un valor de salida fijo.</li>
+</ul>
+<center>
+
+![ID:5 Learning. Resultados](../img/sentry2/id5_resul.png)  
+
+</center>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Resultado</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Fijado, 160</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Fijado, 120</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Fijado, 224</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Fijado, 224</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Etiqueta</td>
+</tr>
+</tbody>
+</table>
+<p><mark><strong>ID:6 Card (tarjeta)</strong></mark></p>
+<ul>
+<li><strong>Resumen</strong><br />
+Reconocer una tarjeta específica en la imagen y devolver sus coordenadas, tamaño, etiqueta y otra información. Incluye tarjetas de tráfico, de formas y de números.</li>
+</ul>
+<center>
+
+![ID:6 Tarjeta (Card). Resumen](../img/sentry2/id6_res.png)  
+
+</center>
+
+<p>Las etiquetas se muestran en la siguiente tabla. Del 1 al 10 para <strong>Tráfico</strong>, del 11 al 19 para <strong>Formas</strong> y del 20 al 29 para <strong>Números</strong>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Etiqueta</th>
+<th>Nombre</th>
+<th style="text-align: center;">Etiqueta</th>
+<th>Nombre</th>
+<th style="text-align: center;">Etiqueta</th>
+<th>Nombre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Avanzar (Forward)</td>
+<td style="text-align: center;">2</td>
+<td>Izquierda (Left)</td>
+<td style="text-align: center;">3</td>
+<td>Derecha (Right)</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Dar la vuelta (Turn Around)</td>
+<td style="text-align: center;">5</td>
+<td>Aparcamiento (Park)</td>
+<td style="text-align: center;">6</td>
+<td>Verde (Green)</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td>Rojo (Red)</td>
+<td style="text-align: center;">8</td>
+<td>Velocidad 40 (Speed 40)</td>
+<td style="text-align: center;">9</td>
+<td>Velocidad 60 (Speed 60)</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td>Velocidad 80 (Speed 80)</td>
+<td style="text-align: center;"></td>
+<td></td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td>Comprueba (Check)</td>
+<td style="text-align: center;">12</td>
+<td>Aspa (Cross)</td>
+<td style="text-align: center;">13</td>
+<td>Círculo (Circle)</td>
+</tr>
+<tr>
+<td style="text-align: center;">14</td>
+<td>Cuadrado (Square)</td>
+<td style="text-align: center;">15</td>
+<td>Triángulo (Triangle)</td>
+<td style="text-align: center;">16</td>
+<td>Suma (Plus)</td>
+</tr>
+<tr>
+<td style="text-align: center;">17</td>
+<td>Resta (Minus)</td>
+<td style="text-align: center;">18</td>
+<td>División (Divide)</td>
+<td style="text-align: center;">19</td>
+<td>Igual (Equal)</td>
+</tr>
+<tr>
+<td style="text-align: center;">20</td>
+<td>Número 0</td>
+<td style="text-align: center;">21</td>
+<td>Número 1</td>
+<td style="text-align: center;">22</td>
+<td>Número 2</td>
+</tr>
+<tr>
+<td style="text-align: center;">23</td>
+<td>Número 3</td>
+<td style="text-align: center;">24</td>
+<td>Número 4</td>
+<td style="text-align: center;">25</td>
+<td>Número 5</td>
+</tr>
+<tr>
+<td style="text-align: center;">26</td>
+<td>Número 6</td>
+<td style="text-align: center;">27</td>
+<td>Número 7</td>
+<td style="text-align: center;">28</td>
+<td>Número 8</td>
+</tr>
+<tr>
+<td style="text-align: center;">29</td>
+<td>Número 9</td>
+<td style="text-align: center;"></td>
+<td></td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>Parámetros</strong><br />
+Ninguno.</p>
+</li>
+<li>
+<p><strong>Resultados</strong><br />
+Esta visión puede reconocer varias tarjetas al mismo tiempo, incluso se están rotadas hasta 30 grados, pero no las gires demasiado.</p>
+</li>
+</ul>
+<center>
+
+![ID:6 Tarjeta (Card). Resultados](../img/sentry2/id6_resul.png)  
+
+</center>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Resultado</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Coordenada X del centro de la tarjeta</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Coordenada Y del centro de la tarjeta</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Ancho de la tarjeta</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Alto de la tarjeta</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Etiqueta de de la tarjeta</td>
+</tr>
+</tbody>
+</table>
+<p><mark><strong>ID:7 Face (Caras)</strong></mark></p>
+<ul>
+<li><strong>Resumen</strong><br />
+Esta visión permite entrenar y reconocer rostros, se pueden guardar hasta 25 datos de modelos y también admite la detección de máscaras.</li>
+</ul>
+<center>
+
+![ID:7 Face (Cara). Resumen](../img/sentry2/id7_res.png)  
+
+</center>
+
+<ul>
+<li><strong>Parámetros</strong>  </li>
+</ul>
+<blockquote>
+<ul>
+<li><strong>Entrenando nueva cara</strong>: Un nuevo objeto se puede entrenar desde la página de ejecución.</li>
+</ul>
+</blockquote>
+<center>
+
+![ID:7 Face (Cara). Parámetros](../img/sentry2/id7_param.png)  
+
+</center>
+
+<p>Una nueva etiqueta se asigna a la nueva cara tomando como criterio escoger el número mas pequeño de los ID disponibles.</p>
+<blockquote>
+<ul>
+<li><strong>Borrar todas las caras</strong>: Una pulsación superior a 2 segundos del botón del joystick.</li>
+</ul>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Parámetro</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Ninguno</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Ninguno</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Ninguno</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Ninguno</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Escribe 0 para borrar el objeto actual o 100 para entrenamiento</td>
+</tr>
+</tbody>
+</table>
+<p>Puedes renombrar o borrar el objeto entrenado desde la página de configuración de la interfaz de usuario.</p>
+<center>
+
+![ID:7 Face (Cara). Renombrar o borrar](../img/sentry2/id7_param1.png)  
+
+</center>
+
+<ul>
+<li><strong>Resultados</strong>  </li>
+</ul>
+<center>
+
+![ID:7 Face (Cara). Resultados](../img/sentry2/id7_resul.png)  
+
+</center>
+
+<p>Esta cámara de visión artificial admite la detección de rostros (rostros nuevos) y el reconocimiento de rostros (rostros entrenados) que se ejecutan al mismo tiempo. A los rostros nuevos se les asignará la etiqueta 0. En particular, si se detecta un rostro nuevo que lleva una mascarilla, se mostrará 'Rostro nuevo (mascarilla)' y la etiqueta se fijará en 200.</p>
+<center>
+
+![ID:7 Face (Cara). Resultados](../img/sentry2/id7_resul1.png)  
+
+</center>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Resultado</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Coordenada X del centro de la cara</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Coordenada Y del centro de la cara</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Ancho de la cara</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Alto de la cara</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Etiqueta 0: nueva cara, 200: cara con máscarilla</td>
+</tr>
+</tbody>
+</table>
+<p><mark><strong>ID:8 20Class (objetos)</strong></mark></p>
+<ul>
+<li><strong>Resumen</strong><br />
+Identifica 20 tipos comunes de objetos y devuelve sus coordenadas, tamaño y etiquetas, tal y como se muestra en la tabla siguiente.</li>
+</ul>
+<center>
+
+![ID:8 20Class. Resumen](../img/sentry2/id8_res.png)  
+
+</center>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Resultado</th>
+<th>Resumen</th>
+<th style="text-align: center;">Resultado</th>
+<th>Resumen</th>
+<th style="text-align: center;">Resultado</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Avión (Airplane)</td>
+<td style="text-align: center;">2</td>
+<td>Bicicleta (Bicycle)</td>
+<td style="text-align: center;">3</td>
+<td>Pájaro (Bird)</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Barco (Boat)</td>
+<td style="text-align: center;">5</td>
+<td>Botella (Bottle)</td>
+<td style="text-align: center;">6</td>
+<td>Autobús (Bus)</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td>Coch (Car)</td>
+<td style="text-align: center;">8</td>
+<td>Gato (Gat)</td>
+<td style="text-align: center;">9</td>
+<td>Silla (Chair)</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td>Vaca (Cow)</td>
+<td style="text-align: center;">11</td>
+<td>Mesa de comedor (DiningTable)</td>
+<td style="text-align: center;">12</td>
+<td>Perro (Dog)</td>
+</tr>
+<tr>
+<td style="text-align: center;">13</td>
+<td>Caballo (Horse)</td>
+<td style="text-align: center;">14</td>
+<td>Motocicleta (Motorbike)</td>
+<td style="text-align: center;">15</td>
+<td>Persona (Person)</td>
+</tr>
+<tr>
+<td style="text-align: center;">16</td>
+<td>Maceta (PottedPlant)</td>
+<td style="text-align: center;">17</td>
+<td>Oveja (Sheep)</td>
+<td style="text-align: center;">18</td>
+<td>Sofá (Sofa)</td>
+</tr>
+<tr>
+<td style="text-align: center;">19</td>
+<td>Tren (Train)</td>
+<td style="text-align: center;">20</td>
+<td>Monitor de televisión (Tvmonitor)</td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Parámetros</strong>  </li>
+</ul>
+<center>
+
+![ID:8 20Class. Parámetros](../img/sentry2/id8_param.png)  
+
+</center>
+
+<p><strong>Nivel de rendimiento del algoritmo</strong>: Para seleccionar el rendimiento de la visión según los diferentes requisitos de la aplicación: 'Sensible (Sensitive)', 'Equilibrado (Balance)' y 'Preciso (Accurate)'.</p>
+<ul>
+<li><strong>Resultados</strong>  </li>
+</ul>
+<center>
+
+![ID:8 20Class. Resultados](../img/sentry2/id8_resul.png)  
+
+</center>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Resultado</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Coordenada X del centro del objeto</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Coordenada Y del centro del objeto</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Ancho del objeto</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Alto del objeto</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Etiqueta</td>
+</tr>
+</tbody>
+</table>
+<p><mark><strong>ID:9 Código QR</strong></mark></p>
+<div class="admonition bug">
+<p class="admonition-title"> </p>
+<p><strong>SOLAMENTE DISPONIBLE PARA LA VERSIÓN ENTERPRISE</strong></p>
+</div>
+<ul>
+<li><strong>Resumen</strong>  </li>
+</ul>
+<center>
+
+![ID:9 Código QR. Resumen](../img/sentry2/id9_res.png)  
+
+</center>
+
+<p>Se puede reconocer un código QR estándar (menos de 25 caracteres ASCII).</p>
+<p><strong>Tabla <a href="https://es.wikipedia.org/wiki/ASCII">ASCII</a></strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Etiqueta</th>
+<th style="text-align: center;">ASCII</th>
+<th style="text-align: center;">Etiqueta</th>
+<th style="text-align: center;">ASCII</th>
+<th style="text-align: center;">Etiqueta</th>
+<th style="text-align: center;">ASCII</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">Espacio</td>
+<td style="text-align: center;">33</td>
+<td style="text-align: center;">!</td>
+<td style="text-align: center;">34</td>
+<td style="text-align: center;">“</td>
+</tr>
+<tr>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">#</td>
+<td style="text-align: center;">36</td>
+<td style="text-align: center;">$</td>
+<td style="text-align: center;">37</td>
+<td style="text-align: center;">%</td>
+</tr>
+<tr>
+<td style="text-align: center;">38</td>
+<td style="text-align: center;">&amp;</td>
+<td style="text-align: center;">39</td>
+<td style="text-align: center;">‘</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">(</td>
+</tr>
+<tr>
+<td style="text-align: center;">41</td>
+<td style="text-align: center;">)</td>
+<td style="text-align: center;">42</td>
+<td style="text-align: center;">*</td>
+<td style="text-align: center;">43</td>
+<td style="text-align: center;">+</td>
+</tr>
+<tr>
+<td style="text-align: center;">44</td>
+<td style="text-align: center;">,</td>
+<td style="text-align: center;">45</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">46</td>
+<td style="text-align: center;">.</td>
+</tr>
+<tr>
+<td style="text-align: center;">47</td>
+<td style="text-align: center;">/</td>
+<td style="text-align: center;">48</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">49</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">51</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td style="text-align: center;">53</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">54</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">55</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr>
+<td style="text-align: center;">56</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">57</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">58</td>
+<td style="text-align: center;">:</td>
+</tr>
+<tr>
+<td style="text-align: center;">59</td>
+<td style="text-align: center;">;</td>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">&lt;</td>
+<td style="text-align: center;">61</td>
+<td style="text-align: center;">=</td>
+</tr>
+<tr>
+<td style="text-align: center;">62</td>
+<td style="text-align: center;">&gt;</td>
+<td style="text-align: center;">63</td>
+<td style="text-align: center;">?</td>
+<td style="text-align: center;">64</td>
+<td style="text-align: center;">@</td>
+</tr>
+<tr>
+<td style="text-align: center;">65</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">66</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">67</td>
+<td style="text-align: center;">C</td>
+</tr>
+<tr>
+<td style="text-align: center;">68</td>
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">69</td>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr>
+<td style="text-align: center;">71</td>
+<td style="text-align: center;">G</td>
+<td style="text-align: center;">72</td>
+<td style="text-align: center;">H</td>
+<td style="text-align: center;">73</td>
+<td style="text-align: center;">I</td>
+</tr>
+<tr>
+<td style="text-align: center;">74</td>
+<td style="text-align: center;">J</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">K</td>
+<td style="text-align: center;">76</td>
+<td style="text-align: center;">L</td>
+</tr>
+<tr>
+<td style="text-align: center;">77</td>
+<td style="text-align: center;">M</td>
+<td style="text-align: center;">78</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">79</td>
+<td style="text-align: center;">O</td>
+</tr>
+<tr>
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">P</td>
+<td style="text-align: center;">81</td>
+<td style="text-align: center;">Q</td>
+<td style="text-align: center;">82</td>
+<td style="text-align: center;">R</td>
+</tr>
+<tr>
+<td style="text-align: center;">83</td>
+<td style="text-align: center;">S</td>
+<td style="text-align: center;">84</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">85</td>
+<td style="text-align: center;">U</td>
+</tr>
+<tr>
+<td style="text-align: center;">86</td>
+<td style="text-align: center;">V</td>
+<td style="text-align: center;">87</td>
+<td style="text-align: center;">W</td>
+<td style="text-align: center;">88</td>
+<td style="text-align: center;">X</td>
+</tr>
+<tr>
+<td style="text-align: center;">89</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">90</td>
+<td style="text-align: center;">Z</td>
+<td style="text-align: center;">91</td>
+<td style="text-align: center;">[</td>
+</tr>
+<tr>
+<td style="text-align: center;">92</td>
+<td style="text-align: center;">\</td>
+<td style="text-align: center;">93</td>
+<td style="text-align: center;">]</td>
+<td style="text-align: center;">94</td>
+<td style="text-align: center;">^</td>
+</tr>
+<tr>
+<td style="text-align: center;">95</td>
+<td style="text-align: center;">_</td>
+<td style="text-align: center;">96</td>
+<td style="text-align: center;">`</td>
+<td style="text-align: center;">97</td>
+<td style="text-align: center;">a</td>
+</tr>
+<tr>
+<td style="text-align: center;">98</td>
+<td style="text-align: center;">b</td>
+<td style="text-align: center;">99</td>
+<td style="text-align: center;">c</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">d</td>
+</tr>
+<tr>
+<td style="text-align: center;">101</td>
+<td style="text-align: center;">e</td>
+<td style="text-align: center;">102</td>
+<td style="text-align: center;">f</td>
+<td style="text-align: center;">103</td>
+<td style="text-align: center;">g</td>
+</tr>
+<tr>
+<td style="text-align: center;">104</td>
+<td style="text-align: center;">h</td>
+<td style="text-align: center;">105</td>
+<td style="text-align: center;">i</td>
+<td style="text-align: center;">106</td>
+<td style="text-align: center;">j</td>
+</tr>
+<tr>
+<td style="text-align: center;">107</td>
+<td style="text-align: center;">k</td>
+<td style="text-align: center;">108</td>
+<td style="text-align: center;">l</td>
+<td style="text-align: center;">109</td>
+<td style="text-align: center;">m</td>
+</tr>
+<tr>
+<td style="text-align: center;">110</td>
+<td style="text-align: center;">n</td>
+<td style="text-align: center;">111</td>
+<td style="text-align: center;">o</td>
+<td style="text-align: center;">112</td>
+<td style="text-align: center;">p</td>
+</tr>
+<tr>
+<td style="text-align: center;">113</td>
+<td style="text-align: center;">q</td>
+<td style="text-align: center;">114</td>
+<td style="text-align: center;">r</td>
+<td style="text-align: center;">115</td>
+<td style="text-align: center;">s</td>
+</tr>
+<tr>
+<td style="text-align: center;">116</td>
+<td style="text-align: center;">t</td>
+<td style="text-align: center;">117</td>
+<td style="text-align: center;">u</td>
+<td style="text-align: center;">118</td>
+<td style="text-align: center;">v</td>
+</tr>
+<tr>
+<td style="text-align: center;">119</td>
+<td style="text-align: center;">w</td>
+<td style="text-align: center;">120</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">121</td>
+<td style="text-align: center;">y</td>
+</tr>
+<tr>
+<td style="text-align: center;">122</td>
+<td style="text-align: center;">z</td>
+<td style="text-align: center;">123</td>
+<td style="text-align: center;">{</td>
+<td style="text-align: center;">124</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">125</td>
+<td style="text-align: center;">}</td>
+<td style="text-align: center;">126</td>
+<td style="text-align: center;">~</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>Parámetros</strong><br />
+Ninguno</p>
+</li>
+<li>
+<p><strong>Resultados</strong><br />
+A diferencia de otras cámaras de visión artificial, esta devuelve dos tipos de información, paquete de atributos y datos de caracteres.</p>
+</li>
+</ul>
+<center>
+
+![ID:9 Código QR. Resultados](../img/sentry2/id9_resul.png)  
+
+</center>
+
+<p><strong>Paquete de atributos</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Resultado</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Coordenada X del centro del QR</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Coordenada Y del centro del QR</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Ancho del QR</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Alto del QR</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Número de caracteres</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Datos de caracteres</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Resultado</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Dato de caracter</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Dato de caracter</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Dato de caracter</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Dato de caracter</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Dato de caracter</td>
+</tr>
+</tbody>
+</table>
+<p><mark><strong>ID:10 Custom (Personalizado)</strong></mark></p>
+<ul>
+<li><strong>Resumen</strong><br />
+Si este modo está habilitado, el chip wifi estará en modo ejecución. Mas detalles en:</li>
+</ul>
+<p><strong><ins>Versión en Inglés:</ins></strong>  </p>
+<center>[Sentry2 WiFi Firmware Developing User Guide_V1.1.pdf](../Sentry2/Sentry2%20WiFi%20Firmware%20Developing%20User%20Guide_V1.1.pdf)</center>
+
+<p><strong><ins>Versión en Castellano:</ins></strong>  </p>
+<center>[Guía de desarrollo del firmware WiFi Sentry2_V1.1.pdf](../Sentry2/Guía%20de%20desarrollo%20del%20firmware%20WiFi%20Sentry2_V1.1.pdf)</center>
+
+<center>
+
+![ID:10 Personalizado. Resumen](../img/sentry2/id10_res.png)  
+
+</center>
+
+<ul>
+<li>
+<p><strong>Parámetros</strong><br />
+Personalizados</p>
+</li>
+<li>
+<p><strong>Resultados</strong><br />
+Personalizados</p>
+</li>
+</ul>
+<p><mark><strong>ID:11 Motion (Movimiento)</strong></mark></p>
+<div class="admonition bug">
+<p class="admonition-title"> </p>
+<p><strong>SOLAMENTE DISPONIBLE PARA LA VERSIÓN ENTERPRISE</strong></p>
+</div>
+<ul>
+<li><strong>Resumen</strong><br />
+Compara la diferencia de píxeles de los fotogramas adyacentes para determinar si hay una región con movimiento en la imagen, devolviendo su coordenada y tamaño.</li>
+</ul>
+<center>
+
+![ID:11 Movimiento. Resumen](../img/sentry2/id11_res.png)  
+
+</center>
+
+<ul>
+<li>
+<p><strong>Parámetros</strong><br />
+Ninguno</p>
+</li>
+<li>
+<p><strong>Resultados</strong>  </p>
+</li>
+</ul>
+<center>
+
+![ID:11 Movimiento. Resultados](../img/sentry2/id11_resul.png)  
+
+</center>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Resultado</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Coordenada X del centro de la región</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Coordenada Y del centro de la región</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Ancho de la región</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Alto de la región</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Ninguno</td>
+</tr>
+</tbody>
+</table>
+<h3 id="resumen-de-la-interfaz-de-ejecucion-running"><FONT COLOR=#AA0000>Resumen de la interfaz de ejecución (Running)</font><a class="headerlink" href="#resumen-de-la-interfaz-de-ejecucion-running" title="Permanent link">&para;</a></h3>
+<center>
+
+![Interfaz de ejecución (Running)](../img/sentry2/Modo_ejec.png)  
+
+</center>
+
+<p>Hay varias formas de habilitar/desactivar la visión:</p>
+<ul>
+<li><strong>Desde la página de la interfaz de usuario</strong></li>
+</ul>
+<center>
+
+![Desde la página de la interfaz de usuario](../img/sentry2/act_des_vision.png)  
+
+</center>
+
+<ol>
+<li>Selecciona la vista en los menús de la izquierda de la página de configuración de la visión.</li>
+<li>Algunas visiones se pueden configurar. Pulsa en "Setting / configuración" para entrar.</li>
+<li>
+<p>Si se muestra el botón rojo "STOP / detener" en la parte inferior izquierda del área de control derecha, significa que el algoritmo está cerrado actualmente. Después de clicar en él, cambiará a un botón verde "RUN / ejecuta", lo que significa que el algoritmo se inicia. Pulsa de nuevo y volverá a cambiar en el botón rojo "STOP / detener".</p>
+</li>
+<li>
+<p><strong>Con el joystick</strong></p>
+</li>
+</ol>
+<center>
+
+![Con el joystick](../img/sentry2/ini_rap.png)  
+
+</center>
+
+<ol>
+<li>Pulsa brevemente en el joystick hacia arriba y hacia abajo para activar o desactivar una visión. La visión anterior se cerrará si se está ejecutando una visión nueva.</li>
+<li>
+<p>La secuencia de cambio de visión se ordena por Vision-ID.</p>
+</li>
+<li>
+<p>Mediante las instrucciones de programación del controlador</p>
+</li>
+</ol>
+<p>De esta forma, el controlador necesita leer y escribir registros para habilitar o desactivar la visión. Se ofrecen las bibliotecas de controladores para distintas plataformas de programación.</p>
+<p>En el modo UART, la lectura o la escritura de registros se realiza de acuerdo con el protocolo estándar o el protocolo simple. Para obtener más información, consulte las secciones relacionadas.</p>
+<p>El modo I2C puede leer o escribir registros directamente.</p>
+<p>Activa la visión:</p>
+<ol>
+<li>Escribe <strong>Vision ID</strong> en el registro <strong>0x20-VISION_ID</strong></li>
+<li>Escribe <strong>0x01</strong> en el registro <strong>0x21-VISIO_CONF1</strong> para habilitar la visión. De lo contrario, escribe <strong>0x00</strong> para desactivarla.</li>
+</ol>
+<h2 id="ideas-de-utilizacion"><FONT COLOR=#007575><strong>Ideas de utilización</strong></font><a class="headerlink" href="#ideas-de-utilizacion" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Reconocimiento de color (ID: 1)</strong> → Esta función podría utilizarse en un robot de clasificación para identificar objetos de diferentes colores y separarlos según su etiqueta de color. Por ejemplo, podríamos configurar regiones de interés y el sensor devolvería la etiqueta de color (rojo, azul, etc.) para cada región, permitiendo al robot tomar decisiones basadas en la información de color.</li>
+<li><strong>Detección de bloques de color (ID: 2)</strong> → Un ejemplo de uso podría estar en un sistema de seguimiento de objetos donde un robot sigue una pelota de un color específico (como el rojo). El sensor detectaría el bloque de color rojo y proporcionaría su posición, permitiendo al robot ajustar su movimiento para mantener la pelota dentro de su campo de visión</li>
+<li><strong>Reconocimiento de Apriltag (ID: 3)</strong> → Esta tecnología podría aplicarse en la navegación robótica donde un robot utiliza etiquetas Apriltag colocadas en diferentes ubicaciones para orientarse y determinar su posición en un entorno. El sensor identificaría la etiqueta y devolvería su ID y coordenadas.</li>
+<li><strong>Detección de líneas (ID: 4)</strong> → Un uso común sería en robots seguidores de líneas para competiciones o en sistemas automatizados de transporte. El sensor detectaría la línea y proporcionaría los puntos finales y el ángulo, permitiendo al robot seguir el trazado. Otro posible uso es el que ya implementan la mayoría de los coches, que consiste en corregir la dirección, o al menos avisar mediante señales optico-acústicas, de una salida de calzada o cambio de carril.</li>
+<li><strong>Aprendizaje (ID: 5)</strong> → Este algoritmo permitiría a la Sentry2 reconocer objetos personalizados después de un entrenamiento. Un ejemplo podría estar en un control de calidad industrial donde el sensor aprende a identificar piezas defectuosas específicas. Tras el entrenamiento, el sensor podría determinar si el objeto entrenado está o no presente.</li>
+<li><strong>Reconocimiento de tarjetas (ID: 6)</strong> → Se podría utilizar en aplicaciones educativas para interactuar con tarjetas que contienen símbolos, números o señales de tráfico. Por ejemplo, un niño podría mostrar una tarjeta con el número "5" y el sensor la identificaría, devolviendo la etiqueta correspondiente.</li>
+<li><strong>Reconocimiento facial (ID: 7)</strong> → Un ejemplo de aplicación sería en un sistema básico de control de acceso donde el sensor puede detectar si existe una cara y, si se ha entrenado, identificar de quién se trata. También puede detectar si una "cara nueva" lleva máscara.</li>
+<li><strong>Reconocimiento de 20 clases de objetos (ID: 8)</strong> → Esta función se podría utilizar en proyectos de visión por computador básicos para identificar objetos comunes como gatos, coches o personas. Por ejemplo, un robot podría utilizar esa capacidad para "ver" y reaccionar a la presencia de determinados objetos en su entorno.</li>
+</ul>
+<h2 id="videos-de-la-sentry2"><FONT COLOR=#007575><strong>Videos de la Sentry2</strong></font><a class="headerlink" href="#videos-de-la-sentry2" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">AVISO:</p>
+<p>La mayoría de los enlaces que siguen a continuación nos dirigen a páginas escritas en Chino.</p>
+</div>
+<p>Búsqueda en <a href="https://search.bilibili.com/all?keyword=sentry2">bilibili</a></p>
+<ul>
+<li><strong><a href="https://www.bilibili.com/video/BV19v4y1D785">Funciones</a></strong></li>
+</ul>
+<p>Sentry2 es un sensor visual altamente integrado desarrollado por Tongxin Intelligent para las necesidades desde la escuela primaria a estudiantes universitarios en la realización de educación en inteligencia artificial, participación en concursos de robots y proyectos de graduación. Admite dos modos de trabajo: reconocimiento fuera de línea y reconocimiento online. Este vídeo presenta el hardware y los algoritmos de Sentry2 en detalle, permitiendo a los usuarios tener una comprensión intuitiva de qué es Sentry2 y qué puede hacer.</p>
+<ul>
+<li><strong><a href="https://www.bilibili.com/video/BV178411h7A6">Guia de trabajo con el joystick</a></strong></li>
+<li><strong><a href="https://www.bilibili.com/video/BV13k4y1n7TD">Instrucciones y ejemplos de protocolos sencillos</a></strong></li>
+</ul>
+<p>Programa de muestra Makecode: https://makecode.microbit.org/_9akJuiCAg5xj Los sensores de la serie Sentry contienen una función muy práctica: instrucciones de protocolo sencillas. De este modo se puede dejar a un lado la dependencia con la biblioteca oficial y utilizar esta serie de sensores a través de plataformas, no siendo necesario importar archivos de biblioteca, ahorrando recursos valiosos del procesador de la placa de control, además, se pueden ampliar para conectarse al mismo sistema.</p>
+<ul>
+<li><strong><a href="https://www.bilibili.com/video/BV1Ve4y1m7D2">Configuración del modo de comunicación</a></strong></li>
+<li><strong><a href="https://www.bilibili.com/video/BV18K411Z7Gh">Reconocimiento de colores</a></strong></li>
+</ul>
+<p>¿Qué tiene de distinto el algoritmo de reconocimiento de colores de Sentry2? ¿Cómo configurar la selección del algoritmo? ¿Qué aplicaciones creativas se pueden realizar con este algoritmo?</p>
+<ul>
+<li><strong><a href="https://www.bilibili.com/video/BV1KM411C73u">Detección de bloques de color</a></strong></li>
+</ul>
+<p>¿Qué diferencias existen entre el algoritmo de detección de bloques de color de Sentry2 y el algoritmo de reconocimiento de colores? ¿Qué diferencias existen en comparación con productos similares? ¿Cómo configurar la selección del algoritmo? ¿Qué aplicaciones creativas se pueden realizar con este algoritmo?</p>
+<ul>
+<li><strong><a href="https://www.bilibili.com/video/BV15e411N7Tj">Reconocimiento facial</a></strong></li>
+<li><strong><a href="https://www.bilibili.com/video/BV1hh411A7Cd">Aprendizaje</a></strong></li>
+<li><strong><a href="https://www.bilibili.com/video/BV1dP4y1e7SW">Reconocimiento de Apriltag</a></strong></li>
+<li><strong><a href="https://www.bilibili.com/video/BV1de4y137QU">Detección de líneas</a></strong></li>
+<li><strong><a href="https://www.bilibili.com/video/BV1qu411t78q">Detección de líneas y un ejemplo de reconocimiento</a></strong></li>
+<li><strong><a href="https://www.bilibili.com/video/BV1Ls4y1R7s4">Conducción autónoma con IA</a></strong></li>
+<li><strong><a href="https://www.bilibili.com/video/BV1WG4y1b73i">Instrucciones de conexionado de la fuente de alimentación del puerto USB de la Sentry2</a></strong></li>
+</ul>
+<p>Se han suministrado 5V a Sentry2 ¿Por qué Sentry2 se reinicia con una pantalla negra o no funciona? Cuando se alimenta a Sentry2 a través del puerto USB, ¿cómo se debe conectar Sentry2 a la placa base o a la placa de expansión de la placa base?</p>
+<ul>
+<li><strong><a href="https://www.bilibili.com/video/BV1Dg411B79o">WiFi ESP8285</a></strong></li>
+<li><strong><a href="https://www.bilibili.com/video/BV1Gv4y1S7Kv">Reconocimiento de imágenes en la nube</a></strong></li>
+</ul>
+<p>Uno de los aspectos más destacados de Sentry2 es que tiene un chip WiFi ESP8285 incorporado que está abierto a la programación de los usuarios, ya sea para escribir programas de control o para desarrollar funciones relacionadas con WiFi, como la identificación en la nube y el acceso a Internet de las cosas.</p>
+<ul>
+<li><strong><a href="https://www.bilibili.com/video/BV1EX4y1y7o7">Control remoto de coche y transmisión de imágenes por WiFi</a></strong></li>
+<li><strong><a href="https://www.bilibili.com/video/BV1N24y147AJ">Robot con Sentry2</a></strong></li>
+<li><strong><a href="https://www.bilibili.com/video/BV1Ls4y1R7s4">Robot con Sentry2</a></strong></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright y copia; 2023 - 2035 Federico Coca
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://bsky.app/profile/fgcoca.bsky.social" target="_blank" rel="noopener" title="Bluesky de Federico Coca" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3M288 227.1c-26.1-50.7-97.1-145.2-163.1-191.8C61.6-9.4 37.5-1.7 21.6 5.5 3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7 3.3-.5 6.6-.9 10-1.4-3.3.5-6.6 1-10 1.4-93.9 14-177.3 48.2-67.9 169.9C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4 102.4-103.4 28.1-156-65.8-169.9-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3 64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/fgcoca" target="_blank" rel="noopener" title="Github de Federico Coca" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.instagram.com/cocafederico/?hl=es" target="_blank" rel="noopener" title="Instagram de Federico Coca" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M194.4 211.7a53.3 53.3 0 1 0 59.2 88.6 53.3 53.3 0 1 0-59.2-88.6m142.3-68.4c-5.2-5.2-11.5-9.3-18.4-12-18.1-7.1-57.6-6.8-83.1-6.5-4.1 0-7.9.1-11.2.1s-7.2 0-11.4-.1c-25.5-.3-64.8-.7-82.9 6.5-6.9 2.7-13.1 6.8-18.4 12s-9.3 11.5-12 18.4c-7.1 18.1-6.7 57.7-6.5 83.2 0 4.1.1 7.9.1 11.1s0 7-.1 11.1c-.2 25.5-.6 65.1 6.5 83.2 2.7 6.9 6.8 13.1 12 18.4s11.5 9.3 18.4 12c18.1 7.1 57.6 6.8 83.1 6.5 4.1 0 7.9-.1 11.2-.1s7.2 0 11.4.1c25.5.3 64.8.7 82.9-6.5 6.9-2.7 13.1-6.8 18.4-12s9.3-11.5 12-18.4c7.2-18 6.8-57.4 6.5-83 0-4.2-.1-8.1-.1-11.4s0-7.1.1-11.4c.3-25.5.7-64.9-6.5-83-2.7-6.9-6.8-13.1-12-18.4zm-67.1 44.5c18.1 12.1 30.6 30.9 34.9 52.2s-.2 43.5-12.3 61.6c-6 9-13.7 16.6-22.6 22.6s-19 10.1-29.6 12.2c-21.3 4.2-43.5-.2-61.6-12.3s-30.6-30.9-34.9-52.2.2-43.5 12.2-61.6 30.9-30.6 52.2-34.9 43.5.2 61.6 12.2h.1zm29.2-1.3c-3.1-2.1-5.6-5.1-7.1-8.6s-1.8-7.3-1.1-11.1 2.6-7.1 5.2-9.8 6.1-4.5 9.8-5.2 7.6-.4 11.1 1.1 6.5 3.9 8.6 7 3.2 6.8 3.2 10.6c0 2.5-.5 5-1.4 7.3s-2.4 4.4-4.1 6.2-3.9 3.2-6.2 4.2-4.8 1.5-7.3 1.5c-3.8 0-7.5-1.1-10.6-3.2zM448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64zm-91 293c-18.7 18.7-41.4 24.6-67 25.9-26.4 1.5-105.6 1.5-132 0-25.6-1.3-48.3-7.2-67-25.9s-24.6-41.4-25.8-67c-1.5-26.4-1.5-105.6 0-132 1.3-25.6 7.1-48.3 25.8-67s41.5-24.6 67-25.8c26.4-1.5 105.6-1.5 132 0 25.6 1.3 48.3 7.1 67 25.8s24.6 41.4 25.8 67c1.5 26.3 1.5 105.4 0 131.9-1.3 25.6-7.1 48.3-25.8 67z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../plugins/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

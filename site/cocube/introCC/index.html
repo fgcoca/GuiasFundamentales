@@ -1,0 +1,3282 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="En esta web vamos a encontrar diversas guías para iniciarnos en placas como Keyestudio UNO, micro:bit, ESP32 micro:STEAMakers, ESP32STEAMakers y otras.">
+      
+      
+        <meta name="author" content="Federico Coca">
+      
+      
+        <link rel="canonical" href="https://fgcoca.github.io/GuiasFundamentales/cocube/introCC/">
+      
+      
+        <link rel="prev" href="../contCoCube/">
+      
+      
+        <link rel="next" href="../lcd/">
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Introducción - Guias Fundamentales</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aspectos-destacados" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Guias Fundamentales" class="md-header__button md-logo" aria-label="Guias Fundamentales" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guias Fundamentales
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introducción
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="deep-purple"  aria-label="Modo Oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo Oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="deep-purple"  aria-label="Modo Claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo Claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fgcoca/GuiasFundamentales" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fgcoca/GuiasFundamentales
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+  Principal
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../TdR_STEAM/contTdR/" class="md-tabs__link">
+          
+  
+  
+  Imagina TdR STEAM
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../UNO/contUNO/" class="md-tabs__link">
+          
+  
+  
+  Keyestudio UNO
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../STEAMakers/contSM/" class="md-tabs__link">
+          
+  
+  
+  ESP32 STEAMakers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../microSTEAMakers/contmicroSM/" class="md-tabs__link">
+          
+  
+  
+  ESP32 micro:STEAMakers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../contCoCube/" class="md-tabs__link">
+          
+  
+  
+  Robot CoCube
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Sentry2/contSentry2/" class="md-tabs__link">
+          
+  
+  
+  Sensor de visión IA Sentry2
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ed1/conted1.md" class="md-tabs__link">
+          
+  
+  
+  ED1
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../retos/keyestudio_UNO/" class="md-tabs__link">
+          
+  
+  
+  Retos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Miscelanea/about/" class="md-tabs__link">
+          
+  
+  
+  Miscelanea
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guias Fundamentales" class="md-nav__button md-logo" aria-label="Guias Fundamentales" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    Guias Fundamentales
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fgcoca/GuiasFundamentales" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fgcoca/GuiasFundamentales
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Principal
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Principal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problemasUSB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Problemas de conexión USB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../previos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conocimientos técnicos previos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CO2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conceptos sobre CO2 y VOC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mod_colores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modelo de colores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comunicaciones Bluetooth
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basicoUDP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conceptos básicos de UDP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sentry2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sensor de visión IA Sentry2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Imagina TdR STEAM
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Imagina TdR STEAM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TdR_STEAM/contTdR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TdR_STEAM/SMBlocks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    STEAMakersBlocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TdR_STEAM/retos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Retos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TdR_STEAM/seg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Keyestudio UNO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Keyestudio UNO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/contUNO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/tdrsteam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Placa TdR-STEAM y keyestudio UNO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/lcd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pantalla LCD 1602
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/oled/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pantalla OLED
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/externos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar sensores externos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/servos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar servomotores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/ultrason/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar el sensor de ultrasonidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/mando/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar el mando a distancia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UNO/tira/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar una tira de LEDs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ESP32 STEAMakers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ESP32 STEAMakers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/contSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/tdrsteam_SM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Placa TdR-STEAM y ESP32 STEAMakers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/considera/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Consideraciones sobre ESP32
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/lcdSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pantalla LCD 1602
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/oledSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pantalla OLED
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/externosSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar sensores externos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/wifiSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conectar la placa a una red WiFi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/thingspkSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enviar datos a Thingspeak
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/servosSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar servomotores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/ultrasonSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar el sensor de ultrasonidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/mandoSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar el mando a distancia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEAMakers/tiraSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programar una tira de LEDs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ESP32 micro:STEAMakers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            ESP32 micro:STEAMakers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microSTEAMakers/contmicroSM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microSTEAMakers/uB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entorno de programación Microblocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microSTEAMakers/lib_wifi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MicroBlocks, libreria WiFi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microSTEAMakers/Boardie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Boardie:un tablero virtual para MicroBlocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microSTEAMakers/prog_uB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programación con MicroBlocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microSTEAMakers/app_ble/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aplicaciones con BLE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microSTEAMakers/ble_inventor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extensión BluetoothLE de App Inventor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microSTEAMakers/mb_inventor_BLE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MicroBlocks + App Inventor + BLE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microSTEAMakers/wifi_radio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WiFi y Wifi Radio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microSTEAMakers/crea_libreria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Como crear una libreria
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Robot CoCube
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Robot CoCube
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contCoCube/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aspectos-destacados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aspectos destacados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#especificaciones-tecnicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Especificaciones técnicas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Especificaciones técnicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#robot-cocube" class="md-nav__link">
+    <span class="md-ellipsis">
+      Robot CoCube
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapas-de-ubicacion-comaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapas de ubicación CoMaps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulo-de-expansion-comodules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Módulo de expansión CoModules
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plataforma-grafica-de-programacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plataforma gráfica de programación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plataforma gráfica de programación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conexion-de-cocube" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión de CoCube
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualizar-firmware-de-cocube" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actualizar firmware de CoCube
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloques-de-la-libreria-cocube" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloques de la libreria CoCube
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloques-de-la-libreria-de-modulos-externos-de-cocube" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloques de la libreria de módulos externos de CoCube
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcador-aruco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marcador ArUco
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcador-apriltag" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marcador AprilTag
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lcd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Progamación de la pantalla LCD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movimientos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Movimientos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posicionamiento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Posicionamiento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sonidos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sonidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pinza/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Servo con pinza
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../broadcast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Eventos de transmisión o broadcast
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teclado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control por eventos de teclado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../com_UDP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comunicaciones UDP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remoto_wifi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control remoto mediante APP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sentry2_color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reconocimiento de color con Sentry2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Sensor de visión IA Sentry2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Sensor de visión IA Sentry2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sentry2/contSentry2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ED1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            ED1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ed1/conted1.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Antes de
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ed1/introED1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Retos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Retos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../retos/keyestudio_UNO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Keyestudio UNO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Miscelanea
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Miscelanea
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Autor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/lic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Licencias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/webgrafia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Webgrafia/Bibliografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/soft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software utilizado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aspectos-destacados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aspectos destacados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#especificaciones-tecnicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Especificaciones técnicas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Especificaciones técnicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#robot-cocube" class="md-nav__link">
+    <span class="md-ellipsis">
+      Robot CoCube
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapas-de-ubicacion-comaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapas de ubicación CoMaps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulo-de-expansion-comodules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Módulo de expansión CoModules
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plataforma-grafica-de-programacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plataforma gráfica de programación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plataforma gráfica de programación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conexion-de-cocube" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión de CoCube
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualizar-firmware-de-cocube" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actualizar firmware de CoCube
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloques-de-la-libreria-cocube" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloques de la libreria CoCube
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloques-de-la-libreria-de-modulos-externos-de-cocube" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloques de la libreria de módulos externos de CoCube
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcador-aruco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marcador ArUco
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcador-apriltag" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marcador AprilTag
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Introducción</h1>
+
+<p>CoCube es un robot educativo escritorio que incorpora inteligencia artificial, desarrollado conjuntamente por un equipo de estudiantes de máster y doctorado de las universidades Shanghái Jiao Tong y Fudan, con el objetivo de acercar la inteligencia artificial a los jóvenes y crear una plataforma creativa llena de interactividad, logros y diversión. CoCube estimula la curiosidad y la creatividad de los estudiantes al involucrarlos en el diseño de robots de IA, desde la programación simple hasta la construcción de sistemas interactivos complejos, y les ayuda a convertir sus ideas e inspiraciones en realidad.</p>
+<h2 id="aspectos-destacados"><FONT COLOR=#007575><strong>Aspectos destacados</strong></font><a class="headerlink" href="#aspectos-destacados" title="Permanent link">&para;</a></h2>
+<ul>
+<li>CoCube es un robot de escritorio muy pequeño que integra comunicación inalámbrica, pantalla, interacción por voz y otras funciones. Incorpora una batería de larga duración que le permite moverse con flexibilidad. Su programación es sencilla y se puede disfrutar en cualquier momento y lugar.</li>
+</ul>
+<center>
+
+![Ligero y portátil](../img/CoCube/lig_port.png)  
+
+</center>
+
+<ul>
+<li>CoCube cuenta con comunicación inalámbrica, pantalla LCD de 240x240 px0, movimientos precisos a través de sus ruedas, botón de encendido y apagado, altavoz para emitir sonidos, dos botones, un LED indicador de carga (rojo) o de encendido (verde), un conector magnético para módulos de expansión y posicionamiento exacto mediante camara.</li>
+</ul>
+<center>
+
+![Componentes de CoCube](../img/CoCube/partes.png)  
+
+</center>
+
+<ul>
+<li>Gracias a su interfaz magnética frontal, CoCube puede expandirse con módulos de detección, actuadores, visualización e inteligencia artificial. El conector es de tipo plug and play, por lo que permite satisfacer muchas necesidades creativas y personalizadas.</li>
+</ul>
+<center>
+
+![Módulos de expansión](../img/CoCube/mod.png)  
+
+</center>
+
+<ul>
+<li>El robot CoCube puede ubicarse con precisión en mapas CoMaps, lo que brinda grandes posibilidades para el control preciso de un robot y la colaboración en grupos de robots. Esto permite experimentar con el trabajo en equipo y la programación creativa.</li>
+</ul>
+<center>
+
+![Posicionamiento preciso](../img/CoCube/CoMaps.png)  
+
+</center>
+
+<ul>
+<li><strong>CoMaps</strong> utiliza tecnología de identificación óptica (OID) para crear mapas de codificación por micropuntos que se pueden imprimir en papel normal, lo que proporciona a los robots CoCube capacidades de posicionamiento de alta precisión y fáciles de implementar.</li>
+</ul>
+<center>
+
+![Posicionamiento preciso](../img/CoCube/CoMaps1.png)  
+
+</center>
+
+<ul>
+<li>El robot CoCube se puede programar mediante la plataforma de programación gráfica MicroBlocks, que ya se ha descrito en la sección <a href="https://fgcoca.github.io/GuiasFundamentales/microSTEAMakers/contmicroSM/">ESP32 micro:STEAMakers</a>. MicroBlocks admite programación interactiva, depuración en tiempo real y conexión y desconexión en cualquier momento, lo que permite el funcionamiento autónomo. El sistema utiliza MicroBlocks para el desarrollo de firmware y bibliotecas de bloques, con interfaces de comunicación para APIs avanzadas que permiten realizar tareas más complejas.</li>
+</ul>
+<center>
+
+![Programación gráfica](../img/CoCube/prog.png)  
+
+</center>
+
+<h2 id="especificaciones-tecnicas"><FONT COLOR=#007575><strong>Especificaciones técnicas</strong></font><a class="headerlink" href="#especificaciones-tecnicas" title="Permanent link">&para;</a></h2>
+<h3 id="robot-cocube"><FONT COLOR=#AA0000>Robot CoCube</font><a class="headerlink" href="#robot-cocube" title="Permanent link">&para;</a></h3>
+<center>
+
+![Robot CoCube](../img/CoCube/robotCC.png)  
+
+|Especificación|Parámetro|
+|---|---|
+|Microcontrolador|ESP32 Xtensa® 32-bit LX6 Procesadores de núcleo simple/dual|
+|WiFi|802.11 b/g/n (2.4Ghz)|
+|Bluetooth|Bluetooth V4.2 BR/EDR norma BLE|
+|Movimiento|Chasis diferencial de doble vía con una velocidad máxima de movimiento de 50 unidades/s|
+|Posicionamiento|Velocidad de fotogramas elevada, posicionamiento exacto a nivel milimétrico y resolución angular de 1°|
+|Pantalla TFT|Pantalla a color de 1.54 pulgadas y resolución de 240x240|
+|Botones|El botón de encendido se encuentra en la parte inferior y debe mantenerse presionado durante 3 segundos para encenderlo, mientras que los botones A y B se encuentra en la parte trasera del chasis|
+|Zumbador|Pasivo|
+|Interfaz magnética|Interfaz de 4 pines de sujeción magnética (I2C + I/O + UART),5V / 600mA|
+|Bateria de litio|7.4V / 450mAh|
+|Tensión de carga|Interfaz tipo C, 5V / 1.2A|
+|Duración batería|Sin límite en el modo de programación por cable, aproximadamente 2 horas en el modo de programación inalámbrica por Bluetooth, aproximadamente 1 hora en el modo Wi-Fi|
+|Dimensiones|45 × 45 × 38 mm|
+|Peso|63g|
+
+</center>
+
+<h3 id="mapas-de-ubicacion-comaps"><FONT COLOR=#AA0000>Mapas de ubicación CoMaps</font><a class="headerlink" href="#mapas-de-ubicacion-comaps" title="Permanent link">&para;</a></h3>
+<p>Los robots CoCube pueden obtener ubicaciones y ángulos precisos en los mapas CoMaps.</p>
+<p>Para un CoMap estándar, el tamaño total es de aproximadamente un formato A3 y está diseñado con variedad de temas, como laberintos, circuitos para conducción, fútbol, etc.</p>
+<center>
+
+![CoMap laberinto](../img/CoCube/laberinto.png)
+
+</center>
+
+<p>Las coordenadas de la esquina superior izquierda del mapa son (0,0), las coordenadas de la esquina inferior derecha son (300,200), el eje X va de izquierda a derecha (0 ~ 300) y el eje Y va de arriba a abajo (0 ~ 200).</p>
+<p>El robot está orientado 0 grados en la dirección positiva del eje Y y 180 grados cuando está orientado en la dirección negativa del mismo eje. Además, el ángulo de rotación aumenta en sentido contrario a las agujas del reloj.</p>
+<p>Las líneas punteadas se imprimen en el mapa cada 50 unidades, lo que permite localizar rápidamente la ubicación de las coordenadas.</p>
+<p>Los mapas de ubicación de CoMaps admiten costuras extendidas para un tamaño mayor del rango de posicionamiento.</p>
+<p>Para obtener más información sobre los mapas de ubicación de CoMaps o los requisitos de personalización de mapas grandes, consulta con el equipo de CoCube.</p>
+<h3 id="modulo-de-expansion-comodules"><FONT COLOR=#AA0000>Módulo de expansión CoModules</font><a class="headerlink" href="#modulo-de-expansion-comodules" title="Permanent link">&para;</a></h3>
+<p>El robot CoCube se puede ampliar fácilmente a través de conectores magnéticos con diferentes módulos. Actualmente, se admiten los siguientes:</p>
+<center>
+
+|Módulo|Imagen|Funciones y aplicaciones|
+|---|---|---|
+|Pinza servo|![](../img/CoCube/gripper.png)|Las pinzas se pueden dotar de piezas de agarre de silicona para que sean antidelizantes.<br>Aplicable a logistica y escenarios de competición</br>|
+|ToF (tiempo de vuelo)|![](../img/CoCube/ToF.png)|Mediante la emisión de un láser infrarrojo, mide el tiempo que tarda la luz en llegar a un objeto y reflejarse, y así obtiene datos precisos sobre la distancia. Tiene una excelente adaptabilidad a la luz y no se ve afectado por la reflectividad del objetivo, por lo que funciona de manera estable en diversas condiciones de iluminación y escenarios de uso|
+|Panel WS2812|![](../img/CoCube/NeoPixel.png)|Se trata de una matriz de 6x8 LEDs RGB controlables individualmente y con una amplia variedad de colores y efectos dinámicos. Se puede programar y controlar fácilmente a través de un microcontrolador o un controlador dedicado y permite el ajuste píxel a píxel para un rendimiento óptimo|
+|Reconocimiento de gestos|![](../img/CoCube/3Dgesture.png)|Para el reconocimiento de gestos en un espacio tridimensional, lo que permite el control interactivo con un robot|
+|Visión artificial|![](../img/CoCube/vis_art.png)|Con procesados K210 de 64 bits RISC-V integra algoritmos de visión como reconocimiento de color, de tarjetas, de caras, AprilTag (etiquetas visuales), códigos QR, que facilitan la creación de aplicaciones con visión artificial|
+
+</center>
+
+<h2 id="plataforma-grafica-de-programacion"><FONT COLOR=#007575><strong>Plataforma gráfica de programación</strong></font><a class="headerlink" href="#plataforma-grafica-de-programacion" title="Permanent link">&para;</a></h2>
+<p>En cuanto a la arquitectura de software, el objetivo de CoCube es ofrecer una experiencia de programación fácil de usar, manteniendo la flexibilidad y escalabilidad para soportar su hardware modular. El sistema utiliza MicroBlocks para el desarrollo del firmware y bibliotecas de bloques, con interfaces de comunicación para APIs avanzadas que permitan realizar tareas.</p>
+<p>Basado en la plataforma MicroBlocks, CoCube se puede programar directamente en el navegador sin necesidad de descargarlo ni instalarlo.</p>
+<p>MicroBlocks es un lenguaje de programación gráfico para "computación física" inspirado en Scratch.</p>
+<ul>
+<li><a href="https://microblocks.fun/">Página principal de MicroBlocks</a></li>
+</ul>
+<center>
+
+![Página principal de MicroBlocks](../img/CoCube/home.png)
+
+</center>
+
+<ul>
+<li><a href="https://microblocks.fun/run/microblocks.html#scripts=GP%20Scripts%0Adepends%20%27CoCube%27">Página de MicroBlocks con libreria CoCube y dependencias</a></li>
+</ul>
+<center>
+
+![Página principal de MicroBlocks](../img/CoCube/uBCoCube.png)
+
+</center>
+
+<div class="admonition note">
+<p class="admonition-title">Nota:</p>
+<p>La plataforma MicroBlocks es actualmente compatible con Windows, MacOS y Linux.</p>
+</div>
+<h3 id="conexion-de-cocube"><FONT COLOR=#AA0000>Conexión de CoCube</font><a class="headerlink" href="#conexion-de-cocube" title="Permanent link">&para;</a></h3>
+<p>En MicroBlocks hay dos formas de conectar un dispositivo CoCube, siendo recomendable la conectividad inalámbrica.</p>
+<p><strong>1. Conexión inalámbrica</strong></p>
+<ul>
+<li>Desde un navegador Chromium, Chrome o Edge abre la interfaz de MicroBlocks.</li>
+<li>Asegurate de que la función Bluetooth del ordenador esté activada.</li>
+<li>Manten presionado el interruptor (se encuentra en la parte inferior del robot) durante tres segundos para encenderlo. Después de encenderlo, se mostrarán tres caracteres en la pantalla que representan el número de BLE.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Habilitar permisos BLE en Linux</p>
+<ul>
+<li>Teclea <strong>chrome://flags/</strong> en la barra de navegación.</li>
+<li>Busca Bluetooth <strong>Use the new permissions backend for Web Bluetooth</strong> y configuralo como habilitado. Debes reiniciar el navegador.</li>
+</ul>
+<center>
+<p><a class="glightbox" href="../../img/CoCube/permiss_backend.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Use the new permissions backend for Web Bluetooth" src="../../img/CoCube/permiss_backend.png" /></a></p>
+</center>
+</div>
+<ul>
+<li>En la configuración Bluetooth del ordenador empareja el dispositivo detectado.</li>
+</ul>
+<center>
+
+![Emparejado Bluetooth en PC](../img/CoCube/emparejado.png)
+
+</center>
+
+<ul>
+<li>Haz clic en el icono "USB Conecta" en la parte superior derecha de interfaz de MicroBlocks y toca en Conexión inalámbrica (BLE).</li>
+<li>En circunstancias normales, se pueden reconocer las palabras "MicroBlocks XXX" o "CoCube XXX", siendo XXX es las tres letras muestra el robot cuando se enciende.</li>
+</ul>
+<center>
+
+![Emparejado Bluetooth en IDE](../img/CoCube/emparejadoIDE.png)
+
+</center>
+
+<p><strong>2. Conexión por cable</strong></p>
+<ul>
+<li>Navegadores recomendados: Chromium, Chrome y Edge, donde hay que tener abierta la interfaz <a href="https://microblocks.fun/run/microblocks.html#scripts=GP%20Scripts%0Adepends%20%27CoCube%27">MicroBlocks-CoCube</a> de programación.</li>
+<li>Conecta el ordenador a CoCube con un cable USB.</li>
+<li>Manten presionado el interruptor durante 3 segundos (el botón del interruptor se encuentra en la parte inferior del robot) para encender el robot CoCube.</li>
+<li>Haz clic en el icono "USB Conecta" en la parte superior derecha de la interfaz de MicroBlocks y escoge la conexión por cable.</li>
+<li>En circunstancias normales, se puede identificar el puerto serie con el que emparejarse.</li>
+</ul>
+<h3 id="actualizar-firmware-de-cocube"><FONT COLOR=#AA0000>Actualizar firmware de CoCube</font><a class="headerlink" href="#actualizar-firmware-de-cocube" title="Permanent link">&para;</a></h3>
+<p>Cuando uses el dispositivo por primera vez, actualiza el firmware más reciente de tu CoCube para obtener la mejor experiencia.</p>
+<ul>
+<li>Conecta mediante cable el robot CoCube.</li>
+<li>Accede a la configuración del IDE de MicroBlocks, haz clic en "Actualizar el firmware de la placa", selecciona "CoCube" de la lista y selecciona el puerto correspondiente.</li>
+</ul>
+<center>
+
+![Actualizar firmware de CoCube](../img/CoCube/act_firm.png)
+
+</center>
+
+<div class="admonition warning">
+<p class="admonition-title"> </p>
+<p>El proceso de actualización tarda aproximadamente un minuto, durante el cual debes mantener el IDE de MicroBlocks en pantalla. No hagas nada más durante este tiempo. De lo contrario, es posible que la actualización del firmware falle, por lo que, si esto ocurre, deberás volver a actualizar.</p>
+</div>
+<h3 id="bloques-de-la-libreria-cocube"><FONT COLOR=#AA0000>Bloques de la libreria CoCube</font><a class="headerlink" href="#bloques-de-la-libreria-cocube" title="Permanent link">&para;</a></h3>
+<p>A continuación se describen brevemente:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Bloque</th>
+<th>Función</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_mueve.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_mueve.png" /></a></td>
+<td>Mueve 'adelante/Atrás' a la velocidad dada durante el tiempo establecido</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_gira.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_gira.png" /></a></td>
+<td>Gira 'a la izquierda/a la derecha' a la velocidad dada durante el tiempo establecido</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_mueve2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_mueve2.png" /></a></td>
+<td>Mueve 'adelante/Atrás' a la velocidad dada</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_gira2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_gira2.png" /></a></td>
+<td>Gira 'a la izquierda/a la derecha' a la velocidad dada</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_pon_vel.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_pon_vel.png" /></a></td>
+<td>Configura la velocidad de cada rueda</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_deten_ruedas.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_deten_ruedas.png" /></a></td>
+<td>Frena el movimiento de los motores</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_frena_ruedas.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_frena_ruedas.png" /></a></td>
+<td>Detiene el movimiento de los motores</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_ArUco.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_ArUco.png" /></a></td>
+<td>Muestra marcador ArUco<span class="arithmatex">\(^*\)</span> en pantalla (<span class="arithmatex">\(^*\)</span> A continuación de Bloques)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_AprilTag.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_AprilTag.png" /></a></td>
+<td>Muestra imagen AprilTag<span class="arithmatex">\(^*\)</span> en pantalla (<span class="arithmatex">\(^*\)</span> A continuación de Bloques)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_luz_fondo.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_luz_fondo.png" /></a></td>
+<td>Activa/desactiva la iluminación de fondo de la pantalla</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_carga.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_carga.png" /></a></td>
+<td>Devuelve el porcentaje de carga de la bateria</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_coorX.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_coorX.png" /></a></td>
+<td>Devuelve el valor de la coordenada X de la posición del robot</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_coorY.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_coorY.png" /></a></td>
+<td>Devuelve el valor de la coordenada Y de la posición del robot</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_grados.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_grados.png" /></a></td>
+<td>Devuelve la orientación o dirección de la posición del robot</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_mueve_pasos.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_mueve_pasos.png" /></a></td>
+<td>Mueve 'adelante/Atrás' a la velocidad dada los pasos establecidos</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_gira_grados.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_gira_grados.png" /></a></td>
+<td>Gira 'a la izquierda/a la derecha' a la velocidad dada los grados establecidos</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_gira_angulo_vel.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_gira_angulo_vel.png" /></a></td>
+<td>Gira el ángulo dado a la velocidad indicada</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_apunta.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_apunta.png" /></a></td>
+<td>Gira a la velocidad dada para orientarse hacía el punto del mapa dado</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_mueve_punto.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_mueve_punto.png" /></a></td>
+<td>Mueve a la velocidad dada hasta el punto del mapa dado</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_sobre.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_sobre.png" /></a></td>
+<td>Detecta si el robot está sobre una superficie sensible CoMap o CoTag</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_ID_tarjeta.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_ID_tarjeta.png" /></a></td>
+<td>Devuelve el identificador de la tarjeta sobre la que está el robot</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bloques-de-la-libreria-de-modulos-externos-de-cocube"><FONT COLOR=#AA0000>Bloques de la libreria de módulos externos de CoCube</font><a class="headerlink" href="#bloques-de-la-libreria-de-modulos-externos-de-cocube" title="Permanent link">&para;</a></h3>
+<p>A continuación se describen brevemente:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Bloque</th>
+<th>Función</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_abre_p.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_abre_p.png" /></a></td>
+<td>Abre la pinza</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_cierra_p.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_cierra_p.png" /></a></td>
+<td>Cierra la pinza</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_pinza_grados.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_pinza_grados.png" /></a></td>
+<td>Establece los grados de apertura de la pinza</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_ini_npx.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_ini_npx.png" /></a></td>
+<td>Inicializa la tira de 48 LEDs direccionables</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_color_npx.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_color_npx.png" /></a></td>
+<td>Establece el color de todos los LEDs</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_apaga_npx.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_apaga_npx.png" /></a></td>
+<td>Pone a negro (apaga) todos los LEDs</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_dist_infra_con.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_dist_infra_con.png" /></a></td>
+<td>Activa el pin como entrada e indica que el sensor VL53L0X está conectado</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_dist_infra.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_dist_infra.png" /></a></td>
+<td>Devuelve la distancia en mm medida por el sensor VL53L0X</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_conect_gestos.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_conect_gestos.png" /></a></td>
+<td>Activa el pin como entrada e indica que el sensor paj7620 está conectado</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_lect_gestos.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_lect_gestos.png" /></a></td>
+<td>Devuelve la lectura efectuada por el sensor de gestos</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="glightbox" href="../../img/CoCube/B_activa_alimen.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../img/CoCube/B_activa_alimen.png" /></a></td>
+<td>Activa la alimentación del módulo colocado en el conector de expansión</td>
+</tr>
+</tbody>
+</table>
+<h3 id="marcador-aruco"><FONT COLOR=#AA0000>Marcador ArUco</font><a class="headerlink" href="#marcador-aruco" title="Permanent link">&para;</a></h3>
+<p>Los marcadores ArUco utilizan un sistema de codificación binaria consistente en una matriz cuadrada de diferentes tamaños (4x4, 5x5, 6x6 o 7x7). Los bloques negros representan un "1" y los blancos un "0", formando cada código un patrón bidimensional de bloques blancos y negros que se puede leer utilizando un sistema de visión. El patrón codifica un número único (ID) que identifica al marcador.</p>
+<p>Los marcadores se organizan en diccionarios que contienen un número fijo de marcadores. Por ejemplo, el módulo aruco de <a href="https://opencv.org/">OpenCV</a> cuenta con un total de 25 diccionarios predefinidos de marcadores . Todos los marcadores de un diccionario contienen el mismo número de bloques o bits (4×4, 5×5, 6×6 o 7×7), y cada diccionario contiene un número fijo de marcadores (50, 100, 250 o 1000).</p>
+<p>La estructura de un marcador ArUco se forma con un borde negro y una cuadricula interna que contiene el patrón binario que representa un identificador. En la imagen vemos marcadores ArUco de 4x4, 5x5, 6x6 y 7x7.</p>
+<center>
+
+![Marcador ArUco](../img/CoCube/ArUco.png)
+
+</center>
+
+<p>Estos marcadores son una herramienta cuyos ejemplos de uso son: en realidad aumentada, superponiendo imágenes virtuales sobre un marcador real para crear experiencias interactivas; en localización de robots, permitiendo a los mismo localizar objetos o posiciones específicas en un entorno o en seguimiento de objetos, donde pueden utilizarse para rastrear la posición y orientación de objetos en tiempo real.</p>
+<p>Existen páginas donde se pueden generar y descargar hojas de marcadores ArUco:</p>
+<ul>
+<li>Página de <a href="https://fodi.be/">Bence Fodor (Fodi)</a></li>
+<li>Generador online de marcadores ArUco <a href="https://fodi.github.io/arucosheetgen/">arucosheetgen</a> de Fodi forked desde <a href="https://github.com/okalachev/arucogen">okalachev/arucogen</a>.</li>
+</ul>
+<p>En la imagen vemos un ejemplo de uso:</p>
+<center>
+
+![Marcadores ArUco](../img/CoCube/ArUco_marcadores.png)  
+
+</center>
+
+<h3 id="marcador-apriltag"><FONT COLOR=#AA0000>Marcador AprilTag</font><a class="headerlink" href="#marcador-apriltag" title="Permanent link">&para;</a></h3>
+<p>Los <a href="https://april.eecs.umich.edu/software/apriltag">AprilTag</a> son marcadores visuales para detección e identificación mediante sistemas de visión artificial desarrollados por investigadores de la universidad de Michigan.</p>
+<p>Tecnicamente su diseño fiducial y sistema de codificación se basan en lexicografia. El sistema se describe en los artículos enlazados en la web anterior.</p>
+<p>Conceptualmente son similares a los códigos QR pero diseñados para cargas de datos mucho mas pequeñas (entre 4 y 12 bits), lo que permite una detección mejor a mayor distancia. Están diseñados para calcular su posición 3D precisa respecto a la cámara.</p>
+<p>Se utilizan como marcadores fiduciales en robótica y otras aplicaciones.</p>
+<p>Un marcador fiducial o solamente fiducial es un objeto colocado en el campo de visión de un sistema de imágenes que aparece en la imagen producida, para su uso como punto de referencia o medida.</p>
+<p>Su nombre procede del laboratorio de robótica "April" de la Universidad de Michigan, siendo AprilTag una biblioteca y algoritmo que permite a un sistema identificar características en hasta seis grados de libertad.</p>
+<p>Se clasifican en las siguientes familias:</p>
+<center>
+
+![Familias AprilTag](../img/CoCube/fam_april.png)  
+
+</center>
+
+<p>En la tabla siguiente vemos datos referentes a estas familias:</p>
+<table>
+<thead>
+<tr>
+<th>Familia</th>
+<th>Ancho total</th>
+<th>Ancho del cuadrado</th>
+<th>Factor de relleneo</th>
+<th>Número de etiquetas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16H5</td>
+<td>8</td>
+<td>6</td>
+<td>0.75</td>
+<td>30</td>
+</tr>
+<tr>
+<td>21H7 redonda</td>
+<td>9</td>
+<td>5</td>
+<td>0.55</td>
+<td>38</td>
+</tr>
+<tr>
+<td>25H9</td>
+<td>9</td>
+<td>7</td>
+<td>0.78</td>
+<td>35</td>
+</tr>
+<tr>
+<td>36H11</td>
+<td>10</td>
+<td>8</td>
+<td>0.8</td>
+<td>587</td>
+</tr>
+<tr>
+<td>41H12 Estándar</td>
+<td>9</td>
+<td>5</td>
+<td>0.56</td>
+<td>2115</td>
+</tr>
+<tr>
+<td>48H12 Personalizada</td>
+<td>10</td>
+<td>6</td>
+<td>0.6</td>
+<td>42211</td>
+</tr>
+<tr>
+<td>49H12 redonda</td>
+<td>11</td>
+<td>5</td>
+<td>0.45</td>
+<td>65535</td>
+</tr>
+<tr>
+<td>52H13 Estándar</td>
+<td>10</td>
+<td>6</td>
+<td>0.6</td>
+<td>48714</td>
+</tr>
+</tbody>
+</table>
+<p>Es más complicado de utilizar que el sistema ArUco pero es mas adecuado para aplicaciones donde es necesaria velocidad y robustez.</p>
+<p>Una referencia base la encontramos en <a href="https://compileralchemy.substack.com/p/apriltags-why-robotics-invented-its">AprilTags: Why Robotics Invented Its Own QR Code</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright y copia; 2023 - 2035 Federico Coca
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://bsky.app/profile/fgcoca.bsky.social" target="_blank" rel="noopener" title="Bluesky de Federico Coca" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3M288 227.1c-26.1-50.7-97.1-145.2-163.1-191.8C61.6-9.4 37.5-1.7 21.6 5.5 3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7 3.3-.5 6.6-.9 10-1.4-3.3.5-6.6 1-10 1.4-93.9 14-177.3 48.2-67.9 169.9C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4 102.4-103.4 28.1-156-65.8-169.9-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3 64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/fgcoca" target="_blank" rel="noopener" title="Github de Federico Coca" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.instagram.com/cocafederico/?hl=es" target="_blank" rel="noopener" title="Instagram de Federico Coca" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M194.4 211.7a53.3 53.3 0 1 0 59.2 88.6 53.3 53.3 0 1 0-59.2-88.6m142.3-68.4c-5.2-5.2-11.5-9.3-18.4-12-18.1-7.1-57.6-6.8-83.1-6.5-4.1 0-7.9.1-11.2.1s-7.2 0-11.4-.1c-25.5-.3-64.8-.7-82.9 6.5-6.9 2.7-13.1 6.8-18.4 12s-9.3 11.5-12 18.4c-7.1 18.1-6.7 57.7-6.5 83.2 0 4.1.1 7.9.1 11.1s0 7-.1 11.1c-.2 25.5-.6 65.1 6.5 83.2 2.7 6.9 6.8 13.1 12 18.4s11.5 9.3 18.4 12c18.1 7.1 57.6 6.8 83.1 6.5 4.1 0 7.9-.1 11.2-.1s7.2 0 11.4.1c25.5.3 64.8.7 82.9-6.5 6.9-2.7 13.1-6.8 18.4-12s9.3-11.5 12-18.4c7.2-18 6.8-57.4 6.5-83 0-4.2-.1-8.1-.1-11.4s0-7.1.1-11.4c.3-25.5.7-64.9-6.5-83-2.7-6.9-6.8-13.1-12-18.4zm-67.1 44.5c18.1 12.1 30.6 30.9 34.9 52.2s-.2 43.5-12.3 61.6c-6 9-13.7 16.6-22.6 22.6s-19 10.1-29.6 12.2c-21.3 4.2-43.5-.2-61.6-12.3s-30.6-30.9-34.9-52.2.2-43.5 12.2-61.6 30.9-30.6 52.2-34.9 43.5.2 61.6 12.2h.1zm29.2-1.3c-3.1-2.1-5.6-5.1-7.1-8.6s-1.8-7.3-1.1-11.1 2.6-7.1 5.2-9.8 6.1-4.5 9.8-5.2 7.6-.4 11.1 1.1 6.5 3.9 8.6 7 3.2 6.8 3.2 10.6c0 2.5-.5 5-1.4 7.3s-2.4 4.4-4.1 6.2-3.9 3.2-6.2 4.2-4.8 1.5-7.3 1.5c-3.8 0-7.5-1.1-10.6-3.2zM448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64zm-91 293c-18.7 18.7-41.4 24.6-67 25.9-26.4 1.5-105.6 1.5-132 0-25.6-1.3-48.3-7.2-67-25.9s-24.6-41.4-25.8-67c-1.5-26.4-1.5-105.6 0-132 1.3-25.6 7.1-48.3 25.8-67s41.5-24.6 67-25.8c26.4-1.5 105.6-1.5 132 0 25.6 1.3 48.3 7.1 67 25.8s24.6 41.4 25.8 67c1.5 26.3 1.5 105.4 0 131.9-1.3 25.6-7.1 48.3-25.8 67z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../plugins/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
