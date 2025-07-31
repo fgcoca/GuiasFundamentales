@@ -37,7 +37,6 @@ nav:
     - Modelo de colores: mod_colores.md
     - Comunicaciones Bluetooth: bt.md
     - Conceptos básicos de UDP: basicoUDP.md
-    - Sensor de visión IA Sentry2: sentry2.md
   - Imagina TdR STEAM:
     - Antes de: TdR_STEAM/contTdR.md
     - STEAMakersBlocks: TdR_STEAM/SMBlocks.md
@@ -53,6 +52,7 @@ nav:
     - Programar el sensor de ultrasonidos: UNO/ultrason.md
     - Programar el mando a distancia: UNO/mando.md
     - Programar una tira de LEDs: UNO/tira.md
+    - Retos Keyestudio UNO: UNO/keyestudio_UNO.md
   - ESP32 STEAMakers:
     - Antes de: STEAMakers/contSM.md
     - Placa TdR-STEAM y ESP32 STEAMakers: STEAMakers/tdrsteam_SM.md
@@ -90,15 +90,21 @@ nav:
     - Comunicaciones UDP: cocube/com_UDP.md
     - Control remoto mediante APP: cocube/remoto_wifi.md
     - Reconocimiento de color con Sentry2: cocube/sentry2_color.md
-  - Sensor de visión IA Sentry2:
+  - Sentry2:
     - Antes de: Sentry2/contSentry2.md
+    - Hardware: Sentry2/hard.md
+    - Interface de usuario: Sentry2/userinterface.md
+    - Visión: Sentry2/vision.md
+    - Ideas de utilización y videos: Sentry2/ideas.md
+    - Sentry2 - WiFi: Sentry2/wifi_sentry2.md
+    - Sentry2 y STEAMakersBlocks: Sentry2/sentry2_SMBlocks.md
+    #- Sentry2 y MicroBlocks: Sentry2/sentry2_MB.md
+    #- Sentry2 - Firmware: 
+
     
   - ED1:
     - Antes de: ed1/conted1.md
     - Introducción: ed1/introED1.md
-
-  - Retos:
-    - Keyestudio UNO: retos/keyestudio_UNO.md
     
 
 #- Ayuda:

@@ -344,20 +344,3 @@ El programa quedará configurado de la siguiente forma:
 *[Descargar: NIVEL V. Trasvase de agua](../UNO/programas/R_UNO_Trasvase_agua.abp)*
 
 </center>
-
-
-
-
-
-
-## <FONT COLOR=#8B008B>**NIVEL IV. Contaminación acústica**</font>
-
-
-<center>
-
-![NIVEL IV. Contaminación acústica](../img/retos/IV_Cont_acustica.png)  
-*[Descargar: NIVEL IV. Contaminación acústica](../UNO/programas/R_UNO_Contaminacion_acustica.abp)*
-
-</center>
-
-NIVEL V. Trasvase de agua
