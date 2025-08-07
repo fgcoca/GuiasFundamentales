@@ -18,7 +18,7 @@
         <link rel="prev" href="../remoto_wifi/">
       
       
-        <link rel="next" href="../../Sentry2/contSentry2/">
+        <link rel="next" href="../sentry2_trafico/">
       
       
       <link rel="icon" href="../../img/favicon.png">
@@ -1888,8 +1888,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#programacion" class="md-nav__link">
-    Programación
+  <a href="#programacion-de-ejemplo-base" class="md-nav__link">
+    Programación de ejemplo base
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programacion-seguir-objeto-de-color-azul" class="md-nav__link">
+    Programación seguir objeto de color azul
   </a>
   
 </li>
@@ -1898,6 +1905,66 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sentry2_trafico/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tráfico inteligente con Sentry2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sentry2_linea/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reconocimiento de línea con Sentry2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sentry2_april/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reconocimiento de etiquetas Apriltag
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2388,8 +2455,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#programacion" class="md-nav__link">
-    Programación
+  <a href="#programacion-de-ejemplo-base" class="md-nav__link">
+    Programación de ejemplo base
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programacion-seguir-objeto-de-color-azul" class="md-nav__link">
+    Programación seguir objeto de color azul
   </a>
   
 </li>
@@ -2412,12 +2486,18 @@
   <h1>Reconocimiento de color con Sentry2</h1>
 
 <h2 id="objetivo"><FONT COLOR=#007575><strong>Objetivo</strong></font><a class="headerlink" href="#objetivo" title="Permanent link">&para;</a></h2>
-<p>Utilizar la función de reconocimiento de bloques de color del sensor de visión artificial Sentry2 y utilizar el CoCube para seguir el movimiento de un cilindro.</p>
+<p>Utilizar la función de reconocimiento de bloques de color del sensor de visión artificial Sentry2 y posteriormente utilizar el CoCube para seguir el movimiento de un cilindro.</p>
+<p>El video siguiente muestra la idea que se pretende programar.</p>
+<p><center></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bXq0cMlPjwQ?si=4CgMK46Iow98Y7U5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p></center></p>
 <h2 id="materiales"><FONT COLOR=#007575><strong>Materiales</strong></font><a class="headerlink" href="#materiales" title="Permanent link">&para;</a></h2>
-<p>Robot CoCube, pinza con servomotor y ordenador ejecutando el IDE de MicroBlocks.</p>
+<p>Robot CoCube, conector soporte para Sentry2 y ordenador ejecutando el IDE de MicroBlocks en cualquiera de sus versiones, estable instalada localmente o versiones online tanto estable como pilot. En cualquier caso tenemos que añadir las bibliotecas <strong>CoCube</strong>, <strong>CoCube module</strong> y <strong>Sentry2 AI camera</strong>.</p>
 <p><center></p>
 <p><a class="glightbox" href="../../img/CoCube/mat08.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Materiales" src="../../img/CoCube/mat08.png" /></a></p>
 <p></center></p>
+<p>Hay que realizar la conexión de de dispostivos colocando el soporte para la Sentry2, con la cámara colocada, en el conector de expansión del CoCube. El conector con 4 cables hay que colocarlo en el conector I2C de la cámara.</p>
 <h2 id="informacion-de-algoritmos-de-sentry2"><FONT COLOR=#007575><strong>Información de algoritmos de Sentry2</strong></font><a class="headerlink" href="#informacion-de-algoritmos-de-sentry2" title="Permanent link">&para;</a></h2>
 <h3 id="introduccion"><FONT COLOR=#AA0000>Introducción</font><a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h3>
 <p><center></p>
@@ -2515,9 +2595,13 @@
 </tr>
 </tbody>
 </table>
+<p>Nos aseguramos de tener blob configurado como en la imagen siguiente:</p>
+<p><center></p>
+<p><a class="glightbox" href="../img/sentry2/conf_blob_color.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Colores a inspeccionar" src="../img/sentry2/conf_blob_color.png" /></a>  </p>
+<p></center></p>
 <h3 id="consejos-de-uso"><FONT COLOR=#AA0000>Consejos de uso</font><a class="headerlink" href="#consejos-de-uso" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Cuando se determina que es necesario rastrear un único objeto, como detectar una carretera blanca o seguir una pelota, se puede establecer el número de número de bloques de color en 1 para mejorar la velocidad y reducir los falsos positivos.</li>
+<li>Cuando se determina que es necesario rastrear un único objeto, como detectar una carretera blanca o seguir una pelota, se puede establecer el número de bloques de color en 1 para mejorar la velocidad y reducir los falsos positivos.</li>
 <li>El uso de un área de reconocimiento más pequeña y un modo de rendimiento preciso permite ver objetos más lejanos.</li>
 <li>Al reconocer grandes áreas de manchas de color, la velocidad de fotogramas disminuirá significativamente. En este caso, se debe utilizar el modo sensible.</li>
 <li>Cuando hay una mancha de color en la imagen, es necesario bloquear la función de balance de blancos.</li>
@@ -2554,8 +2638,40 @@ Es un parámetro opcional que determina la dirección I2C del dispositivo. El va
 <p><a class="glightbox" href="../../img/CoCube/B_detec_atrib_sentry2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bloque detección de los atributos del objeto" src="../../img/CoCube/B_detec_atrib_sentry2.png" /></a>  </p>
 <p></center></p>
 <p>Devuelve las propiedades del identificador del objeto detectado, incluida la coordenada x central del bloque de color, la coordenada y del centro del bloque de color, el ancho del bloque de color w, la altura del bloque de color h y la etiqueta de clasificación de color.</p>
-<p>Las etiquetas de clasificación por colores van del 1 al 5, y representan el negro, el blanco, el rojo, el verde y el azul, respectivamente.</p>
-<h2 id="programacion"><FONT COLOR=#007575><strong>Programación</strong></font><a class="headerlink" href="#programacion" title="Permanent link">&para;</a></h2>
+<p>Las etiquetas de clasificación por colores van del 1 al 6, y representan el negro (1), el blanco (2), el rojo (3), el verde (4), el azul (5) y el amarillo (6), respectivamente.</p>
+<ul>
+<li><strong>set blob check color red ... green ... blue ...</strong> (<strong>establecer color de detección de bloque</strong>)</li>
+</ul>
+<p><center></p>
+<p><a class="glightbox" href="../../img/CoCube/B_set_blob_check_color.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bloque set blob check color red ... green ... blue ..." src="../../img/CoCube/B_set_blob_check_color.png" /></a>  </p>
+<p></center></p>
+<p>El bloque permite ajustar el color de detección del bloque (blob) de entre los posibles que son: <strong>negro, blanco, rojo, verde, azul y amarillo</strong>.</p>
+<p>Tiene el mismo efecto que si lo hacemos desde la configuración de blob con el joystick:</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/CoCube/conf_blob_color.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Configuración color detección blob en Sentry2" src="../../img/CoCube/conf_blob_color.png" /></a>  </p>
+<p></center></p>
+<h2 id="programacion-de-ejemplo-base"><FONT COLOR=#007575><strong>Programación de ejemplo base</strong></font><a class="headerlink" href="#programacion-de-ejemplo-base" title="Permanent link">&para;</a></h2>
+<p><font color=#FF0000><strong>&#x2460;</strong></font> Conecta el IDE de MicroBlocks al robot CoCube a través de cable USB o por medios inalámbricos.</p>
+<p><font color=#FF0000><strong>&#x2461;</strong></font> Debes agregar las bibliotecas <strong>Sentry2 AI camera</strong>, <strong>CoCube</strong> y <strong>CoCube module</strong>.</p>
+<p><font color=#FF0000><strong>&#x2462;</strong></font> Debajo de un bloque sombrero "al empezar" coloca el bloque "activa la alimentación del módulo" para que la Sentry2 se alimente a través del conector I2C. A continuación inicializa la interfaz I2C y coloca una espera de 4 segundos para dar tiempo a que el módulo de la cámara se inicie correctamente y, a continuación, establece el modo de algoritmo de la cámara en modo blob para el reconocimiento de bloques de color. Finalmente establece como color de detección por ejemplo rojo.</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/CoCube/P_detec_color_ini.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Programa &quot;al comenzar&quot;" src="../../img/CoCube/P_detec_color_ini.png" /></a>  </p>
+<p></center></p>
+<p><font color=#FF0000><strong>&#x2463;</strong></font> Bajo un bloque sombrero "cuando" se comprueba continuamente si se detectan manchas de color Blob de color rojo. Cuando el número de objetos detectados sea 1, se muestran los cinco atributos de esa mancha u objeto. Puedes observar la posición, el tamaño y la etiqueta de color de la mancha en tiempo real.</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/CoCube/P_detec_color.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Programa detectar bloque de color" src="../../img/CoCube/P_detec_color.png" /></a><br />
+<strong><a href="../../program/cocube/Reconocimiento_color_Sentry2.ubp">Descargar el programa</a></strong></p>
+<p></center></p>
+<h2 id="programacion-seguir-objeto-de-color-azul"><FONT COLOR=#007575><strong>Programación seguir objeto de color azul</strong></font><a class="headerlink" href="#programacion-seguir-objeto-de-color-azul" title="Permanent link">&para;</a></h2>
+<p>Ten en cuenta que debes configurar los parámetros de reconocimiento de bloques de color de la cámara Sentry2 para cambiar el color rojo por defecto que trae de fábrica al color azul.</p>
+<p><font color=#FF0000><strong>&#x2460;</strong></font> Conecta el IDE de MicroBlocks al robot CoCube a través de cable USB o por medios inalámbricos.</p>
+<p><font color=#FF0000><strong>&#x2461;</strong></font> Debes agregar las bibliotecas <strong>Sentry2 AI camera</strong>, <strong>CoCube</strong> y <strong>CoCube module</strong>.</p>
+<p><font color=#FF0000><strong>&#x2462;</strong></font> Debajo de un bloque sombrero "al empezar" coloca el bloque "activa la alimentación del módulo" para que la Sentry2 se alimente a través del conector I2C. A continuación inicializa la interfaz I2C y coloca una espera de 4 segundos para dar tiempo a que el módulo de la cámara se inicie correctamente y, a continuación, establece el modo de algoritmo de la cámara en modo blob para el reconocimiento de bloques de color. Finalmente establece como color de detección el azul.</p>
+<p><font color=#FF0000><strong>&#x2463;</strong></font> Bajo un bloque sombrero "cuando" se comprueba continuamente si se detectan manchas de color Blob azules. Si es cierto el robot avanza y si el color desaparece el robot se detiene.</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/CoCube/P_seguir_azul.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Programa seguir color azul" src="../../img/CoCube/P_seguir_azul.png" /></a><br />
+<strong><a href="../../program/cocube/CoCube_sigue_azul.ubp">Descargar el programa</a></strong></p>
+<p></center></p>
 
 
 
