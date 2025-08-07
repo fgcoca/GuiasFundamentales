@@ -90,6 +90,9 @@ nav:
     - Comunicaciones UDP: cocube/com_UDP.md
     - Control remoto mediante APP: cocube/remoto_wifi.md
     - Reconocimiento de color con Sentry2: cocube/sentry2_color.md
+    - Tráfico inteligente con Sentry2: cocube/sentry2_trafico.md
+    - Reconocimiento de línea con Sentry2: cocube/sentry2_linea.md
+    - Reconocimiento de etiquetas Apriltag: cocube/sentry2_april.md
   - Sentry2:
     - Antes de: Sentry2/contSentry2.md
     - Hardware: Sentry2/hard.md
@@ -99,7 +102,7 @@ nav:
     - Sentry2 - WiFi: Sentry2/wifi_sentry2.md
     - Sentry2 y STEAMakersBlocks: Sentry2/sentry2_SMBlocks.md
     #- Sentry2 y MicroBlocks: Sentry2/sentry2_MB.md
-    #- Sentry2 - Firmware: 
+    #- Actualización del firmware: Sentry2/act_firmw.md
 
     
   - ED1:

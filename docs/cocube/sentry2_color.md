@@ -1,14 +1,24 @@
 ## <FONT COLOR=#007575>**Objetivo**</font>
-Utilizar la función de reconocimiento de bloques de color del sensor de visión artificial Sentry2 y utilizar el CoCube para seguir el movimiento de un cilindro.
+Utilizar la función de reconocimiento de bloques de color del sensor de visión artificial Sentry2 y posteriormente utilizar el CoCube para seguir el movimiento de un cilindro.
+
+El video siguiente muestra la idea que se pretende programar.
+
+<center>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bXq0cMlPjwQ?si=4CgMK46Iow98Y7U5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+</center>
 
 ## <FONT COLOR=#007575>**Materiales**</font>
-Robot CoCube, pinza con servomotor y ordenador ejecutando el IDE de MicroBlocks.
+Robot CoCube, conector soporte para Sentry2 y ordenador ejecutando el IDE de MicroBlocks en cualquiera de sus versiones, estable instalada localmente o versiones online tanto estable como pilot. En cualquier caso tenemos que añadir las bibliotecas **CoCube**, **CoCube module** y **Sentry2 AI camera**.
 
 <center>
 
 ![Materiales](../img/CoCube/mat08.png)
 
 </center>
+
+Hay que realizar la conexión de de dispostivos colocando el soporte para la Sentry2, con la cámara colocada, en el conector de expansión del CoCube. El conector con 4 cables hay que colocarlo en el conector I2C de la cámara.
 
 ## <FONT COLOR=#007575>**Información de algoritmos de Sentry2**</font>
 ### <FONT COLOR=#AA0000>Introducción</font>
@@ -77,8 +87,16 @@ Cuando se leen los registros a través del maestro, se devuelven los siguientes 
 |4|Alto del bloque 'h'|
 |5|Etiquetas de clasificación de colores|
 
+Nos aseguramos de tener blob configurado como en la imagen siguiente:
+
+<center>
+
+![Colores a inspeccionar](../img/sentry2/conf_blob_color.png)  
+
+</center>
+
 ### <FONT COLOR=#AA0000>Consejos de uso</font>
-1. Cuando se determina que es necesario rastrear un único objeto, como detectar una carretera blanca o seguir una pelota, se puede establecer el número de número de bloques de color en 1 para mejorar la velocidad y reducir los falsos positivos.
+1. Cuando se determina que es necesario rastrear un único objeto, como detectar una carretera blanca o seguir una pelota, se puede establecer el número de bloques de color en 1 para mejorar la velocidad y reducir los falsos positivos.
 2. El uso de un área de reconocimiento más pequeña y un modo de rendimiento preciso permite ver objetos más lejanos.
 3. Al reconocer grandes áreas de manchas de color, la velocidad de fotogramas disminuirá significativamente. En este caso, se debe utilizar el modo sensible.
 4. Cuando hay una mancha de color en la imagen, es necesario bloquear la función de balance de blancos.
@@ -129,6 +147,63 @@ El número de resultados se verá afectado por la configuración de parámetros 
 
 Devuelve las propiedades del identificador del objeto detectado, incluida la coordenada x central del bloque de color, la coordenada y del centro del bloque de color, el ancho del bloque de color w, la altura del bloque de color h y la etiqueta de clasificación de color.
 
-Las etiquetas de clasificación por colores van del 1 al 5, y representan el negro, el blanco, el rojo, el verde y el azul, respectivamente.
+Las etiquetas de clasificación por colores van del 1 al 6, y representan el negro (1), el blanco (2), el rojo (3), el verde (4), el azul (5) y el amarillo (6), respectivamente.
 
-## <FONT COLOR=#007575>**Programación**</font>
+- **set blob check color red ... green ... blue ...** (**establecer color de detección de bloque**)
+
+<center>
+
+![Bloque set blob check color red ... green ... blue ...](../img/CoCube/B_set_blob_check_color.png)  
+
+</center>
+
+El bloque permite ajustar el color de detección del bloque (blob) de entre los posibles que son: **negro, blanco, rojo, verde, azul y amarillo**.
+
+Tiene el mismo efecto que si lo hacemos desde la configuración de blob con el joystick:
+
+<center>
+
+![Configuración color detección blob en Sentry2](../img/CoCube/conf_blob_color.png)  
+
+</center>
+
+## <FONT COLOR=#007575>**Programación de ejemplo base**</font>
+
+<font color=#FF0000>**&#x2460**</font> Conecta el IDE de MicroBlocks al robot CoCube a través de cable USB o por medios inalámbricos.
+
+<font color=#FF0000>**&#x2461**</font> Debes agregar las bibliotecas **Sentry2 AI camera**, **CoCube** y **CoCube module**.
+
+<font color=#FF0000>**&#x2462**</font> Debajo de un bloque sombrero "al empezar" coloca el bloque "activa la alimentación del módulo" para que la Sentry2 se alimente a través del conector I2C. A continuación inicializa la interfaz I2C y coloca una espera de 4 segundos para dar tiempo a que el módulo de la cámara se inicie correctamente y, a continuación, establece el modo de algoritmo de la cámara en modo blob para el reconocimiento de bloques de color. Finalmente establece como color de detección por ejemplo rojo.
+
+<center>
+
+![Programa "al comenzar"](../img/CoCube/P_detec_color_ini.png)  
+
+</center>
+
+<font color=#FF0000>**&#x2463**</font> Bajo un bloque sombrero "cuando" se comprueba continuamente si se detectan manchas de color Blob de color rojo. Cuando el número de objetos detectados sea 1, se muestran los cinco atributos de esa mancha u objeto. Puedes observar la posición, el tamaño y la etiqueta de color de la mancha en tiempo real.
+
+<center>
+
+![Programa detectar bloque de color](../img/CoCube/P_detec_color.png)  
+**[Descargar el programa](../program/cocube/Reconocimiento_color_Sentry2.ubp)**
+
+</center>
+
+## <FONT COLOR=#007575>**Programación seguir objeto de color azul**</font>
+Ten en cuenta que debes configurar los parámetros de reconocimiento de bloques de color de la cámara Sentry2 para cambiar el color rojo por defecto que trae de fábrica al color azul.
+
+<font color=#FF0000>**&#x2460**</font> Conecta el IDE de MicroBlocks al robot CoCube a través de cable USB o por medios inalámbricos.
+
+<font color=#FF0000>**&#x2461**</font> Debes agregar las bibliotecas **Sentry2 AI camera**, **CoCube** y **CoCube module**.
+
+<font color=#FF0000>**&#x2462**</font> Debajo de un bloque sombrero "al empezar" coloca el bloque "activa la alimentación del módulo" para que la Sentry2 se alimente a través del conector I2C. A continuación inicializa la interfaz I2C y coloca una espera de 4 segundos para dar tiempo a que el módulo de la cámara se inicie correctamente y, a continuación, establece el modo de algoritmo de la cámara en modo blob para el reconocimiento de bloques de color. Finalmente establece como color de detección el azul.
+
+<font color=#FF0000>**&#x2463**</font> Bajo un bloque sombrero "cuando" se comprueba continuamente si se detectan manchas de color Blob azules. Si es cierto el robot avanza y si el color desaparece el robot se detiene.
+
+<center>
+
+![Programa seguir color azul](../img/CoCube/P_seguir_azul.png)  
+**[Descargar el programa](../program/cocube/CoCube_sigue_azul.ubp)**
+
+</center>
